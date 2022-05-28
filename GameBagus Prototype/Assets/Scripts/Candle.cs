@@ -77,6 +77,10 @@ public class Candle : MonoBehaviour, IEntity
     public void Regeneration()
     {
         candleStats.HP += candleStats.RegenerateHP * Time.deltaTime;
+        if(candleStats.HP >= candleStats.MaxHP)
+        {
+            SM.moodState.Exit(this);
+        }
     }
 
     public void Death()
