@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ProgressBar : MonoBehaviour
-{
+public class ProgressBar : MonoBehaviour {
     [Header("Dates")]
     public List<string> dates;
     public TextMeshProUGUI dateText;
-    
+
     [SerializeField]
     private int dateCounter;
     public int updateTime;
@@ -24,10 +23,8 @@ public class ProgressBar : MonoBehaviour
     public List<Candle> Candles;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        foreach(Candle candle in FindObjectsOfType<Candle>())
-        {
+    void Start() {
+        foreach (Candle candle in FindObjectsOfType<Candle>()) {
             Candles.Add(candle);
         }
 
@@ -35,29 +32,24 @@ public class ProgressBar : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         UpdateVisuals();
 
-        foreach (Candle candle in Candles)
-        {
-            if(candle != null)
-            candle.currCandle.SM.UpdateStates(this);
+        foreach (Candle candle in Candles) {
+            if (candle != null)
+                candle.currCandle.SM.UpdateStates(this);
         }
     }
 
-    void UpdateVisuals()
-    {
+    void UpdateVisuals() {
         progressSlider.value = currentProgress;
     }
 
-    void UpdateDate()
-    {
+    void UpdateDate() {
         dateText.text = dates[dateCounter];
         dateCounter++;
 
-        if(dateCounter >= dates.Count)
-        {
+        if (dateCounter >= dates.Count) {
             dateCounter = 0;
         }
     }
