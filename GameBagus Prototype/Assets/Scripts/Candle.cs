@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [System.Serializable]
 public class CandleStats
 {
-    [Range(1,100)]
+    [Range(0,100)]
     public float MaxHP;
     public float HP;
-    [Range(1, 100)]
+    [Range(0, 100)]
     public float Power;
-    [Range(1, 100)]
+    [Range(0, 100)]
     public float RegenerateHP;
-    [Range(1, 100)]
+    [Range(0, 100)]
     public float DecayPerSec;
 
     [Header("Crunch")]
@@ -23,6 +24,12 @@ public class CandleStats
     // x = power, y = decay
     public List<Vector2Int> Mutltiplier;
     public List<int> MoodThreshold;
+
+    [Header("Beta Testing")]
+    public TextMeshProUGUI HPText;
+    public TextMeshProUGUI CurrentMoodState;
+    public TextMeshProUGUI CurrentWorkingState;
+
 }
 
 public class Candle : MonoBehaviour, IEntity
@@ -41,6 +48,11 @@ public class Candle : MonoBehaviour, IEntity
         SM.SetWorkingState(new W_Working());
         SM.SetMoodState(new M_Happy());
         candleStats.HP = candleStats.MaxHP;
+    }
+
+    public void Update()
+    {
+        DisplayText();
     }
 
     public void Decay()
@@ -70,5 +82,12 @@ public class Candle : MonoBehaviour, IEntity
     public void Death()
     {
         Destroy(gameObject);
+    }
+
+    public void DisplayText()
+    {
+        candleStats.HPText.text = candleStats.HP + "";
+        candleStats.CurrentMoodState.text = SM.moodState.Name + " ";
+        candleStats.CurrentWorkingState.text = SM.workingState.Name + " ";
     }
 }
