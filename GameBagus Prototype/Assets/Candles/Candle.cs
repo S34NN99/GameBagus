@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 [System.Serializable]
@@ -31,11 +32,16 @@ public class CandleStats {
 public class Candle : MonoBehaviour, IEntity {
     private const float burnoutCandleGraphicsPos = -192f;
 
-    public ParticleSystem firePs;
     public CandleStats candleStats;
 
     public StateMachine SM { get; private set; }
     public Candle currCandle { get; set; }
+
+    [SerializeField] private CandleSkin _skin;
+    public CandleSkin Skin => _skin;
+
+    [SerializeField] private Image _headImage;
+    public Image HeadImage => _headImage;
 
 
     [SerializeField] private RectTransform graphicsParentTransform;
@@ -62,6 +68,7 @@ public class Candle : MonoBehaviour, IEntity {
     }
 
     public void Work(ProgressBar pb) {
+        // moodstate is null
         pb.currentProgress += (candleStats.Power + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x) * Time.deltaTime;
         pb.UpdateVisuals();
 
@@ -89,11 +96,5 @@ public class Candle : MonoBehaviour, IEntity {
         candleStats.HPText.text = candleStats.HP + "";
         candleStats.CurrentMoodState.text = SM.moodState.Name + " ";
         candleStats.CurrentWorkingState.text = SM.workingState.Name + " ";
-    }
-
-    public void SetFireSpeed(float speed)
-    {
-        var main = firePs.main;
-        main.simulationSpeed = speed;    
     }
 }

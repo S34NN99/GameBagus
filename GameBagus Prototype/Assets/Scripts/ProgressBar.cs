@@ -9,6 +9,7 @@ public class ProgressBar : MonoBehaviour {
     [Header("ProgressBar")]
     public float currentProgress;
     public Slider progressSlider;
+    public TextMeshProUGUI progressText;
 
     [Space(20)]
     [Header("Candle")]
@@ -22,8 +23,7 @@ public class ProgressBar : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        foreach (var candle in candleManager.GetCandles())
-        {
+        foreach (var candle in candleManager.GetCandles()) {
             candle.currCandle.SM.UpdateStates(this);
         }
     }
@@ -31,13 +31,14 @@ public class ProgressBar : MonoBehaviour {
     public void UpdateVisuals() {
         progressSlider.value = currentProgress;
 
-        if (progressSlider.value >= progressSlider.maxValue)
-        {
+        if (progressSlider.value >= progressSlider.maxValue) {
             progressSlider.value = 0;
             currentProgress = 0;
             Debug.Log("Resetting");
             candleManager.CheckCandles();
             clock.ResetClock(clock.ProjectDuration);
         }
+
+        progressText.text = (progressSlider.normalizedValue * 100).ToString("0.0") + " %";
     }
 }
