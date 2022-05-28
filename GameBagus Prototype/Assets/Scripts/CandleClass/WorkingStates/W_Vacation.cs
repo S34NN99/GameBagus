@@ -49,7 +49,6 @@ public class W_Vacation : WorkingState
                         entity.SM.SetMoodState(new M_Sad());
                         return;
                 }
-                
             }
         }
     }
