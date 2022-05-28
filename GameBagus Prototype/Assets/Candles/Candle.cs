@@ -85,6 +85,7 @@ public class Candle : MonoBehaviour, IEntity {
     }
 
     public void Death() {
+        HeadManager.Instance.RollHead(HeadImage.gameObject);
         Destroy(gameObject);
     }
 
