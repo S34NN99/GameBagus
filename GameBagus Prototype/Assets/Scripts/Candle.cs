@@ -24,7 +24,7 @@ public class CandleStats
 public class Candle : MonoBehaviour, IEntity
 {
     public CandleStats candleStats;
-
+     
     public StateMachine SM { get; private set; }
     public Candle currCandle { get; set; }
 
