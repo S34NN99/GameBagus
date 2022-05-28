@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ProgressBar : MonoBehaviour
-{
+public class ProgressBar : MonoBehaviour {
     [Space(20)]
     [Header("ProgressBar")]
     public float currentProgress;
@@ -13,31 +12,19 @@ public class ProgressBar : MonoBehaviour
 
     [Space(20)]
     [Header("Candle")]
-    public List<Candle> Candles;
+    [SerializeField] private CandleManager candleManager;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        foreach(Candle candle in FindObjectsOfType<Candle>())
-        {
-            Candles.Add(candle);
-        }
-    }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         UpdateVisuals();
 
-        foreach (Candle candle in Candles)
-        {
-            if(candle != null)
+        foreach (var candle in candleManager.GetCandles()) {
             candle.currCandle.SM.UpdateStates(this);
         }
     }
 
-    void UpdateVisuals()
-    {
+    void UpdateVisuals() {
         progressSlider.value = currentProgress;
     }
 }
