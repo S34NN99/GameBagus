@@ -14,17 +14,30 @@ public class ProgressBar : MonoBehaviour {
     [Header("Candle")]
     [SerializeField] private CandleManager candleManager;
 
+    [Space(20)]
+    [Header("Clock")]
+    [SerializeField] private ProjectClock clock;
+
 
     // Update is called once per frame
     void Update() {
-        UpdateVisuals();
 
-        foreach (var candle in candleManager.GetCandles()) {
+        foreach (var candle in candleManager.GetCandles())
+        {
             candle.currCandle.SM.UpdateStates(this);
         }
     }
 
-    void UpdateVisuals() {
+    public void UpdateVisuals() {
         progressSlider.value = currentProgress;
+
+        if (progressSlider.value >= progressSlider.maxValue)
+        {
+            progressSlider.value = 0;
+            currentProgress = 0;
+            Debug.Log("Resetting");
+            candleManager.CheckCandles();
+            clock.ResetClock(clock.ProjectDuration);
+        }
     }
 }
