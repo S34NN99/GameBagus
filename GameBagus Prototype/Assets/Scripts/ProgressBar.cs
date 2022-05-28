@@ -6,11 +6,10 @@ using TMPro;
 
 public class ProgressBar : MonoBehaviour
 {
-    public static ProgressBar instance = null;
-
     [Header("Dates")]
     public List<string> dates;
     public TextMeshProUGUI dateText;
+    
     [SerializeField]
     private int dateCounter;
     public int updateTime;
@@ -20,25 +19,31 @@ public class ProgressBar : MonoBehaviour
     public float currentProgress;
     public Slider progressSlider;
 
-    List<Candle> candles;
-
-    private void Awake()
-    {
-        instance = this;
-        if (instance != this)
-            Destroy(gameObject);
-    }
+    [Space(20)]
+    [Header("Candle")]
+    public List<Candle> Candles;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("UpdateDate", 0, updateTime);
+        foreach(Candle candle in FindObjectsOfType<Candle>())
+        {
+            Candles.Add(candle);
+        }
+
+        //InvokeRepeating("UpdateDate", 0, updateTime);
     }
 
     // Update is called once per frame
     void Update()
     {
         UpdateVisuals();
+
+        foreach (Candle candle in Candles)
+        {
+            if(candle != null)
+            candle.currCandle.SM.UpdateStates(this);
+        }
     }
 
     void UpdateVisuals()

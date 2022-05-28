@@ -2,19 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum CandleStates
-{
-    Active,
-    Inactive, 
-    BurnOut
-}
-
 [System.Serializable]
 public class CandleStats
 {
-    public CandleStates currentState;
-
     [Range(1,100)]
+    public float MaxHP;
+    [HideInInspector]
     public float HP;
     [Range(1, 100)]
     public float Power;
@@ -22,8 +15,10 @@ public class CandleStats
     public float RegenerateHP;
     [Range(1, 100)]
     public float DecayPerSec;
-    [Range(1, 100)]
-    public float CostPerPay; //reconsider naming
+    
+    // x = power, y = decay
+    public List<Vector2Int> Mutltiplier;
+    public List<int> MoodThreshold;
 }
 
 public class Candle : MonoBehaviour, IEntity
@@ -31,18 +26,32 @@ public class Candle : MonoBehaviour, IEntity
     public CandleStats candleStats;
 
     public StateMachine SM { get; private set; }
+    public Candle currCandle { get; set; }
 
     private void Awake()
     {
+        currCandle = this;
         SM = new StateMachine(this);
         SM.owner = this;
-        SM.SetWorkingState(new W_Active());
+
+        SM.SetWorkingState(new W_working());
         SM.SetMoodState(new M_Happy());
-        //SM.SetMoodState();
+        candleStats.HP = candleStats.MaxHP;
     }
 
-    void Update()
+    public void Decay()
     {
-        SM.UpdateStates();
+        candleStats.HP -= (candleStats.DecayPerSec + candleStats.Mutltiplier[SM.moodState.CurrentIndex].y) * Time.deltaTime;
+    }
+
+    public void Work(ProgressBar pb)
+    {
+        pb.currentProgress += (candleStats.Power + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x) * Time.deltaTime;
+        Debug.Log(name + " is working with power " + candleStats.Power + " " + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x);
+    }
+
+    public void Death()
+    {
+        Destroy(gameObject);
     }
 }
