@@ -13,12 +13,46 @@ MonoBehaviour:
   m_Name: Default Dialog
   m_EditorClassIdentifier: 
   _workingHappy:
-  - Working Happy
+  - We're a great team
+  - I love working with you guys
+  - 'Project''s almost done '
+  - Loving the team dynamics
+  - Happy to be working here
   _workingNeutral:
-  - Working Neutral
+  - Just finished my task
+  - Great job guys
+  - Let's get this done
+  - Doing my task now
+  - We're being productive
+  - Finishing my task
+  - Let's hustle!
+  - Anyone need help?
+  - I'm joining the team
+  - Just got my task
   _workingSad:
-  - Working Sad
+  - I feel no sense of purpose
+  - I have too much on my plate
+  - I need time-off
+  - I haven't been spending time with my family
+  - I need a raise
+  - I'm so tired
+  - I can't finish my task
+  - Why am I still here?
+  - I can't concentrate on my work
   _crunching:
-  - Crunching
+  - This is unbearable
+  - I can't take this any more
+  - This is too much to handle
+  - I'm overworked
+  - I can't think straight
+  - I'm having a migrane
+  - I'm mentally and physically drained
+  - This task is too difficult
+  - I'm so stressed out
   _onVacation:
-  - On Vacation
+  - Love spending time with my family
+  - Just what I needed
+  - Time to travel
+  - Recharging my battery
+  - Time for self-care
+  - No emails, no calls

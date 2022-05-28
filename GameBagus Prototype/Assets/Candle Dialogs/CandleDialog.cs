@@ -32,7 +32,7 @@ public class CandleDialog : ScriptableObject {
 
     public string GetDialogFromCandleState(string workingState, string moodState) {
         return workingState switch {
-            "Active" => moodState switch {
+            "Working" => moodState switch {
                 "Happy" => RandomDialogWhenWorkingHappy,
                 "Neutral" => RandomDialogWhenWorkingNeutral,
                 "Sad" => RandomDialogWhenWorkingSad,
