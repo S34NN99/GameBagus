@@ -1,20 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
-public enum CandleStates
-{
+public enum CandleStates {
     Active,
-    Inactive, 
+    Inactive,
     BurnOut
 }
 
 [System.Serializable]
-public class CandleStats
-{
+public class CandleStats {
     public CandleStates currentState;
 
-    [Range(1,100)]
+    [Range(1, 100)]
     public float HP;
     [Range(1, 100)]
     public float Power;
@@ -26,14 +25,12 @@ public class CandleStats
     public float CostPerPay; //reconsider naming
 }
 
-public class Candle : MonoBehaviour, IEntity
-{
+public class Candle : MonoBehaviour, IEntity {
     public CandleStats candleStats;
 
     public StateMachine SM { get; private set; }
 
-    private void Awake()
-    {
+    private void Awake() {
         SM = new StateMachine(this);
         SM.owner = this;
         SM.SetWorkingState(new W_Active());
@@ -41,8 +38,7 @@ public class Candle : MonoBehaviour, IEntity
         //SM.SetMoodState();
     }
 
-    void Update()
-    {
-        SM.UpdateStates();
+    void Update() {
+        //SM.UpdateStates();
     }
 }

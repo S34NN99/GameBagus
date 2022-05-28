@@ -5,10 +5,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DragDropBtn : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
+public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
     [SerializeField] private Canvas parentCanvas;
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private RectTransform rectTransform;
+
+    [Space]
+    [SerializeField] private bool snapToOriginalPos = true;
 
     private Vector2 originalPosition;
 
@@ -25,7 +28,9 @@ public class DragDropBtn : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     }
 
     public void OnEndDrag(PointerEventData eventData) {
-        rectTransform.anchoredPosition = originalPosition;
+        if (snapToOriginalPos) {
+            rectTransform.anchoredPosition = originalPosition;
+        }
         canvasGroup.blocksRaycasts = true;
     }
 }
