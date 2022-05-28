@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 using UnityEngine;
 
@@ -25,5 +26,5 @@ public class CandleManager : MonoBehaviour {
         }
     }
 
-    public IReadOnlyList<Candle> GetCandles() => candles;
+    public IEnumerable<Candle> GetCandles() => candles.Where(candle => candle != null);
 }
