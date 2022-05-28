@@ -6,7 +6,7 @@ public class M_Happy : MoodState
 {
     public override string Name => "Happy";
 
-    public override int CurrentIndex => 0;
+    public override int CurrentIndex => (int)MoodStatesIndex.Happy;
 
     public override void Enter(IEntity entity)
     {

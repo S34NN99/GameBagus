@@ -6,7 +6,7 @@ public class M_Neutral : MoodState
 {
     public override string Name => "Neutral";
 
-    public override int CurrentIndex => 1;
+    public override int CurrentIndex => (int)MoodStatesIndex.Neutral;
 
     public override void Enter(IEntity entity)
     {

@@ -18,6 +18,13 @@ public abstract class State
 
 public abstract class WorkingState : State { }
 
+public enum MoodStatesIndex
+{
+    Happy,
+    Neutral, 
+    Sad
+}
+
 public abstract class MoodState : State 
 {
     public abstract int CurrentIndex { get; }
