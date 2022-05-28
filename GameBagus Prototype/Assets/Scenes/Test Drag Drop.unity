@@ -338,7 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentProgress: 0
   progressSlider: {fileID: 121316041}
-  Candles: []
+  candleManager: {fileID: 771858640}
 --- !u!1001 &446651413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -819,7 +819,7 @@ MonoBehaviour:
   - {x: 156.25, y: 0}
   - {x: 468.75, y: 0}
   candles:
-  - {fileID: 1875617667}
+  - {fileID: 1875617669}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -1332,11 +1332,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871040747}
   m_CullTransparentMesh: 1
---- !u!1 &1875617667 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5359402302208987754, guid: 94988f6ce3f66411a8e3f9a86bad96ef, type: 3}
+--- !u!114 &1875617669 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -5744972036774059160, guid: 94988f6ce3f66411a8e3f9a86bad96ef, type: 3}
   m_PrefabInstance: {fileID: 5359402301739892949}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c152ac3882ea264da639a9a2ce36cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5359402301739892949
 PrefabInstance:
   m_ObjectHideFlags: 0
