@@ -5,6 +5,22 @@ using System.Linq;
 using UnityEngine;
 
 public class CandleManager : MonoBehaviour {
+    private string[] femaleNames = {
+        "Elisa",
+        "Ashley",
+        "Nicole",
+        "Sarah",
+        "Nadia",
+    };
+
+    private string[] maleNames = {
+        "Joe",
+        "Brian",
+        "Adam",
+        "Jason",
+        "Steven",
+    };
+
     [SerializeField] private GameObject candleTemplate;
 
     [SerializeField] private Vector2[] candlePositions;
@@ -22,6 +38,11 @@ public class CandleManager : MonoBehaviour {
                 candleGO.GetComponent<RectTransform>().anchoredPosition = candlePositions[i];
 
                 candles[i] = candleGO.GetComponent<Candle>();
+                if (Random.Range(0, 2) == 1) {
+                    candles[i].candleStats.nameText.text = femaleNames[Random.Range(0, femaleNames.Length)];
+                } else {
+                    candles[i].candleStats.nameText.text = maleNames[Random.Range(0, maleNames.Length)];
+                }
             }
         }
     }

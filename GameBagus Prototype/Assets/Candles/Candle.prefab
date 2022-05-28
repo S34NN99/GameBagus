@@ -1033,6 +1033,7 @@ MonoBehaviour:
     - {x: 2, y: 5}
     - {x: 1, y: 10}
     MoodThreshold: 90010000c800000000000000
+    nameText: {fileID: 879413119361205574}
     HPText: {fileID: 1486359525}
     CurrentMoodState: {fileID: 1890207384}
     CurrentWorkingState: {fileID: 90793248}

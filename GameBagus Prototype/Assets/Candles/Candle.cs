@@ -4,8 +4,7 @@ using UnityEngine;
 using TMPro;
 
 [System.Serializable]
-public class CandleStats
-{
+public class CandleStats {
     public float MaxHP;
     public float HP;
     public float Power;
@@ -22,21 +21,20 @@ public class CandleStats
     public List<int> MoodThreshold;
 
     [Header("Beta Testing")]
+    public TextMeshProUGUI nameText;
     public TextMeshProUGUI HPText;
     public TextMeshProUGUI CurrentMoodState;
     public TextMeshProUGUI CurrentWorkingState;
 
 }
 
-public class Candle : MonoBehaviour, IEntity
-{
+public class Candle : MonoBehaviour, IEntity {
     public CandleStats candleStats;
-     
+
     public StateMachine SM { get; private set; }
     public Candle currCandle { get; set; }
 
-    private void Awake()
-    {
+    private void Awake() {
         currCandle = this;
         SM = new StateMachine(this);
         SM.owner = this;
@@ -46,46 +44,38 @@ public class Candle : MonoBehaviour, IEntity
         candleStats.HP = candleStats.MaxHP;
     }
 
-    public void Update()
-    {
+    public void Update() {
         DisplayText();
     }
 
-    public void Decay()
-    {
+    public void Decay() {
         candleStats.HP -= (candleStats.DecayPerSec + candleStats.Mutltiplier[SM.moodState.CurrentIndex].y) * Time.deltaTime;
     }
-    public void CrunchDecay()
-    {
-        candleStats.HP -= (candleStats.DecayPerSec + candleStats.AdditionalDecay +  candleStats.Mutltiplier[SM.moodState.CurrentIndex].y) * Time.deltaTime;
+    public void CrunchDecay() {
+        candleStats.HP -= (candleStats.DecayPerSec + candleStats.AdditionalDecay + candleStats.Mutltiplier[SM.moodState.CurrentIndex].y) * Time.deltaTime;
     }
 
-    public void Work(ProgressBar pb)
-    {
+    public void Work(ProgressBar pb) {
         pb.currentProgress += (candleStats.Power + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x) * Time.deltaTime;
         pb.UpdateVisuals();
 
     }
 
-    public void CrunchWork(ProgressBar pb)
-    {
+    public void CrunchWork(ProgressBar pb) {
         pb.currentProgress += (candleStats.Power + candleStats.AdditionalPower + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x) * Time.deltaTime;
         pb.UpdateVisuals();
     }
 
-    public void Regeneration()
-    {
-        if(candleStats.HP < candleStats.MaxHP)
-        candleStats.HP += candleStats.RegenerateHP * Time.deltaTime;
+    public void Regeneration() {
+        if (candleStats.HP < candleStats.MaxHP)
+            candleStats.HP += candleStats.RegenerateHP * Time.deltaTime;
     }
 
-    public void Death()
-    {
+    public void Death() {
         Destroy(gameObject);
     }
 
-    public void DisplayText()
-    {
+    public void DisplayText() {
         candleStats.HPText.text = candleStats.HP + "";
         candleStats.CurrentMoodState.text = SM.moodState.Name + " ";
         candleStats.CurrentWorkingState.text = SM.workingState.Name + " ";
