@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public class WorkAction : BaseAction {
+public class VacationAction : BaseAction {
 
     public override void ActOn(Candle candle) {
-        print(candle.name + " is working");
+        print(candle.name + " is on vacation");
         candle.SM.workingState.Exit(candle);
-        candle.SM.SetWorkingState(new W_Working());
+        candle.SM.SetWorkingState(new W_Vacation());
     }
 }
