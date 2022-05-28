@@ -23,5 +23,6 @@ public class CandleManager : MonoBehaviour {
                 candles[i] = candleGO;
             }
         }
+
     }
 }
