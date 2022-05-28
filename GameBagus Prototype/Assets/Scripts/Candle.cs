@@ -19,57 +19,30 @@ public class CandleStats
     [Range(1, 100)]
     public float Power;
     [Range(1, 100)]
+    public float RegenerateHP;
+    [Range(1, 100)]
     public float DecayPerSec;
     [Range(1, 100)]
     public float CostPerPay; //reconsider naming
 }
 
-public class Candle : MonoBehaviour
+public class Candle : MonoBehaviour, IEntity
 {
     public CandleStats candleStats;
 
-    // Update is called once per frame
+    public StateMachine SM { get; private set; }
+
+    private void Awake()
+    {
+        SM = new StateMachine(this);
+        SM.owner = this;
+        SM.SetWorkingState(new W_Active());
+        SM.SetMoodState(new M_Happy());
+        //SM.SetMoodState();
+    }
+
     void Update()
     {
-        UpdateState();
-
-        // Move these into UpdateState
-        Work();
-        Decay();
-    }
-
-    void Work()
-    {
-        ProgressBar.instance.currentProgress += candleStats.Power * Time.deltaTime;
-    }
-
-    void Decay()
-    {
-        candleStats.HP -= candleStats.DecayPerSec * Time.deltaTime;
-
-        if (candleStats.HP <= 0)
-        {
-            Death();
-        }
-    }
-
-    void Death()
-    {
-
-    }
-
-    void UpdateState()
-    {
-        switch(candleStats.currentState)
-        {
-            case CandleStates.Active:
-                break;
-
-            case CandleStates.Inactive:
-                break;
-
-            case CandleStates.BurnOut:
-                break;
-        }
+        SM.UpdateStates();
     }
 }

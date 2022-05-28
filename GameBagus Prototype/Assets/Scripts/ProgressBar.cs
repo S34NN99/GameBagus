@@ -20,6 +20,7 @@ public class ProgressBar : MonoBehaviour
     public float currentProgress;
     public Slider progressSlider;
 
+    List<Candle> candles;
 
     private void Awake()
     {
