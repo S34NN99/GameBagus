@@ -21,6 +21,7 @@ public class M_Neutral : MoodState
 
     public override void Exit(IEntity entity)
     {
+        entity.currCandle.SM.moodState = null;
         Debug.Log("Exiting active state " + Name);
     }
 

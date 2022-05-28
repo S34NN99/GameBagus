@@ -19,6 +19,7 @@ public class W_Working : WorkingState
 
     public override void Exit(IEntity entity)
     {
+        entity.currCandle.SM.workingState = null;
         Debug.Log("Exiting state " + Name);
     }
 }

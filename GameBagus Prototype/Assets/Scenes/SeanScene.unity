@@ -571,13 +571,14 @@ GameObject:
   m_Component:
   - component: {fileID: 771277709}
   - component: {fileID: 771277710}
+  - component: {fileID: 771277711}
   m_Layer: 0
   m_Name: Square 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &771277709
 Transform:
   m_ObjectHideFlags: 0
@@ -645,6 +646,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &771277711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771277708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c152ac3882ea264da639a9a2ce36cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  candleStats:
+    MaxHP: 0
+    HP: 100
+    Power: 10
+    RegenerateHP: 10
+    DecayPerSec: 10
+    Mutltiplier:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    MoodThreshold: 
 --- !u!1 &843658326
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,13 +679,14 @@ GameObject:
   m_Component:
   - component: {fileID: 843658327}
   - component: {fileID: 843658328}
+  - component: {fileID: 843658329}
   m_Layer: 0
   m_Name: Square 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &843658327
 Transform:
   m_ObjectHideFlags: 0
@@ -729,6 +754,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &843658329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843658326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c152ac3882ea264da639a9a2ce36cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  candleStats:
+    MaxHP: 0
+    HP: 100
+    Power: 5
+    RegenerateHP: 5
+    DecayPerSec: 1
+    Mutltiplier:
+    - {x: 2, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    MoodThreshold: 
 --- !u!1 &942380775
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +787,7 @@ GameObject:
   m_Component:
   - component: {fileID: 942380776}
   - component: {fileID: 942380777}
+  - component: {fileID: 942380778}
   m_Layer: 0
   m_Name: Square 4
   m_TagString: Untagged
@@ -813,6 +862,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &942380778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942380775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c152ac3882ea264da639a9a2ce36cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  candleStats:
+    MaxHP: 100
+    HP: 100
+    Power: 20
+    RegenerateHP: 10
+    DecayPerSec: 10
+    Mutltiplier:
+    - {x: 1, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    MoodThreshold: 4b0000001e00000000000000
 --- !u!1 &1091114341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,7 +1108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1694123419
 Transform:
   m_ObjectHideFlags: 0
@@ -1117,11 +1189,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   candleStats:
-    currentState: 0
+    MaxHP: 0
     HP: 100
     Power: 2
+    RegenerateHP: 0
     DecayPerSec: 2
-    CostPerPay: 1
+    Mutltiplier:
+    - {x: 1, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    MoodThreshold: 
 --- !u!1 &1713987176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,6 +1331,7 @@ MonoBehaviour:
   updateTime: 2
   currentProgress: 0
   progressSlider: {fileID: 1713987178}
+  Candles: []
 --- !u!4 &2004424414
 Transform:
   m_ObjectHideFlags: 0
