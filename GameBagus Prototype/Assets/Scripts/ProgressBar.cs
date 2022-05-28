@@ -8,8 +8,8 @@ public class ProgressBar : MonoBehaviour {
     [Space(20)]
     [Header("ProgressBar")]
     public float currentProgress;
-    public Slider progressSlider;
     public TextMeshProUGUI progressText;
+    public Animator wokAnim;
 
     [Space(20)]
     [Header("Candle")]
@@ -29,16 +29,14 @@ public class ProgressBar : MonoBehaviour {
     }
 
     public void UpdateVisuals() {
-        progressSlider.value = currentProgress;
 
-        if (progressSlider.value >= progressSlider.maxValue) {
-            progressSlider.value = 0;
+        if (currentProgress >= 100) {
             currentProgress = 0;
-            Debug.Log("Resetting");
+            wokAnim.SetTrigger("WokLoop");
             candleManager.CheckCandles();
             clock.ResetClock(clock.ProjectDuration);
         }
 
-        progressText.text = (progressSlider.normalizedValue * 100).ToString("0.0") + " %";
+        progressText.text = (currentProgress).ToString("0.0") + " %";
     }
 }

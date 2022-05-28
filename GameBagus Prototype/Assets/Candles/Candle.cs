@@ -32,6 +32,7 @@ public class CandleStats {
 public class Candle : MonoBehaviour, IEntity {
     private const float burnoutCandleGraphicsPos = -192f;
 
+    public ParticleSystem firePs;
     public CandleStats candleStats;
 
     public StateMachine SM { get; private set; }
@@ -96,5 +97,11 @@ public class Candle : MonoBehaviour, IEntity {
         candleStats.HPText.text = candleStats.HP + "";
         candleStats.CurrentMoodState.text = SM.moodState.Name + " ";
         candleStats.CurrentWorkingState.text = SM.workingState.Name + " ";
+    }
+
+    public void SetFireSpeed(float speed)
+    {
+        var main = firePs.main;
+        main.simulationSpeed = speed;
     }
 }
