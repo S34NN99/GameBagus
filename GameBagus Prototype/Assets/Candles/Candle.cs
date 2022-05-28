@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 [System.Serializable]
@@ -36,6 +37,13 @@ public class Candle : MonoBehaviour, IEntity {
     public StateMachine SM { get; private set; }
     public Candle currCandle { get; set; }
 
+    [SerializeField] private CandleSkin _skin;
+    public CandleSkin Skin => _skin;
+
+    [SerializeField] private Image _headImage;
+    public Image HeadImage => _headImage;
+
+
     [SerializeField] private RectTransform graphicsParentTransform;
 
     private void Awake() {
@@ -60,6 +68,7 @@ public class Candle : MonoBehaviour, IEntity {
     }
 
     public void Work(ProgressBar pb) {
+        // moodstate is null
         pb.currentProgress += (candleStats.Power + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x) * Time.deltaTime;
         pb.UpdateVisuals();
 
