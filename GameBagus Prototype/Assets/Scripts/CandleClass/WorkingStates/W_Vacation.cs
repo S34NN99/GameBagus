@@ -26,35 +26,38 @@ public class W_Vacation : WorkingState
     public void CheckHP(IEntity entity)
     {
         List<int> threshold = entity.currCandle.candleStats.MoodThreshold;
-        Debug.Log("Checking Threshold");
         for(int i = 0; i < threshold.Count; i++)
         {
             if(CalculateThreshold(entity, i))
             {
-                Debug.Log(i + " true");
-                entity.SM.moodState.Exit(entity);
+                Debug.Log("True" + i);
                 switch (i)
                 {
                     case (int)MoodStatesIndex.Happy:
+                        entity.SM.moodState.Exit(entity);
                         entity.SM.SetMoodState(new M_Happy());
-                        break;
+                        return;
 
                     case (int)MoodStatesIndex.Neutral:
+                        entity.SM.moodState.Exit(entity);
                         entity.SM.SetMoodState(new M_Neutral());
-                        break;
+                        return;
 
                     case (int)MoodStatesIndex.Sad:
+                        entity.SM.moodState.Exit(entity);
+
                         entity.SM.SetMoodState(new M_Sad());
-                        break;
+                        return;
                 }
-                return;
+                
             }
         }
     }
 
     public bool CalculateThreshold(IEntity entity, int num)
     {
-        float threshold = entity.currCandle.candleStats.MaxHP * entity.currCandle.candleStats.MoodThreshold[num] / 100;
+        float threshold = entity.currCandle.candleStats.MoodThreshold[num];
+        Debug.Log(threshold + " is the " + num);
         return entity.currCandle.candleStats.HP > threshold;
     }
 }

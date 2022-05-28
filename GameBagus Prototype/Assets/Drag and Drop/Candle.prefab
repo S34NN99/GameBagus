@@ -734,18 +734,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   candleStats:
-    MaxHP: 100
+    MaxHP: 600
     HP: 0
     Power: 2
-    RegenerateHP: 5
-    DecayPerSec: 5
-    AdditionalPower: 5
+    RegenerateHP: 10
+    DecayPerSec: 10
+    AdditionalPower: 2
     AdditionalDecay: 10
     Mutltiplier:
-    - {x: 1, y: 0}
-    - {x: 0, y: -1}
-    - {x: -1, y: -2}
-    MoodThreshold: 4b0000001e00000000000000
+    - {x: 3, y: 0}
+    - {x: 2, y: 5}
+    - {x: 1, y: 10}
+    MoodThreshold: 90010000c800000000000000
     HPText: {fileID: 1486359525}
     CurrentMoodState: {fileID: 1890207384}
     CurrentWorkingState: {fileID: 90793248}
