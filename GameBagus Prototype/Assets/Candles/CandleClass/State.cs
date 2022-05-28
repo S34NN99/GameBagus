@@ -16,7 +16,10 @@ public abstract class State
     public abstract void Exit(IEntity entity);
 }
 
-public abstract class WorkingState : State { }
+public abstract class WorkingState : State 
+{ 
+    public abstract float FireSpeed { get; }
+}
 
 public enum MoodStatesIndex
 {

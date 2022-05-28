@@ -5,10 +5,13 @@ using UnityEngine;
 public class W_Crunch : WorkingState
 {
     public override string Name => "Crunch";
+    public override float FireSpeed => 1.4f;
+
 
     public override void Enter(IEntity entity)
     {
         Debug.Log("In active state " + Name);
+        entity.currCandle.SetFireSpeed(FireSpeed);
     }
 
     public override void Update(IEntity entity, ProgressBar pb)

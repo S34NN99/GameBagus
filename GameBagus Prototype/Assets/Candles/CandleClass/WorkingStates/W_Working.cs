@@ -5,10 +5,12 @@ using UnityEngine;
 public class W_Working : WorkingState
 {
     public override string Name => "Working";
+    public override float FireSpeed => 0.4f;
 
     public override void Enter(IEntity entity)
     {
         Debug.Log("In active state " + Name);
+        entity.currCandle.SetFireSpeed(FireSpeed);
     }
 
     public override void Update(IEntity entity, ProgressBar pb)
