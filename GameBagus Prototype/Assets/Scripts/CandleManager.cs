@@ -7,7 +7,7 @@ public class CandleManager : MonoBehaviour {
     [SerializeField] private GameObject candleTemplate;
 
     [SerializeField] private Vector2[] candlePositions;
-    [SerializeField] private GameObject[] candles;
+    [SerializeField] private Candle[] candles;
 
     private void Start() {
         CheckCandles();
@@ -20,9 +20,11 @@ public class CandleManager : MonoBehaviour {
                 GameObject candleGO = Instantiate(candleTemplate, transform);
                 candleGO.GetComponent<RectTransform>().anchoredPosition = candlePositions[i];
 
-                candles[i] = candleGO;
+                candles[i] = candleGO.GetComponent<Candle>();
             }
         }
 
     }
+
+    public IReadOnlyList<Candle> GetCandles() => candles;
 }
