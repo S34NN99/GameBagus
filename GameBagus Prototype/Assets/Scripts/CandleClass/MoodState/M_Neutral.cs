@@ -36,7 +36,7 @@ public class M_Neutral : MoodState
 
     public override bool CalculateThreshold(IEntity entity)
     {
-        float threshold = entity.currCandle.candleStats.MaxHP * entity.currCandle.candleStats.MoodThreshold[CurrentIndex] / 100;
+        float threshold = entity.currCandle.candleStats.MoodThreshold[CurrentIndex];
         return entity.currCandle.candleStats.HP < threshold;
     }
 

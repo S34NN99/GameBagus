@@ -6,14 +6,10 @@ using TMPro;
 [System.Serializable]
 public class CandleStats
 {
-    [Range(0,100)]
     public float MaxHP;
     public float HP;
-    [Range(0, 100)]
     public float Power;
-    [Range(0, 100)]
     public float RegenerateHP;
-    [Range(0, 100)]
     public float DecayPerSec;
 
     [Header("Crunch")]
@@ -76,6 +72,7 @@ public class Candle : MonoBehaviour, IEntity
 
     public void Regeneration()
     {
+        if(candleStats.HP < candleStats.MaxHP)
         candleStats.HP += candleStats.RegenerateHP * Time.deltaTime;
     }
 

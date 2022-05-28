@@ -955,9 +955,6 @@ MonoBehaviour:
   - {x: 468.75, y: 0}
   candles:
   - {fileID: 1875617669}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &775745477 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8012338459642621441, guid: 092c1715a2fdd4a97bcb40e2f0209010, type: 3}
