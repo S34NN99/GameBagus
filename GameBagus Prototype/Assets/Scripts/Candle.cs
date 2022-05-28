@@ -34,7 +34,7 @@ public class Candle : MonoBehaviour, IEntity
         SM = new StateMachine(this);
         SM.owner = this;
 
-        SM.SetWorkingState(new W_working());
+        SM.SetWorkingState(new W_Working());
         SM.SetMoodState(new M_Happy());
         candleStats.HP = candleStats.MaxHP;
     }
@@ -48,6 +48,11 @@ public class Candle : MonoBehaviour, IEntity
     {
         pb.currentProgress += (candleStats.Power + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x) * Time.deltaTime;
         Debug.Log(name + " is working with power " + candleStats.Power + " " + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x);
+    }
+
+    public void Regeneration()
+    {
+        candleStats.HP += candleStats.RegenerateHP * Time.deltaTime;
     }
 
     public void Death()
