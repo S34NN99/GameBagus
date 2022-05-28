@@ -14,7 +14,7 @@ public class ProjectClock : MonoBehaviour {
         private set {
             _projectDuration = value;
 
-            clockImg.fillAmount = Mathf.Lerp(0, _projectDuration, TimeRemaining);
+            clockImg.fillAmount = Mathf.InverseLerp(0, _projectDuration, TimeRemaining);
         }
     }
 

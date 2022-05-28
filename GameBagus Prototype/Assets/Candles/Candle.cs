@@ -29,10 +29,14 @@ public class CandleStats {
 }
 
 public class Candle : MonoBehaviour, IEntity {
+    private const float burnoutCandleGraphicsPos = -192f;
+
     public CandleStats candleStats;
 
     public StateMachine SM { get; private set; }
     public Candle currCandle { get; set; }
+
+    [SerializeField] private RectTransform graphicsParentTransform;
 
     private void Awake() {
         currCandle = this;
@@ -76,6 +80,10 @@ public class Candle : MonoBehaviour, IEntity {
     }
 
     public void DisplayText() {
+        Vector2 graphicsParentPos = graphicsParentTransform.anchoredPosition;
+        graphicsParentPos.y = Mathf.Lerp(burnoutCandleGraphicsPos, 0, Mathf.InverseLerp(0, candleStats.MaxHP, candleStats.HP));
+        graphicsParentTransform.anchoredPosition = graphicsParentPos;
+
         candleStats.HPText.text = candleStats.HP + "";
         candleStats.CurrentMoodState.text = SM.moodState.Name + " ";
         candleStats.CurrentWorkingState.text = SM.workingState.Name + " ";
