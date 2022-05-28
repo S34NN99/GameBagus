@@ -13,12 +13,13 @@ public class W_Crunch : WorkingState
 
     public override void Update(IEntity entity, ProgressBar pb)
     {
-        entity.currCandle.Work(pb);
-        entity.currCandle.Decay();
+        entity.currCandle.CrunchWork(pb);
+        entity.currCandle.CrunchDecay();
     }
 
     public override void Exit(IEntity entity)
     {
+        entity.currCandle.SM.workingState = null;
         Debug.Log("Exiting state " + Name);
     }
 }

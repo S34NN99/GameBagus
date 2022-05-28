@@ -262,13 +262,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   candleStats:
-    MaxHP: 0
+    MaxHP: 100
     HP: 0
-    Power: 0
-    RegenerateHP: 0
-    DecayPerSec: 0
-    Mutltiplier: []
-    MoodThreshold: 
+    Power: 1
+    RegenerateHP: 5
+    DecayPerSec: 5
+    Mutltiplier:
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    - {x: 0, y: 0}
+    MoodThreshold: 4b0000001e00000000000000
 --- !u!114 &6906471467138375371
 MonoBehaviour:
   m_ObjectHideFlags: 0

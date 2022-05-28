@@ -29,11 +29,6 @@ public class StateMachine
             moodState = state;
             moodState.Enter(owner);
         }
-        else if(moodState != null)
-        {
-            moodState = state;
-            moodState.Enter(owner);
-        }
     }
 
     public void UpdateStates(ProgressBar pb)

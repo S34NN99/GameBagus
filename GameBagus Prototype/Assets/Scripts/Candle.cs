@@ -7,7 +7,6 @@ public class CandleStats
 {
     [Range(1,100)]
     public float MaxHP;
-    [HideInInspector]
     public float HP;
     [Range(1, 100)]
     public float Power;
@@ -15,7 +14,12 @@ public class CandleStats
     public float RegenerateHP;
     [Range(1, 100)]
     public float DecayPerSec;
-    
+
+    [Header("Crunch")]
+    public float AdditionalPower;
+    public float AdditionalDecay;
+
+    [Header("Mood")]
     // x = power, y = decay
     public List<Vector2Int> Mutltiplier;
     public List<int> MoodThreshold;
@@ -43,11 +47,19 @@ public class Candle : MonoBehaviour, IEntity
     {
         candleStats.HP -= (candleStats.DecayPerSec + candleStats.Mutltiplier[SM.moodState.CurrentIndex].y) * Time.deltaTime;
     }
+    public void CrunchDecay()
+    {
+        candleStats.HP -= (candleStats.DecayPerSec + candleStats.AdditionalDecay +  candleStats.Mutltiplier[SM.moodState.CurrentIndex].y) * Time.deltaTime;
+    }
 
     public void Work(ProgressBar pb)
     {
         pb.currentProgress += (candleStats.Power + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x) * Time.deltaTime;
-        Debug.Log(name + " is working with power " + candleStats.Power + " " + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x);
+    }
+
+    public void CrunchWork(ProgressBar pb)
+    {
+        pb.currentProgress += (candleStats.Power + candleStats.AdditionalPower + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x) * Time.deltaTime;
     }
 
     public void Regeneration()

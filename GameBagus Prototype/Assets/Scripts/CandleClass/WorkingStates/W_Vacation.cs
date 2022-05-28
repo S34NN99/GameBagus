@@ -18,6 +18,7 @@ public class W_Vacation : WorkingState
 
     public override void Exit(IEntity entity)
     {
+        entity.currCandle.SM.workingState = null;
         Debug.Log("Exiting state " + Name);
     }
 
