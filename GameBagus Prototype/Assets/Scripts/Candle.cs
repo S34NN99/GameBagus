@@ -63,11 +63,14 @@ public class Candle : MonoBehaviour, IEntity
     public void Work(ProgressBar pb)
     {
         pb.currentProgress += (candleStats.Power + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x) * Time.deltaTime;
+        pb.UpdateVisuals();
+
     }
 
     public void CrunchWork(ProgressBar pb)
     {
         pb.currentProgress += (candleStats.Power + candleStats.AdditionalPower + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x) * Time.deltaTime;
+        pb.UpdateVisuals();
     }
 
     public void Regeneration()

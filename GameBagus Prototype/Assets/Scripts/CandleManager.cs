@@ -24,7 +24,6 @@ public class CandleManager : MonoBehaviour {
                 candles[i] = candleGO.GetComponent<Candle>();
             }
         }
-
     }
 
     public IEnumerable<Candle> GetCandles() => candles.Where(candle => candle != null);

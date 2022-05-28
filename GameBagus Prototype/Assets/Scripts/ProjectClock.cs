@@ -41,10 +41,6 @@ public class ProjectClock : MonoBehaviour {
         InvokeRepeating("Tick", 1, 1);
     }
 
-    private void Update() {
-
-    }
-
     public void Tick() {
         TimeRemaining--;
     }
