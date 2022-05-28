@@ -339,7 +339,7 @@ MonoBehaviour:
   currentProgress: 0
   progressSlider: {fileID: 121316041}
   candleManager: {fileID: 771858640}
-  clock: {fileID: 0}
+  clock: {fileID: 1903967314}
 --- !u!1001 &446651413
 PrefabInstance:
   m_ObjectHideFlags: 0
