@@ -29,7 +29,11 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioClip onProjectFinished;
 
     [Space()]
+    [SerializeField] private AudioClip[] bgMusicClips;
+
+    [Space()]
     [Header("Audio Sources")]
+    [SerializeField] private AudioSource bgMusicPlayer;
     [SerializeField] private AudioSource uiSfxPlayer;
     [SerializeField] private AudioSource candleSfxPlayer;
     [SerializeField] private AudioSource candleNearDeathSfxPlayer;
@@ -90,5 +94,12 @@ public class AudioManager : MonoBehaviour {
             projectSfxPlayer.loop = false;
             projectSfxPlayer.Play();
         });
+    }
+
+    private void Update() {
+        if (!bgMusicPlayer.isPlaying) {
+            bgMusicPlayer.clip = bgMusicClips[Random.Range(0, bgMusicClips.Length)];
+            bgMusicPlayer.Play();
+        }
     }
 }

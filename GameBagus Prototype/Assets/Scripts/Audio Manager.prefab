@@ -698,6 +698,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2059efe7fc82a498fafe8f3f42aaa93f, type: 3}
   nearingProjectFinished: {fileID: 8300000, guid: e05a73de0f9784effba41cd082199624, type: 3}
   onProjectFinished: {fileID: 8300000, guid: 368bc28e7d6214321b0ce7d17211e065, type: 3}
+  bgMusicClips:
+  - {fileID: 8300000, guid: 28fac7ff90ff04b13a6aef180d9aaba4, type: 3}
+  - {fileID: 8300000, guid: 6b2eba82255534c0099d1f5bd8c5e666, type: 3}
+  - {fileID: 8300000, guid: 2ec09165b2fd845f3ae13d89cf9bd4f9, type: 3}
+  - {fileID: 8300000, guid: 484c053d3a39c4ab79f6cc93337cb949, type: 3}
+  - {fileID: 8300000, guid: ea08fbaeec20c423d84088e5b8514739, type: 3}
+  bgMusicPlayer: {fileID: 3683832230490624936}
   uiSfxPlayer: {fileID: 3683832230738767943}
   candleSfxPlayer: {fileID: 3683832229900874720}
   candleNearDeathSfxPlayer: {fileID: 3683832229324878166}
