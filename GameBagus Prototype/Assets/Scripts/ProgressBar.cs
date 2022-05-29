@@ -32,6 +32,7 @@ public class ProgressBar : MonoBehaviour {
     [SerializeField] private int minProjectDuration = 20;
     [SerializeField] private int maxProjectDuration = 60;
 
+    private bool isFinishing;
 
     // Update is called once per frame
     void Update() {
@@ -53,6 +54,15 @@ public class ProgressBar : MonoBehaviour {
             clock.ResetClock(Random.Range(minProjectDuration, maxProjectDuration));
 
             wokAnim.SetTrigger("WokLoop");
+
+            GameEventManager.Instance.BroadcastEvent(AudioManager.OnProjectFinishedEvent);
+
+            isFinishing = false;
+        } else if (currentProgress >= requiredProgress * 0.8f) {
+            if (!isFinishing) {
+                GameEventManager.Instance.BroadcastEvent(AudioManager.NearingProjectFinishedEvent);
+            }
+            isFinishing = true;
         }
 
         progressText.text = (Mathf.InverseLerp(0, requiredProgress, currentProgress) * 100).ToString("0.0") + " %";

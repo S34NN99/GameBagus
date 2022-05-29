@@ -20,6 +20,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     }
 
     public void OnBeginDrag(PointerEventData eventData) {
+        GameEventManager.Instance.BroadcastEvent(AudioManager.OnButtonPickedUp);
         canvasGroup.blocksRaycasts = false;
     }
 
@@ -32,5 +33,6 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             rectTransform.anchoredPosition = originalPosition;
         }
         canvasGroup.blocksRaycasts = true;
+        GameEventManager.Instance.BroadcastEvent(AudioManager.OnButtonDropped);
     }
 }
