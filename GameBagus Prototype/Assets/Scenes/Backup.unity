@@ -1884,7 +1884,7 @@ MonoBehaviour:
   candleManager: {fileID: 771858640}
   clock: {fileID: 1903967314}
   minProjectDuration: 20
-  maxProjectDuration: 60
+  maxProjectDuration: 45
 --- !u!224 &1301103382 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8012338459642621442, guid: 092c1715a2fdd4a97bcb40e2f0209010, type: 3}
