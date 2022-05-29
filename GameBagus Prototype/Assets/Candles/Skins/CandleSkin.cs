@@ -17,4 +17,12 @@ public class CandleSkin : ScriptableObject {
     [SerializeField] private Sprite _Head_Sad;
     public Sprite Head_Sad => _Head_Sad;
 
+    public Sprite GetFacialExpression(MoodState state) {
+        return state.Name switch {
+            "Happy" => Head_Happy,
+            "Neutral" => Head_Neutral,
+            "Sad" => Head_Sad,
+            _ => Head_Happy,
+        };
+    }
 }

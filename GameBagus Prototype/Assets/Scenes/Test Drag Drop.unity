@@ -839,6 +839,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  candleSkins:
+  - {fileID: 11400000, guid: 33da8d173f591455094c0d8603bee0cd, type: 2}
+  - {fileID: 11400000, guid: bebf921dc60e649eaaa2c447c66b4182, type: 2}
 --- !u!1 &775745477 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8012338459642621441, guid: 092c1715a2fdd4a97bcb40e2f0209010, type: 3}
