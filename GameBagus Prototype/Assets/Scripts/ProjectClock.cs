@@ -28,7 +28,7 @@ public class ProjectClock : MonoBehaviour {
                 return;
             }
 
-            timerTxt.text = _timeRemaining.ToString();
+            timerTxt.text = _timeRemaining.ToString() + " Days";
             clockImg.fillAmount = Mathf.InverseLerp(0, ProjectDuration, _timeRemaining);
         }
     }
