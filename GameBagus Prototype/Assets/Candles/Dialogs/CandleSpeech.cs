@@ -26,16 +26,17 @@ public class CandleSpeech : MonoBehaviour {
     private void Update() {
         cooldownTimer -= Time.deltaTime;
         if (cooldownTimer <= 0) {
-            print(candle.SM.workingState.Name);
-            print(candle.SM.moodState.Name);
-            string dialog = dialogs.GetDialogFromCandleState(candle.SM.workingState.Name, candle.SM.moodState.Name);
+            string dialog = GetDialog();
             ShowDialog(dialog);
-
-            cooldownTimer = Random.Range(minDialogCooldown, maxDialogCooldown) + dialogLingerDuration;
         }
     }
 
-    private void ShowDialog(string dialogText) {
+    public string GetDialog()
+    {
+        return dialogs.GetDialogFromCandleState(candle.SM.workingState.Name, candle.SM.moodState.Name);
+    }
+
+    public void ShowDialog(string dialogText) {
         onShowDialog.Invoke();
         dialogUiText.text = dialogText;
 
@@ -43,6 +44,7 @@ public class CandleSpeech : MonoBehaviour {
 
         IEnumerator HideDialog() {
             yield return new WaitForSeconds(dialogLingerDuration);
+            cooldownTimer = Random.Range(minDialogCooldown, maxDialogCooldown) + dialogLingerDuration;
             onHideDialog.Invoke();
         }
     }

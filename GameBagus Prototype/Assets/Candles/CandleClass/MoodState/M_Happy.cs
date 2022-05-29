@@ -10,6 +10,9 @@ public class M_Happy : MoodState {
 
     public override void Enter(IEntity entity) {
         entity.currCandle.HeadImage.sprite = entity.currCandle.Skin.GetFacialExpression(this);
+        CandleSpeech speech = entity.currCandle.GetComponent<CandleSpeech>();
+        speech.ShowDialog(speech.GetDialog());
+        Debug.Log("State Speech");
     }
 
     public override void Update(IEntity entity, ProgressBar pb) {
