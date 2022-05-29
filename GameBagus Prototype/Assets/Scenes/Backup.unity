@@ -123,6 +123,70 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &65477453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 65477454}
+  - component: {fileID: 65477455}
+  m_Layer: 5
+  m_Name: Boss Quotes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &65477454
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65477453}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1059922398}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &65477455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65477453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9fc423eb3eef4d708583680e6815226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quotes_nearingDeadline:
+  - What is taking so long to complete the project?
+  - Why is the project not completed yet?
+  quotes_projectFinished:
+  - One project down. More projects to go
+  - We still have projects incoming
+  quotes_candleBurnout:
+  - Your work is not up to par
+  - This job is not meant for you
+  quotes_replaceAllCandle:
+  - More hands on deck
+  - Project can be completed faster now
+  quotes_candleVacation:
+  - Remember to come back to work
+  - You still can reply emails right?
 --- !u!1001 &76952193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1603,6 +1667,7 @@ RectTransform:
   - {fileID: 1271812194}
   - {fileID: 849411827}
   - {fileID: 9037389454814165091}
+  - {fileID: 65477454}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

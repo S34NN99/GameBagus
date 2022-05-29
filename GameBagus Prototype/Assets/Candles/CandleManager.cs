@@ -58,33 +58,29 @@ public class CandleManager : MonoBehaviour {
                 candleStory.Personality = candlePersonalities[Random.Range(0, candlePersonalities.Length)];
             }
         }
+
+        GameEventManager.Instance.BroadcastEvent(BossQuotes.OnReplaceAllCandleEvent);
     }
 
     public IEnumerable<Candle> GetCandles() => candles.Where(candle => candle != null);
 
-    public void DestroyAllCandles()
-    {
-        for (int i = 0; i < candles.Length; i++)
-        {
+    public void DestroyAllCandles() {
+        for (int i = 0; i < candles.Length; i++) {
             if (candles[i] != null)
-            Destroy(candles[i].gameObject);
+                Destroy(candles[i].gameObject);
         }
     }
 
-    public void CheckIfListEmpty()
-    {
+    public void CheckIfListEmpty() {
         Debug.Log(candles.Length);
         float counter = 0;
-        for(int i = 0; i < candles.Length; i++)
-        {
-            if (candles[i] == null || this.gameObject == candles[i])
-            {
+        for (int i = 0; i < candles.Length; i++) {
+            if (candles[i] == null || this.gameObject == candles[i]) {
                 Debug.Log("is null");
                 counter++;
             }
 
-            if(counter >= 3)
-            {
+            if (counter >= 3) {
                 LoseScreen loseScreen = FindObjectOfType<LoseScreen>();
                 loseScreen.ShowLoseScreen();
             }

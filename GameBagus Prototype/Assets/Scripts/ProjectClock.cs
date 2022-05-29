@@ -38,17 +38,28 @@ public class ProjectClock : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI timerTxt;
     [SerializeField] private Image clockImg;
 
+    private bool isNearingDeadline = false;
+
     private void Start() {
         InvokeRepeating("Tick", 1, 1);
     }
 
     public void Tick() {
         TimeRemaining--;
+
+        if (TimeRemaining <= ProjectDuration * 0.2f) {
+            if (!isNearingDeadline) {
+                GameEventManager.Instance.BroadcastEvent(BossQuotes.NearingDeadlineEvent);
+            }
+            isNearingDeadline = true;
+        }
     }
 
     public void ResetClock(int newDeadline) {
         ProjectDuration = newDeadline;
         TimeRemaining = newDeadline;
+
+        isNearingDeadline = false;
     }
 
     public void ShortenDeadline(float shortenedPercentage) {

@@ -26,7 +26,9 @@ public class GameEventManager : MonoBehaviour {
     }
 
     public void CreateNewEvent(string eventName) {
-        events.Add(eventName, () => { });
+        if (!events.TryGetValue(eventName, out _)) {
+            events.Add(eventName, () => { });
+        }
     }
 
     public void RemoveEvent(string eventName) {
