@@ -9,7 +9,7 @@ public class M_Happy : MoodState {
     public override int CurrentIndex => (int)MoodStatesIndex.Happy;
 
     public override void Enter(IEntity entity) {
-        entity.currCandle.HeadImage.sprite = entity.currCandle.Skin.Head_Happy;
+        entity.currCandle.HeadImage.sprite = entity.currCandle.Skin.GetFacialExpression(this);
     }
 
     public override void Update(IEntity entity, ProgressBar pb) {

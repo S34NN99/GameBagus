@@ -26,6 +26,8 @@ public class CandleManager : MonoBehaviour {
     [SerializeField] private Vector2[] candlePositions;
     [SerializeField] private Candle[] candles;
 
+    [SerializeField] private CandleSkin[] candleSkins;
+
     private void Start() {
         CheckCandles();
     }
@@ -43,6 +45,7 @@ public class CandleManager : MonoBehaviour {
                 } else {
                     candles[i].candleStats.nameText.text = maleNames[Random.Range(0, maleNames.Length)];
                 }
+                candles[i].Skin = candleSkins[Random.Range(0, candleSkins.Length)];
             }
         }
     }

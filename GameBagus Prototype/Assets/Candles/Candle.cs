@@ -39,10 +39,20 @@ public class Candle : MonoBehaviour, IEntity {
     public Candle currCandle { get; set; }
 
     [SerializeField] private CandleSkin _skin;
-    public CandleSkin Skin => _skin;
+    public CandleSkin Skin {
+        get => _skin;
+        set {
+            _skin = value;
+            HeadImage.sprite = _skin.GetFacialExpression(SM.moodState);
+            BodyImage.sprite = _skin.CandleBase;
+        }
+    }
 
     [SerializeField] private Image _headImage;
     public Image HeadImage => _headImage;
+
+    [SerializeField] private Image _bodyImage;
+    public Image BodyImage => _bodyImage;
 
 
     [SerializeField] private RectTransform graphicsParentTransform;
@@ -102,8 +112,7 @@ public class Candle : MonoBehaviour, IEntity {
         candleStats.CurrentWorkingState.text = SM.workingState.Name + " ";
     }
 
-    public void SetFireSpeed(float speed)
-    {
+    public void SetFireSpeed(float speed) {
         //var main = firePs.main;
         //main.simulationSpeed = speed;
     }

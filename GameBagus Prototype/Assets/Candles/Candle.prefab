@@ -1041,6 +1041,7 @@ MonoBehaviour:
     CurrentWorkingState: {fileID: 90793248}
   _skin: {fileID: 11400000, guid: 33da8d173f591455094c0d8603bee0cd, type: 2}
   _headImage: {fileID: 7400414124865200413}
+  _bodyImage: {fileID: 3623485460449808591}
   graphicsParentTransform: {fileID: 7445085905104273939}
 --- !u!114 &6906471467138375371
 MonoBehaviour:

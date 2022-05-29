@@ -9,7 +9,7 @@ public class M_Neutral : MoodState {
     public override int CurrentIndex => (int)MoodStatesIndex.Neutral;
 
     public override void Enter(IEntity entity) {
-        entity.currCandle.HeadImage.sprite = entity.currCandle.Skin.Head_Neutral;
+        entity.currCandle.HeadImage.sprite = entity.currCandle.Skin.GetFacialExpression(this);
     }
 
     public override void Update(IEntity entity, ProgressBar pb) {
