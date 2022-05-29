@@ -9,7 +9,6 @@ public class W_Vacation : WorkingState
 
     public override void Enter(IEntity entity)
     {
-        Debug.Log("In active state " + Name);
         entity.currCandle.SetFireSpeed(FireSpeed);
     }
 
@@ -22,7 +21,6 @@ public class W_Vacation : WorkingState
     {
         CheckHP(entity);
         entity.currCandle.SM.workingState = null;
-        Debug.Log("Exiting state " + Name);
     }
 
     public void CheckHP(IEntity entity)
@@ -32,7 +30,6 @@ public class W_Vacation : WorkingState
         {
             if(CalculateThreshold(entity, i))
             {
-                Debug.Log("True" + i);
                 switch (i)
                 {
                     case (int)MoodStatesIndex.Happy:
@@ -58,7 +55,6 @@ public class W_Vacation : WorkingState
     public bool CalculateThreshold(IEntity entity, int num)
     {
         float threshold = entity.currCandle.candleStats.MoodThreshold[num];
-        Debug.Log(threshold + " is the " + num);
         return entity.currCandle.candleStats.HP > threshold;
     }
 }

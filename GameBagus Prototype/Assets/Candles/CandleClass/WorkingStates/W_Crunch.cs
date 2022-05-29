@@ -10,7 +10,6 @@ public class W_Crunch : WorkingState
 
     public override void Enter(IEntity entity)
     {
-        Debug.Log("In active state " + Name);
         entity.currCandle.SetFireSpeed(FireSpeed);
     }
 
@@ -23,6 +22,5 @@ public class W_Crunch : WorkingState
     public override void Exit(IEntity entity)
     {
         entity.currCandle.SM.workingState = null;
-        Debug.Log("Exiting state " + Name);
     }
 }

@@ -102,7 +102,7 @@ public class Candle : MonoBehaviour, IEntity {
 
     public void SetFireSpeed(float speed)
     {
-        var main = firePs.main;
-        main.simulationSpeed = speed;
+        //var main = firePs.main;
+        //main.simulationSpeed = speed;
     }
 }
