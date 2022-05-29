@@ -1404,7 +1404,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -150}
+  m_AnchoredPosition: {x: 0, y: -115}
   m_SizeDelta: {x: 1500, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1301103382 stripped
@@ -1765,34 +1765,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 771858639}
     m_Modifications:
-    - target: {fileID: 4970853946247772034, guid: 94988f6ce3f66411a8e3f9a86bad96ef, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970853946247772034, guid: 94988f6ce3f66411a8e3f9a86bad96ef, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 4970853946247772035, guid: 94988f6ce3f66411a8e3f9a86bad96ef, type: 3}
-      propertyPath: LightsModule.light
-      value: 
-      objectReference: {fileID: 2619602462852166708, guid: 9f70388aedca6544b840cf5e54353355, type: 3}
-    - target: {fileID: 4970853946247772035, guid: 94988f6ce3f66411a8e3f9a86bad96ef, type: 3}
-      propertyPath: LightsModule.ratio
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970853946247772035, guid: 94988f6ce3f66411a8e3f9a86bad96ef, type: 3}
-      propertyPath: LightsModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970853946247772035, guid: 94988f6ce3f66411a8e3f9a86bad96ef, type: 3}
-      propertyPath: LightsModule.rangeCurve.scalar
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4970853946247772035, guid: 94988f6ce3f66411a8e3f9a86bad96ef, type: 3}
-      propertyPath: LightsModule.intensityCurve.scalar
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5359402302208987669, guid: 94988f6ce3f66411a8e3f9a86bad96ef, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
