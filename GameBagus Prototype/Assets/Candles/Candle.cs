@@ -84,7 +84,6 @@ public class Candle : MonoBehaviour, IEntity {
         // moodstate is null
         pb.currentProgress += (candleStats.Power + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x) * updateTime;
         pb.UpdateVisuals();
-
     }
 
     public void CrunchWork(ProgressBar pb) {
@@ -99,7 +98,9 @@ public class Candle : MonoBehaviour, IEntity {
 
     public void Death() {
         HeadManager.Instance.RollHead(HeadImage.gameObject);
+        CandleManager cm = FindObjectOfType<CandleManager>();
         Destroy(gameObject);
+        cm.CheckIfListEmpty();
     }
 
     public void DisplayText() {

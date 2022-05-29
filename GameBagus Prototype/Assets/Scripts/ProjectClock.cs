@@ -25,6 +25,7 @@ public class ProjectClock : MonoBehaviour {
             _timeRemaining = value;
             if (TimeRemaining == 0) {
                 onTimesUp.Invoke();
+                return;
             }
 
             timerTxt.text = _timeRemaining.ToString();
