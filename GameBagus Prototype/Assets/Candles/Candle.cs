@@ -97,6 +97,7 @@ public class Candle : MonoBehaviour, IEntity {
     }
 
     public void Death() {
+        GameEventManager.Instance.BroadcastEvent(AudioManager.OnCandleBurnoutEvent);
         HeadManager.Instance.RollHead(HeadImage.gameObject);
         CandleManager cm = FindObjectOfType<CandleManager>();
         Destroy(gameObject);
