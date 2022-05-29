@@ -33,12 +33,13 @@ public class LoseScreen : MonoBehaviour
     public void Reset()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
-    public void Quit()
+    public void GoBackToMainMenu()
     {
-        Application.Quit();
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 
 
