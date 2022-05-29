@@ -965,6 +965,7 @@ GameObject:
   - component: {fileID: 5359402302208987670}
   - component: {fileID: -5744972036774059160}
   - component: {fileID: 6906471467138375371}
+  - component: {fileID: 3537397514384867276}
   m_Layer: 5
   m_Name: Candle
   m_TagString: Untagged
@@ -1139,6 +1140,27 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   dialogUiText: {fileID: 346833639121859419}
+--- !u!114 &3537397514384867276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5359402302208987754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 683e1c60525114b74adb5027d27250bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  candleSpeech: {fileID: 6906471467138375371}
+  personalQuotes:
+  - Met a partner yesterday
+  - We're going on a date
+  - Last night's date was great!
+  - My partner proposed last night and I said yes!
+  - Planning for the wedding
+  - Gotta pay deposit for the wedding venue
+  - Our wedding is tomorrow
 --- !u!1 &5853376012171584277
 GameObject:
   m_ObjectHideFlags: 0

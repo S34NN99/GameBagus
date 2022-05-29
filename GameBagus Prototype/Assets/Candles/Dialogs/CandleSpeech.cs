@@ -31,8 +31,7 @@ public class CandleSpeech : MonoBehaviour {
         }
     }
 
-    public string GetDialog()
-    {
+    public string GetDialog() {
         return dialogs.GetDialogFromCandleState(candle.SM.workingState.Name, candle.SM.moodState.Name);
     }
 
@@ -41,10 +40,10 @@ public class CandleSpeech : MonoBehaviour {
         dialogUiText.text = dialogText;
 
         StartCoroutine(HideDialog());
+        cooldownTimer = Random.Range(minDialogCooldown, maxDialogCooldown) + dialogLingerDuration;
 
         IEnumerator HideDialog() {
             yield return new WaitForSeconds(dialogLingerDuration);
-            cooldownTimer = Random.Range(minDialogCooldown, maxDialogCooldown) + dialogLingerDuration;
             onHideDialog.Invoke();
         }
     }
