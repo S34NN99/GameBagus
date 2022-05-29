@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    public GameObject creditScreen;
     public void Quit()
     {
         Application.Quit();
@@ -14,5 +15,15 @@ public class MainMenuManager : MonoBehaviour
     {
         Debug.Log("clicking");
         SceneManager.LoadScene(1);
+    }
+
+    public void OpenCredit()
+    {
+        creditScreen.SetActive(true);
+    }
+
+    public void CloseCredit()
+    {
+        creditScreen.SetActive(false);
     }
 }
