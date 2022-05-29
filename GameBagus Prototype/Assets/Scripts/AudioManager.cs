@@ -97,9 +97,9 @@ public class AudioManager : MonoBehaviour {
     }
 
     private void Update() {
-        if (!bgMusicPlayer.isPlaying) {
-            bgMusicPlayer.clip = bgMusicClips[Random.Range(0, bgMusicClips.Length)];
-            bgMusicPlayer.Play();
-        }
+        //if (!bgMusicPlayer.isPlaying) {
+        //    bgMusicPlayer.clip = bgMusicClips[Random.Range(0, bgMusicClips.Length)];
+        //    bgMusicPlayer.Play();
+        //}
     }
 }
