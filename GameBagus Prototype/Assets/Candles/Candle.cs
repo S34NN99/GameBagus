@@ -56,6 +56,7 @@ public class Candle : MonoBehaviour, IEntity {
 
 
     [SerializeField] private RectTransform graphicsParentTransform;
+    private float updateTime = 0;
 
     private void Awake() {
         currCandle = this;
@@ -69,30 +70,31 @@ public class Candle : MonoBehaviour, IEntity {
 
     public void Update() {
         DisplayText();
+        updateTime = Time.deltaTime / 1;
     }
 
     public void Decay() {
-        candleStats.HP -= (candleStats.DecayPerSec + candleStats.Mutltiplier[SM.moodState.CurrentIndex].y) * Time.deltaTime;
+        candleStats.HP -= (candleStats.DecayPerSec + candleStats.Mutltiplier[SM.moodState.CurrentIndex].y) * updateTime;
     }
     public void CrunchDecay() {
-        candleStats.HP -= (candleStats.DecayPerSec + candleStats.AdditionalDecay + candleStats.Mutltiplier[SM.moodState.CurrentIndex].y) * Time.deltaTime;
+        candleStats.HP -= (candleStats.DecayPerSec + candleStats.AdditionalDecay + candleStats.Mutltiplier[SM.moodState.CurrentIndex].y) * updateTime;
     }
 
     public void Work(ProgressBar pb) {
         // moodstate is null
-        pb.currentProgress += (candleStats.Power + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x) * Time.deltaTime;
+        pb.currentProgress += (candleStats.Power + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x) * updateTime;
         pb.UpdateVisuals();
 
     }
 
     public void CrunchWork(ProgressBar pb) {
-        pb.currentProgress += (candleStats.Power + candleStats.AdditionalPower + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x) * Time.deltaTime;
+        pb.currentProgress += (candleStats.Power + candleStats.AdditionalPower + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x) * updateTime;
         pb.UpdateVisuals();
     }
 
     public void Regeneration() {
         if (candleStats.HP < candleStats.MaxHP)
-            candleStats.HP += candleStats.RegenerateHP * Time.deltaTime;
+            candleStats.HP += candleStats.RegenerateHP * updateTime;
     }
 
     public void Death() {
@@ -111,7 +113,7 @@ public class Candle : MonoBehaviour, IEntity {
     }
 
     public void SetFireSpeed(float speed) {
-        //var main = firePs.main;
-        //main.simulationSpeed = speed;
+        var main = firePs.main;
+        main.simulationSpeed = speed;
     }
 }
