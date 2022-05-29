@@ -11,7 +11,10 @@ public class ProgressBar : MonoBehaviour {
     public TextMeshProUGUI progressText;
     public Animator wokAnim;
     public int completedProjectCounter;
+    public TextMeshProUGUI completedProjectCounterTxt;
 
+    [Space(20)]
+    [Header("Randomisation")]
     [SerializeField] private int minReqProgress = 240;
     [Tooltip("The number of steps when randomising the value of the required progress for the next project")]
     [SerializeField] private int progressRandomisationSteps = 29;
@@ -43,6 +46,7 @@ public class ProgressBar : MonoBehaviour {
         if (currentProgress >= requiredProgress) {
             currentProgress = 0;
             completedProjectCounter++;
+            completedProjectCounterTxt.text = completedProjectCounter.ToString();
             candleManager.CheckCandles();
 
             requiredProgress = GetRequiredProgressForNextProject();
