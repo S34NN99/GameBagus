@@ -11,6 +11,12 @@ public class ProgressBar : MonoBehaviour {
     public TextMeshProUGUI progressText;
     public Animator wokAnim;
 
+    [SerializeField] private int minReqProgress;
+    [SerializeField] private int reqProgressVarianceSteps;
+    [Tooltip("The value of each step when randomising the value of the required progress for the next project")]
+    [SerializeField] private int reqProgressVarianceIntervals;
+    [SerializeField] private int requiredProgress;
+
     [Space(20)]
     [Header("Candle")]
     [SerializeField] private CandleManager candleManager;
@@ -30,13 +36,20 @@ public class ProgressBar : MonoBehaviour {
 
     public void UpdateVisuals() {
 
-        if (currentProgress >= 100) {
+        if (currentProgress >= requiredProgress) {
             currentProgress = 0;
-            wokAnim.SetTrigger("WokLoop");
             candleManager.CheckCandles();
+
+            requiredProgress = GetRequiredProgressForNextProject();
             clock.ResetClock(clock.ProjectDuration);
+
+            wokAnim.SetTrigger("WokLoop");
         }
 
-        progressText.text = (currentProgress).ToString("0.0") + " %";
+        progressText.text = (Mathf.InverseLerp(0, requiredProgress, currentProgress) * 100).ToString("0.0") + " %";
+    }
+
+    private int GetRequiredProgressForNextProject() {
+        return minReqProgress + (Random.Range(0, reqProgressVarianceSteps) * reqProgressVarianceIntervals);
     }
 }

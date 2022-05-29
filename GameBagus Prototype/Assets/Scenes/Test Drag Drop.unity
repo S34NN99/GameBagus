@@ -339,6 +339,10 @@ MonoBehaviour:
   currentProgress: 0
   progressText: {fileID: 1195593749}
   wokAnim: {fileID: 0}
+  minReqProgress: 75
+  reqProgressVarianceSteps: 8
+  reqProgressVarianceIntervals: 25
+  requiredProgress: 100
   candleManager: {fileID: 771858640}
   clock: {fileID: 1903967314}
 --- !u!1 &143708355
