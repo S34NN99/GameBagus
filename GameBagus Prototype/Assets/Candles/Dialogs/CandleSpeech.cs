@@ -26,6 +26,8 @@ public class CandleSpeech : MonoBehaviour {
     private void Update() {
         cooldownTimer -= Time.deltaTime;
         if (cooldownTimer <= 0) {
+            print(candle.SM.workingState.Name);
+            print(candle.SM.moodState.Name);
             string dialog = dialogs.GetDialogFromCandleState(candle.SM.workingState.Name, candle.SM.moodState.Name);
             ShowDialog(dialog);
 

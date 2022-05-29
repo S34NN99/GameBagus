@@ -41,6 +41,7 @@ public class HeadManager : MonoBehaviour {
             RectTransform headTransform = head.GetComponent<RectTransform>();
             headTransform.anchorMin = new Vector2(0.5f, 0.5f);
             headTransform.anchorMax = new Vector2(0.5f, 0.5f);
+            headTransform.pivot = new Vector2(0.5f, 0.5f);
 
             Vector2 posSmoothVelocity = new Vector2(0, 0);
 
@@ -55,10 +56,14 @@ public class HeadManager : MonoBehaviour {
                 yield return new WaitForEndOfFrame();
             }
 
-            while (headTransform.anchoredPosition.y > -500) {
+            while (headTransform.anchoredPosition.y > -1200) {
                 Vector2 currentPos = headTransform.anchoredPosition;
                 currentPos.y -= dropSpeed * Time.deltaTime;
                 headTransform.anchoredPosition = currentPos;
+
+                Quaternion currentRot = headTransform.rotation;
+                Quaternion rotSpeed = Quaternion.Euler(0, 0, rotateSpeed * Time.deltaTime);
+                headTransform.rotation = rotSpeed * currentRot;
 
                 yield return new WaitForEndOfFrame();
             }

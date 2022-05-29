@@ -13,22 +13,22 @@ public class CandleDialog : ScriptableObject {
     [SerializeField] private List<string> _workingNeutral;
     public List<string> WorkingNeutral => _workingNeutral;
 
-    public string RandomDialogWhenWorkingNeutral => WorkingHappy[Random.Range(0, WorkingHappy.Count)];
+    public string RandomDialogWhenWorkingNeutral => WorkingNeutral[Random.Range(0, WorkingNeutral.Count)];
 
     [SerializeField] private List<string> _workingSad;
     public List<string> WorkingSad => _workingSad;
 
-    public string RandomDialogWhenWorkingSad => WorkingHappy[Random.Range(0, WorkingHappy.Count)];
+    public string RandomDialogWhenWorkingSad => WorkingSad[Random.Range(0, WorkingSad.Count)];
 
     [SerializeField] private List<string> _crunching;
     public List<string> Crunching => _crunching;
 
-    public string RandomDialogWhenCrunching => WorkingHappy[Random.Range(0, WorkingHappy.Count)];
+    public string RandomDialogWhenCrunching => Crunching[Random.Range(0, Crunching.Count)];
 
     [SerializeField] private List<string> _onVacation;
     public List<string> OnVacation => _onVacation;
 
-    public string RandomDialogWhenOnVacation => WorkingHappy[Random.Range(0, WorkingHappy.Count)];
+    public string RandomDialogWhenOnVacation => OnVacation[Random.Range(0, OnVacation.Count)];
 
     public string GetDialogFromCandleState(string workingState, string moodState) {
         return workingState switch {
