@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702adc945cef4457d86b05efbb2bb2cd, type: 3}
+  m_Name: Young and Dumb
+  m_EditorClassIdentifier: 
+  _storyQuotes:
+  - Met a partner yesterday
+  - We're going on a date
+  - Last night's date was great!
+  - My partner proposed last night and I said yes!
+  - 'Planning for the wedding '
+  - Gotta pay deposit for the wedding venue
+  - Our wedding is tomorrow

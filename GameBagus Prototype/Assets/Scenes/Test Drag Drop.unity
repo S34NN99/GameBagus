@@ -340,11 +340,13 @@ MonoBehaviour:
   progressText: {fileID: 1195593749}
   wokAnim: {fileID: 0}
   minReqProgress: 75
-  reqProgressVarianceSteps: 8
-  reqProgressVarianceIntervals: 25
+  progressRandomisationSteps: 14
+  progressRandomisationInterval: 10
   requiredProgress: 100
   candleManager: {fileID: 771858640}
   clock: {fileID: 1903967314}
+  minProjectDuration: 10
+  maxProjectDuration: 25
 --- !u!1 &143708355
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,6 +848,14 @@ MonoBehaviour:
   candleSkins:
   - {fileID: 11400000, guid: 33da8d173f591455094c0d8603bee0cd, type: 2}
   - {fileID: 11400000, guid: bebf921dc60e649eaaa2c447c66b4182, type: 2}
+  - {fileID: 11400000, guid: 6723333d7bba946f7baf46ada29ff66b, type: 2}
+  - {fileID: 11400000, guid: bff7f42bd1e184b3bb7c9832d55b1ee5, type: 2}
+  candlePersonalities:
+  - {fileID: 11400000, guid: 379d3bf14565d4bfa984232019c7dde9, type: 2}
+  - {fileID: 11400000, guid: dca259936ebda44a2b3f7988e4bd6021, type: 2}
+  - {fileID: 11400000, guid: 71757ba70a01a43ab927537571c20eea, type: 2}
+  - {fileID: 11400000, guid: 7cda58361003146a596fe07488183b17, type: 2}
+  - {fileID: 11400000, guid: 587368604a7d64faaa739fa01a2effa6, type: 2}
 --- !u!1 &775745477 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8012338459642621441, guid: 092c1715a2fdd4a97bcb40e2f0209010, type: 3}
