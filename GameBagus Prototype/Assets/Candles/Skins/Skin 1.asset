@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa88c7e28fa1c42a9a885e356cd2cf79, type: 3}
   m_Name: Skin 1
   m_EditorClassIdentifier: 
-  _candleBase: {fileID: 21300000, guid: 39cf6f89b95ff44a68b271f6a401fe2b, type: 3}
-  _Head_Happy: {fileID: 21300000, guid: 44ebdd33156e54cd9b894154912e716b, type: 3}
-  _Head_Neutral: {fileID: 21300000, guid: 929179351f6524c5495d36a986aba9b3, type: 3}
-  _Head_Sad: {fileID: 21300000, guid: 42f8288c8e759402f9081980634ab0ee, type: 3}
+  _candleBase: {fileID: 21300000, guid: aeb44de7a228f4fcb8e2aba02eb0c821, type: 3}
+  _Head_Happy: {fileID: 21300000, guid: 3a86cb5f3710949ad8d77b83a7d3f983, type: 3}
+  _Head_Neutral: {fileID: 21300000, guid: 6a9f06b8fab884f2680eee2bfdf713b3, type: 3}
+  _Head_Sad: {fileID: 21300000, guid: 7733d55f363db455c83e7a72928772c6, type: 3}

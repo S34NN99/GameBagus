@@ -285,6 +285,10 @@ MonoBehaviour:
   currentProgress: 0
   progressText: {fileID: 1195593749}
   wokAnim: {fileID: 962522793}
+  minReqProgress: 75
+  reqProgressVarianceSteps: 10
+  reqProgressVarianceIntervals: 15
+  requiredProgress: 100
   candleManager: {fileID: 771858640}
   clock: {fileID: 1903967314}
 --- !u!1 &143708355
@@ -787,11 +791,14 @@ MonoBehaviour:
   - {x: 156.25, y: 0}
   - {x: 468.75, y: 0}
   candles:
-  - {fileID: 1875617669}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  candleSkins: []
+  - {fileID: 0}
+  candleSkins:
+  - {fileID: 11400000, guid: 33da8d173f591455094c0d8603bee0cd, type: 2}
+  - {fileID: 11400000, guid: bebf921dc60e649eaaa2c447c66b4182, type: 2}
+  - {fileID: 11400000, guid: 6723333d7bba946f7baf46ada29ff66b, type: 2}
 --- !u!1 &775745477 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8012338459642621441, guid: 092c1715a2fdd4a97bcb40e2f0209010, type: 3}
@@ -1611,17 +1618,6 @@ MonoBehaviour:
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
---- !u!114 &1875617669 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -5744972036774059160, guid: 94988f6ce3f66411a8e3f9a86bad96ef, type: 3}
-  m_PrefabInstance: {fileID: 5359402301739892949}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c152ac3882ea264da639a9a2ce36cea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1903967312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,6 +1849,10 @@ PrefabInstance:
     - target: {fileID: 5359402302208987754, guid: 94988f6ce3f66411a8e3f9a86bad96ef, type: 3}
       propertyPath: m_Name
       value: Candle 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359402302208987754, guid: 94988f6ce3f66411a8e3f9a86bad96ef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94988f6ce3f66411a8e3f9a86bad96ef, type: 3}
