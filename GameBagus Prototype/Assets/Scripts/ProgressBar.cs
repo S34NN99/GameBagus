@@ -11,11 +11,12 @@ public class ProgressBar : MonoBehaviour {
     public TextMeshProUGUI progressText;
     public Animator wokAnim;
 
-    [SerializeField] private int minReqProgress;
-    [SerializeField] private int reqProgressVarianceSteps;
+    [SerializeField] private int minReqProgress = 120;
+    [Tooltip("The number of steps when randomising the value of the required progress for the next project")]
+    [SerializeField] private int progressRandomisationSteps = 14;
     [Tooltip("The value of each step when randomising the value of the required progress for the next project")]
-    [SerializeField] private int reqProgressVarianceIntervals;
-    [SerializeField] private int requiredProgress;
+    [SerializeField] private int progressRandomisationInterval = 10;
+    [SerializeField] private int requiredProgress = 120;
 
     [Space(20)]
     [Header("Candle")]
@@ -24,6 +25,8 @@ public class ProgressBar : MonoBehaviour {
     [Space(20)]
     [Header("Clock")]
     [SerializeField] private ProjectClock clock;
+    [SerializeField] private int minProjectDuration = 10;
+    [SerializeField] private int maxProjectDuration = 25;
 
 
     // Update is called once per frame
@@ -41,7 +44,7 @@ public class ProgressBar : MonoBehaviour {
             candleManager.CheckCandles();
 
             requiredProgress = GetRequiredProgressForNextProject();
-            clock.ResetClock(clock.ProjectDuration);
+            clock.ResetClock(Random.Range(minProjectDuration, maxProjectDuration));
 
             wokAnim.SetTrigger("WokLoop");
         }
@@ -50,6 +53,6 @@ public class ProgressBar : MonoBehaviour {
     }
 
     private int GetRequiredProgressForNextProject() {
-        return minReqProgress + (Random.Range(0, reqProgressVarianceSteps) * reqProgressVarianceIntervals);
+        return minReqProgress + (Random.Range(0, progressRandomisationSteps) * progressRandomisationInterval);
     }
 }

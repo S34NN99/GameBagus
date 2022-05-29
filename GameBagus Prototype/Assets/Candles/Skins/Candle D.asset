@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa88c7e28fa1c42a9a885e356cd2cf79, type: 3}
-  m_Name: Skin 2
+  m_Name: Candle D
   m_EditorClassIdentifier: 
   _candleBase: {fileID: 21300000, guid: aeb44de7a228f4fcb8e2aba02eb0c821, type: 3}
-  _Head_Happy: {fileID: 21300000, guid: 0bbede8f3a52e4ee48c386975e871c1d, type: 3}
-  _Head_Neutral: {fileID: 21300000, guid: a0fcaa40719424c3da5dc6719eaa5ba6, type: 3}
-  _Head_Sad: {fileID: 21300000, guid: fd44af60a43dd47418fd5d500bd3fe54, type: 3}
+  _Head_Happy: {fileID: 21300000, guid: 5b4b07fb2243e42b1a17699df2b196c3, type: 3}
+  _Head_Neutral: {fileID: 21300000, guid: 48bd2a988510a4421a1293ceb70dd299, type: 3}
+  _Head_Sad: {fileID: 21300000, guid: 24bcc4066bde24a26884f242f69fb23b, type: 3}

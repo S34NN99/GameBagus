@@ -233,6 +233,42 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8012338459642621442, guid: 092c1715a2fdd4a97bcb40e2f0209010, type: 3}
   m_PrefabInstance: {fileID: 76952193}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &92632807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 92632808}
+  m_Layer: 5
+  m_Name: Drop Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &92632808
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92632807}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 849411827}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 531, y: -140}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &121316039
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,12 +321,14 @@ MonoBehaviour:
   currentProgress: 0
   progressText: {fileID: 1195593749}
   wokAnim: {fileID: 962522793}
-  minReqProgress: 75
-  reqProgressVarianceSteps: 10
-  reqProgressVarianceIntervals: 15
-  requiredProgress: 100
+  minReqProgress: 120
+  reqProgressVarianceSteps: 14
+  reqProgressVarianceIntervals: 10
+  requiredProgress: 120
   candleManager: {fileID: 771858640}
   clock: {fileID: 1903967314}
+  minProjectDuration: 10
+  maxProjectDuration: 25
 --- !u!1 &143708355
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,6 +837,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 33da8d173f591455094c0d8603bee0cd, type: 2}
   - {fileID: 11400000, guid: bebf921dc60e649eaaa2c447c66b4182, type: 2}
   - {fileID: 11400000, guid: 6723333d7bba946f7baf46ada29ff66b, type: 2}
+  - {fileID: 11400000, guid: bff7f42bd1e184b3bb7c9832d55b1ee5, type: 2}
 --- !u!1 &775745477 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8012338459642621441, guid: 092c1715a2fdd4a97bcb40e2f0209010, type: 3}
@@ -964,6 +1003,61 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &849411826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 849411827}
+  - component: {fileID: 849411828}
+  m_Layer: 5
+  m_Name: Head Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &849411827
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849411826}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 92632808}
+  m_Father: {fileID: 1059922398}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &849411828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849411826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c655ed96758bd403fa511b0f0050015b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posThreshold: 5
+  posSmoothSpeed: 1
+  dropSpeed: 300
+  rotateSpeed: 150
+  dropAnchor: {fileID: 92632808}
 --- !u!1 &962522789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1253,7 @@ RectTransform:
   - {fileID: 143708356}
   - {fileID: 121316040}
   - {fileID: 1271812194}
+  - {fileID: 849411827}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

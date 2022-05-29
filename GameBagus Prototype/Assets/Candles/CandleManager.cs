@@ -45,7 +45,8 @@ public class CandleManager : MonoBehaviour {
                 } else {
                     candles[i].candleStats.nameText.text = maleNames[Random.Range(0, maleNames.Length)];
                 }
-                candles[i].Skin = candleSkins[Random.Range(0, candleSkins.Length)];
+                //candles[i].Skin = candleSkins[Random.Range(0, candleSkins.Length)];
+                candles[i].Skin = candleSkins[i];
             }
         }
     }

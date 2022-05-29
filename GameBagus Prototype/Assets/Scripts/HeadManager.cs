@@ -21,6 +21,7 @@ public class HeadManager : MonoBehaviour {
     [SerializeField] private RectTransform dropAnchor;
 
     private int headCount;
+    public int HeadCount => headCount;
 
     private void Awake() {
         if (_instance == null) {
