@@ -824,7 +824,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 23.21, y: 5}
+  m_AnchoredPosition: {x: 23.209991, y: 5}
   m_SizeDelta: {x: 148.21, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &668223236
@@ -1880,7 +1880,7 @@ MonoBehaviour:
   minReqProgress: 240
   progressRandomisationSteps: 26
   progressRandomisationInterval: 10
-  requiredProgress: 240
+  requiredProgress: 800
   candleManager: {fileID: 771858640}
   clock: {fileID: 1903967314}
   minProjectDuration: 20
@@ -2142,8 +2142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb23205717ed84a1f9b2bc52fc4797be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectDuration: 20
-  _timeRemaining: 20
+  _projectDuration: 90
+  _timeRemaining: 90
   onTimesUp:
     m_PersistentCalls:
       m_Calls:
