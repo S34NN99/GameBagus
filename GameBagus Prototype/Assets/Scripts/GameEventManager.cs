@@ -14,7 +14,7 @@ public class GameEventManager : MonoBehaviour {
         }
     }
 
-    private Dictionary<string, System.Action> events = new Dictionary<string, System.Action>();
+    private Dictionary<string, System.Action> events = new();
 
     private void Awake() {
         if (_instance == null) {

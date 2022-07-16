@@ -10,13 +10,12 @@ public class HeadManager : MonoBehaviour {
     [SerializeField] private float rotateSpeed = 15f;
     [SerializeField] private RectTransform dropAnchor;
 
-    private int headCount;
-    public int HeadCount => headCount;
+    [SerializeField] private IntProperty headCountProp;
 
     public void RollHead(GameObject head) {
         RectTransform clonedHead = Instantiate(head, transform).GetComponent<RectTransform>();
 
-        headCount++;
+        headCountProp.Value++;
         StartCoroutine(RollHeadCoroutine());
 
         IEnumerator RollHeadCoroutine() {

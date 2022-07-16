@@ -13,6 +13,9 @@ public class ProgressBar : MonoBehaviour {
     public int completedProjectCounter;
     public TextMeshProUGUI completedProjectCounterTxt;
 
+    [SerializeField] private FloatProperty _progressPercentageProp;
+    public FloatProperty ProgressPercentageProp => _progressPercentageProp;
+
     [Space(20)]
     [Header("Randomisation")]
     [SerializeField] private int minReqProgress = 240;
@@ -31,15 +34,18 @@ public class ProgressBar : MonoBehaviour {
     [SerializeField] private ProjectClock clock;
     [SerializeField] private int minProjectDuration = 20;
     [SerializeField] private int maxProjectDuration = 60;
+    [Range(0, 1f)]
+    [SerializeField] private float nearingProjecFinishThreshold = 0.8f;
 
     private bool isFinishing;
 
-    // Update is called once per frame
-    void Update() {
+    //e Update is called once per frame
+    private void Update() {
 
         foreach (var candle in candleManager.GetCandles()) {
             candle.currCandle.SM.UpdateStates(this);
         }
+        ProgressPercentageProp.Value = Mathf.InverseLerp(0, requiredProgress, currentProgress);
     }
 
     public void UpdateVisuals() {
@@ -58,7 +64,7 @@ public class ProgressBar : MonoBehaviour {
             GameEventManager.Instance.BroadcastEvent(AudioManager.OnProjectFinishedEvent);
 
             isFinishing = false;
-        } else if (currentProgress >= requiredProgress * 0.8f) {
+        } else if (currentProgress >= requiredProgress * nearingProjecFinishThreshold) {
             if (!isFinishing) {
                 GameEventManager.Instance.BroadcastEvent(AudioManager.NearingProjectFinishedEvent);
             }

@@ -4,9 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class LoseScreen : MonoBehaviour
-{
-    public HeadManager headManager;
+public class LoseScreen : MonoBehaviour {
     public CandleManager candleManager;
     public ProjectClock projectClock;
     public ProgressBar progressBar;
@@ -15,14 +13,14 @@ public class LoseScreen : MonoBehaviour
     public TextMeshProUGUI headCountText;
     public TextMeshProUGUI completedProjectText;
 
-    private void DisplayStats()
-    {
-        headCountText.text = "Candles burnt out : " + headManager.HeadCount;
+    [SerializeField] private IntProperty headCountProp;
+
+    private void DisplayStats() {
+        headCountText.text = "Candles burnt out : " + headCountProp.Value;
         completedProjectText.text = " Projects completed : " + progressBar.completedProjectCounter;
     }
 
-    public void ShowLoseScreen()
-    {
+    public void ShowLoseScreen() {
         Debug.Log("Show Lose Screen");
         candleManager.DestroyAllCandles();
         Time.timeScale = 0;
@@ -30,14 +28,12 @@ public class LoseScreen : MonoBehaviour
         loseScreen.gameObject.SetActive(true);
     }
 
-    public void Reset()
-    {
+    public void Reset() {
         Time.timeScale = 1;
         SceneManager.LoadScene(1);
     }
 
-    public void GoBackToMainMenu()
-    {
+    public void GoBackToMainMenu() {
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
