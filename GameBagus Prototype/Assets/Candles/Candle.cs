@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class CandleStats {
@@ -58,6 +59,8 @@ public class Candle : MonoBehaviour, IEntity {
     [SerializeField] private RectTransform graphicsParentTransform;
     private float updateTime = 0;
 
+    public UnityEvent<Candle> onDeath;
+
     private void Awake() {
         currCandle = this;
         SM = new StateMachine(this);
@@ -97,11 +100,11 @@ public class Candle : MonoBehaviour, IEntity {
     }
 
     public void Death() {
-        GameEventManager.Instance.BroadcastEvent(AudioManager.OnCandleBurnoutEvent);
-        HeadManager.Instance.RollHead(HeadImage.gameObject);
-        CandleManager cm = FindObjectOfType<CandleManager>();
+        // should be delayed so its not gonna affect anything
         Destroy(gameObject);
-        cm.CheckIfListEmpty();
+
+        GameEventManager.Instance.BroadcastEvent(AudioManager.OnCandleBurnoutEvent);
+        onDeath.Invoke(this);
     }
 
     public void DisplayText() {

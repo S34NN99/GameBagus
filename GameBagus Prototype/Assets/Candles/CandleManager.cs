@@ -38,6 +38,7 @@ public class CandleManager : MonoBehaviour {
             if (candles[i] == null) {
                 // Spawn candle here
                 GameObject candleGO = Instantiate(candleTemplate, transform);
+                candleGO.SetActive(true);
                 candleGO.GetComponent<RectTransform>().anchoredPosition = candlePositions[i];
 
                 candles[i] = candleGO.GetComponent<Candle>();
