@@ -85,8 +85,8 @@ public class Candle : MonoBehaviour, IEntity {
 
     public void Work(ProgressBar pb) {
         // moodstate is null
-        pb.currentProgress += (candleStats.Power + candleStats.Multiplier[SM.moodState.CurrentIndex].x) * updateTime;
-        pb.UpdateVisuals();
+        //pb.currentProgress += (candleStats.Power + candleStats.Multiplier[SM.moodState.CurrentIndex].x) * updateTime;
+        //pb.UpdateVisuals();
     }
 
     public void CrunchWork(ProgressBar pb) {
