@@ -10,7 +10,7 @@ public class CandleStats {
     public float HP;
     public float Power;
     public float RegenerateHP;
-    public float DecayPerSec;
+    public float Decay;
 
     [Header("Crunch")]
     public float AdditionalPower;
@@ -18,7 +18,7 @@ public class CandleStats {
 
     [Header("Mood")]
     // x = power, y = decay
-    public List<Vector2Int> Mutltiplier;
+    public List<Vector2Int> Multiplier;
     public List<int> MoodThreshold;
 
     [Header("Beta Testing")]
@@ -74,20 +74,20 @@ public class Candle : MonoBehaviour, IEntity {
     }
 
     public void Decay() {
-        candleStats.HP -= (candleStats.DecayPerSec + candleStats.Mutltiplier[SM.moodState.CurrentIndex].y) * updateTime;
+        candleStats.HP -= (candleStats.Decay + candleStats.Multiplier[SM.moodState.CurrentIndex].y) * updateTime;
     }
     public void CrunchDecay() {
-        candleStats.HP -= (candleStats.DecayPerSec + candleStats.AdditionalDecay + candleStats.Mutltiplier[SM.moodState.CurrentIndex].y) * updateTime;
+        candleStats.HP -= (candleStats.Decay + candleStats.AdditionalDecay + candleStats.Multiplier[SM.moodState.CurrentIndex].y) * updateTime;
     }
 
     public void Work(ProgressBar pb) {
         // moodstate is null
-        pb.currentProgress += (candleStats.Power + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x) * updateTime;
+        pb.currentProgress += (candleStats.Power + candleStats.Multiplier[SM.moodState.CurrentIndex].x) * updateTime;
         pb.UpdateVisuals();
     }
 
     public void CrunchWork(ProgressBar pb) {
-        pb.currentProgress += (candleStats.Power + candleStats.AdditionalPower + candleStats.Mutltiplier[SM.moodState.CurrentIndex].x) * updateTime;
+        pb.currentProgress += (candleStats.Power + candleStats.AdditionalPower + candleStats.Multiplier[SM.moodState.CurrentIndex].x) * updateTime;
         pb.UpdateVisuals();
     }
 
