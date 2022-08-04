@@ -13,7 +13,7 @@ public class M_Sad : MoodState {
         CandleSpeech speech = entity.currCandle.GetComponent<CandleSpeech>();
         speech.ShowDialog(speech.GetDialog());
 
-        GameEventManager.Instance.BroadcastEvent(AudioManager.NearingCandleBurnoutEvent);
+        GeneralEventManager.Instance.BroadcastEvent(AudioManager.NearingCandleBurnoutEvent);
     }
 
     public override void Update(IEntity entity, ProgressBar pb) {

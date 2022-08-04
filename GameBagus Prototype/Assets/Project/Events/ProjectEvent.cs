@@ -5,44 +5,27 @@ using UnityEngine.Events;
 using System.Collections.Generic;
 
 [RequireComponent(typeof(ProjectEventTrigger))]
-public class ProjectEvent : MonoBehaviour {
-    [SerializeField] private ProjectEventTrigger trigger;
+public class ProjectEvent : GameEventBase<GroupChat> {
+    [SerializeField] private float displayDuration;
 
-    [Header("Content")]
-    [SerializeField] private string _title;
-    public string Title => ObservableParameter.ConvertToRuntimeText(_title);
+    //[SerializeField] private ProjectEventType projectEventType;
 
-    [SerializeField] private string _mainBody;
-    public string MainBody => ObservableParameter.ConvertToRuntimeText(_mainBody);
-
-    [SerializeField] private string _closing;
-    public string Closing => ObservableParameter.ConvertToRuntimeText(_closing);
-
-    [SerializeField] private ProjectEventAction[] _availableActions;
-    public IReadOnlyList<ProjectEventAction> AvailableActions => _availableActions;
-
-    public bool ReadyToFire { get; private set; }
+    //[Space]
+    //[SerializeField] private ProjectEventAction[] _availableActions;
+    //public IReadOnlyList<ProjectEventAction> AvailableActions => _availableActions;
 
 #if UNITY_EDITOR
     // auto assign trigger
-    private void OnValidate() {
-        if (trigger == null) {
-            if (!TryGetComponent(out trigger)) {
-                trigger = gameObject.AddComponent<ProjectEventTrigger>();
-            }
-        }
+    protected override void OnValidate() {
+        base.OnValidate();
     }
 #endif
 
-    private void Update() {
-        if (trigger.GetTrigger()) {
-            ReadyToFire = true;
-        }
+    protected override void Update() {
+        base.Update();
     }
 
-    public void FireEvent(ProjectEventPanel eventPanel) {
-        ReadyToFire = false;
-
+    protected override void DisplayEvent(GroupChat groupChat) {
 
     }
 }

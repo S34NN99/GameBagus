@@ -9,7 +9,7 @@ public class W_Vacation : WorkingState {
 
     public override void Enter(IEntity entity) {
         entity.currCandle.SetFireSpeed(FireSpeed);
-        GameEventManager.Instance.BroadcastEvent(BossQuotes.OnCandleVacationEvent);
+        GeneralEventManager.Instance.BroadcastEvent(BossQuotes.OnCandleVacationEvent);
     }
 
     public override void Update(IEntity entity, ProgressBar pb) {

@@ -103,7 +103,7 @@ public class Candle : MonoBehaviour, IEntity {
         // should be delayed so its not gonna affect anything
         Destroy(gameObject);
 
-        GameEventManager.Instance.BroadcastEvent(AudioManager.OnCandleBurnoutEvent);
+        GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnCandleBurnoutEvent);
         onDeath.Invoke(this);
     }
 

@@ -61,12 +61,12 @@ public class ProgressBar : MonoBehaviour {
 
             wokAnim.SetTrigger("WokLoop");
 
-            GameEventManager.Instance.BroadcastEvent(AudioManager.OnProjectFinishedEvent);
+            GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnProjectFinishedEvent);
 
             isFinishing = false;
         } else if (currentProgress >= requiredProgress * nearingProjecFinishThreshold) {
             if (!isFinishing) {
-                GameEventManager.Instance.BroadcastEvent(AudioManager.NearingProjectFinishedEvent);
+                GeneralEventManager.Instance.BroadcastEvent(AudioManager.NearingProjectFinishedEvent);
             }
             isFinishing = true;
         }

@@ -10,7 +10,7 @@ public class W_Crunch : WorkingState {
 
     public override void Enter(IEntity entity) {
         entity.currCandle.SetFireSpeed(FireSpeed);
-        GameEventManager.Instance.BroadcastEvent(AudioManager.OnCandleCrunchEvent);
+        GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnCandleCrunchEvent);
     }
 
     public override void Update(IEntity entity, ProgressBar pb) {

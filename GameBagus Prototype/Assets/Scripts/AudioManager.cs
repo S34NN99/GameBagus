@@ -42,29 +42,24 @@ public class AudioManager : MonoBehaviour {
     private bool firstCandleNearingBurnout = false;
 
     private void Start() {
-        GameEventManager.Instance.CreateNewEvent(OnButtonPickedUp);
-        GameEventManager.Instance.SubscribeToEvent(OnButtonPickedUp, () => {
+        GeneralEventManager.Instance.StartListeningTo(OnButtonPickedUp, () => {
             uiSfxPlayer.clip = onButtonPickedUp;
             uiSfxPlayer.Play();
         });
 
-        GameEventManager.Instance.CreateNewEvent(OnButtonDropped);
-        GameEventManager.Instance.SubscribeToEvent(OnButtonDropped, () => {
+        GeneralEventManager.Instance.StartListeningTo(OnButtonDropped, () => {
             uiSfxPlayer.clip = onButtonDropped;
             uiSfxPlayer.Play();
         });
 
 
 
-
-        GameEventManager.Instance.CreateNewEvent(OnCandleCrunchEvent);
-        GameEventManager.Instance.SubscribeToEvent(OnCandleCrunchEvent, () => {
+        GeneralEventManager.Instance.StartListeningTo(OnCandleCrunchEvent, () => {
             candleSfxPlayer.clip = onCandleCrunch;
             candleSfxPlayer.Play();
         });
 
-        GameEventManager.Instance.CreateNewEvent(NearingCandleBurnoutEvent);
-        GameEventManager.Instance.SubscribeToEvent(NearingCandleBurnoutEvent, () => {
+        GeneralEventManager.Instance.StartListeningTo(NearingCandleBurnoutEvent, () => {
             if (!firstCandleNearingBurnout) {
                 candleNearDeathSfxPlayer.clip = nearingCandleBurnout;
                 candleNearDeathSfxPlayer.Play();
@@ -72,8 +67,7 @@ public class AudioManager : MonoBehaviour {
             }
         });
 
-        GameEventManager.Instance.CreateNewEvent(OnCandleBurnoutEvent);
-        GameEventManager.Instance.SubscribeToEvent(OnCandleBurnoutEvent, () => {
+        GeneralEventManager.Instance.StartListeningTo(OnCandleBurnoutEvent, () => {
             candleSfxPlayer.clip = onCandleSnuffedClips[Random.Range(0, onCandleSnuffedClips.Length)];
             candleSfxPlayer.Play();
         });
@@ -81,15 +75,13 @@ public class AudioManager : MonoBehaviour {
 
 
 
-        GameEventManager.Instance.CreateNewEvent(NearingProjectFinishedEvent);
-        GameEventManager.Instance.SubscribeToEvent(NearingProjectFinishedEvent, () => {
+        GeneralEventManager.Instance.StartListeningTo(NearingProjectFinishedEvent, () => {
             projectSfxPlayer.clip = nearingProjectFinished;
             projectSfxPlayer.loop = true;
             projectSfxPlayer.Play();
         });
 
-        GameEventManager.Instance.CreateNewEvent(OnProjectFinishedEvent);
-        GameEventManager.Instance.SubscribeToEvent(OnProjectFinishedEvent, () => {
+        GeneralEventManager.Instance.StartListeningTo(OnProjectFinishedEvent, () => {
             projectSfxPlayer.clip = onProjectFinished;
             projectSfxPlayer.loop = false;
             projectSfxPlayer.Play();

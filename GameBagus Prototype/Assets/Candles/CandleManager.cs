@@ -60,7 +60,7 @@ public class CandleManager : MonoBehaviour {
             }
         }
 
-        GameEventManager.Instance.BroadcastEvent(BossQuotes.OnReplaceAllCandleEvent);
+        GeneralEventManager.Instance.BroadcastEvent(BossQuotes.OnReplaceAllCandleEvent);
     }
 
     public IEnumerable<Candle> GetCandles() => candles.Where(candle => candle != null);

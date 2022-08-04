@@ -49,7 +49,7 @@ public class ProjectClock : MonoBehaviour {
 
         if (TimeRemaining <= ProjectDuration * 0.2f) {
             if (!isNearingDeadline) {
-                GameEventManager.Instance.BroadcastEvent(BossQuotes.NearingDeadlineEvent);
+                GeneralEventManager.Instance.BroadcastEvent(BossQuotes.NearingDeadlineEvent);
             }
             isNearingDeadline = true;
         }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+[System.Obsolete]
 public class BossQuotes : MonoBehaviour {
     public const string NearingDeadlineEvent = "Nearing Deadline";
     public const string OnProjectFinishedEvent = "On Project Finished";
@@ -30,30 +31,25 @@ public class BossQuotes : MonoBehaviour {
     private float dialogCooldown;
 
     private void Start() {
-        GameEventManager.Instance.CreateNewEvent(NearingDeadlineEvent);
-        GameEventManager.Instance.SubscribeToEvent(NearingDeadlineEvent, () => {
+        GeneralEventManager.Instance.StartListeningTo(NearingDeadlineEvent, () => {
             ShowDialog(quotes_nearingDeadline[Random.Range(0, quotes_nearingDeadline.Length)]);
         });
 
-        GameEventManager.Instance.CreateNewEvent(OnProjectFinishedEvent);
-        GameEventManager.Instance.SubscribeToEvent(OnProjectFinishedEvent, () => {
+        GeneralEventManager.Instance.StartListeningTo(OnProjectFinishedEvent, () => {
             ShowDialog(quotes_projectFinished[Random.Range(0, quotes_projectFinished.Length)]);
         });
 
 
 
-        GameEventManager.Instance.CreateNewEvent(OnCandleBurnoutEvent);
-        GameEventManager.Instance.SubscribeToEvent(OnCandleBurnoutEvent, () => {
+        GeneralEventManager.Instance.StartListeningTo(OnCandleBurnoutEvent, () => {
             ShowDialog(quotes_candleBurnout[Random.Range(0, quotes_candleBurnout.Length)]);
         });
 
-        GameEventManager.Instance.CreateNewEvent(OnReplaceAllCandleEvent);
-        GameEventManager.Instance.SubscribeToEvent(OnReplaceAllCandleEvent, () => {
+        GeneralEventManager.Instance.StartListeningTo(OnReplaceAllCandleEvent, () => {
             ShowDialog(quotes_replaceAllCandle[Random.Range(0, quotes_replaceAllCandle.Length)]);
         });
 
-        GameEventManager.Instance.CreateNewEvent(OnCandleVacationEvent);
-        GameEventManager.Instance.SubscribeToEvent(OnCandleVacationEvent, () => {
+        GeneralEventManager.Instance.StartListeningTo(OnCandleVacationEvent, () => {
             ShowDialog(quotes_candleVacation[Random.Range(0, quotes_candleVacation.Length)]);
         });
     }
