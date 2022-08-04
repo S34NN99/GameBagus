@@ -15,7 +15,7 @@ public class M_Happy : MoodState {
         Debug.Log("State Speech");
     }
 
-    public override void Update(IEntity entity, ProgressBar pb) {
+    public override void Update(IEntity entity, Project pb) {
         CheckHP(entity);
     }
 

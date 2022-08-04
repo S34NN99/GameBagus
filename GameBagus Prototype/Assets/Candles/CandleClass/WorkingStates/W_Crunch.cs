@@ -13,7 +13,7 @@ public class W_Crunch : WorkingState {
         GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnCandleCrunchEvent);
     }
 
-    public override void Update(IEntity entity, ProgressBar pb) {
+    public override void Update(IEntity entity, Project pb) {
         entity.currCandle.CrunchWork(pb);
         entity.currCandle.CrunchDecay();
     }

@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class LoseScreen : MonoBehaviour {
     public CandleManager candleManager;
-    public ProjectClock projectClock;
-    public ProgressBar progressBar;
+    public ProjectCalendar projectClock;
+    public Project progressBar;
 
     public GameObject loseScreen;
     public TextMeshProUGUI headCountText;

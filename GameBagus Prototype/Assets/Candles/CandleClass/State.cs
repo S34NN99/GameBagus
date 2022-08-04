@@ -12,7 +12,7 @@ public abstract class State
 {
     public abstract string Name { get; }
     public abstract void Enter(IEntity entity);
-    public abstract void Update(IEntity entity, ProgressBar pb);
+    public abstract void Update(IEntity entity, Project pb);
     public abstract void Exit(IEntity entity);
 }
 

@@ -83,13 +83,13 @@ public class Candle : MonoBehaviour, IEntity {
         candleStats.HP -= (candleStats.Decay + candleStats.AdditionalDecay + candleStats.Multiplier[SM.moodState.CurrentIndex].y) * updateTime;
     }
 
-    public void Work(ProgressBar pb) {
+    public void Work(Project pb) {
         // moodstate is null
         //pb.currentProgress += (candleStats.Power + candleStats.Multiplier[SM.moodState.CurrentIndex].x) * updateTime;
         //pb.UpdateVisuals();
     }
 
-    public void CrunchWork(ProgressBar pb) {
+    public void CrunchWork(Project pb) {
         pb.currentProgress += (candleStats.Power + candleStats.AdditionalPower + candleStats.Multiplier[SM.moodState.CurrentIndex].x) * updateTime;
         pb.UpdateVisuals();
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ProgressBar : MonoBehaviour {
+public class Project : MonoBehaviour {
     [Space(20)]
     [Header("ProgressBar")]
     public float currentProgress;
@@ -31,7 +31,7 @@ public class ProgressBar : MonoBehaviour {
 
     [Space(20)]
     [Header("Clock")]
-    [SerializeField] private ProjectClock clock;
+    [SerializeField] private ProjectCalendar clock;
     [SerializeField] private int minProjectDuration = 20;
     [SerializeField] private int maxProjectDuration = 60;
     [Range(0, 1f)]

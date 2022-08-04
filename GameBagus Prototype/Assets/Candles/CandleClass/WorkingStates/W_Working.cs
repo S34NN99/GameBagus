@@ -12,7 +12,7 @@ public class W_Working : WorkingState
         entity.currCandle.SetFireSpeed(FireSpeed);
     }
 
-    public override void Update(IEntity entity, ProgressBar pb)
+    public override void Update(IEntity entity, Project pb)
     {
         entity.currCandle.Work(pb);
         entity.currCandle.Decay();

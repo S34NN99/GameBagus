@@ -16,7 +16,7 @@ public class M_Sad : MoodState {
         GeneralEventManager.Instance.BroadcastEvent(AudioManager.NearingCandleBurnoutEvent);
     }
 
-    public override void Update(IEntity entity, ProgressBar pb) {
+    public override void Update(IEntity entity, Project pb) {
         CheckHP(entity);
     }
 

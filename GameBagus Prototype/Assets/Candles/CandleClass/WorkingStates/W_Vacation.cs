@@ -12,7 +12,7 @@ public class W_Vacation : WorkingState {
         GeneralEventManager.Instance.BroadcastEvent(BossQuotes.OnCandleVacationEvent);
     }
 
-    public override void Update(IEntity entity, ProgressBar pb) {
+    public override void Update(IEntity entity, Project pb) {
         entity.currCandle.Regeneration();
     }
 

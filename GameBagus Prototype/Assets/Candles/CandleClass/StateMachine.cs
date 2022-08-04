@@ -31,7 +31,7 @@ public class StateMachine
         }
     }
 
-    public void UpdateStates(ProgressBar pb)
+    public void UpdateStates(Project pb)
     {
         moodState.Update(owner, pb);
         workingState.Update(owner, pb);
