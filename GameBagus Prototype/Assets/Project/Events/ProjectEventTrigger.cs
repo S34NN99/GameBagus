@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 #if UNITY_EDITOR
 using UnityEditor;
+using UnityEditorInternal;
 #endif
 
 public class ProjectEventTrigger : MonoBehaviour {
@@ -44,6 +46,7 @@ public class ProjectEventTrigger : MonoBehaviour {
             Float_Value_Threshold,
             Float_Value_Threshold01,
             String_Equals,
+            Required_Attributes,
         }
         [SerializeField] private TriggerType triggerType;
 
@@ -73,6 +76,12 @@ public class ProjectEventTrigger : MonoBehaviour {
                         ConditionSatisfied = newVal == comparedValue;
                     });
                     break;
+                case TriggerType.Required_Attributes:
+                    HashSetStringProperty hashSetStringProperty = observedVariable as HashSetStringProperty;
+                    hashSetStringProperty.OnValueUpdated.AddListener((oldVal, newVal) => {
+                        ConditionSatisfied = hashSetStringProperty.GetValueAsText() == comparedValue;
+                    });
+                    break;
             }
         }
     }
@@ -84,6 +93,10 @@ public class ProjectEventTrigger : MonoBehaviour {
         private const float PropertyRectHeightWithMargins = 20;
 
         private bool showContents;
+        private List<string> strList = new();
+        private ReorderableList strReorderableList;
+
+
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
             EditorGUI.BeginProperty(position, label, property);
@@ -109,6 +122,7 @@ public class ProjectEventTrigger : MonoBehaviour {
                     TriggerCondition.TriggerType.Float_Value_Threshold => observedVariableProp.objectReferenceValue is ObservableProperty<float>,
                     TriggerCondition.TriggerType.Float_Value_Threshold01 => observedVariableProp.objectReferenceValue is ObservableProperty<float>,
                     TriggerCondition.TriggerType.String_Equals => observedVariableProp.objectReferenceValue is ObservableProperty<string>,
+                    TriggerCondition.TriggerType.Required_Attributes => observedVariableProp.objectReferenceValue is HashSetStringProperty,
                     _ => false,
                 };
                 if (!doesObservedVariableMatchTriggerType) {
@@ -135,6 +149,9 @@ public class ProjectEventTrigger : MonoBehaviour {
                         comparedValueProperty.stringValue = EditorGUI.Slider(position, comparedValueLabel, float01Val, 0, 1).ToString();
                         break;
                     case TriggerCondition.TriggerType.String_Equals:
+                        comparedValueProperty.stringValue = EditorGUI.TextField(position, comparedValueLabel, comparedValueProperty.stringValue);
+                        break;
+                    case TriggerCondition.TriggerType.Required_Attributes:
                         comparedValueProperty.stringValue = EditorGUI.TextField(position, comparedValueLabel, comparedValueProperty.stringValue);
                         break;
                 }

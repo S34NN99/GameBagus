@@ -22,6 +22,7 @@ public class CandleManager : MonoBehaviour {
     };
 
     [SerializeField] private GameObject candleTemplate;
+    [SerializeField] private GameObject[] candleTemplates;
 
     [SerializeField] private Vector2[] candlePositions;
     [SerializeField] private Candle[] candles;

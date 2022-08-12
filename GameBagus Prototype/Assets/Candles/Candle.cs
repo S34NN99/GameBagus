@@ -49,12 +49,14 @@ public class Candle : MonoBehaviour, IEntity {
         }
     }
 
+    [SerializeField] private CandleProfile _profile;
+    public CandleProfile Profile { get => _profile; set => _profile = value; }
+
     [SerializeField] private Image _headImage;
     public Image HeadImage => _headImage;
 
     [SerializeField] private Image _bodyImage;
     public Image BodyImage => _bodyImage;
-
 
     [SerializeField] private RectTransform graphicsParentTransform;
     private float updateTime = 0;
@@ -85,8 +87,8 @@ public class Candle : MonoBehaviour, IEntity {
 
     public void Work(Project pb) {
         // moodstate is null
-        //pb.currentProgress += (candleStats.Power + candleStats.Multiplier[SM.moodState.CurrentIndex].x) * updateTime;
-        //pb.UpdateVisuals();
+        pb.currentProgress += (candleStats.Power + candleStats.Multiplier[SM.moodState.CurrentIndex].x) * updateTime;
+        pb.UpdateVisuals();
     }
 
     public void CrunchWork(Project pb) {

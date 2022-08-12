@@ -6,7 +6,15 @@ using System.Collections.Generic;
 
 [RequireComponent(typeof(ProjectEventTrigger))]
 public class ProjectEvent : GameEventBase<GroupChat> {
-    [SerializeField] private float displayDuration;
+    [Header("Content")]
+    [SerializeField] [RuntimeString] protected string _title = "Urgent Issue";
+    public string Title => ObservableVariable.ConvertToRuntimeText(_title);
+
+    [SerializeField] [RuntimeString] protected string _mainBody = "Too many bugs";
+    public string MainBody => ObservableVariable.ConvertToRuntimeText(_mainBody);
+
+    [SerializeField] private float _displayDuration = 4f;
+    public float DisplayDuration => _displayDuration;
 
     //[SerializeField] private ProjectEventType projectEventType;
 
@@ -26,6 +34,6 @@ public class ProjectEvent : GameEventBase<GroupChat> {
     }
 
     protected override void DisplayEvent(GroupChat groupChat) {
-
+        groupChat.ShowNotificationAlertBanner(this);
     }
 }

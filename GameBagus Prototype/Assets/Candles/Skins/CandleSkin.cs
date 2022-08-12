@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Candle Skin")]
+[CreateAssetMenu(menuName = "Candle/Candle Skin")]
 public class CandleSkin : ScriptableObject {
     [SerializeField] private Sprite _candleBase;
     public Sprite CandleBase => _candleBase;

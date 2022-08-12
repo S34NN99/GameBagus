@@ -1,8 +1,8 @@
 ﻿
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Chat Profile")]
-public class ChatProfile : ScriptableObject {
+[CreateAssetMenu(menuName = "Candle/Profile")]
+public class CandleProfile : ScriptableObject {
     [SerializeField] private string _profileName;
     public string ProfileName => _profileName;
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -65,15 +66,13 @@ public abstract class ObservableVariable : MonoBehaviour {
     public abstract string GetValueAsText();
 }
 
-public abstract class ObservableProperty<T> : ObservableVariable where T : IEquatable<T> {
+public abstract class ObservableProperty<T> : ObservableVariable {
     [SerializeField] protected T _value;
     public virtual T Value {
         get => _value;
         set {
-            if (!_value.Equals(value)) {
-                OnValueUpdated.Invoke(_value, value);
-                _value = value;
-            }
+            OnValueUpdated.Invoke(_value, value);
+            _value = value;
         }
 
     }
@@ -87,4 +86,38 @@ public abstract class ObservableProperty<T> : ObservableVariable where T : IEqua
     public UnityEvent<T, T> OnValueUpdated => _onValueUpdated;
 
     public override string GetValueAsText() => Value.ToString();
+}
+
+public abstract class ObservableEquatableProperty<T> : ObservableProperty<T> where T : IEquatable<T> {
+    public override T Value {
+        get => _value;
+        set {
+            if (!_value.Equals(value)) {
+                OnValueUpdated.Invoke(_value, value);
+                _value = value;
+            }
+        }
+
+    }
+
+}
+
+public abstract class CollectionProperty<T, U> : ObservableProperty<T> where T : ICollection<U> {
+    public virtual void Add(U element) {
+        Value.Add(element);
+        OnValueUpdated.Invoke(Value, Value);
+    }
+
+    public void Clear() {
+        Value.Clear();
+        OnValueUpdated.Invoke(Value, Value);
+    }
+
+    public virtual bool Remove(U element) {
+        if (Value.Remove(element)) {
+            OnValueUpdated.Invoke(Value, Value);
+            return true;
+        }
+        return false;
+    }
 }

@@ -9,50 +9,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ed0fca550e6245be996ffa0902a1a13, type: 3}
+  m_Script: {fileID: 11500000, guid: a1cc92d5329ac4396a3a8d1f69ef0503, type: 3}
   m_Name: Default Dialog
   m_EditorClassIdentifier: 
-  _workingHappy:
-  - We're a great team
-  - I love working with you guys
-  - 'Project''s almost done '
-  - Loving the team dynamics
+  workingDialogs_Happy:
+  - Project's almost done
   - Happy to be working here
-  _workingNeutral:
-  - Just finished my task
-  - Great job guys
-  - Let's get this done
-  - Doing my task now
-  - We're being productive
-  - Finishing my task
-  - Let's hustle!
-  - Anyone need help?
-  - I'm joining the team
+  - 'Loving the team dynamics '
+  - I love working with you guys
+  - 'We''re a great team '
+  workingDialogs_Neutral:
+  - 'Anyone need help? '
   - Just got my task
-  _workingSad:
-  - I feel no sense of purpose
-  - I have too much on my plate
-  - I need time-off
-  - I haven't been spending time with my family
+  - 'Just finished my task '
+  - 'We have much more to do! '
+  - 'Let''s get this done '
+  - 'Doing my task now '
+  - 'We''re being productive '
+  - 'Finishing my task '
+  workingDialogs_Sad:
+  - 'I can''t concentrate on my work '
   - I need a raise
-  - I'm so tired
-  - I can't finish my task
+  - I have too much on my plate
+  - 'I need time-off '
+  - 'I''m so tired '
+  - I haven't been spending time with my family
   - Why am I still here?
-  - I can't concentrate on my work
-  _crunching:
-  - This is unbearable
-  - I can't take this any more
-  - This is too much to handle
-  - I'm overworked
-  - I can't think straight
-  - I'm having a migrane
+  - 'I can''t finish my task '
+  - I feel no sense of purpose
+  onCrunchingDialogs:
+  - 'I''m having a migrane '
   - I'm mentally and physically drained
-  - This task is too difficult
+  - This is unbearable
+  - I can't take this anymore
+  - 'This is too much to handle '
   - I'm so stressed out
-  _onVacation:
+  - 'I''m overworked '
+  - I can't think straight
+  - 'This task is too difficult '
+  onVacationDialogs:
+  - 'No emails, no calls '
+  - Time for self-care
+  - 'Just what I needed '
   - Love spending time with my family
-  - Just what I needed
   - Time to travel
   - Recharging my battery
-  - Time for self-care
-  - No emails, no calls
+  onDeathDialogs: []

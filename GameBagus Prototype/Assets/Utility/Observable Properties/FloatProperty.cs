@@ -3,5 +3,5 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public class FloatProperty : ObservableProperty<float> {
+public class FloatProperty : ObservableEquatableProperty<float> {
 }

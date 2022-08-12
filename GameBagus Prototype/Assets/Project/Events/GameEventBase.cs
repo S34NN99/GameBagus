@@ -6,18 +6,12 @@ using UnityEngine;
 public abstract class GameEventBase<UiDisplay> : MonoBehaviour where UiDisplay : MonoBehaviour {
     [SerializeField] protected ProjectEventTrigger trigger;
 
-    [Header("Content")]
-    [SerializeField] [RuntimeString] protected string _title;
-    public string Title => ObservableVariable.ConvertToRuntimeText(_title);
-
-    [SerializeField] [RuntimeString] protected string _mainBody;
-    public string MainBody => ObservableVariable.ConvertToRuntimeText(_mainBody);
-
-    [SerializeField] [RuntimeString] protected string _closing;
-    public string Closing => ObservableVariable.ConvertToRuntimeText(_closing);
-
     [Space]
     [SerializeField] protected UiDisplay eventDisplay;
+
+    [Space]
+    [Tooltip("You guys can leave a comment about what the event should do")]
+    [SerializeField] private string remarksForTech;
 
 #if UNITY_EDITOR
     // auto assign trigger
