@@ -1,5 +1,6 @@
 ﻿
 using System.Collections.Generic;
+using System.Collections;
 
 using UnityEngine;
 
@@ -17,6 +18,9 @@ public class ManagementEvent : GameEventBase<GroupChat> {
 
     [SerializeField] private float _displayDuration;
     public float DisplayDuration => _displayDuration;
+
+    [SerializeField] private CandleProfile _bossProfile;
+    public CandleProfile BossProfile => _bossProfile;
 
     [Header("Actions")]
     [Tooltip("First action is the default action")]
@@ -36,6 +40,49 @@ public class ManagementEvent : GameEventBase<GroupChat> {
     }
 
     protected override void DisplayEvent(GroupChat groupChat) {
-        groupChat.ShowBossMessage(this);
+        GroupChatBossMessage bossMessage = groupChat.CreateBossMessage();
+        PhoneCallAlert phoneCallAlert = groupChat.PhoneCallAlert;
+
+        bool phoneCallActivated = false;
+
+        Coroutine timerCoroutine = StartCoroutine(CountdownEnumerator());
+
+        bossMessage.DisplayMessage(BossProfile, this);
+        bossMessage.MoreInfoButton.onClick.AddListener(() => {
+            phoneCallActivated = true;
+
+            phoneCallAlert.Show();
+            phoneCallAlert.Message.DisplayMessage(BossProfile, MainBody);
+            phoneCallAlert.SetActions(AvailableActions, DeactivateEvent);
+        });
+
+        IEnumerator CountdownEnumerator() {
+            float timer = DisplayDuration;
+
+            while (timer > 0) {
+                yield return new WaitForEndOfFrame();
+
+                timer -= Time.deltaTime;
+
+                float currentProgress = Mathf.InverseLerp(0, DisplayDuration, timer);
+                bossMessage.UpdateProgress(currentProgress);
+
+            }
+
+            if (phoneCallActivated) {
+                phoneCallAlert.Hide();
+            }
+            bossMessage.UpdateProgress(0f);
+            DefaultAction.Fire();
+        }
+
+        void DeactivateEvent() {
+            if (timerCoroutine != null) {
+                StopCoroutine(timerCoroutine);
+                timerCoroutine = null;
+            }
+
+            bossMessage.UpdateProgress(0f);
+        }
     }
 }

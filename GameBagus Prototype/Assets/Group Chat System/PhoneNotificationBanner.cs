@@ -1,26 +1,16 @@
 ﻿
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 public class PhoneNotificationBanner : MonoBehaviour {
-    [Header("Ui Components")]
-    [SerializeField] private TextMeshProUGUI titleText;
-    [SerializeField] private TextMeshProUGUI messageText;
-    [SerializeField] private float titleTextHeight = 75f;
-    [SerializeField] private float minimumTextHeight = 125f;
-    public float TextHeight { get; private set; }
-    public float TotalHeight { get; private set; }
+    [Header("Ui")]
+    [SerializeField] private UnityEvent<string> updateTitleCallback;
+    [SerializeField] private UnityEvent<string> updateMessageCallback;
 
-    public RectTransform RT { get; private set; }
-
-    [Space]
-    [SerializeField] private float popupAnimDuration = 0.5f;
-    private float popupAnimTimer;
     private float displayTimer;
 
     private void Awake() {
-        RT = GetComponent<RectTransform>();
-
         gameObject.SetActive(false);
     }
 
@@ -40,15 +30,7 @@ public class PhoneNotificationBanner : MonoBehaviour {
 
         displayTimer = duration;
 
-        titleText.text = title;
-        messageText.text = message;
-
-        ReadjustTextHeight();
-        RT.sizeDelta = new Vector2(RT.sizeDelta.x, TotalHeight);
-    }
-
-    private void ReadjustTextHeight() {
-        TextHeight = Mathf.Max(minimumTextHeight, messageText.preferredHeight);
-        TotalHeight = TextHeight + titleTextHeight;
+        updateTitleCallback.Invoke(title);
+        updateMessageCallback.Invoke(message);
     }
 }

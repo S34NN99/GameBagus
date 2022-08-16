@@ -34,6 +34,7 @@ public class ProjectEvent : GameEventBase<GroupChat> {
     }
 
     protected override void DisplayEvent(GroupChat groupChat) {
-        groupChat.ShowNotificationAlertBanner(this);
+        PhoneNotificationBanner notificationBanner = groupChat.NotificationBanner;
+        notificationBanner.DisplayNotification(Title, MainBody, DisplayDuration);
     }
 }

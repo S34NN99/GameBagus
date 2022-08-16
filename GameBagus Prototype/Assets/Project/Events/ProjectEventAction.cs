@@ -13,7 +13,7 @@ public class ProjectEventAction : MonoBehaviour {
 
     [SerializeField] private UnityEvent onActionSelected;
 
-    public void SelectAction() {
+    public void Fire() {
         onActionSelected.Invoke();
     }
 }

@@ -1,67 +1,58 @@
 ﻿
-using UnityEngine;
+using System.Collections;
 
+using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
-using UnityEngine.Events;
+public class GroupChatBossMessage : MonoBehaviour {
+    [SerializeField] private CandleMessage _chatMessage;
+    public CandleMessage ChatMessage => _chatMessage;
 
-using TMPro;
+    [SerializeField] private Button _moreInfoButton;
+    public Button MoreInfoButton => _moreInfoButton;
 
-public class GroupChatBossMessage : GroupChatMessage {
-    [Header("Additional UI Components")]
-    //[SerializeField] private Image timerBar;
-    //[SerializeField] private TextMeshProUGUI issueTitleText;
-    //[SerializeField] private TextMeshProUGUI footerText;
-
-    [Header("UI Events")]
+    [Header("UI")]
     [SerializeField] private UnityEvent<float> updateProgressCallback;
     [SerializeField] private UnityEvent<string> updateTitleCallback;
     [SerializeField] private UnityEvent<string> updateFooterCallback;
+    [SerializeField] private UnityEvent onTimesUp;
 
-    private float timer;
-    private Issue currentIssue = Issue.defaultIssue;
+    public float Timer { get; private set; }
 
-    protected override void Awake() {
-        base.Awake();
+    public void DisplayMessage(CandleProfile profile, ManagementEvent managementEvent) {
+        ChatMessage.DisplayMessage(profile, managementEvent.MainBody);
+
+        updateTitleCallback.Invoke(managementEvent.Title);
+        updateFooterCallback.Invoke(managementEvent.Footer);
+
+        //StartCoroutine(StartCountdownEnumerator());
+
+        //IEnumerator StartCountdownEnumerator() {
+        //    Timer = managementEvent.DisplayDuration;
+
+        //    yield return new WaitWhile(() => {
+        //        Timer -= Time.deltaTime;
+        //        if (Timer <= 0) {
+        //            Timer = 0;
+        //        }
+
+        //        float currentProgress = Mathf.InverseLerp(0, managementEvent.DisplayDuration, Timer);
+        //        updateProgressCallback.Invoke(currentProgress);
+
+
+        //        return Timer > 0;
+        //    });
+
+        //    managementEvent.DefaultAction.Fire();
+        //    onTimesUp.Invoke();
+        //}
     }
 
-    protected override void Update() {
-        base.Update();
-
-        if (timer > 0) {
-            timer -= Time.deltaTime;
-            if (timer < 0) {
-                timer = 0;
-                // todo force
-            }
-
-            float currentProgress = Mathf.InverseLerp(0, currentIssue.Duration, timer);
-            updateProgressCallback.Invoke(currentProgress);
-
-            //timerBar.fillAmount = Mathf.InverseLerp(0, currentIssue.Duration, timer);
+    public void UpdateProgress(float progress) {
+        if (progress == 0) {
+            onTimesUp.Invoke();
         }
-    }
-
-    public void SetIssue(Issue issue) {
-        currentIssue = issue ?? Issue.defaultIssue;
-
-        //issueTitleText.text = currentIssue.Title;
-        updateTitleCallback.Invoke(currentIssue.Title);
-        //footerText.text = currentIssue.Footer;
-        updateFooterCallback.Invoke(currentIssue.Footer);
-
-        timer = currentIssue.Duration;
-    }
-
-    public class Issue {
-        public static Issue defaultIssue = new Issue() {
-            Title = "Urgent Issue",
-            Footer = "Danger",
-            Duration = 2f,
-        };
-
-        public string Title { get; set; }
-        public string Footer { get; set; }
-        public float Duration { get; set; }
+        updateProgressCallback.Invoke(progress);
     }
 }
