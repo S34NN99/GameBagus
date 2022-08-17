@@ -10,6 +10,10 @@ using UnityEditorInternal;
 public class ProjectEventTrigger : MonoBehaviour {
     [SerializeField] private TriggerCondition[] conditions;
 
+    [Space]
+    [Tooltip("You guys can leave a comment about what the event should do")]
+    [SerializeField] private string remarksForTech;
+
     private bool hasEventFired;
 
     private void Awake() {
