@@ -9,6 +9,7 @@ public class Project : MonoBehaviour {
     [Header("ProgressBar")]
     public float currentProgress;
     public TextMeshProUGUI progressText;
+    public Slider progressBar;
     public Animator wokAnim;
     public int completedProjectCounter;
     public TextMeshProUGUI completedProjectCounterTxt;
@@ -59,7 +60,8 @@ public class Project : MonoBehaviour {
             requiredProgress = GetRequiredProgressForNextProject();
             clock.ResetClock(Random.Range(minProjectDuration, maxProjectDuration));
 
-            wokAnim.SetTrigger("WokLoop");
+            progressBar.value = (currentProgress / requiredProgress);
+            //wokAnim.SetTrigger("WokLoop");
 
             GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnProjectFinishedEvent);
 
