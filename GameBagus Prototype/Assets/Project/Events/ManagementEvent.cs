@@ -39,7 +39,7 @@ public class ManagementEvent : GameEventBase<GroupChat> {
         base.Update();
     }
 
-    protected override void DisplayEvent(GroupChat groupChat) {
+    protected override void TriggerEvent(GroupChat groupChat) {
         GroupChatBossMessage bossMessage = groupChat.CreateBossMessage();
         PhoneCallAlert phoneCallAlert = groupChat.PhoneCallAlert;
 
@@ -47,13 +47,17 @@ public class ManagementEvent : GameEventBase<GroupChat> {
 
         Coroutine timerCoroutine = StartCoroutine(CountdownEnumerator());
 
+        foreach (var availableAction in AvailableActions) {
+            availableAction.EventCallback.AddListener(DeactivateEvent);
+        }
+
         bossMessage.DisplayMessage(BossProfile, this);
         bossMessage.MoreInfoButton.onClick.AddListener(() => {
             phoneCallActivated = true;
 
             phoneCallAlert.Show();
             phoneCallAlert.Message.DisplayMessage(BossProfile, MainBody);
-            phoneCallAlert.SetActions(AvailableActions, DeactivateEvent);
+            phoneCallAlert.SetActions(AvailableActions);
         });
 
         IEnumerator CountdownEnumerator() {
@@ -73,7 +77,7 @@ public class ManagementEvent : GameEventBase<GroupChat> {
                 phoneCallAlert.Hide();
             }
             bossMessage.UpdateProgress(0f);
-            DefaultAction.Fire();
+            DefaultAction.EventCallback.Invoke();
         }
 
         void DeactivateEvent() {

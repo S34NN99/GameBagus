@@ -16,11 +16,7 @@ public class ProjectEvent : GameEventBase<GroupChat> {
     [SerializeField] private float _displayDuration = 4f;
     public float DisplayDuration => _displayDuration;
 
-    //[SerializeField] private ProjectEventType projectEventType;
-
-    //[Space]
-    //[SerializeField] private ProjectEventAction[] _availableActions;
-    //public IReadOnlyList<ProjectEventAction> AvailableActions => _availableActions;
+    [SerializeField] private UnityEvent onEventTriggered;
 
 #if UNITY_EDITOR
     // auto assign trigger
@@ -33,8 +29,10 @@ public class ProjectEvent : GameEventBase<GroupChat> {
         base.Update();
     }
 
-    protected override void DisplayEvent(GroupChat groupChat) {
+    protected override void TriggerEvent(GroupChat groupChat) {
         PhoneNotificationBanner notificationBanner = groupChat.NotificationBanner;
         notificationBanner.DisplayNotification(Title, MainBody, DisplayDuration);
+
+        onEventTriggered.Invoke();
     }
 }

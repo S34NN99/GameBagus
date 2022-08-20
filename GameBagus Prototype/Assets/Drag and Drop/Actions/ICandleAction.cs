@@ -3,6 +3,6 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public abstract class BaseAction : MonoBehaviour {
+public abstract class CandleAction : MonoBehaviour {
     public abstract void ActOn(Candle candle);
 }

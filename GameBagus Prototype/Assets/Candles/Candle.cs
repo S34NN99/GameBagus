@@ -1,9 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+
 using TMPro;
+
+using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class CandleStats {
@@ -23,7 +24,7 @@ public class CandleStats {
     public List<int> MoodThreshold;
 
     [Header("Beta Testing")]
-    public TextMeshProUGUI nameText;
+    public UnityEvent<string> updateNameCallback;
     public TextMeshProUGUI HPText;
     public TextMeshProUGUI CurrentMoodState;
     public TextMeshProUGUI CurrentWorkingState;
@@ -44,22 +45,22 @@ public class Candle : MonoBehaviour, IEntity {
         get => _skin;
         set {
             _skin = value;
-            HeadImage.sprite = _skin.GetFacialExpression(SM.moodState);
-            BodyImage.sprite = _skin.CandleBase;
+            UpdateHeadImageCallback.Invoke(_skin.GetFacialExpression(SM.moodState));
+            UpdateBodyImageCallback.Invoke(_skin.CandleBase);
         }
     }
 
     [SerializeField] private CandleProfile _profile;
     public CandleProfile Profile { get => _profile; set => _profile = value; }
 
-    [SerializeField] private Image _headImage;
-    public Image HeadImage => _headImage;
-
-    [SerializeField] private Image _bodyImage;
-    public Image BodyImage => _bodyImage;
-
     [SerializeField] private RectTransform graphicsParentTransform;
     private float updateTime = 0;
+
+    [SerializeField] private UnityEvent<Sprite> _updateHeadImageCallback;
+    public UnityEvent<Sprite> UpdateHeadImageCallback => _updateHeadImageCallback;
+
+    [SerializeField] private UnityEvent<Sprite> _updateBodyImageCallback;
+    public UnityEvent<Sprite> UpdateBodyImageCallback => _updateBodyImageCallback;
 
     public UnityEvent<Candle> onDeath;
 
@@ -74,7 +75,7 @@ public class Candle : MonoBehaviour, IEntity {
     }
 
     public void Update() {
-        DisplayText();
+        //DisplayText();
         updateTime = Time.deltaTime / 1;
     }
 

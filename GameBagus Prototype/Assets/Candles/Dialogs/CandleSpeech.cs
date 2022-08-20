@@ -10,8 +10,8 @@ public class CandleSpeech : MonoBehaviour {
     [SerializeField] private Candle candle;
 
     [Header("Cooldown")]
-    [SerializeField] private float minDialogCooldown = 3;
-    [SerializeField] private float maxDialogCooldown = 6;
+    [SerializeField] private float minDialogCooldown = 8;
+    [SerializeField] private float maxDialogCooldown = 15;
     //[SerializeField] private float dialogLingerDuration = 2;
 
     [Space]

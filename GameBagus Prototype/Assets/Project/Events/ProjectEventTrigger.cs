@@ -10,6 +10,8 @@ using UnityEditorInternal;
 public class ProjectEventTrigger : MonoBehaviour {
     [SerializeField] private TriggerCondition[] conditions;
 
+    [SerializeField] private bool triggerOnce = true;
+
     [Space]
     [Tooltip("You guys can leave a comment about what the event should do")]
     [SerializeField] private string remarksForTech;
@@ -27,6 +29,8 @@ public class ProjectEventTrigger : MonoBehaviour {
     /// </summary>
     /// <returns></returns>
     public bool GetTrigger() {
+        if (hasEventFired && triggerOnce) return false;
+
         bool allConditionsMet = true;
         foreach (var condition in conditions) {
             if (!condition.ConditionSatisfied) {
@@ -35,7 +39,7 @@ public class ProjectEventTrigger : MonoBehaviour {
             }
         }
 
-        if (allConditionsMet && !hasEventFired) {
+        if (allConditionsMet) {
             hasEventFired = true;
             return true;
         }
@@ -54,6 +58,8 @@ public class ProjectEventTrigger : MonoBehaviour {
         }
         [SerializeField] private TriggerType triggerType;
 
+        [SerializeField] private bool isLatch;
+
         [SerializeField] private ObservableVariable observedVariable;
         [SerializeField] private string comparedValue;
 
@@ -64,25 +70,39 @@ public class ProjectEventTrigger : MonoBehaviour {
                 case TriggerType.Int_Value_Threshold:
                     ObservableProperty<int> targetIntProperty = observedVariable as ObservableProperty<int>;
                     targetIntProperty.OnValueUpdated.AddListener((oldVal, newVal) => {
+                        if (isLatch && ConditionSatisfied) {
+                            return;
+                        }
                         ConditionSatisfied = int.TryParse(comparedValue, out int comparedIntVal) && newVal >= comparedIntVal;
+
                     });
+
                     break;
                 case TriggerType.Float_Value_Threshold:
                 case TriggerType.Float_Value_Threshold01:
                     ObservableProperty<float> targetFloatProperty = observedVariable as ObservableProperty<float>;
                     targetFloatProperty.OnValueUpdated.AddListener((oldVal, newVal) => {
+                        if (isLatch && ConditionSatisfied) {
+                            return;
+                        }
                         ConditionSatisfied = float.TryParse(comparedValue, out float comparedFloatVal) && newVal >= comparedFloatVal;
                     });
                     break;
                 case TriggerType.String_Equals:
                     ObservableProperty<string> targetStringProperty = observedVariable as ObservableProperty<string>;
                     targetStringProperty.OnValueUpdated.AddListener((oldVal, newVal) => {
+                        if (isLatch && ConditionSatisfied) {
+                            return;
+                        }
                         ConditionSatisfied = newVal == comparedValue;
                     });
                     break;
                 case TriggerType.Required_Attributes:
                     HashSetStringProperty hashSetStringProperty = observedVariable as HashSetStringProperty;
                     hashSetStringProperty.OnValueUpdated.AddListener((oldVal, newVal) => {
+                        if (isLatch && ConditionSatisfied) {
+                            return;
+                        }
                         ConditionSatisfied = hashSetStringProperty.GetValueAsText() == comparedValue;
                     });
                     break;
@@ -112,6 +132,7 @@ public class ProjectEventTrigger : MonoBehaviour {
                 EditorGUI.indentLevel++;
 
                 SerializedProperty triggerTypeProp = property.FindPropertyRelative("triggerType");
+                SerializedProperty isLatchProp = property.FindPropertyRelative("isLatch");
                 SerializedProperty observedVariableProp = property.FindPropertyRelative("observedVariable");
 
                 GUIContent comparedValueLabel = new GUIContent("Compared");
@@ -119,6 +140,9 @@ public class ProjectEventTrigger : MonoBehaviour {
 
                 position.y += PropertyRectHeightWithMargins;
                 EditorGUI.PropertyField(position, triggerTypeProp, new GUIContent("Trigger Type"));
+
+                position.y += PropertyRectHeightWithMargins;
+                EditorGUI.PropertyField(position, isLatchProp, new GUIContent("Is Latch", "If true, when the condition is satisfied once, it remains satisfied forever."));
 
                 position.y += PropertyRectHeightWithMargins * 1.5f;
                 bool doesObservedVariableMatchTriggerType = (TriggerCondition.TriggerType)triggerTypeProp.enumValueIndex switch {
@@ -168,7 +192,7 @@ public class ProjectEventTrigger : MonoBehaviour {
         }
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label) {
-            return showContents ? PropertyRectHeightWithMargins * 4.5f : base.GetPropertyHeight(property, label);
+            return showContents ? PropertyRectHeightWithMargins * 5.5f : base.GetPropertyHeight(property, label);
         }
     }
 #endif

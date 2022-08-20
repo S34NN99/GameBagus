@@ -26,7 +26,7 @@ public class PhoneCallAlert : MonoBehaviour {
         gameObject.SetActive(true);
     }
 
-    public void SetActions(IReadOnlyList<ProjectEventAction> actions, System.Action baseAction = null) {
+    public void SetActions(IReadOnlyList<ProjectEventAction> actions) {
         int newButtonsRequired = actions.Count - ActionButtons.Count;
         for (int i = 0; i < newButtonsRequired; i++) {
             Button actionButton = Instantiate(ActionButtonTemplate, ActionButtonParent).GetComponent<Button>();
@@ -44,10 +44,7 @@ public class PhoneCallAlert : MonoBehaviour {
             }
 
             actionButton.onClick.RemoveAllListeners();
-            actionButton.onClick.AddListener(eventAction.Fire);
-            if (baseAction != null) {
-                actionButton.onClick.AddListener(() => baseAction());
-            }
+            actionButton.onClick.AddListener(eventAction.EventCallback.Invoke);
             actionButton.onClick.AddListener(Hide);
 
             actionButton.transform.GetComponentInChildren<TextMeshProUGUI>().text = eventAction.ButtonTitleText;

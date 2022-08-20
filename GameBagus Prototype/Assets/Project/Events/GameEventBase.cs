@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
+/// <summary>
+/// Has the Update and OnValidate functions implemented
+/// </summary>
+/// <typeparam name="UiDisplay"></typeparam>
 public abstract class GameEventBase<UiDisplay> : MonoBehaviour where UiDisplay : MonoBehaviour {
     [SerializeField] protected ProjectEventTrigger trigger;
 
@@ -26,9 +30,9 @@ public abstract class GameEventBase<UiDisplay> : MonoBehaviour where UiDisplay :
 
     protected virtual void Update() {
         if (trigger.GetTrigger()) {
-            DisplayEvent(eventDisplay);
+            TriggerEvent(eventDisplay);
         }
     }
 
-    protected abstract void DisplayEvent(UiDisplay display);
+    protected abstract void TriggerEvent(UiDisplay display);
 }

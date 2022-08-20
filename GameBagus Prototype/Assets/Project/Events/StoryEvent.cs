@@ -26,7 +26,7 @@ public class StoryEvent : GameEventBase<GroupChat> {
         base.Update();
     }
 
-    protected override void DisplayEvent(GroupChat groupChat) {
+    protected override void TriggerEvent(GroupChat groupChat) {
         PhoneCallAlert phoneCallAlert = groupChat.PhoneCallAlert;
 
         phoneCallAlert.Show();

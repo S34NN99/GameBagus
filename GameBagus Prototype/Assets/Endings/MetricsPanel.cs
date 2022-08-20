@@ -2,8 +2,8 @@
 using System.Collections;
 
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using TMPro;
 using UnityEngine.UI;
 
 public class MetricsPanel : MonoBehaviour {
@@ -12,8 +12,8 @@ public class MetricsPanel : MonoBehaviour {
 
     [Header("UI Components")]
     [SerializeField] private RectTransform rootTransform;
-    [SerializeField] private TextMeshProUGUI tasksCompletedText;
-    [SerializeField] private TextMeshProUGUI burnoutCountText;
+    [SerializeField] private UnityEvent<string> updateTasksCompletedTextCallback;
+    [SerializeField] private UnityEvent<string> updateBurnoutCountTextCallback;
     [SerializeField] private Image[] starImages;
 
     public void Show(float delay = 0) {
@@ -39,11 +39,11 @@ public class MetricsPanel : MonoBehaviour {
     }
 
     public void UpdateBurnoutCount(int oldVal, int burnoutCount) {
-        burnoutCountText.text = "Candles burnt out : " + burnoutCount;
+        updateBurnoutCountTextCallback.Invoke("Candles burnt out : " + burnoutCount);
     }
 
     public void UpdateTasksCompleted(int oldVal, int tasksCompleted) {
-        tasksCompletedText.text = "Tasks completed : " + tasksCompleted;
+        updateTasksCompletedTextCallback.Invoke("Tasks completed : " + tasksCompleted);
     }
 
     public void UpdateStars(int oldVal, int starsEarned) {
