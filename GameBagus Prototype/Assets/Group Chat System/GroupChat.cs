@@ -13,6 +13,9 @@ public class GroupChat : MonoBehaviour {
     [SerializeField] private GameObject _bossMessageTemplate;
     private GameObject BossMessageTemplate => _bossMessageTemplate;
 
+    [SerializeField] private GameObject _playerChatMessageTemplate;
+    private GameObject PlayerChatMessageTemplate => _playerChatMessageTemplate;
+
 
     [Space]
     [SerializeField] private RectTransform _chatMessageParent;

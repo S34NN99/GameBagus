@@ -21,14 +21,18 @@ public class CandleManager : MonoBehaviour {
         "Steven",
     };
 
-    [SerializeField] private GameObject candleTemplate;
+    //[SerializeField] private GameObject candleTemplate;
     [SerializeField] private GameObject[] candleTemplates;
 
-    [SerializeField] private Vector2[] candlePositions;
+    //[SerializeField] private Vector2[] candlePositions;
     [SerializeField] private Candle[] candles;
 
     [SerializeField] private CandleSkin[] candleSkins;
     [SerializeField] private CandlePersonality[] candlePersonalities;
+
+    private void Awake() {
+        candles = new Candle[candleTemplates.Length];
+    }
 
     private void Start() {
         CheckCandles();
@@ -38,9 +42,9 @@ public class CandleManager : MonoBehaviour {
         for (int i = 0; i < candles.Length; i++) {
             if (candles[i] == null) {
                 // Spawn candle here
-                GameObject candleGO = Instantiate(candleTemplate, transform);
-                candleGO.SetActive(true);
-                candleGO.GetComponent<RectTransform>().anchoredPosition = candlePositions[i];
+                GameObject candleGO = Instantiate(candleTemplates[i], transform);
+                //candleGO.SetActive(true);
+                //candleGO.GetComponent<RectTransform>().anchoredPosition = candlePositions[i];
 
                 candles[i] = candleGO.GetComponent<Candle>();
                 string candleName;
@@ -49,7 +53,7 @@ public class CandleManager : MonoBehaviour {
                 } else {
                     candleName = maleNames[Random.Range(0, maleNames.Length)];
                 }
-                candles[i].candleStats.nameText.text = candleName;
+                candles[i].candleStats.updateNameCallback.Invoke(candleName);
                 //candles[i].Skin = candleSkins[Random.Range(0, candleSkins.Length)];
                 candles[i].Skin = candleSkins[i];
 

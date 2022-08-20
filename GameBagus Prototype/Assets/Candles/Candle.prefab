@@ -962,7 +962,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5359402302208987669}
-  - component: {fileID: 5359402302208987670}
+  - component: {fileID: 6428194811839695005}
   - component: {fileID: -5744972036774059160}
   - component: {fileID: 6906471467138375371}
   - component: {fileID: 3537397514384867276}
@@ -997,7 +997,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 268, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5359402302208987670
+--- !u!114 &6428194811839695005
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1006,10 +1006,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5359402302208987754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2de574ecea7234381a2d5f82279452b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 1727812062d9a4790a3b8e32838b682b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetCandle: {fileID: -5744972036774059160}
+  parentCanvas: {fileID: 0}
+  candleInUi: 0
+  candleCamera: {fileID: 0}
+  positionOnScreen: {x: 0, y: 0}
 --- !u!114 &-5744972036774059160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1028,22 +1032,51 @@ MonoBehaviour:
     HP: 0
     Power: 2
     RegenerateHP: 10
-    DecayPerSec: 10
+    Decay: 0
     AdditionalPower: 2
     AdditionalDecay: 10
-    Mutltiplier:
-    - {x: 3, y: 0}
-    - {x: 2, y: 5}
-    - {x: 1, y: 10}
+    Multiplier: []
     MoodThreshold: 90010000c800000000000000
     nameText: {fileID: 879413119361205574}
     HPText: {fileID: 1486359525}
     CurrentMoodState: {fileID: 1890207384}
     CurrentWorkingState: {fileID: 90793248}
   _skin: {fileID: 11400000, guid: 33da8d173f591455094c0d8603bee0cd, type: 2}
-  _headImage: {fileID: 7400414124865200413}
-  _bodyImage: {fileID: 3623485460449808591}
+  _profile: {fileID: 0}
   graphicsParentTransform: {fileID: 7445085905104273939}
+  _updateHeadImageCallback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7400414124865200413}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _updateBodyImageCallback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3623485460449808591}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6906471467138375371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1057,10 +1090,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogs: {fileID: 11400000, guid: 506dcc9176cfc4a9fa303c14e167753a, type: 2}
+  candle: {fileID: -5744972036774059160}
   minDialogCooldown: 4
   maxDialogCooldown: 7
-  dialogLingerDuration: 2
-  candle: {fileID: -5744972036774059160}
   onShowDialog:
     m_PersistentCalls:
       m_Calls:
@@ -1100,46 +1132,6 @@ MonoBehaviour:
           m_StringArgument: Expand Out
           m_BoolArgument: 0
         m_CallState: 2
-  onHideDialog:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6897754546926330587}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: ResetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Shrink In
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6897754546926330587}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: ResetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Expand Out
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6897754546926330587}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Shrink In
-          m_BoolArgument: 0
-        m_CallState: 2
-  dialogUiText: {fileID: 346833639121859419}
 --- !u!114 &3537397514384867276
 MonoBehaviour:
   m_ObjectHideFlags: 0

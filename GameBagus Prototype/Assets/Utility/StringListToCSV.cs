@@ -62,31 +62,31 @@ public class StringListToCSV : EditorWindow {
 }
 
 
-public class GameEventEditorWindow : EditorWindow {
-    private IReadOnlyList<ProjectEvent> projectEvents;
-    private IReadOnlyList<ManagementEvent> managementEvents;
-    private IReadOnlyList<StoryEvent> storyEvents;
+//public class GameEventEditorWindow : EditorWindow {
+//    private IReadOnlyList<ProjectEvent> projectEvents;
+//    private IReadOnlyList<ManagementEvent> managementEvents;
+//    private IReadOnlyList<StoryEvent> storyEvents;
 
 
-    // Add menu named "My Window" to the Window menu
-    [MenuItem("Window/Custom/Game Events")]
-    static void Init() {
-        // Get existing open window or if none, make a new one:
-        GameEventEditorWindow window = (GameEventEditorWindow)GetWindow(typeof(GameEventEditorWindow));
-        window.Show();
-    }
+//    // Add menu named "My Window" to the Window menu
+//    [MenuItem("Window/Custom/Game Events")]
+//    static void Init() {
+//        // Get existing open window or if none, make a new one:
+//        GameEventEditorWindow window = (GameEventEditorWindow)GetWindow(typeof(GameEventEditorWindow));
+//        window.Show();
+//    }
 
-    private void OnEnable() {
-        projectEvents = FindObjectsOfType<ProjectEvent>();
-        managementEvents = FindObjectsOfType<ManagementEvent>();
-        storyEvents = FindObjectsOfType<StoryEvent>();
-
-
-    }
-
-    private void OnGUI() {
+//    private void OnEnable() {
+//        projectEvents = FindObjectsOfType<ProjectEvent>();
+//        managementEvents = FindObjectsOfType<ManagementEvent>();
+//        storyEvents = FindObjectsOfType<StoryEvent>();
 
 
-    }
-}
+//    }
+
+//    private void OnGUI() {
+
+
+//    }
+//}
 #endif
