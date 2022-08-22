@@ -12,6 +12,9 @@ public class StoryEvent : GameEventBase<GroupChat> {
     [SerializeField] private ProjectEventAction[] _availableActions;
     public IReadOnlyList<ProjectEventAction> AvailableActions => _availableActions;
 
+    [SerializeField] private CandleProfile _bossProfile;
+    public CandleProfile BossProfile => _bossProfile;
+
 #if UNITY_EDITOR
     // auto assign trigger
     protected override void OnValidate() {
@@ -24,6 +27,10 @@ public class StoryEvent : GameEventBase<GroupChat> {
     }
 
     protected override void DisplayEvent(GroupChat groupChat) {
-        groupChat.ShowPhoneCallAlert(this);
+        PhoneCallAlert phoneCallAlert = groupChat.PhoneCallAlert;
+
+        phoneCallAlert.Show();
+        phoneCallAlert.Message.DisplayMessage(BossProfile, MainBody);
+        phoneCallAlert.SetActions(AvailableActions);
     }
 }

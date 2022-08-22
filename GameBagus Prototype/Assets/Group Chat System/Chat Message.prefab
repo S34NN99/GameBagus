@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1501176886512935139}
   - component: {fileID: 4769938261153826837}
   - component: {fileID: 3924516857735964447}
-  - component: {fileID: 6327338266381716653}
   m_Layer: 5
   m_Name: Profile Pic
   m_TagString: Untagged
@@ -77,26 +76,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6327338266381716653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 459286771702495055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: 100
-  m_PreferredHeight: -1
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
 --- !u!1 &3027442327377513294
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +88,7 @@ GameObject:
   - component: {fileID: 3542528977662599622}
   - component: {fileID: 9115962700702248099}
   m_Layer: 5
-  m_Name: Msg Bubble
+  m_Name: Message Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,7 +297,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1451681784149344543}
-  - component: {fileID: 2280161279001926526}
+  - component: {fileID: 5358674787350424468}
+  - component: {fileID: 3214858286097413905}
+  - component: {fileID: 564695965632240848}
+  - component: {fileID: 3255763288022853137}
+  - component: {fileID: 4413911419186448864}
   m_Layer: 5
   m_Name: Chat Message
   m_TagString: Untagged
@@ -349,7 +332,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2280161279001926526
+--- !u!114 &5358674787350424468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -358,16 +341,137 @@ MonoBehaviour:
   m_GameObject: {fileID: 3738104873369078346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5014d0fec02294672b3ebdb1da565dc4, type: 3}
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profilePic: {fileID: 3924516857735964447}
-  profileNameText: {fileID: 7208251948163963991}
-  messageText: {fileID: 625139080342645283}
-  profileNameTextHeight: 40
-  minimumTextHeight: 60
-  smoothSpeed: 2
-  smoothAccuracy: 1
+  m_ShowMaskGraphic: 0
+--- !u!114 &3214858286097413905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738104873369078346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &564695965632240848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738104873369078346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53bf2a349e2fd4ebc8adb56bd28fb253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateProfilePicCallback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3924516857735964447}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  updateProfileNameCallback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7208251948163963991}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  updateMessageCallback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 625139080342645283}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3255763288022853137}
+        m_TargetAssemblyTypeName: TextHeightFitter, Assembly-CSharp
+        m_MethodName: RecalculateTextHeight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3255763288022853137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738104873369078346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2892d699bc0f476aa33ac20a4937baa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRectTransform: {fileID: 1451681784149344543}
+  staticHeight: 40
+  textTargets:
+  - _textTarget: {fileID: 625139080342645283}
+    _minimumHeight: 60
+  smoothTime: 15
+  smoothAccuracy: 0.05
+  _recalculateHeightOnUpdate: 0
+--- !u!222 &4413911419186448864
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738104873369078346}
+  m_CullTransparentMesh: 1
 --- !u!1 &6701317696303764472
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,7 +484,7 @@ GameObject:
   - component: {fileID: 7641536162261747789}
   - component: {fileID: 625139080342645283}
   m_Layer: 5
-  m_Name: Msg Text
+  m_Name: Message Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

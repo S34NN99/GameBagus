@@ -7,37 +7,45 @@ using UnityEngine;
 
 public class GroupChat : MonoBehaviour {
     [Header("Templates")]
-    [SerializeField] private GameObject chatMessageTemplate;
-    [SerializeField] private GameObject bossMessageTemplate;
+    [SerializeField] private GameObject _chatMessageTemplate;
+    private GameObject ChatMessageTemplate => _chatMessageTemplate;
+
+    [SerializeField] private GameObject _bossMessageTemplate;
+    private GameObject BossMessageTemplate => _bossMessageTemplate;
+
 
     [Space]
-    [SerializeField] private RectTransform chatMessageParent;
-    [SerializeField] private float chatMessageSpacing = 25f;
-    private List<GroupChatMessage> messagesInChat = new();
-    private Queue<GroupChatMessage> chatMessageQueue = new();
-    private GroupChatMessage currentMessage;
+    [SerializeField] private RectTransform _chatMessageParent;
+    private RectTransform ChatMessageParent => _chatMessageParent;
 
     [Space]
-    [SerializeField] private CandleProfile bossProfile;
-    [SerializeField] private PhoneNotificationBanner notificationBanner;
-    [SerializeField] private PhoneCallAlert phoneCallAlert;
+    [SerializeField] private PhoneNotificationBanner _notificationBanner;
+    public PhoneNotificationBanner NotificationBanner => _notificationBanner;
+
+    [SerializeField] private PhoneCallAlert _phoneCallAlert;
+    public PhoneCallAlert PhoneCallAlert => _phoneCallAlert;
+
+    private List<TextHeightFitter> messagesInChat = new();
+    private Queue<TextHeightFitter> chatMessageQueue = new();
+    private TextHeightFitter currentMessage;
+
 
     private void Awake() {
 
     }
 
     private void Update() {
-        //if (currentMessage == null) {
-        //    if (chatMessageQueue.Any()) {
-        //        currentMessage = chatMessageQueue.Dequeue();
-        //        currentMessage.gameObject.SetActive(true);
-
-        //        ResizeGroupChat();
-        //    }
-        //} else if (!currentMessage.IsAnimating) {
-        //    // stops animating, free to display new message on next frame
-        //    currentMessage = null;
-        //}
+        if (currentMessage == null) {
+            if (chatMessageQueue.Any()) {
+                currentMessage = chatMessageQueue.Dequeue();
+                currentMessage.gameObject.SetActive(true);
+            }
+        } else {
+            if (!currentMessage.IsAnimating) {
+                // stops animating, free to display new message on next frame
+                currentMessage = null;
+            }
+        }
     }
 
     public void ShowPanel() {
@@ -48,48 +56,34 @@ public class GroupChat : MonoBehaviour {
 
     }
 
+    public CandleMessage CreateTextMessage() {
+        CandleMessage chatMessage = Instantiate(ChatMessageTemplate, ChatMessageParent).GetComponent<CandleMessage>();
+        chatMessage.gameObject.SetActive(false);
+
+        QueueMessage(chatMessage.GetComponent<TextHeightFitter>());
+
+        return chatMessage;
+    }
+
     public void SendTextMessage(CandleProfile profile, string message) {
-        GroupChatMessage chatMessage = Instantiate(chatMessageTemplate, chatMessageParent).GetComponent<GroupChatMessage>();
+        CandleMessage chatMessage = CreateTextMessage();
         chatMessage.DisplayMessage(profile, message);
-        messagesInChat.Add(chatMessage);
-        ResizeGroupChat();
-
-        //chatMessage.gameObject.SetActive(false);
-        //chatMessageQueue.Enqueue(chatMessage);
     }
 
-    public void ShowBossMessage(ManagementEvent managementEvent) {
-        GroupChatBossMessage bossMessage = Instantiate(bossMessageTemplate, chatMessageParent).GetComponent<GroupChatBossMessage>();
-        bossMessage.SetIssue(new GroupChatBossMessage.Issue {
-            Title = managementEvent.Title,
-            Footer = managementEvent.Footer,
-            Duration = managementEvent.DisplayDuration,
-        });
-        bossMessage.DisplayMessage(bossProfile, managementEvent.MainBody);
-        messagesInChat.Add(bossMessage);
-        ResizeGroupChat();
+    public GroupChatBossMessage CreateBossMessage() {
+        GroupChatBossMessage bossMessage = Instantiate(BossMessageTemplate, ChatMessageParent).GetComponent<GroupChatBossMessage>();
+        bossMessage.gameObject.SetActive(false);
 
-        //bossMessage.gameObject.SetActive(false);
-        //chatMessageQueue.Enqueue(bossMessage);
+        QueueMessage(bossMessage.GetComponent<TextHeightFitter>());
+
+        return bossMessage;
     }
 
-    private void ResizeGroupChat() {
-        float totalHeight = 0;
-        foreach (var message in messagesInChat) {
-            totalHeight += message.RT.sizeDelta.y;
-        }
-        totalHeight += chatMessageSpacing * messagesInChat.Count - 1;
+    private void QueueMessage(TextHeightFitter message) {
+        messagesInChat.Add(message);
+        chatMessageQueue.Enqueue(message);
 
-        chatMessageParent.sizeDelta = new Vector2(chatMessageParent.sizeDelta.x, totalHeight);
+        message.SetHeightTo(40);
+        message.RecalculateTextHeight();
     }
-
-    public void ShowNotificationAlertBanner(ProjectEvent projectEvent) {
-        notificationBanner.DisplayNotification(projectEvent.Title, projectEvent.MainBody, projectEvent.DisplayDuration);
-    }
-
-    public void ShowPhoneCallAlert(StoryEvent storyEvent) {
-    }
-}
-
-public class PhoneCallAlert : MonoBehaviour {
 }

@@ -9,18 +9,47 @@ using UnityEngine.Events;
 
 public abstract class ObservableVariable : MonoBehaviour {
     #region Static Functions
+    /// <summary>
+    /// Finds the <see cref="ObservableVariable"/> in <i><paramref name="parameters"/></i> that has a matching id with <i><paramref name="uniqueId"/></i>
+    /// </summary>
+    /// <param name="parameters">List of <see cref="ObservableVariable"/> to search</param>
+    /// <param name="uniqueId">Finds the <see cref="ObservableVariable"/> that has this id</param>
+    /// <returns></returns>
     public static ObservableVariable FindProperty(IEnumerable<ObservableVariable> parameters, string uniqueId) {
         return parameters.FirstOrDefault(_ => _.UniqueId == uniqueId);
     }
 
+    /// <summary>
+    /// Finds the <see cref="ObservableVariable"/> in the scene that has a matching id with <i><paramref name="uniqueId"/></i>
+    /// </summary> 
+    /// <param name="uniqueId">Finds the <see cref="ObservableVariable"/> that has this id</param>
+    /// <returns></returns>
     public static ObservableVariable FindProperty(string uniqueId) => FindProperty(FindObjectsOfType<ObservableVariable>(), uniqueId);
 
+    /// <summary>
+    /// Finds the <see cref="ObservableVariable"/> in <i><paramref name="parameters"/></i> that has a matching id with <i><paramref name="uniqueId"/></i>
+    /// </summary>
+    /// <param name="parameters">List of <see cref="ObservableVariable"/> to search</param>
+    /// <param name="uniqueId">Finds the <see cref="ObservableVariable"/> that has this id</param>
+    /// <returns></returns>
     public static T FindProperty<T>(IEnumerable<T> parameters, string uniqueId) where T : ObservableVariable {
         return parameters.FirstOrDefault(_ => _.UniqueId == uniqueId);
     }
 
+    /// <summary>
+    /// Finds the <see cref="ObservableVariable"/> in the scene that has a matching id with <i><paramref name="uniqueId"/></i>
+    /// </summary> 
+    /// <param name="uniqueId">Finds the <see cref="ObservableVariable"/> that has this id</param>
+    /// <returns></returns>
     public static T FindProperty<T>(string uniqueId) where T : ObservableVariable => FindProperty(FindObjectsOfType<T>(), uniqueId);
 
+    /// <summary>
+    /// <para>Substrings enclosed with curly brackets are seen as runtime variables.</para>
+    /// <para>Finds <see cref="ObservableVariable"/> with an id that matches the enclosed substring.</para>
+    /// <para>Replaces the enclosed substring with the value from <see cref="GetValueAsText"/></para>
+    /// </summary>
+    /// <param name="text"></param>
+    /// <returns></returns>
     public static string ConvertToRuntimeText(string text) {
         if (text == null || text == "") return "";
 

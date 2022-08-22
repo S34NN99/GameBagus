@@ -54,7 +54,7 @@ public class CandleManager : MonoBehaviour {
                 candles[i].Skin = candleSkins[i];
 
                 CandleSpeech candleSpeech = candles[i].GetComponent<CandleSpeech>();
-                candleSpeech.ShowDialog("Hi, I'm " + candleName);
+                //candleSpeech.ShowDialog("Hi, I'm " + candleName);
 
                 CandleStory candleStory = candles[i].GetComponent<CandleStory>();
                 candleStory.Personality = candlePersonalities[Random.Range(0, candlePersonalities.Length)];

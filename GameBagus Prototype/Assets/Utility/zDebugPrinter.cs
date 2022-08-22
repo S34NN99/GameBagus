@@ -10,4 +10,16 @@ public class zDebugPrinter : MonoBehaviour {
     public void Print() {
         print(printText);
     }
+
+    public void Print(string text) {
+        print(text);
+    }
+
+    public void PrintAsRuntimeStr() {
+        print(ObservableVariable.ConvertToRuntimeText(printText));
+    }
+
+    public void PrintAsRuntimeStr(string text) {
+        print(ObservableVariable.ConvertToRuntimeText(text));
+    }
 }

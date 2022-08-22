@@ -13,7 +13,12 @@ public class ProjectEventAction : MonoBehaviour {
 
     [SerializeField] private UnityEvent onActionSelected;
 
-    public void SelectAction() {
+
+    [Space]
+    [Tooltip("You guys can leave a comment about what the event should do")]
+    [SerializeField] private string remarksForTech;
+
+    public void Fire() {
         onActionSelected.Invoke();
     }
 }
