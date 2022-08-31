@@ -8,7 +8,6 @@ public class Project : MonoBehaviour {
     [Space(20)]
     [Header("ProgressBar")]
     public float currentProgress;
-    public TextMeshProUGUI progressText;
     public Slider progressBar;
     public int completedProjectCounter;
     public TextMeshProUGUI completedProjectCounterTxt;
@@ -70,7 +69,6 @@ public class Project : MonoBehaviour {
         }
 
         progressBar.value = currentProgress / requiredProgress;
-        //progressText.text = (Mathf.InverseLerp(0, requiredProgress, currentProgress) * 100).ToString("0.0") + " %";
     }
 
     private int GetRequiredProgressForNextProject() {
