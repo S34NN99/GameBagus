@@ -10,7 +10,6 @@ public class Project : MonoBehaviour {
     public float currentProgress;
     public TextMeshProUGUI progressText;
     public Slider progressBar;
-    public Animator wokAnim;
     public int completedProjectCounter;
     public TextMeshProUGUI completedProjectCounterTxt;
 
@@ -46,7 +45,7 @@ public class Project : MonoBehaviour {
         foreach (var candle in candleManager.GetCandles()) {
             candle.currCandle.SM.UpdateStates(this);
         }
-        ProgressPercentageProp.Value = Mathf.InverseLerp(0, requiredProgress, currentProgress);
+        //ProgressPercentageProp.Value = Mathf.InverseLerp(0, requiredProgress, currentProgress);
     }
 
     public void UpdateVisuals() {
@@ -60,9 +59,6 @@ public class Project : MonoBehaviour {
             requiredProgress = GetRequiredProgressForNextProject();
             clock.ResetClock(Random.Range(minProjectDuration, maxProjectDuration));
 
-            progressBar.value = (currentProgress / requiredProgress);
-            //wokAnim.SetTrigger("WokLoop");
-
             GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnProjectFinishedEvent);
 
             isFinishing = false;
@@ -73,7 +69,8 @@ public class Project : MonoBehaviour {
             isFinishing = true;
         }
 
-        progressText.text = (Mathf.InverseLerp(0, requiredProgress, currentProgress) * 100).ToString("0.0") + " %";
+        progressBar.value = currentProgress / requiredProgress;
+        //progressText.text = (Mathf.InverseLerp(0, requiredProgress, currentProgress) * 100).ToString("0.0") + " %";
     }
 
     private int GetRequiredProgressForNextProject() {
