@@ -75,6 +75,7 @@ public class ProjectEventTrigger : MonoBehaviour {
                             return;
                         }
                         ConditionSatisfied = int.TryParse(comparedValue, out int comparedIntVal) && newVal >= comparedIntVal;
+
                     });
 
                     break;
