@@ -12,12 +12,6 @@ public class CandleSpeech : MonoBehaviour {
     [Header("Cooldown")]
     [SerializeField] private float minDialogCooldown = 8;
     [SerializeField] private float maxDialogCooldown = 15;
-    //[SerializeField] private float dialogLingerDuration = 2;
-
-    [Space]
-    [SerializeField] private UnityEvent<CandleProfile, string> onShowDialog;
-    //[SerializeField] private UnityEvent onHideDialog;
-    //[SerializeField] private TextMeshProUGUI dialogUiText;
 
     private float cooldownTimer;
 
@@ -28,28 +22,12 @@ public class CandleSpeech : MonoBehaviour {
     private void Update() {
         cooldownTimer -= Time.deltaTime;
         if (cooldownTimer <= 0) {
-            string dialog = GetDialog();
-            ShowDialog(dialog);
+            candle.ShowDialog(GetDialog());
+            cooldownTimer = Random.Range(minDialogCooldown, maxDialogCooldown);
         }
     }
 
     public string GetDialog() {
         return dialogs.GetDialogFromCandleState(candle.SM.workingState.Name, candle.SM.moodState.Name);
-    }
-
-    public void ShowDialog(string dialogText) {
-        onShowDialog.Invoke(candle.Profile, dialogText);
-        cooldownTimer = Random.Range(minDialogCooldown, maxDialogCooldown);
-
-        //onShowDialog.Invoke();
-        //dialogUiText.text = dialogText;
-
-        //StartCoroutine(HideDialog());
-        //cooldownTimer = Random.Range(minDialogCooldown, maxDialogCooldown) + dialogLingerDuration;
-
-        //IEnumerator HideDialog() {
-        //    yield return new WaitForSeconds(dialogLingerDuration);
-        //    onHideDialog.Invoke();
-        //}
     }
 }

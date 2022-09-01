@@ -53,7 +53,8 @@ public class CandleManager : MonoBehaviour {
                 } else {
                     candleName = maleNames[Random.Range(0, maleNames.Length)];
                 }
-                candles[i].candleStats.updateNameCallback.Invoke(candleName);
+                //candles[i].candleStats.updateNameCallback.Invoke(candleName);
+                candles[i].Stats.updateNameCallback.Invoke(candleName);
                 //candles[i].Skin = candleSkins[Random.Range(0, candleSkins.Length)];
                 candles[i].Skin = candleSkins[i];
 
@@ -91,5 +92,46 @@ public class CandleManager : MonoBehaviour {
                 loseScreen.ShowLoseScreen();
             }
         }
+    }
+}
+
+
+public class CandleRandomiser : ScriptableObject {
+    [SerializeField] private GameObject[] candleTemplates;
+    [SerializeField] private CandleSkin[] candleSkins;
+    [SerializeField] private CandlePersonality[] candlePersonalities;
+
+    private string[] femaleNames = {
+        "Elisa",
+        "Ashley",
+        "Nicole",
+        "Sarah",
+        "Nadia",
+    };
+
+    private string[] maleNames = {
+        "Joe",
+        "Brian",
+        "Adam",
+        "Jason",
+        "Steven",
+    };
+
+    public void Randomise(Candle candle) {
+        string candleName;
+        if (Random.Range(0, 2) == 1) {
+            candleName = femaleNames[Random.Range(0, femaleNames.Length)];
+        } else {
+            candleName = maleNames[Random.Range(0, maleNames.Length)];
+        }
+        //candle.candleStats.updateNameCallback.Invoke(candleName);
+        candle.Stats.updateNameCallback.Invoke(candleName);
+        candle.Skin = candleSkins[Random.Range(0, candleSkins.Length)];
+
+        CandleSpeech candleSpeech = candle.GetComponent<CandleSpeech>();
+        //candleSpeech.ShowDialog("Hi, I'm " + candleName);
+
+        CandleStory candleStory = candle.GetComponent<CandleStory>();
+        candleStory.Personality = candlePersonalities[Random.Range(0, candlePersonalities.Length)];
     }
 }

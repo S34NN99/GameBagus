@@ -10,9 +10,9 @@ public class M_Neutral : MoodState {
 
     public override void Enter(IEntity entity) {
         entity.currCandle.UpdateHeadImageCallback.Invoke(entity.currCandle.Skin.GetFacialExpression(this));
+        entity.currCandle.SM.powerMod.Strength = 2;
         CandleSpeech speech = entity.currCandle.GetComponent<CandleSpeech>();
-        speech.ShowDialog(speech.GetDialog());
-        Debug.Log("State Speech");
+        entity.currCandle.ShowDialog(speech.GetDialog());
     }
 
     public override void Update(IEntity entity, Project pb) {
@@ -31,8 +31,10 @@ public class M_Neutral : MoodState {
     }
 
     public override bool CalculateThreshold(IEntity entity) {
-        float threshold = entity.currCandle.candleStats.MoodThreshold[CurrentIndex];
-        return entity.currCandle.candleStats.HP < threshold;
+        //float threshold = entity.currCandle.candleStats.MoodThreshold[CurrentIndex];
+        //return entity.currCandle.candleStats.HP < threshold;
+        float threshold = entity.currCandle.Stats.MoodThreshold[CurrentIndex];
+        return entity.currCandle.Stats.HpProp.Value < threshold;
     }
 
 }

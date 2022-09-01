@@ -18,13 +18,13 @@ public class GroupChatBossMessage : MonoBehaviour {
     [SerializeField] private UnityEvent<string> updateFooterCallback;
     [SerializeField] private UnityEvent onTimesUp;
 
-    public float Timer { get; private set; }
+    //public float Timer { get; private set; }
 
-    public void DisplayMessage(CandleProfile profile, ManagementEvent managementEvent) {
-        ChatMessage.DisplayMessage(profile, managementEvent.MainBody);
+    public void DisplayMessage(CandleProfile profile, string title, string mainBody, string footer) {
+        ChatMessage.DisplayMessage(profile, mainBody);
 
-        updateTitleCallback.Invoke(managementEvent.Title);
-        updateFooterCallback.Invoke(managementEvent.Footer);
+        updateTitleCallback.Invoke(title);
+        updateFooterCallback.Invoke(footer);
 
         //StartCoroutine(StartCountdownEnumerator());
 

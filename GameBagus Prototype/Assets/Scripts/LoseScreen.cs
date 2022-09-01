@@ -14,10 +14,11 @@ public class LoseScreen : MonoBehaviour {
     public TextMeshProUGUI completedProjectText;
 
     [SerializeField] private IntProperty headCountProp;
+    [SerializeField] private IntProperty completedProjectsProp;
 
     private void DisplayStats() {
         headCountText.text = "Candles burnt out : " + headCountProp.Value;
-        completedProjectText.text = " Projects completed : " + progressBar.completedProjectCounter;
+        completedProjectText.text = " Projects completed : " + completedProjectsProp.Value;
     }
 
     public void ShowLoseScreen() {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CandleStory : MonoBehaviour {
-    [SerializeField] private CandleSpeech candleSpeech;
+    [SerializeField] private Candle candle;
 
     [SerializeField] private CandlePersonality _personality;
     public CandlePersonality Personality { get => _personality; set => _personality = value; }
@@ -21,7 +21,7 @@ public class CandleStory : MonoBehaviour {
         if (cooldownTimer <= 0) {
             if (currentProgressInStory >= Personality.StoryQuotes.Length) return;
 
-            candleSpeech.ShowDialog(Personality.StoryQuotes[currentProgressInStory]);
+            candle.ShowDialog(Personality.StoryQuotes[currentProgressInStory]);
             currentProgressInStory++;
 
             cooldownTimer = Random.Range(10f, 20f);

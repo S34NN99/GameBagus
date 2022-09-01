@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+[System.Obsolete]
 public class StoryCheckpointPanel : MonoBehaviour {
     [SerializeField] private GameObject rootPanel;
 

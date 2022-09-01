@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 using TMPro;
 
@@ -6,36 +7,114 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+//[System.Serializable]
+//public class CandleStats {
+//    public float MaxHP = 600;
+//    public float HP = 600;
+//    public float Power = 2;
+//    public float RegenerateHP = 10;
+//    public float Decay = 2;
+
+//    [Header("Crunch")]
+//    public float AdditionalPower;
+//    public float AdditionalDecay;
+
+//    [Header("Mood")]
+//    // x = power, y = decay
+//    public List<Vector2Int> Multiplier;
+//    public List<int> MoodThreshold;
+
+//    [Header("Beta Testing")]
+//    public UnityEvent<string> updateNameCallback;
+//    public TextMeshProUGUI HPText;
+//    public TextMeshProUGUI CurrentMoodState;
+//    public TextMeshProUGUI CurrentWorkingState;
+
+//}
+
 [System.Serializable]
 public class CandleStats {
-    public float MaxHP;
-    public float HP;
-    public float Power;
-    public float RegenerateHP;
-    public float Decay;
+    private float _maxHp;
+    public float MaxHp {
+        get => _maxHp;
+        set {
+            _maxHp = value;
+            HpProp.Value = _maxHp;
+        }
+    }
 
-    [Header("Crunch")]
-    public float AdditionalPower;
-    public float AdditionalDecay;
+    [SerializeField] private FloatProperty _hpProp;
+    public FloatProperty HpProp => _hpProp;
 
-    [Header("Mood")]
-    // x = power, y = decay
-    public List<Vector2Int> Multiplier;
-    public List<int> MoodThreshold;
+    [SerializeField] private List<Modifier> powerMods;
+    [SerializeField] private List<Modifier> decayMods;
 
-    [Header("Beta Testing")]
+    [SerializeField] private List<int> _moodThreshold;
+    public IReadOnlyList<int> MoodThreshold => _moodThreshold;
+
     public UnityEvent<string> updateNameCallback;
-    public TextMeshProUGUI HPText;
-    public TextMeshProUGUI CurrentMoodState;
-    public TextMeshProUGUI CurrentWorkingState;
 
+    public float CalculateWorkDone() => CalculateModifierEffect(powerMods);
+    public float CalculateDecay() => CalculateModifierEffect(decayMods);
+
+    private static float CalculateModifierEffect(List<Modifier> modList) {
+        if (!modList.Any()) return 0;
+
+        float finalEffect = 0;
+        int maxPriority = modList.Max(x => x.Priority);
+        IEnumerable<Modifier> modifiers = modList.Where(x => x.Priority == maxPriority);
+        foreach (var mod in modifiers) {
+            if (mod.ModType == Modifier.Type.constant) {
+                finalEffect += mod.Strength;
+            }
+        }
+        foreach (var mod in modifiers) {
+            if (mod.ModType == Modifier.Type.multiply) {
+                finalEffect += mod.Strength;
+            }
+        }
+
+        return finalEffect;
+    }
+
+    public Modifier AddPowerModifier(int priority, Modifier.Type modType, float strength) => AddModifier(powerMods, priority, modType, strength);
+    public Modifier AddDecayModifier(int priority, Modifier.Type modType, float strength) => AddModifier(decayMods, priority, modType, strength);
+
+    private static Modifier AddModifier(List<Modifier> modList, int priority, Modifier.Type modType, float strength) {
+        Modifier modifier = new() {
+            Priority = priority,
+            ModType = modType,
+            Strength = strength,
+        };
+        modList.Add(modifier);
+        modifier.UnsubscribeSelf = () => modList.Remove(modifier);
+
+        return modifier;
+    }
+
+    [System.Serializable]
+    public class Modifier {
+        public enum Type {
+            constant,
+            multiply
+        }
+
+        public int Priority { get; set; }
+        public Type ModType { get; set; }
+        public float Strength { get; set; }
+
+        public System.Action UnsubscribeSelf { get; set; }
+    }
 }
 
 public class Candle : MonoBehaviour, IEntity {
     private const float burnoutCandleGraphicsPos = -192f;
 
     public ParticleSystem firePs;
-    public CandleStats candleStats;
+    //public CandleStats candleStats;
+
+    [SerializeField] private CandleStats _stats;
+    public CandleStats Stats => _stats;
 
     public StateMachine SM { get; private set; }
     public Candle currCandle { get; set; }
@@ -62,7 +141,8 @@ public class Candle : MonoBehaviour, IEntity {
     [SerializeField] private UnityEvent<Sprite> _updateBodyImageCallback;
     public UnityEvent<Sprite> UpdateBodyImageCallback => _updateBodyImageCallback;
 
-    public UnityEvent<Candle> onDeath;
+    [SerializeField] private UnityEvent<Candle> onDeath;
+    [SerializeField] private UnityEvent<CandleProfile, string> showDialogCallback;
 
     private void Awake() {
         currCandle = this;
@@ -71,7 +151,8 @@ public class Candle : MonoBehaviour, IEntity {
 
         SM.SetWorkingState(new W_Working());
         SM.SetMoodState(new M_Happy());
-        candleStats.HP = candleStats.MaxHP;
+        //candleStats.HP = candleStats.MaxHP;
+        Stats.HpProp.Value = Stats.MaxHp;
     }
 
     public void Update() {
@@ -80,26 +161,33 @@ public class Candle : MonoBehaviour, IEntity {
     }
 
     public void Decay() {
-        candleStats.HP -= (candleStats.Decay + candleStats.Multiplier[SM.moodState.CurrentIndex].y) * updateTime;
+        Stats.HpProp.Value -= Stats.CalculateDecay() * Time.deltaTime;
+        //candleStats.HP -= (candleStats.Decay + candleStats.Multiplier[SM.moodState.CurrentIndex].y) * updateTime;
     }
     public void CrunchDecay() {
-        candleStats.HP -= (candleStats.Decay + candleStats.AdditionalDecay + candleStats.Multiplier[SM.moodState.CurrentIndex].y) * updateTime;
+        Stats.HpProp.Value -= Stats.CalculateDecay() * Time.deltaTime;
+        //candleStats.HP -= (candleStats.Decay + candleStats.AdditionalDecay + candleStats.Multiplier[SM.moodState.CurrentIndex].y) * updateTime;
     }
 
     public void Work(Project pb) {
         // moodstate is null
-        pb.currentProgress += (candleStats.Power + candleStats.Multiplier[SM.moodState.CurrentIndex].x) * updateTime;
+        pb.ProgressProp.Value += Stats.CalculateWorkDone() * Time.deltaTime;
+        //pb.currentProgress += (candleStats.Power + candleStats.Multiplier[SM.moodState.CurrentIndex].x) * updateTime;
         pb.UpdateVisuals();
     }
 
     public void CrunchWork(Project pb) {
-        pb.currentProgress += (candleStats.Power + candleStats.AdditionalPower + candleStats.Multiplier[SM.moodState.CurrentIndex].x) * updateTime;
+        pb.ProgressProp.Value += Stats.CalculateWorkDone() * Time.deltaTime;
+        //pb.currentProgress += (candleStats.Power + candleStats.AdditionalPower + candleStats.Multiplier[SM.moodState.CurrentIndex].x) * updateTime;
         pb.UpdateVisuals();
     }
 
     public void Regeneration() {
-        if (candleStats.HP < candleStats.MaxHP)
-            candleStats.HP += candleStats.RegenerateHP * updateTime;
+        //if (candleStats.HP < candleStats.MaxHP) {
+        if (Stats.HpProp.Value < Stats.MaxHp) {
+            Stats.HpProp.Value -= Stats.CalculateDecay() * Time.deltaTime;
+            //candleStats.HP += candleStats.RegenerateHP * updateTime;
+        }
     }
 
     public void Death() {
@@ -112,16 +200,21 @@ public class Candle : MonoBehaviour, IEntity {
 
     public void DisplayText() {
         Vector2 graphicsParentPos = graphicsParentTransform.anchoredPosition;
-        graphicsParentPos.y = Mathf.Lerp(burnoutCandleGraphicsPos, 0, Mathf.InverseLerp(0, candleStats.MaxHP, candleStats.HP));
+        //graphicsParentPos.y = Mathf.Lerp(burnoutCandleGraphicsPos, 0, Mathf.InverseLerp(0, candleStats.MaxHP, candleStats.HP));
+        graphicsParentPos.y = Mathf.Lerp(burnoutCandleGraphicsPos, 0, Mathf.InverseLerp(0, Stats.MaxHp, Stats.HpProp.Value));
         graphicsParentTransform.anchoredPosition = graphicsParentPos;
 
-        candleStats.HPText.text = candleStats.HP + "";
-        candleStats.CurrentMoodState.text = SM.moodState.Name + " ";
-        candleStats.CurrentWorkingState.text = SM.workingState.Name + " ";
+        //candleStats.HPText.text = candleStats.HP + "";
+        //candleStats.CurrentMoodState.text = SM.moodState.Name + " ";
+        //candleStats.CurrentWorkingState.text = SM.workingState.Name + " ";
     }
 
     public void SetFireSpeed(float speed) {
         var main = firePs.main;
         main.simulationSpeed = speed;
+    }
+
+    public void ShowDialog(string dialogText) {
+        showDialogCallback.Invoke(Profile, dialogText);
     }
 }
