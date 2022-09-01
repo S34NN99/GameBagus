@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
+[System.Obsolete]
 [CreateAssetMenu(menuName = "Project/Story Checkpoint")]
 public class StoryCheckpoint : ScriptableObject {
     [SerializeField] private StoryCheckpointType _checkpointType;

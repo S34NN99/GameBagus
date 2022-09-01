@@ -4,8 +4,7 @@ using System.Collections;
 
 using UnityEngine;
 
-[RequireComponent(typeof(ProjectEventTrigger))]
-public class ManagementEvent : GameEventBase<GroupChat> {
+public class TimedEventContent : MonoBehaviour {
     [Header("Content")]
     [SerializeField] [RuntimeString] private string _title;
     public string Title => ObservableVariable.ConvertToRuntimeText(_title);
@@ -28,18 +27,7 @@ public class ManagementEvent : GameEventBase<GroupChat> {
     public IReadOnlyList<ProjectEventAction> AvailableActions => _availableActions;
     public ProjectEventAction DefaultAction => AvailableActions[0];
 
-#if UNITY_EDITOR
-    // auto assign trigger
-    protected override void OnValidate() {
-        base.OnValidate();
-    }
-#endif
-
-    protected override void Update() {
-        base.Update();
-    }
-
-    protected override void DisplayEvent(GroupChat groupChat) {
+    public void DisplayEvent(GroupChat groupChat) {
         GroupChatBossMessage bossMessage = groupChat.CreateBossMessage();
         PhoneCallAlert phoneCallAlert = groupChat.PhoneCallAlert;
 
@@ -47,13 +35,17 @@ public class ManagementEvent : GameEventBase<GroupChat> {
 
         Coroutine timerCoroutine = StartCoroutine(CountdownEnumerator());
 
-        bossMessage.DisplayMessage(BossProfile, this);
+        foreach (var availableAction in AvailableActions) {
+            availableAction.EventCallback.AddListener(DeactivateEvent);
+        }
+
+        bossMessage.DisplayMessage(BossProfile, Title, MainBody, Footer);
         bossMessage.MoreInfoButton.onClick.AddListener(() => {
             phoneCallActivated = true;
 
             phoneCallAlert.Show();
             phoneCallAlert.Message.DisplayMessage(BossProfile, MainBody);
-            phoneCallAlert.SetActions(AvailableActions, DeactivateEvent);
+            phoneCallAlert.SetActions(AvailableActions);
         });
 
         IEnumerator CountdownEnumerator() {
@@ -73,7 +65,7 @@ public class ManagementEvent : GameEventBase<GroupChat> {
                 phoneCallAlert.Hide();
             }
             bossMessage.UpdateProgress(0f);
-            DefaultAction.Fire();
+            DefaultAction.EventCallback.Invoke();
         }
 
         void DeactivateEvent() {

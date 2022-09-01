@@ -2,8 +2,7 @@
 
 using UnityEngine;
 
-[RequireComponent(typeof(ProjectEventTrigger))]
-public class StoryEvent : GameEventBase<GroupChat> {
+public class CallEventContent : MonoBehaviour {
     [Header("Content")]
     [SerializeField] [RuntimeString] private string _mainBody;
     public string MainBody => ObservableVariable.ConvertToRuntimeText(_mainBody);
@@ -15,18 +14,7 @@ public class StoryEvent : GameEventBase<GroupChat> {
     [SerializeField] private CandleProfile _bossProfile;
     public CandleProfile BossProfile => _bossProfile;
 
-#if UNITY_EDITOR
-    // auto assign trigger
-    protected override void OnValidate() {
-        base.OnValidate();
-    }
-#endif
-
-    protected override void Update() {
-        base.Update();
-    }
-
-    protected override void DisplayEvent(GroupChat groupChat) {
+    public void TriggerEvent(GroupChat groupChat) {
         PhoneCallAlert phoneCallAlert = groupChat.PhoneCallAlert;
 
         phoneCallAlert.Show();

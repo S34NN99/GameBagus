@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public class WorkAction : BaseAction {
+public class WorkAction : CandleAction {
 
     public override void ActOn(Candle candle) {
         print(candle.name + " is working");

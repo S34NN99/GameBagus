@@ -1,40 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.Events;
 
-using System.Collections.Generic;
+public class ProjectEvent : MonoBehaviour {
+    [SerializeField] private ProjectEventTrigger trigger;
 
-[RequireComponent(typeof(ProjectEventTrigger))]
-public class ProjectEvent : GameEventBase<GroupChat> {
-    [Header("Content")]
-    [SerializeField] [RuntimeString] protected string _title = "Urgent Issue";
-    public string Title => ObservableVariable.ConvertToRuntimeText(_title);
+    [SerializeField] private UnityEvent onEventFired;
 
-    [SerializeField] [RuntimeString] protected string _mainBody = "Too many bugs";
-    public string MainBody => ObservableVariable.ConvertToRuntimeText(_mainBody);
-
-    [SerializeField] private float _displayDuration = 4f;
-    public float DisplayDuration => _displayDuration;
-
-    //[SerializeField] private ProjectEventType projectEventType;
-
-    //[Space]
-    //[SerializeField] private ProjectEventAction[] _availableActions;
-    //public IReadOnlyList<ProjectEventAction> AvailableActions => _availableActions;
+    [Space]
+    [Tooltip("You guys can leave a comment about what the event should do")]
+    [SerializeField] private string remarksForTech;
 
 #if UNITY_EDITOR
     // auto assign trigger
-    protected override void OnValidate() {
-        base.OnValidate();
+    protected virtual void OnValidate() {
+        if (trigger == null) {
+            if (!TryGetComponent(out trigger)) {
+                trigger = gameObject.AddComponent<ProjectEventTrigger>();
+            }
+        }
     }
 #endif
 
-    protected override void Update() {
-        base.Update();
-    }
-
-    protected override void DisplayEvent(GroupChat groupChat) {
-        PhoneNotificationBanner notificationBanner = groupChat.NotificationBanner;
-        notificationBanner.DisplayNotification(Title, MainBody, DisplayDuration);
+    protected virtual void Update() {
+        if (trigger.GetTrigger()) {
+            onEventFired.Invoke();
+        }
     }
 }

@@ -22,7 +22,8 @@ public class W_Vacation : WorkingState {
     }
 
     public void CheckHP(IEntity entity) {
-        List<int> threshold = entity.currCandle.candleStats.MoodThreshold;
+        IReadOnlyList<int> threshold = entity.currCandle.Stats.MoodThreshold;
+        //List<int> threshold = entity.currCandle.candleStats.MoodThreshold;
         for (int i = 0; i < threshold.Count; i++) {
             if (CalculateThreshold(entity, i)) {
                 switch (i) {
@@ -47,7 +48,9 @@ public class W_Vacation : WorkingState {
     }
 
     public bool CalculateThreshold(IEntity entity, int num) {
-        float threshold = entity.currCandle.candleStats.MoodThreshold[num];
-        return entity.currCandle.candleStats.HP > threshold;
+        //float threshold = entity.currCandle.candleStats.MoodThreshold[num];
+        //return entity.currCandle.candleStats.HP > threshold;
+        float threshold = entity.currCandle.Stats.MoodThreshold[num];
+        return entity.currCandle.Stats.HpProp.Value > threshold;
     }
 }

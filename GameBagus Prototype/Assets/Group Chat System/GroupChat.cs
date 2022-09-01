@@ -13,6 +13,9 @@ public class GroupChat : MonoBehaviour {
     [SerializeField] private GameObject _bossMessageTemplate;
     private GameObject BossMessageTemplate => _bossMessageTemplate;
 
+    [SerializeField] private GameObject _playerChatMessageTemplate;
+    private GameObject PlayerChatMessageTemplate => _playerChatMessageTemplate;
+
 
     [Space]
     [SerializeField] private RectTransform _chatMessageParent;
@@ -29,12 +32,24 @@ public class GroupChat : MonoBehaviour {
     private Queue<TextHeightFitter> chatMessageQueue = new();
     private TextHeightFitter currentMessage;
 
+    [SerializeField] private float textCooldown = 1f;
+    private float textCooldownTimer;
+
 
     private void Awake() {
 
     }
 
     private void Update() {
+        if (textCooldownTimer > 0) {
+            textCooldownTimer -= Time.deltaTime;
+            if (textCooldownTimer < 0) {
+                textCooldownTimer = 0;
+            }
+
+            return;
+        }
+
         if (currentMessage == null) {
             if (chatMessageQueue.Any()) {
                 currentMessage = chatMessageQueue.Dequeue();
@@ -44,6 +59,7 @@ public class GroupChat : MonoBehaviour {
             if (!currentMessage.IsAnimating) {
                 // stops animating, free to display new message on next frame
                 currentMessage = null;
+                textCooldownTimer = textCooldown;
             }
         }
     }

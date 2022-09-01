@@ -1,9 +1,9 @@
 
-using TMPro;
-
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
+[System.Obsolete]
 public class StoryCheckpointPanel : MonoBehaviour {
     [SerializeField] private GameObject rootPanel;
 
@@ -14,7 +14,7 @@ public class StoryCheckpointPanel : MonoBehaviour {
 
     [Header("Content UI")]
     [SerializeField] private Image pageMainImage;
-    [SerializeField] private TextMeshProUGUI mainBodyText;
+    [SerializeField] private UnityEvent<string> updateMainBodyTextCallback;
 
     public StoryCheckpoint CurrentStoryCheckpoint { get; private set; }
 
@@ -69,7 +69,7 @@ public class StoryCheckpointPanel : MonoBehaviour {
 
     private void SetContentToPage(StoryCheckpoint.Page currentPage) {
         pageMainImage.sprite = currentPage.MainGraphics_Image;
-        mainBodyText.text = currentPage.MainBodyText;
+        updateMainBodyTextCallback.Invoke(currentPage.MainBodyText);
 
     }
 

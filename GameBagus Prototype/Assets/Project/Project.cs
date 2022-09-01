@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using TMPro;
 
 public class Project : MonoBehaviour {
     [Space(20)]
     [Header("ProgressBar")]
-    public float currentProgress;
-    public Slider progressBar;
-    public int completedProjectCounter;
-    public TextMeshProUGUI completedProjectCounterTxt;
+    [SerializeField] private FloatProperty _progressProp;
+    public FloatProperty ProgressProp => _progressProp;
 
-    [SerializeField] private FloatProperty _progressPercentageProp;
-    public FloatProperty ProgressPercentageProp => _progressPercentageProp;
+    [SerializeField] private IntProperty _completedProjectProp;
+    public IntProperty CompletedProjectProp => _completedProjectProp;
+
+    [SerializeField] private UnityEvent<float> updateProgressSliderCallback;
 
     [Space(20)]
     [Header("Randomisation")]
@@ -33,42 +34,59 @@ public class Project : MonoBehaviour {
     [SerializeField] private ProjectCalendar clock;
     [SerializeField] private int minProjectDuration = 20;
     [SerializeField] private int maxProjectDuration = 60;
+    [SerializeField] private float projectMaxDuration = 50;
+    [SerializeField] private float projectDuration = 50;
     [Range(0, 1f)]
     [SerializeField] private float nearingProjecFinishThreshold = 0.8f;
 
+    [Space]
+    [SerializeField] private UnityEvent<float> updateProjectTimeRemaining;
+    [SerializeField] private UnityEvent onProjectEnded;
+
+    private bool isWorkingOnProject;
     private bool isFinishing;
 
     //e Update is called once per frame
     private void Update() {
+        if (isWorkingOnProject) {
+            foreach (var candle in candleManager.GetCandles()) {
+                candle.currCandle.SM.UpdateStates(this);
+            }
 
-        foreach (var candle in candleManager.GetCandles()) {
-            candle.currCandle.SM.UpdateStates(this);
+            projectDuration -= Time.deltaTime;
+            updateProgressSliderCallback.Invoke(_progressProp.Value / requiredProgress);
+            updateProjectTimeRemaining.Invoke(projectDuration / projectMaxDuration);
         }
-        //ProgressPercentageProp.Value = Mathf.InverseLerp(0, requiredProgress, currentProgress);
+    }
+
+    public void ResumeWork() {
+        isWorkingOnProject = true;
+    }
+
+    public void PauseWork() {
+        isWorkingOnProject = false;
     }
 
     public void UpdateVisuals() {
+        if (_progressProp.Value >= requiredProgress) {
+            onProjectEnded.Invoke();
 
-        if (currentProgress >= requiredProgress) {
-            currentProgress = 0;
-            completedProjectCounter++;
-            completedProjectCounterTxt.text = completedProjectCounter.ToString();
+            _progressProp.Value = 0;
+            _completedProjectProp.Value++;
             candleManager.CheckCandles();
 
-            requiredProgress = GetRequiredProgressForNextProject();
-            clock.ResetClock(Random.Range(minProjectDuration, maxProjectDuration));
+            //requiredProgress = GetRequiredProgressForNextProject();
+            //clock.ResetClock(Random.Range(minProjectDuration, maxProjectDuration));
 
             GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnProjectFinishedEvent);
 
             isFinishing = false;
-        } else if (currentProgress >= requiredProgress * nearingProjecFinishThreshold) {
+        } else if (_progressProp.Value >= requiredProgress * nearingProjecFinishThreshold) {
             if (!isFinishing) {
                 GeneralEventManager.Instance.BroadcastEvent(AudioManager.NearingProjectFinishedEvent);
             }
             isFinishing = true;
         }
-
-        progressBar.value = currentProgress / requiredProgress;
     }
 
     private int GetRequiredProgressForNextProject() {
