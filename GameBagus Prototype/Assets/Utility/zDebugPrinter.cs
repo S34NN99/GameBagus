@@ -22,4 +22,8 @@ public class zDebugPrinter : MonoBehaviour {
     public void PrintAsRuntimeStr(string text) {
         print(ObservableVariable.ConvertToRuntimeText(text));
     }
+
+    public void PrintFloatChanged(float oldVal, float newVal) {
+        print($"Old Val : {oldVal}, New Val : {newVal}");
+    }
 }

@@ -9,7 +9,9 @@ public class SequentialActionLoop : MonoBehaviour {
 
     [Space]
     [SerializeField] private UnityEvent[] actionLoop;
-    private int counter;
+
+    private int _counter;
+    private int Counter { get => _counter; set => _counter = value; }
 
     private void Start() {
         if (fireFirstActionOnStart) {
@@ -18,29 +20,35 @@ public class SequentialActionLoop : MonoBehaviour {
     }
 
     public void FireNextAction() {
-        if (counter < actionLoop.Length) {
-            actionLoop[counter].Invoke();
-            counter++;
+        if (Counter < actionLoop.Length) {
+            actionLoop[Counter].Invoke();
+            Counter++;
         }
 
         CheckIfCounterNeedsToReset();
     }
 
     public void JumpBack() {
-        counter--;
+        Counter--;
 
         CheckIfCounterNeedsToReset();
     }
 
     public void SkipForward() {
-        counter++;
+        Counter++;
+
+        CheckIfCounterNeedsToReset();
+    }
+
+    public void JumpTo(int pointerPos) {
+        Counter = pointerPos;
 
         CheckIfCounterNeedsToReset();
     }
 
     private void CheckIfCounterNeedsToReset() {
-        if (counter >= actionLoop.Length || counter < 0) {
-            counter = 0;
+        if (Counter >= actionLoop.Length || Counter < 0) {
+            Counter = 0;
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
 using TMPro;
+using System.Linq;
 
 using UnityEngine;
 using UnityEngine.Events;
@@ -33,7 +34,7 @@ using UnityEngine.UI;
 
 [System.Serializable]
 public class CandleStats {
-    private float _maxHp;
+    [SerializeField] private float _maxHp = 600;
     public float MaxHp {
         get => _maxHp;
         set {
@@ -131,9 +132,6 @@ public class Candle : MonoBehaviour, IEntity {
     [SerializeField] private CandleProfile _profile;
     public CandleProfile Profile { get => _profile; set => _profile = value; }
 
-    [SerializeField] private RectTransform graphicsParentTransform;
-    private float updateTime = 0;
-
     [SerializeField] private UnityEvent<Sprite> _updateHeadImageCallback;
     public UnityEvent<Sprite> UpdateHeadImageCallback => _updateHeadImageCallback;
 
@@ -143,49 +141,41 @@ public class Candle : MonoBehaviour, IEntity {
     [SerializeField] private UnityEvent<Candle> onDeath;
     [SerializeField] private UnityEvent<CandleProfile, string> showDialogCallback;
 
+    [SerializeField] private UnityEvent<float> updateCandleDecay;
+
     private void Awake() {
         currCandle = this;
-        SM = new StateMachine(this);
+        SM = new(this);
         SM.owner = this;
 
         SM.SetWorkingState(new W_Working());
         SM.SetMoodState(new M_Happy());
-        //candleStats.HP = candleStats.MaxHP;
         Stats.HpProp.Value = Stats.MaxHp;
     }
 
     public void Update() {
-        //DisplayText();
-        updateTime = Time.deltaTime / 1;
+        updateCandleDecay.Invoke(Mathf.InverseLerp(0, Stats.MaxHp, Stats.HpProp.Value));
     }
 
     public void Decay() {
         Stats.HpProp.Value -= Stats.CalculateDecay() * Time.deltaTime;
-        //candleStats.HP -= (candleStats.Decay + candleStats.Multiplier[SM.moodState.CurrentIndex].y) * updateTime;
     }
     public void CrunchDecay() {
         Stats.HpProp.Value -= Stats.CalculateDecay() * Time.deltaTime;
-        //candleStats.HP -= (candleStats.Decay + candleStats.AdditionalDecay + candleStats.Multiplier[SM.moodState.CurrentIndex].y) * updateTime;
     }
 
     public void Work(Project pb) {
         // moodstate is null
         pb.ProgressProp.Value += Stats.CalculateWorkDone() * Time.deltaTime;
-        //pb.currentProgress += (candleStats.Power + candleStats.Multiplier[SM.moodState.CurrentIndex].x) * updateTime;
-        pb.UpdateVisuals();
     }
 
     public void CrunchWork(Project pb) {
         pb.ProgressProp.Value += Stats.CalculateWorkDone() * Time.deltaTime;
-        //pb.currentProgress += (candleStats.Power + candleStats.AdditionalPower + candleStats.Multiplier[SM.moodState.CurrentIndex].x) * updateTime;
-        pb.UpdateVisuals();
     }
 
     public void Regeneration() {
-        //if (candleStats.HP < candleStats.MaxHP) {
         if (Stats.HpProp.Value < Stats.MaxHp) {
             Stats.HpProp.Value -= Stats.CalculateDecay() * Time.deltaTime;
-            //candleStats.HP += candleStats.RegenerateHP * updateTime;
         }
     }
 
@@ -195,17 +185,6 @@ public class Candle : MonoBehaviour, IEntity {
 
         GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnCandleBurnoutEvent);
         onDeath.Invoke(this);
-    }
-
-    public void DisplayText() {
-        Vector2 graphicsParentPos = graphicsParentTransform.anchoredPosition;
-        //graphicsParentPos.y = Mathf.Lerp(burnoutCandleGraphicsPos, 0, Mathf.InverseLerp(0, candleStats.MaxHP, candleStats.HP));
-        graphicsParentPos.y = Mathf.Lerp(burnoutCandleGraphicsPos, 0, Mathf.InverseLerp(0, Stats.MaxHp, Stats.HpProp.Value));
-        graphicsParentTransform.anchoredPosition = graphicsParentPos;
-
-        //candleStats.HPText.text = candleStats.HP + "";
-        //candleStats.CurrentMoodState.text = SM.moodState.Name + " ";
-        //candleStats.CurrentWorkingState.text = SM.workingState.Name + " ";
     }
 
     public void SetFireSpeed(float speed) {

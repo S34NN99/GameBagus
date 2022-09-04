@@ -46,7 +46,7 @@ public abstract class ObservableVariable : MonoBehaviour {
     /// <summary>
     /// <para>Substrings enclosed with curly brackets are seen as runtime variables.</para>
     /// <para>Finds <see cref="ObservableVariable"/> with an id that matches the enclosed substring.</para>
-    /// <para>Replaces the enclosed substring with the value from <see cref="GetValueAsText"/></para>
+    /// <para>Replaces the enclosed substring with the value from <see cref="GetRuntimeValueAsText"/></para>
     /// </summary>
     /// <param name="text"></param>
     /// <returns></returns>
@@ -67,7 +67,7 @@ public abstract class ObservableVariable : MonoBehaviour {
             // add match
             ObservableVariable parameter = FindProperty(match.Value.Trim('{', '}'));
             if (parameter != null) {
-                outputText += parameter.GetValueAsText();
+                outputText += parameter.GetRuntimeValueAsText();
             } else {
                 outputText += "unspecified value";
             }
@@ -92,7 +92,7 @@ public abstract class ObservableVariable : MonoBehaviour {
     /// </summary>
     public string UniqueId => _uniqueId;
 
-    public abstract string GetValueAsText();
+    public abstract string GetRuntimeValueAsText();
 }
 
 public abstract class ObservableProperty<T> : ObservableVariable {
@@ -102,9 +102,13 @@ public abstract class ObservableProperty<T> : ObservableVariable {
         set {
             OnValueUpdated.Invoke(_value, value);
             _value = value;
+            UpdateUiCallback.Invoke(_value);
         }
 
     }
+
+    [SerializeField] private UnityEvent<T> _updateUiCallback;
+    public UnityEvent<T> UpdateUiCallback => _updateUiCallback;
 
     [SerializeField] private UnityEvent<T, T> _onValueUpdated;
     /// <summary>
@@ -114,7 +118,7 @@ public abstract class ObservableProperty<T> : ObservableVariable {
     /// </summary>
     public UnityEvent<T, T> OnValueUpdated => _onValueUpdated;
 
-    public override string GetValueAsText() => Value.ToString();
+    public override string GetRuntimeValueAsText() => Value.ToString();
 }
 
 public abstract class ObservableEquatableProperty<T> : ObservableProperty<T> where T : IEquatable<T> {
@@ -122,8 +126,7 @@ public abstract class ObservableEquatableProperty<T> : ObservableProperty<T> whe
         get => _value;
         set {
             if (!_value.Equals(value)) {
-                OnValueUpdated.Invoke(_value, value);
-                _value = value;
+                base.Value = value;
             }
         }
 

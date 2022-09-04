@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
+[System.Obsolete]
 public class ProjectCalendar : MonoBehaviour {
     [SerializeField] private int _projectDuration;
     public int ProjectDuration {

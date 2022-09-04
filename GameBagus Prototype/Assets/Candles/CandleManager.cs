@@ -41,10 +41,7 @@ public class CandleManager : MonoBehaviour {
     public void CheckCandles() {
         for (int i = 0; i < candles.Length; i++) {
             if (candles[i] == null) {
-                // Spawn candle here
                 GameObject candleGO = Instantiate(candleTemplates[i], transform);
-                //candleGO.SetActive(true);
-                //candleGO.GetComponent<RectTransform>().anchoredPosition = candlePositions[i];
 
                 candles[i] = candleGO.GetComponent<Candle>();
                 string candleName;
@@ -79,7 +76,6 @@ public class CandleManager : MonoBehaviour {
     }
 
     public void CheckIfListEmpty() {
-        Debug.Log(candles.Length);
         float counter = 0;
         for (int i = 0; i < candles.Length; i++) {
             if (candles[i] == null || this.gameObject == candles[i]) {
