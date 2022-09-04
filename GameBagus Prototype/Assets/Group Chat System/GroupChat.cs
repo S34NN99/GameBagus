@@ -16,18 +16,6 @@ public class GroupChat : MonoBehaviour {
     [SerializeField] private GameObject _playerChatMessageTemplate;
     private GameObject PlayerChatMessageTemplate => _playerChatMessageTemplate;
 
-
-    [Space]
-    [SerializeField] private RectTransform _chatMessageParent;
-    private RectTransform ChatMessageParent => _chatMessageParent;
-
-    [Space]
-    [SerializeField] private PhoneNotificationBanner _notificationBanner;
-    public PhoneNotificationBanner NotificationBanner => _notificationBanner;
-
-    [SerializeField] private PhoneCallAlert _phoneCallAlert;
-    public PhoneCallAlert PhoneCallAlert => _phoneCallAlert;
-
     private List<TextHeightFitter> messagesInChat = new();
     private Queue<TextHeightFitter> chatMessageQueue = new();
     private TextHeightFitter currentMessage;
@@ -35,11 +23,9 @@ public class GroupChat : MonoBehaviour {
     [SerializeField] private float textCooldown = 1f;
     private float textCooldownTimer;
 
-
-    private void Awake() {
-
-    }
-
+    [Space]
+    [SerializeField] private RectTransform _chatMessageParent;
+    private RectTransform ChatMessageParent => _chatMessageParent;
     private void Update() {
         if (textCooldownTimer > 0) {
             textCooldownTimer -= Time.deltaTime;
@@ -72,8 +58,8 @@ public class GroupChat : MonoBehaviour {
 
     }
 
-    public CandleMessage CreateTextMessage() {
-        CandleMessage chatMessage = Instantiate(ChatMessageTemplate, ChatMessageParent).GetComponent<CandleMessage>();
+    public T CreateMessage<T>(GameObject template) where T : MonoBehaviour {
+        T chatMessage = Instantiate(template, ChatMessageParent).GetComponent<T>();
         chatMessage.gameObject.SetActive(false);
 
         QueueMessage(chatMessage.GetComponent<TextHeightFitter>());
@@ -81,18 +67,13 @@ public class GroupChat : MonoBehaviour {
         return chatMessage;
     }
 
+    public CandleMessage CreateTextMessage() => CreateMessage<CandleMessage>(ChatMessageTemplate);
+    public CandleMessage CreatePlayerMessage() => CreateMessage<CandleMessage>(PlayerChatMessageTemplate);
+    public GroupChatBossMessage CreateBossMessage() => CreateMessage<GroupChatBossMessage>(BossMessageTemplate);
+
     public void SendTextMessage(CandleProfile profile, string message) {
         CandleMessage chatMessage = CreateTextMessage();
         chatMessage.DisplayMessage(profile, message);
-    }
-
-    public GroupChatBossMessage CreateBossMessage() {
-        GroupChatBossMessage bossMessage = Instantiate(BossMessageTemplate, ChatMessageParent).GetComponent<GroupChatBossMessage>();
-        bossMessage.gameObject.SetActive(false);
-
-        QueueMessage(bossMessage.GetComponent<TextHeightFitter>());
-
-        return bossMessage;
     }
 
     private void QueueMessage(TextHeightFitter message) {

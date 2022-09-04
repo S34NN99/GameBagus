@@ -4,33 +4,48 @@ using UnityEngine.Events;
 using TMPro;
 
 public class PhoneNotificationBanner : MonoBehaviour {
-    [Header("Ui")]
-    [SerializeField] private UnityEvent<string> updateTitleCallback;
-    [SerializeField] private UnityEvent<string> updateMessageCallback;
+    [SerializeField] private RectTransform rectTransform;
+    [SerializeField] private float pivotSmoothTime = 0.2f;
+    private float currentPivotVelocity;
+    private float targetPivotY;
 
-    private float displayTimer;
+    [SerializeField] private StringProperty[] notificationBannerContent;
+    [SerializeField] private StringProperty[] popUpContent;
 
     private void Awake() {
-        gameObject.SetActive(false);
-    }
-
-    private void Update() {
-        if (displayTimer > 0) {
-            displayTimer -= Time.deltaTime;
-            if (displayTimer < 0) {
-                displayTimer = 0;
-
-                gameObject.SetActive(false);
-            }
+        if (rectTransform == null) {
+            rectTransform = gameObject.GetComponent<RectTransform>();
         }
     }
 
-    public void DisplayNotification(string title, string message, float duration) {
-        gameObject.SetActive(true);
+    private void Update() {
+        Vector2 anchor = rectTransform.pivot;
+        if (anchor.y != targetPivotY) {
+            anchor.y = Mathf.SmoothDamp(anchor.y, targetPivotY, ref currentPivotVelocity, pivotSmoothTime);
 
-        displayTimer = duration;
+            rectTransform.pivot = anchor;
+        }
+    }
 
-        updateTitleCallback.Invoke(title);
-        updateMessageCallback.Invoke(message);
+    public void Show() {
+        targetPivotY = 1;
+
+        foreach (var runtimeString in notificationBannerContent) {
+            runtimeString.Value = ObservableVariable.ConvertToRuntimeText(runtimeString.Value);
+        }
+    }
+
+    public void RefreshPopUpContent() {
+        foreach (var runtimeString in popUpContent) {
+            runtimeString.Value = ObservableVariable.ConvertToRuntimeText(runtimeString.Value);
+        }
+    }
+
+    public void Hide() {
+        targetPivotY = 0;
+    }
+
+    public void SelfDestructIn(float seconds) {
+        Destroy(gameObject, seconds);
     }
 }

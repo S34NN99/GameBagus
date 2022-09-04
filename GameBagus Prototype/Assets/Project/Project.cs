@@ -6,36 +6,19 @@ using UnityEngine.Events;
 using TMPro;
 
 public class Project : MonoBehaviour {
-    [Space(20)]
     [Header("ProgressBar")]
     [SerializeField] private FloatProperty _progressProp;
     public FloatProperty ProgressProp => _progressProp;
 
-    [SerializeField] private IntProperty _completedProjectProp;
-    public IntProperty CompletedProjectProp => _completedProjectProp;
-
     [SerializeField] private UnityEvent<float> updateProgressSliderCallback;
-
-    [Space(20)]
-    [Header("Randomisation")]
-    [SerializeField] private int minReqProgress = 240;
-    [Tooltip("The number of steps when randomising the value of the required progress for the next project")]
-    [SerializeField] private int progressRandomisationSteps = 29;
-    [Tooltip("The value of each step when randomising the value of the required progress for the next project")]
-    [SerializeField] private int progressRandomisationInterval = 10;
     [SerializeField] private int requiredProgress = 240;
 
-    [Space(20)]
-    [Header("Candle")]
+    [Space]
     [SerializeField] private CandleManager candleManager;
 
-    [Space(20)]
-    [Header("Clock")]
-    [SerializeField] private ProjectCalendar clock;
-    [SerializeField] private int minProjectDuration = 20;
-    [SerializeField] private int maxProjectDuration = 60;
-    [SerializeField] private float projectMaxDuration = 50;
-    [SerializeField] private float projectDuration = 50;
+    [Space]
+    [SerializeField] private float projectDeadline = 50;
+    [SerializeField] private FloatProperty elapsedTimeProp;
     [Range(0, 1f)]
     [SerializeField] private float nearingProjecFinishThreshold = 0.8f;
 
@@ -53,9 +36,11 @@ public class Project : MonoBehaviour {
                 candle.currCandle.SM.UpdateStates(this);
             }
 
-            projectDuration -= Time.deltaTime;
+            UpdateVisuals();
+
+            elapsedTimeProp.Value += Time.deltaTime;
             updateProgressSliderCallback.Invoke(_progressProp.Value / requiredProgress);
-            updateProjectTimeRemaining.Invoke(projectDuration / projectMaxDuration);
+            updateProjectTimeRemaining.Invoke(1 - (elapsedTimeProp.Value / projectDeadline));
         }
     }
 
@@ -72,14 +57,15 @@ public class Project : MonoBehaviour {
             onProjectEnded.Invoke();
 
             _progressProp.Value = 0;
-            _completedProjectProp.Value++;
             candleManager.CheckCandles();
 
+            //_completedProjectProp.Value++;
             //requiredProgress = GetRequiredProgressForNextProject();
             //clock.ResetClock(Random.Range(minProjectDuration, maxProjectDuration));
 
             GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnProjectFinishedEvent);
 
+            isWorkingOnProject = false;
             isFinishing = false;
         } else if (_progressProp.Value >= requiredProgress * nearingProjecFinishThreshold) {
             if (!isFinishing) {
@@ -89,7 +75,7 @@ public class Project : MonoBehaviour {
         }
     }
 
-    private int GetRequiredProgressForNextProject() {
-        return minReqProgress + (Random.Range(0, progressRandomisationSteps) * progressRandomisationInterval);
-    }
+    //private int GetRequiredProgressForNextProject() {
+    //    return minReqProgress + (Random.Range(0, progressRandomisationSteps) * progressRandomisationInterval);
+    //}
 }

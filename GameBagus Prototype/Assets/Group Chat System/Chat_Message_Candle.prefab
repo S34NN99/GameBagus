@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 3255763288022853137}
   - component: {fileID: 4413911419186448864}
   m_Layer: 5
-  m_Name: Chat Message
+  m_Name: Chat_Message_Candle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

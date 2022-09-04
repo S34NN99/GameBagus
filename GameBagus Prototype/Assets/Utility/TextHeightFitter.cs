@@ -13,9 +13,10 @@ public class TextHeightFitter : MonoBehaviour {
     [SerializeField] private FlexibleTextHeight[] textTargets;
 
     [Header("Animation")]
+    [SerializeField] private bool useUnscaledDeltaTime;
     [SerializeField] private float smoothTime = 4f;
-    private float smoothSpeedVelocity;
     [SerializeField] private float smoothAccuracy = 0.05f;
+    private float smoothSpeedVelocity;
 
     public bool IsAnimating { get; protected set; }
 
@@ -44,7 +45,8 @@ public class TextHeightFitter : MonoBehaviour {
         if (CurrentHeight == TotalHeight) {
             return false;
         } else {
-            float adjustedHeight = Mathf.SmoothDamp(CurrentHeight, TotalHeight, ref smoothSpeedVelocity, 1 / smoothTime);
+            float deltaTime = useUnscaledDeltaTime ? Time.unscaledDeltaTime : Time.deltaTime;
+            float adjustedHeight = Mathf.SmoothDamp(CurrentHeight, TotalHeight, ref smoothSpeedVelocity, 1 / smoothTime, 5000, deltaTime);
             if (Mathf.Abs(adjustedHeight - CurrentHeight) < smoothAccuracy) {
                 adjustedHeight = TotalHeight;
             }

@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class TimedEventContent : MonoBehaviour {
     [Header("Content")]
-    [SerializeField] [RuntimeString] private string _title;
+    [SerializeField] [RuntimeString(2)] private string _title;
     public string Title => ObservableVariable.ConvertToRuntimeText(_title);
 
-    [SerializeField] [RuntimeString] private string _mainBody;
+    [SerializeField] [RuntimeString(5)] private string _mainBody;
     public string MainBody => ObservableVariable.ConvertToRuntimeText(_mainBody);
 
-    [SerializeField] [RuntimeString] private string _footer;
+    [SerializeField] [RuntimeString(2)] private string _footer;
     public string Footer => ObservableVariable.ConvertToRuntimeText(_footer);
 
     [SerializeField] private float _displayDuration;
@@ -27,9 +27,9 @@ public class TimedEventContent : MonoBehaviour {
     public IReadOnlyList<ProjectEventAction> AvailableActions => _availableActions;
     public ProjectEventAction DefaultAction => AvailableActions[0];
 
-    public void DisplayEvent(GroupChat groupChat) {
-        GroupChatBossMessage bossMessage = groupChat.CreateBossMessage();
-        PhoneCallAlert phoneCallAlert = groupChat.PhoneCallAlert;
+    public void DisplayEvent(Phone phone) {
+        GroupChatBossMessage bossMessage = phone.GroupChat.CreateBossMessage();
+        PhoneCallAlert phoneCallAlert = phone.PhoneCallAlert;
 
         bool phoneCallActivated = false;
 
