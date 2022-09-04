@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lettersPerSecond: 15
   _textToType: Test
-  useUnscaledDeltaTime: 0
+  useUnscaledDeltaTime: 1
   updateTextCallback:
     m_PersistentCalls:
       m_Calls:
