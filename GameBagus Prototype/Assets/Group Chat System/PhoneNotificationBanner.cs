@@ -9,8 +9,8 @@ public class PhoneNotificationBanner : MonoBehaviour {
     private float currentPivotVelocity;
     private float targetPivotY;
 
-    [SerializeField] private StringProperty[] notificationBannerContent;
-    [SerializeField] private StringProperty[] popUpContent;
+    [SerializeField] private TextMeshProUGUI[] notificationBannerContent;
+    [SerializeField] private TextMeshProUGUI[] popUpContent;
 
     private void Awake() {
         if (rectTransform == null) {
@@ -31,13 +31,13 @@ public class PhoneNotificationBanner : MonoBehaviour {
         targetPivotY = 1;
 
         foreach (var runtimeString in notificationBannerContent) {
-            runtimeString.Value = ObservableVariable.ConvertToRuntimeText(runtimeString.Value);
+            runtimeString.text = ObservableVariable.ConvertToRuntimeText(runtimeString.text);
         }
     }
 
     public void RefreshPopUpContent() {
         foreach (var runtimeString in popUpContent) {
-            runtimeString.Value = ObservableVariable.ConvertToRuntimeText(runtimeString.Value);
+            runtimeString.text = ObservableVariable.ConvertToRuntimeText(runtimeString.text);
         }
     }
 

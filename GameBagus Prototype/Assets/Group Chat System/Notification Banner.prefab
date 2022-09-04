@@ -565,8 +565,8 @@ MonoBehaviour:
   rectTransform: {fileID: 1998669155159222742}
   pivotSmoothTime: 0.5
   notificationBannerContent:
-  - {fileID: 3920022862968309931}
-  - {fileID: 2760529684566548308}
+  - {fileID: 1998669154269970627}
+  - {fileID: 1998669154334665276}
   popUpContent: []
 --- !u!114 &1998669155159222744
 MonoBehaviour:
