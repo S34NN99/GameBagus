@@ -6,19 +6,21 @@ using UnityEngine.UI;
 
 public class ProjectDeadline : MonoBehaviour {
     [SerializeField] private RectTransform deadlineIndicator;
-    [SerializeField] private Image deadlineProgress;
 
-    private float progressUiWidth => deadlineProgress.GetComponent<RectTransform>().sizeDelta.x;
+    [SerializeField] private Image deadlineProgressImg;
+    private RectTransform deadlineProgressRect;
 
     private void Awake() {
-        //progressUiWidth = deadlineProgress.GetComponent<RectTransform>().sizeDelta.x;
+        deadlineProgressRect = deadlineProgressImg.GetComponent<RectTransform>();
     }
+
+    private float deadlineProgressImgWidth => deadlineProgressRect.rect.width;
 
     public void SetTimeRemaining(float timeRemaining) {
         Vector2 currentPos = deadlineIndicator.anchoredPosition;
-        currentPos.x = Mathf.Lerp(0, 1058, 1 - timeRemaining);
+        currentPos.x = Mathf.Lerp(0, deadlineProgressImgWidth, 1 - timeRemaining);
         deadlineIndicator.anchoredPosition = currentPos;
 
-        deadlineProgress.fillAmount = timeRemaining;
+        deadlineProgressImg.fillAmount = timeRemaining;
     }
 }

@@ -579,6 +579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePs: {fileID: 7699765964407069571}
   _stats:
+    _maxHp: 600
     _hpProp: {fileID: 3171803744049403347}
     powerMods: []
     decayMods: []
@@ -633,23 +634,17 @@ MonoBehaviour:
         m_CallState: 2
   onDeath:
     m_PersistentCalls:
+      m_Calls: []
+  showDialogCallback:
+    m_PersistentCalls:
+      m_Calls: []
+  updateCandleDecay:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: HeadManager, Assembly-CSharp
-        m_MethodName: RollHead
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 3806350863122611735}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CandleManager, Assembly-CSharp
-        m_MethodName: CheckIfListEmpty
-        m_Mode: 1
+      - m_Target: {fileID: 8690451067878434602}
+        m_TargetAssemblyTypeName: CandleDecayAnim, Assembly-CSharp
+        m_MethodName: UpdateDisplay
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -658,9 +653,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  showDialogCallback:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &3806350862499601246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1151,6 +1143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3806350863327536143}
+  - component: {fileID: 8690451067878434602}
   m_Layer: 0
   m_Name: Candle Graphics
   m_TagString: Untagged
@@ -1176,6 +1169,20 @@ Transform:
   m_Father: {fileID: 3806350862499601241}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8690451067878434602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806350863327536136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d344b32b74afb4252920e3ab066b6279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minPos: -3.1
+  maxPos: -1.67
 --- !u!1 &7099962009580359262
 GameObject:
   m_ObjectHideFlags: 0

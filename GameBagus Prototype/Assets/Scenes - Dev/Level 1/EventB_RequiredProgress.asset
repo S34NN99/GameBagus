@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7eacf2af979b3460bb4d817cabb184be, type: 3}
-  m_Name: Boss
+  m_Script: {fileID: 11500000, guid: 178a98aec39ac451abdb031dff946096, type: 3}
+  m_Name: EventB_RequiredProgress
   m_EditorClassIdentifier: 
-  _profileName: Boss
-  _profilePic: {fileID: 0}
+  _constant: 45
+  _steps: 15
+  _stepSize: 60

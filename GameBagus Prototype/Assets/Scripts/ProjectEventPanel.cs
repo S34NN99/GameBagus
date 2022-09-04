@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 
+[System.Obsolete]
 public class ProjectEventPanel : MonoBehaviour {
 
     [SerializeField] private GameObject panelObject;

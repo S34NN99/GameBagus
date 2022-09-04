@@ -12,4 +12,9 @@ public class CandleProfile : ScriptableObject {
     [SerializeField] private Sprite _profilePic;
     public Sprite ProfilePic => _profilePic;
 
+    [SerializeField] private bool _overlayInitials;
+    public bool OverlayInitials => _overlayInitials;
+
+    [SerializeField] private string _initials;
+    public string Initials => _initials;
 }
