@@ -590,13 +590,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fca444e724f705448d071e387b897a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  headManager: {fileID: 0}
   candleManager: {fileID: 0}
   projectClock: {fileID: 0}
   progressBar: {fileID: 0}
   loseScreen: {fileID: 3987306127891601871}
   headCountText: {fileID: 3987306128158252453}
   completedProjectText: {fileID: 3987306128491530782}
+  headCountProp: {fileID: 0}
+  completedProjectsProp: {fileID: 0}
 --- !u!1 &3987306128158252452
 GameObject:
   m_ObjectHideFlags: 0
