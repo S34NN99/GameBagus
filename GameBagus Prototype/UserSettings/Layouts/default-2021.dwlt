@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Scene
   m_RootView: {fileID: 3}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 23
+  controlID: 69
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 111
+  controlID: 75
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 112
+  controlID: 76
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -551,9 +551,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1037.3568, y: 687.8561, z: 1.5520382}
+    m_Target: {x: 868.62146, y: 795.12683, z: 8.467374}
     speed: 2
-    m_Value: {x: 1061.7498, y: 694.1148, z: 2.0960646}
+    m_Value: {x: 868.62146, y: 795.12683, z: 8.467374}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -604,9 +604,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1263.3524
+    m_Target: 1357.0328
     speed: 2
-    m_Value: 1208.9497
+    m_Value: 1357.0328
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -672,7 +672,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Art/2D/PaperUI
+    - Assets/Scenes - Dev
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
@@ -687,7 +687,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 2c3a0000
     m_LastClickedID: 14892
-    m_ExpandedIDs: 0000000046290000482900004a290000782a000000690000026900000469000006690000086900000a690000546a0000566a0000586a00005a6a00005c6a00005e6a0000606a0000626a0000646a0000666a0000686a00006a6a00006c6a00006e6a0000706a0000726a0000
+    m_ExpandedIDs: 00000000b4660000b6660000b8660000ba660000bc660000be660000fa660000b2670000b4670000b6670000b8670000126800001468000016680000186800001a6800001c6800001e68000020680000226800002468000026680000286800002a6800002c6800002e68000030680000326800003468000036680000386800003a680000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -712,24 +712,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 180}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 9c5dffffffffffff0000000046290000482900004a290000782a0000f82a000000690000026900000469000006690000086900000a69000046690000546a0000566a0000586a00005a6a00005c6a00005e6a0000606a0000626a0000646a0000666a00006c6a00006e6a0000706a0000726a0000a46a0000ae6a0000c06a0000146d0000366d00003a6d0000a86d00000c6e0000507a0000
+    m_ExpandedIDs: ffffffff00000000b4660000b6660000b8660000ba660000bc660000be660000fa660000b2670000b4670000b6670000b8670000126800001468000016680000186800001a6800001c6800001e68000020680000226800002468000026680000286800002a6800002c6800002e68000030680000326800003468000036680000386800003a680000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Popup_Notification
-      m_OriginalName: Popup_Notification
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 28176
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 9}
     m_SearchString: 
@@ -802,23 +802,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 90680000
       m_LastClickedID: 0
-      m_ExpandedIDs: 14c5feffd043ffff66ddffff82ddffff1edeffff48deffff58deffff62deffff70deffffe8dffffff4e2ffffb2f2ffffccf5ffff00faffffc872000066730000a2730000ee730000189900005a9900007c990000b6990000c6990000129a00007c9a0000c69a0000cc9a0000049b0000189b00001c9b0000429b0000449b0000
+      m_ExpandedIDs: e2f6ffff24fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Light Bugs Popup
-        m_OriginalName: Light Bugs Popup
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 39744
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 2}
       m_SearchString: 
