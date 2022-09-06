@@ -5,12 +5,22 @@ using TMPro;
 
 public class PhoneNotificationBanner : MonoBehaviour {
     [SerializeField] private RectTransform rectTransform;
-    [SerializeField] private float pivotSmoothTime = 0.2f;
-    private float currentPivotVelocity;
-    private float targetPivotY;
-
     [SerializeField] private TextMeshProUGUI[] notificationBannerContent;
     [SerializeField] private TextMeshProUGUI[] popUpContent;
+
+    [Space]
+    [SerializeField] private float offsetYWhenHidden = 0;
+    [SerializeField] private float offsetYWhenShown = -25f;
+
+    [SerializeField] private float pivotYWhenHidden = 0;
+    [SerializeField] private float pivotYWhenShown = 1;
+
+    [SerializeField] private float animSmoothTime = 0.2f;
+    private float currentPivotYVelocity;
+    private float currentOffsetYVelocity;
+
+    private float targetPivotY;
+    private float targetOffsetY;
 
     private void Awake() {
         if (rectTransform == null) {
@@ -20,15 +30,19 @@ public class PhoneNotificationBanner : MonoBehaviour {
 
     private void Update() {
         Vector2 anchor = rectTransform.pivot;
-        if (anchor.y != targetPivotY) {
-            anchor.y = Mathf.SmoothDamp(anchor.y, targetPivotY, ref currentPivotVelocity, pivotSmoothTime);
+        Vector2 pos = rectTransform.anchoredPosition;
+        if (anchor.y != targetPivotY || pos.y != targetOffsetY) {
+            anchor.y = Mathf.SmoothDamp(anchor.y, targetPivotY, ref currentPivotYVelocity, animSmoothTime);
+            pos.y = Mathf.SmoothDamp(pos.y, targetOffsetY, ref currentOffsetYVelocity, animSmoothTime);
 
             rectTransform.pivot = anchor;
+            rectTransform.anchoredPosition = pos;
         }
     }
 
     public void Show() {
-        targetPivotY = 1;
+        targetPivotY = pivotYWhenShown;
+        targetOffsetY = offsetYWhenShown;
 
         foreach (var runtimeString in notificationBannerContent) {
             runtimeString.text = ObservableVariable.ConvertToRuntimeText(runtimeString.text);
@@ -42,7 +56,8 @@ public class PhoneNotificationBanner : MonoBehaviour {
     }
 
     public void Hide() {
-        targetPivotY = 0;
+        targetPivotY = pivotYWhenHidden;
+        targetOffsetY = offsetYWhenHidden;
     }
 
     public void SelfDestructIn(float seconds) {

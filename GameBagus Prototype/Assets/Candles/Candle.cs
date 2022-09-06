@@ -1,36 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
+
 using TMPro;
-using System.Linq;
 
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-
-//[System.Serializable]
-//public class CandleStats {
-//    public float MaxHP = 600;
-//    public float HP = 600;
-//    public float Power = 2;
-//    public float RegenerateHP = 10;
-//    public float Decay = 2;
-
-//    [Header("Crunch")]
-//    public float AdditionalPower;
-//    public float AdditionalDecay;
-
-//    [Header("Mood")]
-//    // x = power, y = decay
-//    public List<Vector2Int> Multiplier;
-//    public List<int> MoodThreshold;
-
-//    [Header("Beta Testing")]
-//    public UnityEvent<string> updateNameCallback;
-//    public TextMeshProUGUI HPText;
-//    public TextMeshProUGUI CurrentMoodState;
-//    public TextMeshProUGUI CurrentWorkingState;
-
-//}
 
 [System.Serializable]
 public class CandleStats {
