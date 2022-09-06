@@ -5,16 +5,17 @@ using UnityEngine;
 
 public class CandleHpAffector : MonoBehaviour {
     [SerializeField] private float duration = 5f;
-    [SerializeField] private float HPAmount = 15f;
+    [SerializeField] private float reducedHP = 15f;
+    [SerializeField] private CandleManager CM;
 
-    public void StartHPAffector(CandleStats candleStats)
+    public void StartHPAffector()
     {
-        StartCoroutine(HPAffector(candleStats));
+        StartCoroutine(HPAffector(CM.RandomizeCandle().Stats));
     }
 
     private IEnumerator HPAffector(CandleStats candleStats)
     {
-        CalculateHP(candleStats.HpProp.Value, HPAmount);
+        CalculateHP(candleStats.HpProp.Value, reducedHP);
         yield return new WaitForSeconds(duration);
     }
 

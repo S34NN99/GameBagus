@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class FavourAffector : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private int reducedFavour = 1;
 
-    // Update is called once per frame
-    void Update()
+    //Change when favour is implemented
+    public void StartFavourAffector(float favour)
     {
-        
+        favour -= reducedFavour;
     }
 }

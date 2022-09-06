@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CandleStateLock : MonoBehaviour {
+
+    [SerializeField] private CandleManager CM;
     [SerializeField] private float duration = 5f;
+
     private WorkingState stateToLock = new W_Crunch();
     private WorkingState defaultState = null;
 
-    public void StartLockState(Candle candle)
+    public void StartLockState()
     {
-        StartCoroutine(LockState(candle));
+        StartCoroutine(LockState(CM.RandomizeCandle()));
     }
 
     private IEnumerator LockState(Candle candle)

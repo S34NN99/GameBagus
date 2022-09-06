@@ -68,6 +68,12 @@ public class CandleManager : MonoBehaviour {
 
     public IEnumerable<Candle> GetCandles() => candles.Where(candle => candle != null);
 
+    public Candle RandomizeCandle()
+    {
+        int index = Random.Range(0, candles.Length);
+        return candles[index].currCandle;
+    }
+
     public void DestroyAllCandles() {
         for (int i = 0; i < candles.Length; i++) {
             if (candles[i] != null)

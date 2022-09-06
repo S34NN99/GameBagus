@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class CandlePowerAffector : MonoBehaviour
 {
-    [SerializeField] private int powerAmount = 1;
+    [SerializeField] private int reducedPower = 1;
     [SerializeField] private float duration = 5f;
+    [SerializeField] private CandleManager CM;
+
+    public void StartPowerAffector()
+    {
+        StartCoroutine(PowerAffector(CM.RandomizeCandle().Stats));
+    }
 
     private IEnumerator PowerAffector(CandleStats candleStats)
     {

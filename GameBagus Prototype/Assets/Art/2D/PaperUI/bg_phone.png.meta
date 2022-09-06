@@ -155,13 +155,13 @@ TextureImporter:
       name: bg_phone_body
       rect:
         serializedVersion: 2
-        x: 2
-        y: 3
-        width: 916
-        height: 1315
+        x: 0
+        y: 0
+        width: 918
+        height: 1318
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 89, y: 53, z: 79, w: 530}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 87, y: 51, z: 83, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -177,12 +177,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1315
+        y: 1317
         width: 918
         height: 127
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 5, y: 5, z: 35, w: 70}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 90, y: 0, z: 31, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
