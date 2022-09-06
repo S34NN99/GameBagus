@@ -13,8 +13,8 @@ public class StateMachine {
 
     public StateMachine(IEntity owner) {
         this.owner = owner;
-        powerMod = owner.currCandle.Stats.AddPowerModifier(10, CandleStats.Modifier.Type.multiply, 1);
-        decayMod = owner.currCandle.Stats.AddDecayModifier(10, CandleStats.Modifier.Type.multiply, 1);
+        powerMod = owner.currCandle.Stats.AddPowerModifier(10, CandleStats.Modifier.Type.multiply, 2);
+        decayMod = owner.currCandle.Stats.AddDecayModifier(10, CandleStats.Modifier.Type.multiply, 2);
     }
 
     public void SetWorkingState(WorkingState state) {
