@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
-public class PerformanceReview : MonoBehaviour
-{
+public class PerformanceReview : MonoBehaviour {
     //[SerializeField] private PerformanceReviewContent _prcontent;
     //public PerformanceReviewContent PRContent => _prcontent;
 
@@ -23,47 +23,41 @@ public class PerformanceReview : MonoBehaviour
     [SerializeField] private GameObject favourParent;
     [SerializeField] private GameObject candlesParent;
 
-    public void UpdateContent()
-    {
+    public void UpdateContent() {
         projectName.text = PaperContent.ProjectName;
         appImage.sprite = PaperContent.AppImage;
         content.text = PaperContent.Content;
         signature.text = PaperContent.Signature;
     }
 
-    public void UpdateIcons()
-    {
+    public void UpdateIcons() {
         UpdateMilestoneIcon();
         UpdateFavourIcon();
         UpdateCandleIcon();
     }
 
-    private void UpdateMilestoneIcon()
-    {
+    private void UpdateMilestoneIcon() {
 
     }
 
-    private void UpdateFavourIcon()
-    {
-       
+    private void UpdateFavourIcon() {
+
     }
 
-    private void UpdateCandleIcon()
-    {
+    private void UpdateCandleIcon() {
         CandleManager cm = FindObjectOfType<CandleManager>();
         int counter = cm.CheckRemainingCandles();
 
-        for(int i = 0; i < counter; i++)
-        {
-            Image image= candlesParent.transform.GetChild(i).GetComponent<Image>();
+        for (int i = 0; i < counter; i++) {
+            Image image = candlesParent.transform.GetChild(i).GetComponent<Image>();
             image.sprite = PaperContent.CandleIcon.IconColour;
         }
     }
 
     //just for showcase, remove this later
-    public void RestartLevel()
-    {
-        Application.LoadLevel(Application.loadedLevel);
+    public void RestartLevel() {
+        //Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(0);
     }
 
 }

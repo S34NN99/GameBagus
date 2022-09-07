@@ -9,12 +9,16 @@ public class StateMachine {
     public IEntity owner;
 
     public CandleStats.Modifier powerMod;
+    public CandleStats.Modifier powerConst;
     public CandleStats.Modifier decayMod;
+    public CandleStats.Modifier decayConst;
 
     public StateMachine(IEntity owner) {
         this.owner = owner;
-        powerMod = owner.currCandle.Stats.AddPowerModifier(10, CandleStats.Modifier.Type.multiply, 2);
-        decayMod = owner.currCandle.Stats.AddDecayModifier(10, CandleStats.Modifier.Type.multiply, 2);
+        powerMod = owner.currCandle.Stats.AddPowerModifier(10, CandleStats.Modifier.Type.multiply, 3);
+        powerConst = owner.currCandle.Stats.AddPowerModifier(10, CandleStats.Modifier.Type.constant, 1);
+        decayMod = owner.currCandle.Stats.AddDecayModifier(10, CandleStats.Modifier.Type.multiply, 1);
+        decayConst = owner.currCandle.Stats.AddDecayModifier(10, CandleStats.Modifier.Type.constant, 1);
     }
 
     public void SetWorkingState(WorkingState state) {

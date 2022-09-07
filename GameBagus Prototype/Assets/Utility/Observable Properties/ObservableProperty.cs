@@ -123,7 +123,7 @@ public abstract class ObservableProperty<T> : ObservableVariable {
 
 public abstract class ObservableEquatableProperty<T> : ObservableProperty<T> where T : IEquatable<T> {
     public override T Value {
-        get => _value;
+        get => base.Value;
         set {
             if (!_value.Equals(value)) {
                 base.Value = value;

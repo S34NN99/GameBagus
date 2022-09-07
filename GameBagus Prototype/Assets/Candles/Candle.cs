@@ -45,7 +45,7 @@ public class CandleStats {
         }
         foreach (var mod in modifiers) {
             if (mod.ModType == Modifier.Type.multiply) {
-                finalEffect += mod.Strength;
+                finalEffect *= mod.Strength;
             }
         }
 
@@ -54,6 +54,9 @@ public class CandleStats {
 
     public Modifier AddPowerModifier(int priority, Modifier.Type modType, float strength) => AddModifier(powerMods, priority, modType, strength);
     public Modifier AddDecayModifier(int priority, Modifier.Type modType, float strength) => AddModifier(decayMods, priority, modType, strength);
+
+    public void RemovePowerModifier(Modifier powerMod) => powerMods.Remove(powerMod);
+    public void RemoveDecayModifier(Modifier decayMod) => decayMods.Remove(decayMod);
 
     private static Modifier AddModifier(List<Modifier> modList, int priority, Modifier.Type modType, float strength) {
         Modifier modifier = new() {
@@ -101,9 +104,6 @@ public class Candle : MonoBehaviour, IEntity {
             _skin = value;
             UpdateWickImgCallback.Invoke(_skin.Wick);
             UpdateCandleImgCallback.Invoke(_skin.GetFacialExpression(SM.moodState));
-
-            //UpdateWickImgCallback.Invoke(_skin.GetFacialExpression(SM.moodState));
-            //UpdateCandleImgCallback.Invoke(_skin.CandleBase);
         }
     }
 

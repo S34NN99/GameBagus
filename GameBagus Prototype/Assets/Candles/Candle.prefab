@@ -579,11 +579,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePs: {fileID: 7699765964407069571}
   _stats:
-    _maxHp: 600
+    _maxHp: 200
     _hpProp: {fileID: 3171803744049403347}
     powerMods: []
     decayMods: []
-    _moodThreshold: 90010000c800000000000000
+    _moodThreshold: 640000003200000000000000
     updateNameCallback:
       m_PersistentCalls:
         m_Calls:

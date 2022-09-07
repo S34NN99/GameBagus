@@ -10,6 +10,8 @@ public class W_Vacation : WorkingState {
     public override void Enter(IEntity entity) {
         entity.currCandle.SetFireSpeed(FireSpeed);
         GeneralEventManager.Instance.BroadcastEvent(BossQuotes.OnCandleVacationEvent);
+        entity.currCandle.SM.powerConst.Strength = 0;
+        entity.currCandle.SM.decayConst.Strength = 0;
     }
 
     public override void Update(IEntity entity, Project pb) {

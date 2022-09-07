@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7eacf2af979b3460bb4d817cabb184be, type: 3}
-  m_Name: New Candle Profile
+  m_Name: Candle_Profile_1
   m_EditorClassIdentifier: 
-  _profileName: Default
-  _profilePic: {fileID: 21300000, guid: 11277a3f23988ec47908362d708edaa8, type: 3}
+  _profileName: Hello
+  _profilePic: {fileID: 21300000, guid: 600669b8d3c32a242a92f7b655700065, type: 3}
+  _overlayInitials: 0
+  _initials: 

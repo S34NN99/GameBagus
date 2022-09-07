@@ -8,8 +8,11 @@ using UnityEditor;
 #endif
 
 public class MultipleEndingsSystem : MonoBehaviour {
-    [SerializeField] private HashSetStringProperty _attributeList;
-    public HashSetStringProperty AttributeList => _attributeList;
+    [SerializeField] private HashSetStringProperty _boolStates;
+    public HashSetStringProperty BoolStates => _boolStates;
+
+    private Dictionary<string, int> _numStates;
+    public Dictionary<string, int> NumStates => _numStates;
 
     [SerializeField] private MetricsPanel metricsPanel;
 
@@ -17,49 +20,83 @@ public class MultipleEndingsSystem : MonoBehaviour {
     public StoryCheckpoint[] Endings => _endings;
 
     private void Awake() {
-        AttributeList.Value = new HashSet<string>();
+        BoolStates.Value = new HashSet<string>();
     }
 
-    public void AddAttribute(string attribute) {
-        AttributeList.Add(attribute);
+    #region Bool State 
+    public void AddBoolState(string boolState) {
+        BoolStates.Add(boolState);
     }
 
-    public void RemoveAttribute(string attribute) {
-        AttributeList.Remove(attribute);
+    public void RemoveBoolState(string boolState) {
+        BoolStates.Remove(boolState);
     }
 
+    public bool HasBoolState(string boolState) {
+        return BoolStates.Value.Contains(boolState);
+    }
+    #endregion
 
-#if UNITY_EDITOR
-    [CustomEditor(typeof(MultipleEndingsSystem))]
-    private class MultipleEndingsSystemEditor : Editor {
-        private MultipleEndingsSystem multipleEndingsSystem;
-
-        private bool showAttributeListDropdown;
-
-        private void OnEnable() {
-            multipleEndingsSystem = target as MultipleEndingsSystem;
+    #region Num State 
+    public void IncrementNumState(string numState) {
+        if (NumStates.ContainsKey(numState)) {
+            NumStates[numState] += 1;
+        } else {
+            NumStates.Add(numState, 1);
         }
+    }
 
-        public override void OnInspectorGUI() {
-            base.OnInspectorGUI();
-
-            if (multipleEndingsSystem.AttributeList.Value == null) return;
-            showAttributeListDropdown = EditorGUILayout.Foldout(showAttributeListDropdown, "Attribute List");
-            if (showAttributeListDropdown) {
-                EditorGUI.BeginDisabledGroup(true);
-                EditorGUI.indentLevel++;
-
-                int counter = 0;
-                foreach (var attribute in multipleEndingsSystem.AttributeList.Value) {
-                    EditorGUILayout.TextField("Element " + counter, attribute);
-                    counter++;
-                }
-
-                EditorGUI.indentLevel--;
-                EditorGUI.EndDisabledGroup();
+    public void DecrementNumState(string numState) {
+        if (NumStates.ContainsKey(numState)) {
+            NumStates[numState] -= 1;
+            if (NumStates[numState] < 0) {
+                NumStates[numState] = 0;
             }
-
+        } else {
+            NumStates.Add(numState, 0);
         }
     }
-#endif
+
+    public int NumStateVal(string numState) {
+        if (NumStates.TryGetValue(numState, out int numStateVal)) {
+            return numStateVal;
+        }
+        return 0;
+    }
+    #endregion
+
+
+    //#if UNITY_EDITOR
+    //    [CustomEditor(typeof(MultipleEndingsSystem))]
+    //    private class MultipleEndingsSystemEditor : Editor {
+    //        private MultipleEndingsSystem multipleEndingsSystem;
+
+    //        private bool showAttributeListDropdown;
+
+    //        private void OnEnable() {
+    //            multipleEndingsSystem = target as MultipleEndingsSystem;
+    //        }
+
+    //        public override void OnInspectorGUI() {
+    //            base.OnInspectorGUI();
+
+    //            if (multipleEndingsSystem.BoolStates.Value == null) return;
+    //            showAttributeListDropdown = EditorGUILayout.Foldout(showAttributeListDropdown, "Attribute List");
+    //            if (showAttributeListDropdown) {
+    //                EditorGUI.BeginDisabledGroup(true);
+    //                EditorGUI.indentLevel++;
+
+    //                int counter = 0;
+    //                foreach (var attribute in multipleEndingsSystem.BoolStates.Value) {
+    //                    EditorGUILayout.TextField("Element " + counter, attribute);
+    //                    counter++;
+    //                }
+
+    //                EditorGUI.indentLevel--;
+    //                EditorGUI.EndDisabledGroup();
+    //            }
+
+    //        }
+    //    }
+    //#endif
 }

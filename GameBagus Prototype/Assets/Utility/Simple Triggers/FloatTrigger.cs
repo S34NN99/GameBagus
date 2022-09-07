@@ -10,6 +10,9 @@ public class FloatTrigger : MonoBehaviour {
     }
 
     [SerializeField] private EquationType equation;
+    [Tooltip("Uses the 'constantComparedVal' value instead of 'targetVar.Value'")]
+    [SerializeField] private bool useConstantVal;
+    [SerializeField] private float constantComparedVal;
     [SerializeField] private FloatProperty targetVar;
 
     [Space]
@@ -23,23 +26,23 @@ public class FloatTrigger : MonoBehaviour {
             }
         }
 
-        float comparedVar = targetVar.Value;
+        float comparedVal = useConstantVal ? constantComparedVal : targetVar.Value;
 
         switch (equation) {
             case EquationType.Greater_Than:
-                outputProp.Value = new_Val > comparedVar;
+                outputProp.Value = new_Val > comparedVal;
                 break;
             case EquationType.Greater_Than_Equal:
-                outputProp.Value = new_Val >= comparedVar;
+                outputProp.Value = new_Val >= comparedVal;
                 break;
             case EquationType.Equal:
-                outputProp.Value = new_Val == comparedVar;
+                outputProp.Value = new_Val == comparedVal;
                 break;
             case EquationType.Smaller_Than:
-                outputProp.Value = new_Val < comparedVar;
+                outputProp.Value = new_Val < comparedVal;
                 break;
             case EquationType.Smaller_Than_Equal:
-                outputProp.Value = new_Val <= comparedVar;
+                outputProp.Value = new_Val <= comparedVal;
                 break;
         }
     }

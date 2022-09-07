@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _constant: 468
   _steps: 15
-  _stepSize: 41.6
+  _stepSize: 10.4

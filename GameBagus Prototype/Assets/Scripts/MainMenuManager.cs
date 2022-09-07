@@ -1,29 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuManager : MonoBehaviour
-{
+public class MainMenuManager : MonoBehaviour {
     public GameObject creditScreen;
-    public void Quit()
-    {
+    [SerializeField] private int startLevelBuildIndex = 1;
+
+    public void Quit() {
         Application.Quit();
     }
 
-    public void NewGame()
-    {
+    public void NewGame() {
         Debug.Log("clicking");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(startLevelBuildIndex);
     }
 
-    public void OpenCredit()
-    {
+    public void OpenCredit() {
         creditScreen.SetActive(true);
     }
 
-    public void CloseCredit()
-    {
+    public void CloseCredit() {
         creditScreen.SetActive(false);
     }
 }
