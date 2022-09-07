@@ -11,8 +11,8 @@ using UnityEditorInternal;
 public class ProjectEventTrigger : MonoBehaviour {
     [System.Serializable]
     private class Trigger {
-        [SerializeField] private BoolProperty condition;
-        [SerializeField] private bool isNot;
+        [SerializeField] public BoolProperty condition;
+        [SerializeField] public bool isNot;
 
         //public bool Value => isNot ? (!condition.Value) : condition.Value;
         public bool Value => isNot ^ condition.Value;
@@ -38,7 +38,7 @@ public class ProjectEventTrigger : MonoBehaviour {
         bool allConditionsMet = true;
         int counter = 0;
         foreach (var condition in conditions) {
-            print(condition.Value + "   " + counter);
+            print(condition.Value + "   " + counter + "     " + condition.condition.Value + "     not  " + condition.isNot);
             counter++;
             if (!condition.Value) {
                 allConditionsMet = false;
