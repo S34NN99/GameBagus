@@ -81,6 +81,17 @@ public class CandleManager : MonoBehaviour {
         }
     }
 
+    public int CheckRemainingCandles()
+    {
+        int counter = 0;
+        foreach(var candles in this.GetCandles())
+        {
+            counter++;
+        }
+
+        return counter;
+    }
+
     public void CheckIfListEmpty() {
         float counter = 0;
         for (int i = 0; i < candles.Length; i++) {
