@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class ProjectDeadline : MonoBehaviour {
     [SerializeField] private RectTransform deadlineIndicator;
-
-    [SerializeField] private Image deadlineProgressImg;
+    [SerializeField] private RectTransform deadlineProgressImg;
     private RectTransform deadlineProgressRect;
+
+    [SerializeField] private UnityEvent<float> updateProgressPercentCallback;
 
     private void Awake() {
         deadlineProgressRect = deadlineProgressImg.GetComponent<RectTransform>();
@@ -21,6 +22,6 @@ public class ProjectDeadline : MonoBehaviour {
         currentPos.x = Mathf.Lerp(0, deadlineProgressImgWidth, 1 - timeRemaining);
         deadlineIndicator.anchoredPosition = currentPos;
 
-        deadlineProgressImg.fillAmount = timeRemaining;
+        updateProgressPercentCallback.Invoke(timeRemaining);
     }
 }

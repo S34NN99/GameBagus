@@ -99,19 +99,22 @@ public class Candle : MonoBehaviour, IEntity {
         get => _skin;
         set {
             _skin = value;
-            UpdateHeadImageCallback.Invoke(_skin.GetFacialExpression(SM.moodState));
-            UpdateBodyImageCallback.Invoke(_skin.CandleBase);
+            UpdateWickImgCallback.Invoke(_skin.Wick);
+            UpdateCandleImgCallback.Invoke(_skin.GetFacialExpression(SM.moodState));
+
+            //UpdateWickImgCallback.Invoke(_skin.GetFacialExpression(SM.moodState));
+            //UpdateCandleImgCallback.Invoke(_skin.CandleBase);
         }
     }
 
     [SerializeField] private CandleProfile _profile;
     public CandleProfile Profile { get => _profile; set => _profile = value; }
 
-    [SerializeField] private UnityEvent<Sprite> _updateHeadImageCallback;
-    public UnityEvent<Sprite> UpdateHeadImageCallback => _updateHeadImageCallback;
+    [SerializeField] private UnityEvent<Sprite> _updateWickImgCallback;
+    public UnityEvent<Sprite> UpdateWickImgCallback => _updateWickImgCallback;
 
-    [SerializeField] private UnityEvent<Sprite> _updateBodyImageCallback;
-    public UnityEvent<Sprite> UpdateBodyImageCallback => _updateBodyImageCallback;
+    [SerializeField] private UnityEvent<Sprite> _updateCandleImgCallback;
+    public UnityEvent<Sprite> UpdateCandleImgCallback => _updateCandleImgCallback;
 
     [SerializeField] private UnityEvent<Candle> onDeath;
     [SerializeField] private UnityEvent<CandleProfile, string> showDialogCallback;

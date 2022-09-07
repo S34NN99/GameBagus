@@ -9,7 +9,7 @@ public class M_Neutral : MoodState {
     public override int CurrentIndex => (int)MoodStatesIndex.Neutral;
 
     public override void Enter(IEntity entity) {
-        entity.currCandle.UpdateHeadImageCallback.Invoke(entity.currCandle.Skin.GetFacialExpression(this));
+        entity.currCandle.UpdateWickImgCallback.Invoke(entity.currCandle.Skin.GetFacialExpression(this));
         entity.currCandle.SM.powerMod.Strength = 2;
         CandleSpeech speech = entity.currCandle.GetComponent<CandleSpeech>();
         entity.currCandle.ShowDialog(speech.GetDialog());

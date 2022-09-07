@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: New Candle Skin
   m_EditorClassIdentifier: 
   _candleBase: {fileID: 21300000, guid: f1133ee9a0ee546498c61b417b9f9bd9, type: 3}
-  _Head_Happy: {fileID: 21300000, guid: 4aca4fdf494d0e743a4cac22af6eab70, type: 3}
+  _wick: {fileID: 21300000, guid: 4aca4fdf494d0e743a4cac22af6eab70, type: 3}
+  _Head_Happy: {fileID: 21300000, guid: f1133ee9a0ee546498c61b417b9f9bd9, type: 3}
   _Head_Neutral: {fileID: 21300000, guid: 50016904eb2dead44a6658edece99f4f, type: 3}
   _Head_Sad: {fileID: 21300000, guid: e8c00ab1d542e1c4eadb0b18a6281b9b, type: 3}
