@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "PerformanceReview/Icons")]
-public class PerformanceReviewIcon : ScriptableObject
+[CreateAssetMenu(menuName = "Paper/Icons")]
+public class Icons : ScriptableObject
 {
     [SerializeField] private Sprite _iconBase;
     public Sprite IconBase => _iconBase;

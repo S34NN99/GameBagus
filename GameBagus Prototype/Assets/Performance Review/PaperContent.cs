@@ -21,14 +21,14 @@ public class PaperContent : ScriptableObject
 
     [Space]
     [Header("Page 2")]
-    [SerializeField] private PerformanceReviewIcon _milestoneIcon;
-    public PerformanceReviewIcon MilesteonIcon => _milestoneIcon;
+    [SerializeField] private Icons _milestoneIcon;
+    public Icons MilesteonIcon => _milestoneIcon;
 
-    [SerializeField] private PerformanceReviewIcon _favourIcon;
-    public PerformanceReviewIcon FavourIcon => _favourIcon;
+    [SerializeField] private Icons _favourIcon;
+    public Icons FavourIcon => _favourIcon;
 
-    [SerializeField] private PerformanceReviewIcon _candleIcon;
-    public PerformanceReviewIcon CandleIcon => _candleIcon;
+    [SerializeField] private Icons _candleIcon;
+    public Icons CandleIcon => _candleIcon;
 
 
 }

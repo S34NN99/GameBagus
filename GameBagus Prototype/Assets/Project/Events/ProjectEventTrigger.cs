@@ -38,7 +38,6 @@ public class ProjectEventTrigger : MonoBehaviour {
         bool allConditionsMet = true;
         int counter = 0;
         foreach (var condition in conditions) {
-            print(condition.Value + "   " + counter + "     " + condition.condition.Value + "     not  " + condition.isNot);
             counter++;
             if (!condition.Value) {
                 allConditionsMet = false;
