@@ -36,7 +36,7 @@ public class CandleStats {
         if (!modList.Any()) return 0;
 
         float finalEffect = 0;
-        int maxPriority = modList.Max(x => x.Priority);
+        int maxPriority = modList.Min(x => x.Priority);
         IEnumerable<Modifier> modifiers = modList.Where(x => x.Priority == maxPriority);
         foreach (var mod in modifiers) {
             if (mod.ModType == Modifier.Type.constant) {

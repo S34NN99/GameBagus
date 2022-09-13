@@ -72,6 +72,10 @@ public class GroupChat : MonoBehaviour {
     public GroupChatBossMessage CreateBossMessage() => CreateMessage<GroupChatBossMessage>(BossMessageTemplate);
 
     public void SendTextMessage(CandleProfile profile, string message) {
+        if (message == null || message == "") {
+            return;
+        }
+
         CandleMessage chatMessage = CreateTextMessage();
         chatMessage.DisplayMessage(profile, message);
     }

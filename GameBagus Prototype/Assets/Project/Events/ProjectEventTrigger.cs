@@ -2,23 +2,18 @@
 using UnityEngine.Events;
 using System.Collections.Generic;
 
-#if UNITY_EDITOR
-using UnityEditor;
-using UnityEditorInternal;
-
-#endif
 
 public class ProjectEventTrigger : MonoBehaviour {
     [System.Serializable]
-    private class Trigger {
-        [SerializeField] public BoolProperty condition;
-        [SerializeField] public bool isNot;
+    public class TriggerCondition {
+        [SerializeField] private BoolProperty condition;
+        [SerializeField] private bool isNot;
 
-        //public bool Value => isNot ? (!condition.Value) : condition.Value;
         public bool Value => isNot ^ condition.Value;
+
     }
 
-    [SerializeField] private Trigger[] conditions;
+    [SerializeField] private TriggerCondition[] conditions;
 
     [SerializeField] private bool triggerOnce = true;
 
@@ -36,10 +31,7 @@ public class ProjectEventTrigger : MonoBehaviour {
         if (hasEventFired && triggerOnce) return false;
 
         bool allConditionsMet = true;
-        int counter = 0;
         foreach (var condition in conditions) {
-            print(condition.Value + "   " + counter + "     " + condition.condition.Value + "     not  " + condition.isNot);
-            counter++;
             if (!condition.Value) {
                 allConditionsMet = false;
                 break;
