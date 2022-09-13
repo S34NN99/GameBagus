@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 178a98aec39ac451abdb031dff946096, type: 3}
-  m_Name: EventB_RequiredProgress
+  m_Name: Lvl1_C_ReqProgress
   m_EditorClassIdentifier: 
   _constant: 468
   _steps: 15

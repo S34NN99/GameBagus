@@ -10,6 +10,8 @@ public class FloatTrigger : MonoBehaviour {
     }
 
     [SerializeField] private EquationType equation;
+
+    [Space]
     [Tooltip("Uses the 'constantComparedVal' value instead of 'targetVar.Value'")]
     [SerializeField] private bool useConstantVal;
     [SerializeField] private float constantComparedVal;
