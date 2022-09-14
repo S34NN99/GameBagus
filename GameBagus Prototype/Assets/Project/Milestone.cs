@@ -1,16 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Milestone : MonoBehaviour
-{
+public class Milestone : MonoBehaviour {
     [System.Serializable]
-    public class MilestoneCondition
-    {
+    public class MilestoneCondition {
         [SerializeField] private bool _passed;
-        public bool Passed
-        {
+        public bool Passed {
             get => _passed;
             set { _passed = value; }
         }
@@ -19,10 +17,9 @@ public class Milestone : MonoBehaviour
         public int ThresholdInPercentage => _thresholdInPercentage;
 
         [SerializeField] private GameObject _self;
-        public GameObject Self
-        {
+        public GameObject Self {
             get => _self;
-            set { _self = value; }            
+            set { _self = value; }
         }
     }
 
@@ -33,17 +30,14 @@ public class Milestone : MonoBehaviour
     [SerializeField] private List<MilestoneCondition> _milestoneConditions;
     public IReadOnlyList<MilestoneCondition> MilestoneConditions => _milestoneConditions;
 
-    private void Start()
-    {
+    private void Start() {
         InitializedMileStone();
     }
 
-    private void InitializedMileStone()
-    {
+    private void InitializedMileStone() {
         float progressWidth = progressbar.GetComponent<RectTransform>().rect.width;
 
-        foreach(MilestoneCondition ms in MilestoneConditions)
-        {
+        foreach (MilestoneCondition ms in MilestoneConditions) {
             GameObject msGo = Instantiate(mileStoneTemplate, mileStoneTemplate.transform.parent);
             msGo.SetActive(true);
             ms.Self = msGo;
@@ -52,15 +46,12 @@ public class Milestone : MonoBehaviour
         }
     }
 
-    public void CheckThreshold(float old_val, float new_Val)
-    {
-        foreach(MilestoneCondition ms in MilestoneConditions)
-        {
+    public void CheckThreshold(float old_val, float new_Val) {
+        foreach (MilestoneCondition ms in MilestoneConditions) {
             if (ms.Passed)
                 continue;
 
-            if(((new_Val / project.RequiredProgress) * 100) >= ms.ThresholdInPercentage)
-            {
+            if (((new_Val / project.RequiredProgress) * 100) >= ms.ThresholdInPercentage) {
                 Debug.Log("Threshold Over");
                 SetFlagOn(ms.Self);
                 ms.Passed = true;
@@ -68,13 +59,11 @@ public class Milestone : MonoBehaviour
         }
     }
 
-    private void SetFlagOn(GameObject go)
-    {
+    private void SetFlagOn(GameObject go) {
         go.GetComponentInChildren<Image>().sprite = flagIcon.IconColour;
     }
 
-    private float CalculateXPosition(float width, float threshold)
-    {
+    private float CalculateXPosition(float width, float threshold) {
         return ((threshold / (100)) * width);
     }
 }

@@ -7,6 +7,110 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+public class Candle : MonoBehaviour, IEntity {
+    public ParticleSystem firePs;
+
+    [SerializeField] private CandleStats _stats;
+    public CandleStats Stats => _stats;
+
+    public StateMachine SM { get; private set; }
+    public Candle currCandle { get; set; }
+
+    [SerializeField] private CandleSkin _skin;
+    public CandleSkin Skin {
+        get => _skin;
+        set {
+            _skin = value;
+            UpdateWickImgCallback.Invoke(_skin.Wick);
+            UpdateCandleImgCallback.Invoke(_skin.GetFacialExpression(SM.moodState));
+        }
+    }
+
+    [SerializeField] private CandleProfile _profile;
+    public CandleProfile Profile {
+        get => _profile;
+        set {
+            _profile = value;
+            UpdateStandImgCallback.Invoke(_profile.Style.CandleStand);
+            UpdateNameCallback.Invoke(_profile.ProfileName);
+        }
+    }
+
+    [SerializeField] private UnityEvent<Sprite> _updateWickImgCallback;
+    public UnityEvent<Sprite> UpdateWickImgCallback => _updateWickImgCallback;
+
+    [SerializeField] private UnityEvent<Sprite> _updateCandleImgCallback;
+    public UnityEvent<Sprite> UpdateCandleImgCallback => _updateCandleImgCallback;
+
+    [SerializeField] private UnityEvent<Sprite> _updateStandImgCallback;
+    public UnityEvent<Sprite> UpdateStandImgCallback => _updateStandImgCallback;
+
+    [SerializeField] private UnityEvent<string> _updateNameCallback;
+    public UnityEvent<string> UpdateNameCallback => _updateNameCallback;
+
+    [SerializeField] private UnityEvent<Candle> onDeath;
+    [SerializeField] private UnityEvent<CandleProfile, string> showDialogCallback;
+
+    [SerializeField] private UnityEvent<float> updateCandleDecay;
+
+    private void Awake() {
+        currCandle = this;
+        SM = new(this);
+        SM.owner = this;
+
+        SM.SetWorkingState(new W_Working());
+        SM.SetMoodState(new M_Happy());
+        Stats.HpProp.Value = Stats.MaxHp;
+    }
+
+    private void Start() {
+    }
+
+    public void Update() {
+        updateCandleDecay.Invoke(Mathf.InverseLerp(0, Stats.MaxHp, Stats.HpProp.Value));
+    }
+
+    public void Decay() {
+        Stats.HpProp.Value -= Stats.CalculateDecay() * Time.deltaTime;
+    }
+    public void CrunchDecay() {
+        Stats.HpProp.Value -= Stats.CalculateDecay() * Time.deltaTime;
+    }
+
+    public void Work(Project pb) {
+        // moodstate is null
+        pb.ProgressProp.Value += Stats.CalculateWorkDone() * Time.deltaTime;
+    }
+
+    public void CrunchWork(Project pb) {
+        pb.ProgressProp.Value += Stats.CalculateWorkDone() * Time.deltaTime;
+    }
+
+    public void Regeneration() {
+        if (Stats.HpProp.Value < Stats.MaxHp) {
+            Stats.HpProp.Value -= Stats.CalculateDecay() * Time.deltaTime;
+        }
+    }
+
+    public void Death() {
+        // should be delayed so its not gonna affect anything
+        Destroy(gameObject);
+
+        GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnCandleBurnoutEvent);
+        onDeath.Invoke(this);
+    }
+
+    public void SetFireDetails(float speed, float size) {
+        var main = firePs.main;
+        main.simulationSpeed = speed;
+        main.startSize = size;
+    }
+
+    public void ShowDialog(string dialogText) {
+        showDialogCallback.Invoke(Profile, dialogText);
+    }
+}
+
 [System.Serializable]
 public class CandleStats {
     [SerializeField] private float _maxHp = 600;
@@ -82,101 +186,5 @@ public class CandleStats {
         public float Strength { get; set; }
 
         public System.Action UnsubscribeSelf { get; set; }
-    }
-}
-
-public class Candle : MonoBehaviour, IEntity {
-    private const float burnoutCandleGraphicsPos = -192f;
-
-    public ParticleSystem firePs;
-    //public CandleStats candleStats;
-
-    [SerializeField] private CandleStats _stats;
-    public CandleStats Stats => _stats;
-
-    public StateMachine SM { get; private set; }
-    public Candle currCandle { get; set; }
-
-    [SerializeField] private CandleSkin _skin;
-    public CandleSkin Skin {
-        get => _skin;
-        set {
-            _skin = value;
-            UpdateWickImgCallback.Invoke(_skin.Wick);
-            UpdateCandleImgCallback.Invoke(_skin.GetFacialExpression(SM.moodState));
-        }
-    }
-
-    [SerializeField] private CandleProfile _profile;
-    public CandleProfile Profile { get => _profile; set => _profile = value; }
-
-    [SerializeField] private UnityEvent<Sprite> _updateWickImgCallback;
-    public UnityEvent<Sprite> UpdateWickImgCallback => _updateWickImgCallback;
-
-    [SerializeField] private UnityEvent<Sprite> _updateCandleImgCallback;
-    public UnityEvent<Sprite> UpdateCandleImgCallback => _updateCandleImgCallback;
-
-    [SerializeField] private UnityEvent<Candle> onDeath;
-    [SerializeField] private UnityEvent<CandleProfile, string> showDialogCallback;
-
-    [SerializeField] private UnityEvent<float> updateCandleDecay;
-
-    private void Awake() {
-        currCandle = this;
-        SM = new(this);
-        SM.owner = this;
-
-        SM.SetWorkingState(new W_Working());
-        SM.SetMoodState(new M_Happy());
-        Stats.HpProp.Value = Stats.MaxHp;
-    }
-
-    private void Start()
-    {
-        
-    }
-
-    public void Update() {
-        updateCandleDecay.Invoke(Mathf.InverseLerp(0, Stats.MaxHp, Stats.HpProp.Value));
-    }
-
-    public void Decay() {
-        Stats.HpProp.Value -= Stats.CalculateDecay() * Time.deltaTime;
-    }
-    public void CrunchDecay() {
-        Stats.HpProp.Value -= Stats.CalculateDecay() * Time.deltaTime;
-    }
-
-    public void Work(Project pb) {
-        // moodstate is null
-        pb.ProgressProp.Value += Stats.CalculateWorkDone() * Time.deltaTime;
-    }
-
-    public void CrunchWork(Project pb) {
-        pb.ProgressProp.Value += Stats.CalculateWorkDone() * Time.deltaTime;
-    }
-
-    public void Regeneration() {
-        if (Stats.HpProp.Value < Stats.MaxHp) {
-            Stats.HpProp.Value -= Stats.CalculateDecay() * Time.deltaTime;
-        }
-    }
-
-    public void Death() {
-        // should be delayed so its not gonna affect anything
-        Destroy(gameObject);
-
-        GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnCandleBurnoutEvent);
-        onDeath.Invoke(this);
-    }
-
-    public void SetFireDetails(float speed, float size) {
-        var main = firePs.main;
-        main.simulationSpeed = speed;
-        main.startSize = size;
-    }
-
-    public void ShowDialog(string dialogText) {
-        showDialogCallback.Invoke(Profile, dialogText);
     }
 }

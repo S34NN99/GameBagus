@@ -11,18 +11,12 @@ public class ChatMessage : MonoBehaviour {
     [SerializeField] private UnityEvent<Color> updateProfileTintCallback;
     [SerializeField] private UnityEvent<string> updateInitialsOverlayCallback;
     [SerializeField] private UnityEvent<string> updateMessageCallback;
-    [SerializeField] private UnityEvent<Color> updateProfileColorCallback;
 
     public void DisplayMessage(CandleProfile profile, string message) {
         updateProfilePicCallback.Invoke(profile.ProfilePic);
         updateProfileNameCallback.Invoke(profile.ProfileName);
-        updateProfileTintCallback.Invoke(profile.ProfilePicTint);
+        updateProfileTintCallback.Invoke(profile.Style.ProfilePicTint);
         updateMessageCallback.Invoke(message);
-        updateProfileColorCallback.Invoke(profile.Color);
-
-
-        if (profile.OverlayInitials) {
-            updateInitialsOverlayCallback.Invoke(profile.Initials);
-        }
+        updateInitialsOverlayCallback.Invoke(profile.Initials);
     }
 }
