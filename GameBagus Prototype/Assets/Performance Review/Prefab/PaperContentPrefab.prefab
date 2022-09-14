@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7436965832146842216}
   m_Layer: 5
-  m_Name: Performance Review
+  m_Name: PaperContentPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

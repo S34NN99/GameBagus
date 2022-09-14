@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class PerformanceReview : MonoBehaviour {
+public class DisplayPaperContent : MonoBehaviour {
 
     [SerializeField] private PaperContent _paperContent;
     public PaperContent PaperContent => _paperContent;
@@ -29,8 +29,8 @@ public class PerformanceReview : MonoBehaviour {
     public void UpdateContent() {
         projectName.text = PaperContent.ProjectName;
         appImage.sprite = PaperContent.AppImage;
-        //content.text = PaperContent.Content;
-        content.gameObject.GetComponent<TypingEffect>().TextToType = PaperContent.Content;
+        content.text = PaperContent.Content;
+        //content.gameObject.GetComponent<TypingEffect>().TextToType = PaperContent.Content;
         signature.text = PaperContent.Signature;
     }
 
