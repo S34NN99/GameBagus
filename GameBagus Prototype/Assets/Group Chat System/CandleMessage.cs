@@ -10,11 +10,14 @@ public class CandleMessage : MonoBehaviour {
     [SerializeField] private UnityEvent<string> updateProfileNameCallback;
     [SerializeField] private UnityEvent<string> updateInitialsOverlayCallback;
     [SerializeField] private UnityEvent<string> updateMessageCallback;
+    [SerializeField] private UnityEvent<Color> updateProfileColorCallback;
 
     public void DisplayMessage(CandleProfile profile, string message) {
         updateProfilePicCallback.Invoke(profile.ProfilePic);
         updateProfileNameCallback.Invoke(profile.ProfileName);
         updateMessageCallback.Invoke(message);
+        updateProfileColorCallback.Invoke(profile.Color);
+
 
         if (profile.OverlayInitials) {
             updateInitialsOverlayCallback.Invoke(profile.Initials);

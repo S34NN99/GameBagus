@@ -6,10 +6,11 @@ using UnityEngine;
 public class W_Crunch : WorkingState {
     public override string Name => "Crunch";
     public override float FireSpeed => 1.4f;
+    public override float FireSize => 0.6f;
 
 
     public override void Enter(IEntity entity) {
-        entity.currCandle.SetFireSpeed(FireSpeed);
+        entity.currCandle.SetFireDetails(FireSpeed, FireSize);
         GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnCandleCrunchEvent);
         entity.currCandle.SM.powerConst.Strength = 4;
         entity.currCandle.SM.decayConst.Strength = 4;

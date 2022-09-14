@@ -12,6 +12,7 @@ public class Project : MonoBehaviour {
 
     [SerializeField] private UnityEvent<float> updateProgressSliderCallback;
     [SerializeField] private int requiredProgress = 240;
+    public int RequiredProgress => requiredProgress;
 
     [Space]
     [SerializeField] private CandleManager candleManager;
@@ -25,9 +26,11 @@ public class Project : MonoBehaviour {
     [Space]
     [SerializeField] private UnityEvent<float> updateProjectTimeRemaining;
     [SerializeField] private UnityEvent onProjectEnded;
+    [SerializeField] private UnityEvent onDeadlineEnded;
 
     private bool isWorkingOnProject;
     private bool isFinishing;
+    private float remainingTime = 0f;
 
     //e Update is called once per frame
     private void Update() {
@@ -39,8 +42,14 @@ public class Project : MonoBehaviour {
             UpdateVisuals();
 
             elapsedTimeProp.Value += Time.deltaTime;
+            remainingTime = 1 - (elapsedTimeProp.Value / projectDeadline);
             updateProgressSliderCallback.Invoke(_progressProp.Value / requiredProgress);
-            updateProjectTimeRemaining.Invoke(1 - (elapsedTimeProp.Value / projectDeadline));
+            updateProjectTimeRemaining.Invoke(remainingTime);
+
+            if(remainingTime <= 0)
+            {
+                onDeadlineEnded?.Invoke();
+            }
         }
     }
 

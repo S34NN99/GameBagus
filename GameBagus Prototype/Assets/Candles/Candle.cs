@@ -131,6 +131,11 @@ public class Candle : MonoBehaviour, IEntity {
         Stats.HpProp.Value = Stats.MaxHp;
     }
 
+    private void Start()
+    {
+        
+    }
+
     public void Update() {
         updateCandleDecay.Invoke(Mathf.InverseLerp(0, Stats.MaxHp, Stats.HpProp.Value));
     }
@@ -165,9 +170,10 @@ public class Candle : MonoBehaviour, IEntity {
         onDeath.Invoke(this);
     }
 
-    public void SetFireSpeed(float speed) {
+    public void SetFireDetails(float speed, float size) {
         var main = firePs.main;
         main.simulationSpeed = speed;
+        main.startSize = size;
     }
 
     public void ShowDialog(string dialogText) {

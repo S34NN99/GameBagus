@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CandleManager : MonoBehaviour {
     private string[] femaleNames = {
@@ -30,6 +30,8 @@ public class CandleManager : MonoBehaviour {
     [SerializeField] private CandleSkin[] candleSkins;
     [SerializeField] private CandlePersonality[] candlePersonalities;
 
+    [SerializeField] private UnityEvent onCandlesBurntOut;
+
     private void Awake() {
         candles = new Candle[candleTemplates.Length];
     }
@@ -54,6 +56,7 @@ public class CandleManager : MonoBehaviour {
                 candles[i].Stats.updateNameCallback.Invoke(candleName);
                 //candles[i].Skin = candleSkins[Random.Range(0, candleSkins.Length)];
                 candles[i].Skin = candleSkins[i];
+                UpdateCandleProfile(candles[i], candleName, candleName.Substring(0, 1));
 
                 CandleSpeech candleSpeech = candles[i].GetComponent<CandleSpeech>();
                 //candleSpeech.ShowDialog("Hi, I'm " + candleName);
@@ -64,6 +67,12 @@ public class CandleManager : MonoBehaviour {
         }
 
         GeneralEventManager.Instance.BroadcastEvent(BossQuotes.OnReplaceAllCandleEvent);
+    }
+
+    private void UpdateCandleProfile(Candle candle, string name, string initial)
+    {
+        candle.Profile.ProfileName = name;
+        candle.Profile.Initials = initial;
     }
 
     public IEnumerable<Candle> GetCandles() => candles.Where(candle => candle != null);
@@ -101,8 +110,9 @@ public class CandleManager : MonoBehaviour {
             }
 
             if (counter >= 3) {
-                LoseScreen loseScreen = FindObjectOfType<LoseScreen>();
-                loseScreen.ShowLoseScreen();
+                //LoseScreen loseScreen = FindObjectOfType<LoseScreen>();
+                //loseScreen.ShowLoseScreen();
+                onCandlesBurntOut?.Invoke();
             }
         }
     }

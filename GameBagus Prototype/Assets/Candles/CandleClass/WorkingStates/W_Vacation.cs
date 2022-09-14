@@ -6,9 +6,10 @@ using UnityEngine;
 public class W_Vacation : WorkingState {
     public override string Name => "Vacation";
     public override float FireSpeed => 0.2f;
+    public override float FireSize => 0.1f;
 
     public override void Enter(IEntity entity) {
-        entity.currCandle.SetFireSpeed(FireSpeed);
+        entity.currCandle.SetFireDetails(FireSpeed, FireSize);
         GeneralEventManager.Instance.BroadcastEvent(BossQuotes.OnCandleVacationEvent);
         entity.currCandle.SM.powerConst.Strength = 0;
         entity.currCandle.SM.decayConst.Strength = 0;

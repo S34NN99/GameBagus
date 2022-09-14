@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 using TMPro;
 
 public class PerformanceReview : MonoBehaviour {
-    //[SerializeField] private PerformanceReviewContent _prcontent;
-    //public PerformanceReviewContent PRContent => _prcontent;
 
     [SerializeField] private PaperContent _paperContent;
     public PaperContent PaperContent => _paperContent;
@@ -23,10 +21,16 @@ public class PerformanceReview : MonoBehaviour {
     [SerializeField] private GameObject favourParent;
     [SerializeField] private GameObject candlesParent;
 
+    private void OnEnable()
+    {
+        UpdateContent();
+    }
+
     public void UpdateContent() {
         projectName.text = PaperContent.ProjectName;
         appImage.sprite = PaperContent.AppImage;
-        content.text = PaperContent.Content;
+        //content.text = PaperContent.Content;
+        content.gameObject.GetComponent<TypingEffect>().TextToType = PaperContent.Content;
         signature.text = PaperContent.Signature;
     }
 
@@ -37,7 +41,16 @@ public class PerformanceReview : MonoBehaviour {
     }
 
     private void UpdateMilestoneIcon() {
+        Milestone milestone = FindObjectOfType<Milestone>();
 
+        for (int i = 0; i < milestone.MilestoneConditions.Count; i++)
+        {
+            if (milestone.MilestoneConditions[i].Passed)
+            {
+                Image image = milestoneParent.transform.GetChild(i).GetComponent<Image>();
+                image.sprite = PaperContent.MilesteonIcon.IconColour;
+            }
+        }
     }
 
     private void UpdateFavourIcon() {

@@ -11,6 +11,7 @@ public class ProjectDeadline : MonoBehaviour {
 
     [SerializeField] private UnityEvent<float> updateProgressPercentCallback;
 
+
     private void Awake() {
         deadlineProgressRect = deadlineProgressImg.GetComponent<RectTransform>();
     }

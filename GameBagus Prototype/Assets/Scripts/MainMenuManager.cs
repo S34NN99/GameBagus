@@ -8,6 +8,11 @@ public class MainMenuManager : MonoBehaviour {
     public GameObject creditScreen;
     [SerializeField] private int startLevelBuildIndex = 1;
 
+    private void Start()
+    {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+    }
+
     public void Quit() {
         Application.Quit();
     }

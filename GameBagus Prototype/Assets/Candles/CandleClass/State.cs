@@ -17,6 +17,7 @@ public abstract class State {
 
 public abstract class WorkingState : State {
     public abstract float FireSpeed { get; }
+    public abstract float FireSize { get; }
 }
 
 public enum MoodStatesIndex {
