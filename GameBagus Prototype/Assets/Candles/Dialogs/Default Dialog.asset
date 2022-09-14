@@ -54,4 +54,5 @@ MonoBehaviour:
   - Love spending time with my family
   - Time to travel
   - Recharging my battery
-  onDeathDialogs: []
+  onDeathDialogs:
+  - It's too much!

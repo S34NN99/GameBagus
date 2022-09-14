@@ -53,23 +53,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1660991866515386213, guid: c72de3d4473ff44f683b554e8b18fa2c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -125
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 1660991866515386213, guid: c72de3d4473ff44f683b554e8b18fa2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -62.5
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 1705800389041535212, guid: c72de3d4473ff44f683b554e8b18fa2c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -125
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 1705800389041535212, guid: c72de3d4473ff44f683b554e8b18fa2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -62.5
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 3738104873369078346, guid: c72de3d4473ff44f683b554e8b18fa2c, type: 3}
       propertyPath: m_Name
-      value: Player Chat Message Variant
+      value: Chat_Message_Player
       objectReference: {fileID: 0}
     - target: {fileID: 7208251948163963991, guid: c72de3d4473ff44f683b554e8b18fa2c, type: 3}
       propertyPath: m_HorizontalAlignment
