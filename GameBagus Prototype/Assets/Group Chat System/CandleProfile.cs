@@ -28,7 +28,4 @@ public class CandleProfile : ScriptableObject {
         get => _initials;
         set { _initials = value; }
     }
-
-    [SerializeField] private Color _color;
-    public Color Color => _color;
 }
