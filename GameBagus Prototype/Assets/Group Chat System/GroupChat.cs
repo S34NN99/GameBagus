@@ -86,8 +86,8 @@ public class GroupChat : MonoBehaviour {
         return chatMessage;
     }
 
-    public CandleMessage CreateTextMessage() => CreateMessage<CandleMessage>(ChatMessageTemplate);
-    public CandleMessage CreatePlayerMessage() => CreateMessage<CandleMessage>(PlayerChatMessageTemplate);
+    public ChatMessage CreateTextMessage() => CreateMessage<ChatMessage>(ChatMessageTemplate);
+    public ChatMessage CreatePlayerMessage() => CreateMessage<ChatMessage>(PlayerChatMessageTemplate);
     public GroupChatBossMessage CreateBossMessage() => CreateMessage<GroupChatBossMessage>(BossMessageTemplate);
 
     public void SendTextMessage(CandleProfile profile, string message) {
@@ -95,7 +95,7 @@ public class GroupChat : MonoBehaviour {
             return;
         }
 
-        CandleMessage chatMessage = CreateTextMessage();
+        ChatMessage chatMessage = CreateTextMessage();
         chatMessage.DisplayMessage(profile, message);
     }
 
