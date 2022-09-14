@@ -8,6 +8,7 @@ using TMPro;
 public class CandleMessage : MonoBehaviour {
     [SerializeField] private UnityEvent<Sprite> updateProfilePicCallback;
     [SerializeField] private UnityEvent<string> updateProfileNameCallback;
+    [SerializeField] private UnityEvent<Color> updateProfileTintCallback;
     [SerializeField] private UnityEvent<string> updateInitialsOverlayCallback;
     [SerializeField] private UnityEvent<string> updateMessageCallback;
     [SerializeField] private UnityEvent<Color> updateProfileColorCallback;
@@ -15,6 +16,7 @@ public class CandleMessage : MonoBehaviour {
     public void DisplayMessage(CandleProfile profile, string message) {
         updateProfilePicCallback.Invoke(profile.ProfilePic);
         updateProfileNameCallback.Invoke(profile.ProfileName);
+        updateProfileTintCallback.Invoke(profile.ProfilePicTint);
         updateMessageCallback.Invoke(message);
         updateProfileColorCallback.Invoke(profile.Color);
 

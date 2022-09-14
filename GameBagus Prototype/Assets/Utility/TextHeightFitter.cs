@@ -6,7 +6,8 @@ using UnityEngine;
 using TMPro;
 
 public class TextHeightFitter : MonoBehaviour {
-    [SerializeField] private RectTransform targetRectTransform;
+    [SerializeField] private RectTransform _targetRectTransform;
+    public RectTransform TargetRectTransform => _targetRectTransform;
 
     [Header("Height")]
     [SerializeField] private float staticHeight;
@@ -25,7 +26,7 @@ public class TextHeightFitter : MonoBehaviour {
 
     public float TotalHeight { get; private set; }
 
-    public float CurrentHeight => targetRectTransform.sizeDelta.y;
+    public float CurrentHeight => TargetRectTransform.sizeDelta.y;
 
     private void Update() {
         if (RecalculateHeightOnUpdate) {
@@ -58,9 +59,9 @@ public class TextHeightFitter : MonoBehaviour {
     }
 
     public void SetHeightTo(float height) {
-        Vector2 sizeDelta = targetRectTransform.sizeDelta;
+        Vector2 sizeDelta = TargetRectTransform.sizeDelta;
         sizeDelta.y = height;
-        targetRectTransform.sizeDelta = sizeDelta;
+        TargetRectTransform.sizeDelta = sizeDelta;
 
         IsAnimating = CurrentHeight != TotalHeight;
     }

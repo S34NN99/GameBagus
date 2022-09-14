@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GroupChat : MonoBehaviour {
     [Header("Templates")]
@@ -18,6 +19,7 @@ public class GroupChat : MonoBehaviour {
 
     private List<TextHeightFitter> messagesInChat = new();
     private Queue<TextHeightFitter> chatMessageQueue = new();
+    private bool readyToSendNextMessage = true;
     private TextHeightFitter currentMessage;
 
     [SerializeField] private float textCooldown = 1f;
@@ -26,6 +28,13 @@ public class GroupChat : MonoBehaviour {
     [Space]
     [SerializeField] private RectTransform _chatMessageParent;
     private RectTransform ChatMessageParent => _chatMessageParent;
+
+    [SerializeField] private ScrollRect _scrollView;
+    private ScrollRect ScrollView => _scrollView;
+
+    private bool isAutoScrolling = true;
+    private float scrollLockPos;
+
     private void Update() {
         if (textCooldownTimer > 0) {
             textCooldownTimer -= Time.deltaTime;
@@ -36,26 +45,36 @@ public class GroupChat : MonoBehaviour {
             return;
         }
 
-        if (currentMessage == null) {
+        if (readyToSendNextMessage) {
             if (chatMessageQueue.Any()) {
                 currentMessage = chatMessageQueue.Dequeue();
                 currentMessage.gameObject.SetActive(true);
+                readyToSendNextMessage = false;
             }
         } else {
             if (!currentMessage.IsAnimating) {
                 // stops animating, free to display new message on next frame
-                currentMessage = null;
+                readyToSendNextMessage = true;
                 textCooldownTimer = textCooldown;
             }
         }
+
+        if (!isAutoScrolling) {
+            float targetHeight = scrollLockPos / ScrollView.content.rect.height;
+            ScrollView.verticalScrollbar.value = 1 + targetHeight;
+        }
     }
 
-    public void ShowPanel() {
-
+    public void StopAutoScroll() {
+        isAutoScrolling = false;
+        if (currentMessage != null) {
+            scrollLockPos = currentMessage.TargetRectTransform.anchoredPosition.y;
+        }
     }
 
-    public void HidePanel() {
-
+    public void ResumeAutoScroll() {
+        isAutoScrolling = true;
+        ScrollView.verticalScrollbar.value = 0;
     }
 
     public T CreateMessage<T>(GameObject template) where T : MonoBehaviour {

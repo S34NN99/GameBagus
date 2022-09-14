@@ -5941,7 +5941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2892d699bc0f476aa33ac20a4937baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetRectTransform: {fileID: 1654977303}
+  _targetRectTransform: {fileID: 1654977303}
   staticHeight: 150
   textTargets:
   - _textTarget: {fileID: 499822845}
