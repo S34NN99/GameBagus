@@ -7,12 +7,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Candle/Profile")]
 public class CandleProfile : ScriptableObject {
     [SerializeField] private string _profileName;
-    public string ProfileName
-    {
+    public string ProfileName {
         get => _profileName;
         set { _profileName = value; }
     }
-    
+
     [SerializeField] private Sprite _profilePic;
     public Sprite ProfilePic => _profilePic;
 
@@ -23,8 +22,7 @@ public class CandleProfile : ScriptableObject {
     public bool OverlayInitials => _overlayInitials;
 
     [SerializeField] private string _initials;
-    public string Initials
-    {
+    public string Initials {
         get => _initials;
         set { _initials = value; }
     }

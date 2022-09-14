@@ -556,7 +556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &56674660
 RectTransform:
   m_ObjectHideFlags: 0
@@ -895,6 +895,7 @@ MonoBehaviour:
   - {fileID: 1430491806}
   - {fileID: 88077640}
   - {fileID: 1048595140}
+  randomisers: []
   candles:
   - {fileID: 0}
   - {fileID: 0}
@@ -1009,7 +1010,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1371484060}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PhoneCallAlert, Assembly-CSharp
         m_MethodName: RefreshPopUpContent
         m_Mode: 1
@@ -1418,17 +1419,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6702661300675094428, guid: cc8a1d1a9381a409ab7f04710bf2e745, type: 3}
   m_PrefabInstance: {fileID: 289855353}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &289855356 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6702661300675094426, guid: cc8a1d1a9381a409ab7f04710bf2e745, type: 3}
-  m_PrefabInstance: {fileID: 289855353}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289855355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9da434ef734944fa0a352f5821906a03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &319798251
 GameObject:
   m_ObjectHideFlags: 0
@@ -2712,6 +2702,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Performance Review Page1
       objectReference: {fileID: 0}
+    - target: {fileID: 8371928470953337638, guid: d4b440ec425a2ad4d929ad3f24b02f5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8371928471219445508, guid: d4b440ec425a2ad4d929ad3f24b02f5f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3741,7 +3735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groupChat: {fileID: 1444744293}
   _notificationBanner: {fileID: 1654977304}
-  _phoneCallAlert: {fileID: 1371484060}
+  _phoneCallAlert: {fileID: 0}
 --- !u!114 &860509692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5913,17 +5907,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6702661300675094429, guid: cc8a1d1a9381a409ab7f04710bf2e745, type: 3}
   m_PrefabInstance: {fileID: 6702661299353946118}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1371484060 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6702661300675094426, guid: cc8a1d1a9381a409ab7f04710bf2e745, type: 3}
-  m_PrefabInstance: {fileID: 6702661299353946118}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1371484058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9da434ef734944fa0a352f5821906a03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1378750782
 GameObject:
   m_ObjectHideFlags: 0
@@ -6844,7 +6827,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 289855356}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PhoneCallAlert, Assembly-CSharp
         m_MethodName: RefreshPopUpContent
         m_Mode: 1

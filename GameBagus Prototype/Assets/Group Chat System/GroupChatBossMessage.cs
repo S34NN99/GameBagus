@@ -6,8 +6,8 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class GroupChatBossMessage : MonoBehaviour {
-    [SerializeField] private CandleMessage _chatMessage;
-    public CandleMessage ChatMessage => _chatMessage;
+    [SerializeField] private ChatMessage _chatMessage;
+    public ChatMessage ChatMessage => _chatMessage;
 
     [SerializeField] private Button _moreInfoButton;
     public Button MoreInfoButton => _moreInfoButton;
