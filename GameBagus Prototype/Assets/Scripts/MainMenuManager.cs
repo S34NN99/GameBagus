@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour {
-    public GameObject creditScreen;
+
     [SerializeField] private int startLevelBuildIndex = 1;
 
     private void Start()
@@ -22,11 +22,13 @@ public class MainMenuManager : MonoBehaviour {
         SceneManager.LoadScene(startLevelBuildIndex);
     }
 
-    public void OpenCredit() {
-        creditScreen.SetActive(true);
+    public void OpenScreen(GameObject screen)
+    {
+        screen.SetActive(true);
     }
 
-    public void CloseCredit() {
-        creditScreen.SetActive(false);
+    public void CloseScreen(GameObject screen)
+    {
+        screen.SetActive(false);
     }
 }
