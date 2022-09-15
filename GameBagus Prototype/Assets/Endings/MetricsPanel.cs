@@ -6,6 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+[System.Obsolete]
 public class MetricsPanel : MonoBehaviour {
     [SerializeField] private string mainMenuSceneName;
     [SerializeField] private string nextProjectSceneName;

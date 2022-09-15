@@ -19,7 +19,7 @@ public class ScriptedDialog : MonoBehaviour {
         }
     }
 
-    public void ShowScriptedDialog() {
+    public void StartDialog() {
         Candle[] remainingCandles = candles.GetCandles().ToArray();
 
         if (remainingCandles.Length < candlesRequired) {
