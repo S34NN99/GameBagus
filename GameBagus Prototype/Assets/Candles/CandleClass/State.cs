@@ -8,6 +8,7 @@ public interface IEntity {
     public Candle currCandle { get; set; }
 }
 
+[System.Serializable]
 public abstract class State {
     public abstract string Name { get; }
     public abstract void Enter(IEntity entity);
@@ -15,6 +16,7 @@ public abstract class State {
     public abstract void Exit(IEntity entity);
 }
 
+[System.Serializable]
 public abstract class WorkingState : State {
     public abstract float FireSpeed { get; }
     public abstract float FireSize { get; }

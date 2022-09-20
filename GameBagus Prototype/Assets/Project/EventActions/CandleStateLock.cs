@@ -4,22 +4,59 @@ using UnityEngine;
 
 public class CandleStateLock : MonoBehaviour {
 
-    [SerializeField] private CandleManager CM;
-    [SerializeField] private float duration = 5f;
+    public enum StateToLock
+    {
+        Crunch,
+        Work,
+        Vacation
+    }
 
-    private WorkingState stateToLock = new W_Crunch();
+    [SerializeField] private GameObject candleParents;
+    [SerializeField] private float duration = 5f;
+    [SerializeField] private StateToLock stateToLock;
+
+
+    private WorkingState W_stateToLock = null;
     private WorkingState defaultState = null;
 
-    public void StartLockState()
+    public void StartLockState(int childNumber)
     {
-        StartCoroutine(LockState(CM.RandomizeCandle()));
+        Candle candle = candleParents.transform.GetChild(childNumber).GetComponent<Candle>();
+        InitializeState();
+        StartCoroutine(LockState(candle));
+    }
+
+    void InitializeState()
+    {
+        switch(stateToLock)
+        {
+            case StateToLock.Crunch:
+                W_stateToLock = new W_Crunch();
+                break;
+
+            case StateToLock.Work:
+                W_stateToLock = new W_Working();
+                break;
+
+            case StateToLock.Vacation:
+                W_stateToLock = new W_Vacation();
+                break;
+        }
     }
 
     private IEnumerator LockState(Candle candle)
     {
+        BoxCollider collider = candle.gameObject.GetComponent<BoxCollider>();
         defaultState = candle.SM.workingState;
-        candle.SM.SetWorkingState(stateToLock);
+
+        candle.SM.workingState.Exit(candle);
+        candle.SM.SetWorkingState(W_stateToLock);
+        collider.enabled = false;
+
         yield return new WaitForSeconds(duration);
+
+        collider.enabled = true;
+        candle.SM.workingState.Exit(candle);
         candle.SM.SetWorkingState(defaultState);
     }
 }

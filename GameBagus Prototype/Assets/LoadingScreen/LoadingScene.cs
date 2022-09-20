@@ -7,16 +7,16 @@ public class LoadingScene : MonoBehaviour
 {
     public void LoadScene(int sceneID)
     {
-        LoadSceneAsync(sceneID);
+        StartCoroutine(LoadSceneAsync(sceneID));
     }
 
-    void LoadSceneAsync(int sceneID)
+    IEnumerator LoadSceneAsync(int sceneID)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneID);
 
-        //while(!operation.isDone)
-        //{
-        //    yield return null;
-        //}
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
     }
 }
