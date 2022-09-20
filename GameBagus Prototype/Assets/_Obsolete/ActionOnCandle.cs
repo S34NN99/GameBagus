@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
+[System.Obsolete]
 public class ActionOnCandle : MonoBehaviour, IEndDragHandler {
     [SerializeField] private Camera candleCamera;
     [SerializeField] private UnityEvent<Candle> actOnCandleCallback;

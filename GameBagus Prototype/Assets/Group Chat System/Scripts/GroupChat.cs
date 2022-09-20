@@ -90,6 +90,13 @@ public class GroupChat : MonoBehaviour {
     public ChatMessage CreatePlayerMessage() => CreateMessage<ChatMessage>(PlayerChatMessageTemplate);
     public GroupChatBossMessage CreateBossMessage() => CreateMessage<GroupChatBossMessage>(BossMessageTemplate);
 
+    public void InjectMessage(GameObject template) {
+        GameObject chatMessage = Instantiate(template, ChatMessageParent);
+        chatMessage.gameObject.SetActive(false);
+
+        QueueMessage(chatMessage.GetComponent<TextHeightFitter>());
+    }
+
     public void SendTextMessage(CandleProfile profile, string message) {
         if (message == null || message == "") {
             return;

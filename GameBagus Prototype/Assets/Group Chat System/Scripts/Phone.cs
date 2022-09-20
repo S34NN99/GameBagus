@@ -1,6 +1,7 @@
 ﻿
 using UnityEngine;
 
+[System.Obsolete]
 public class Phone : MonoBehaviour {
     [SerializeField] private GroupChat _groupChat;
     public GroupChat GroupChat => _groupChat;

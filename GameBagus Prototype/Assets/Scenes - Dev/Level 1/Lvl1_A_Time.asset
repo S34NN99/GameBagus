@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 178a98aec39ac451abdb031dff946096, type: 3}
-  m_Name: Lvl1_A_ElapsedTime
+  m_Name: Lvl1_A_Time
   m_EditorClassIdentifier: 
-  _constant: 30
-  _steps: 15
+  _constant: 5
+  _steps: 5
   _stepSize: 1

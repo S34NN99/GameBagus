@@ -28,7 +28,7 @@ public class ScriptedDialog : MonoBehaviour {
         }
 
         foreach (var dialog in dialogs) {
-            CandleProfile profile = remainingCandles[dialog.candleProfileId].Profile;
+            CandleProfile profile = remainingCandles[dialog.candleProfileId - 1].Profile;
             showDialogCallback.Invoke(profile, dialog.message);
         }
     }

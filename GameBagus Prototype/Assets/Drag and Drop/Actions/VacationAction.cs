@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public class VacationAction : CandleAction {
+public class VacationAction : BaseCandleAction {
 
     public override void ActOn(Candle candle) {
         print(candle.name + " is on vacation");

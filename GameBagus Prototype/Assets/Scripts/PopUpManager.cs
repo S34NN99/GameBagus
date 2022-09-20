@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 using UnityEngine;
 
 public class PopUpManager : MonoBehaviour {
     [SerializeField] private GameObject backgroundPanel;
 
-    [SerializeField] private SequentialActionLoop _currentActionLoop;
+    private SequentialActionLoop _currentActionLoop;
     public SequentialActionLoop CurrentActionLoop { get => _currentActionLoop; set => _currentActionLoop = value; }
 
     public void FireNextActionIfAny() {
@@ -19,11 +20,17 @@ public class PopUpManager : MonoBehaviour {
         CurrentActionLoop = null;
     }
 
-    public void ShowPopup(GameObject popup) {
-        popup.gameObject.SetActive(true);
-        popup.gameObject.TryGetComponent(out _currentActionLoop);
-
+    public void Show() {
         backgroundPanel.SetActive(true);
 
+        Time.timeScale = 0;
+    }
+
+    public void Hide() {
+        ClearActionLoop();
+
+        backgroundPanel.SetActive(false);
+
+        Time.timeScale = 1;
     }
 }

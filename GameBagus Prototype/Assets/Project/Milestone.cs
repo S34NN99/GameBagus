@@ -26,7 +26,6 @@ public class Milestone : MonoBehaviour {
     [SerializeField] private GameObject progressbar;
     [SerializeField] private Icons flagIcon;
     [SerializeField] private GameObject mileStoneTemplate;
-    [SerializeField] private Project project;
     [SerializeField] private List<MilestoneCondition> _milestoneConditions;
     public IReadOnlyList<MilestoneCondition> MilestoneConditions => _milestoneConditions;
 
@@ -51,7 +50,7 @@ public class Milestone : MonoBehaviour {
             if (ms.Passed)
                 continue;
 
-            if (((new_Val / project.RequiredProgress) * 100) >= ms.ThresholdInPercentage) {
+            if ((new_Val * 100) >= ms.ThresholdInPercentage) {
                 Debug.Log("Threshold Over");
                 SetFlagOn(ms.Self);
                 ms.Passed = true;
@@ -64,6 +63,6 @@ public class Milestone : MonoBehaviour {
     }
 
     private float CalculateXPosition(float width, float threshold) {
-        return ((threshold / (100)) * width);
+        return (threshold / 100f) * width;
     }
 }

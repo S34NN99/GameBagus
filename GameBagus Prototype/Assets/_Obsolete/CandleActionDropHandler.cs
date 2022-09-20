@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+[System.Obsolete]
 public class CandleActionDropHandler : MonoBehaviour, IDropHandler {
     [SerializeField] private Candle targetCandle;
     [SerializeField] private Canvas parentCanvas;
@@ -17,7 +18,7 @@ public class CandleActionDropHandler : MonoBehaviour, IDropHandler {
     public void OnDrop(PointerEventData eventData) {
         print(targetCandle.name);
         if (candleInUi) {
-            if (eventData.selectedObject.TryGetComponent(out CandleAction action)) {
+            if (eventData.selectedObject.TryGetComponent(out BaseCandleAction action)) {
                 action.ActOn(targetCandle);
             }
         } else {
@@ -25,7 +26,7 @@ public class CandleActionDropHandler : MonoBehaviour, IDropHandler {
             Ray ray = candleCamera.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out RaycastHit hit)) {
-                if (hit.collider.TryGetComponent(out CandleAction action)) {
+                if (hit.collider.TryGetComponent(out BaseCandleAction action)) {
                     action.ActOn(targetCandle);
                 }
             }

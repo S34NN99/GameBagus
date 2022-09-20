@@ -10,7 +10,15 @@ public class Project : MonoBehaviour {
     [SerializeField] private FloatProperty _progressProp;
     public FloatProperty ProgressProp => _progressProp;
 
-    [SerializeField] private UnityEvent<float> updateProgressSliderCallback;
+    [SerializeField] private FloatProperty _progressPercentProp;
+    public FloatProperty ProgressPercentProp => _progressPercentProp;
+
+    [SerializeField] private FloatProperty _elapsedTimeProp;
+    public FloatProperty ElapsedTimeProp => _elapsedTimeProp;
+
+    [SerializeField] private FloatProperty _timeRemainingPercentProp;
+    public FloatProperty TimeRemainingPercentProp => _timeRemainingPercentProp;
+
     [SerializeField] private int requiredProgress = 240;
     public int RequiredProgress => requiredProgress;
 
@@ -19,11 +27,12 @@ public class Project : MonoBehaviour {
 
     [Space]
     [SerializeField] private float projectDeadline = 50;
-    [SerializeField] private FloatProperty elapsedTimeProp;
+
     [Range(0, 1f)]
     [SerializeField] private float nearingProjecFinishThreshold = 0.8f;
 
     [Space]
+    [SerializeField] private UnityEvent<float> updateProgressSliderCallback;
     [SerializeField] private UnityEvent<float> updateProjectTimeRemaining;
     [SerializeField] private UnityEvent onProjectEnded;
     [SerializeField] private UnityEvent onDeadlineEnded;
@@ -41,13 +50,17 @@ public class Project : MonoBehaviour {
 
             UpdateVisuals();
 
-            elapsedTimeProp.Value += Time.deltaTime;
-            remainingTime = 1 - (elapsedTimeProp.Value / projectDeadline);
-            updateProgressSliderCallback.Invoke(_progressProp.Value / requiredProgress);
+            ElapsedTimeProp.Value += Time.deltaTime;
+            remainingTime = 1 - (ElapsedTimeProp.Value / projectDeadline);
+
+            ProgressPercentProp.Value = ProgressProp.Value / requiredProgress;
+            TimeRemainingPercentProp.Value = remainingTime;
+
+
+            updateProgressSliderCallback.Invoke(ProgressProp.Value / requiredProgress);
             updateProjectTimeRemaining.Invoke(remainingTime);
 
-            if(remainingTime <= 0)
-            {
+            if (remainingTime <= 0) {
                 onDeadlineEnded?.Invoke();
             }
         }
@@ -62,10 +75,10 @@ public class Project : MonoBehaviour {
     }
 
     public void UpdateVisuals() {
-        if (_progressProp.Value >= requiredProgress) {
+        if (ProgressProp.Value >= requiredProgress) {
             onProjectEnded.Invoke();
 
-            _progressProp.Value = 0;
+            ProgressProp.Value = 0;
             candleManager.CheckCandles();
 
             //_completedProjectProp.Value++;
@@ -76,7 +89,7 @@ public class Project : MonoBehaviour {
 
             isWorkingOnProject = false;
             isFinishing = false;
-        } else if (_progressProp.Value >= requiredProgress * nearingProjecFinishThreshold) {
+        } else if (ProgressProp.Value >= requiredProgress * nearingProjecFinishThreshold) {
             if (!isFinishing) {
                 GeneralEventManager.Instance.BroadcastEvent(AudioManager.NearingProjectFinishedEvent);
             }
