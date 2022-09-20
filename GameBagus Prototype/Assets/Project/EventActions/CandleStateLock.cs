@@ -21,7 +21,7 @@ public class CandleStateLock : MonoBehaviour {
 
     public void StartLockState(int childNumber)
     {
-        Candle candle = candleParents.transform.GetChild(childNumber).GetComponent<Candle>();
+        Candle candle = candleParents.transform.GetChild(childNumber - 1).GetComponent<Candle>();
         InitializeState();
         StartCoroutine(LockState(candle));
     }

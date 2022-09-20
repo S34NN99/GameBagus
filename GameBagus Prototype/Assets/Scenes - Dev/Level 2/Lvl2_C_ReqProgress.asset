@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 178a98aec39ac451abdb031dff946096, type: 3}
-  m_Name: Lvl2_E_ReqProgress
+  m_Name: Lvl2_C_ReqProgress
   m_EditorClassIdentifier: 
-  _constant: 0.6
+  _constant: 0.25
   _steps: 5
   _stepSize: 0.01
