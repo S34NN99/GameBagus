@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 2960340101018120040}
   - component: {fileID: 4262887029697669314}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Milestones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

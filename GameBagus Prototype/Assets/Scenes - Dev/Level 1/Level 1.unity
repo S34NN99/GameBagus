@@ -2271,7 +2271,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1998669154269970627, guid: cdb47877009914bc18382ebe0e7c354a, type: 3}
       propertyPath: m_text
-      value: Notice
+      value: 'Notice:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998669154334665276, guid: cdb47877009914bc18382ebe0e7c354a, type: 3}
+      propertyPath: m_text
+      value: 'Guys, that new jump mechanic is completely bonkered, please fix ASAP!
+        xoxodd
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 1998669155159222742, guid: cdb47877009914bc18382ebe0e7c354a, type: 3}
       propertyPath: m_Pivot.y
@@ -6486,6 +6493,42 @@ PrefabInstance:
     - target: {fileID: 1809290574970153531, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992552454350788961, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
+      propertyPath: onTimesUp.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992552454350788961, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
+      propertyPath: onTimesUp.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992552454350788961, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
+      propertyPath: onTimesUp.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 995807103}
+    - target: {fileID: 1992552454350788961, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
+      propertyPath: onTimesUp.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992552454350788961, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
+      propertyPath: onTimesUp.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ClickButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992552454350788961, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
+      propertyPath: onTimesUp.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GO_Utility, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992552454350788961, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
+      propertyPath: onTimesUp.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992552454350788961, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
+      propertyPath: onTimesUp.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1780058159}
+    - target: {fileID: 1992552454350788961, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
+      propertyPath: onTimesUp.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.UI.Button, UnityEngine.UI
       objectReference: {fileID: 0}
     - target: {fileID: 2640415019110844254, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

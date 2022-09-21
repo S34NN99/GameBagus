@@ -750,7 +750,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: e520cd9b0d18f4fc99760b5c22b881d0, type: 3}
     - target: {fileID: 3255763288022853137, guid: c72de3d4473ff44f683b554e8b18fa2c, type: 3}
       propertyPath: staticHeight
-      value: 75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3255763288022853137, guid: c72de3d4473ff44f683b554e8b18fa2c, type: 3}
       propertyPath: textTargets.Array.data[0]._minimumHeight
