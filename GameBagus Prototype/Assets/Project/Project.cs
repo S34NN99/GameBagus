@@ -32,8 +32,8 @@ public class Project : MonoBehaviour {
     [SerializeField] private float nearingProjecFinishThreshold = 0.8f;
 
     [Space]
-    [SerializeField] private UnityEvent<float> updateProgressSliderCallback;
-    [SerializeField] private UnityEvent<float> updateProjectTimeRemaining;
+    //[SerializeField] private UnityEvent<float> updateProgressSliderCallback;
+    //[SerializeField] private UnityEvent<float> updateProjectTimeRemaining;
     [SerializeField] private UnityEvent onProjectEnded;
     [SerializeField] private UnityEvent onDeadlineEnded;
 
@@ -57,8 +57,8 @@ public class Project : MonoBehaviour {
             TimeRemainingPercentProp.Value = remainingTime;
 
 
-            updateProgressSliderCallback.Invoke(ProgressProp.Value / requiredProgress);
-            updateProjectTimeRemaining.Invoke(remainingTime);
+            //updateProgressSliderCallback.Invoke(ProgressProp.Value / requiredProgress);
+            //updateProjectTimeRemaining.Invoke(remainingTime);
 
             if (remainingTime <= 0) {
                 onDeadlineEnded?.Invoke();

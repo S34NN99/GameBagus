@@ -11,11 +11,6 @@ public class MultipleEndingsSystem : MonoBehaviour {
     private Dictionary<string, int> _attributes;
     public Dictionary<string, int> Attributes => _attributes;
 
-    //[SerializeField] private MetricsPanel metricsPanel;
-
-    //[SerializeField] private StoryCheckpoint[] _endings;
-    //public StoryCheckpoint[] Endings => _endings;
-
     private void Awake() {
         _attributes = new();
     }
@@ -69,38 +64,11 @@ public class MultipleEndingsSystem : MonoBehaviour {
     }
     #endregion
 
+    public void Save() {
 
-    //#if UNITY_EDITOR
-    //    [CustomEditor(typeof(MultipleEndingsSystem))]
-    //    private class MultipleEndingsSystemEditor : Editor {
-    //        private MultipleEndingsSystem multipleEndingsSystem;
+    }
 
-    //        private bool showAttributeListDropdown;
+    public void RetrieveData() {
 
-    //        private void OnEnable() {
-    //            multipleEndingsSystem = target as MultipleEndingsSystem;
-    //        }
-
-    //        public override void OnInspectorGUI() {
-    //            base.OnInspectorGUI();
-
-    //            if (multipleEndingsSystem.BoolStates.Value == null) return;
-    //            showAttributeListDropdown = EditorGUILayout.Foldout(showAttributeListDropdown, "Attribute List");
-    //            if (showAttributeListDropdown) {
-    //                EditorGUI.BeginDisabledGroup(true);
-    //                EditorGUI.indentLevel++;
-
-    //                int counter = 0;
-    //                foreach (var attribute in multipleEndingsSystem.BoolStates.Value) {
-    //                    EditorGUILayout.TextField("Element " + counter, attribute);
-    //                    counter++;
-    //                }
-
-    //                EditorGUI.indentLevel--;
-    //                EditorGUI.EndDisabledGroup();
-    //            }
-
-    //        }
-    //    }
-    //#endif
+    }
 }

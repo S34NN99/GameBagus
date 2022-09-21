@@ -12,6 +12,7 @@ public class CandleManager : MonoBehaviour {
 
     //[SerializeField] private Vector2[] candlePositions;
     [SerializeField] private Candle[] candles;
+    public IReadOnlyList<Candle> CandleSlots => candles;
 
     [SerializeField] private CandleSkin[] candleSkins;
     [SerializeField] private CandlePersonality[] candlePersonalities;
@@ -35,28 +36,10 @@ public class CandleManager : MonoBehaviour {
                 candles[i] = candleGO.GetComponent<Candle>();
 
                 randomisers[i].Randomise(candles[i], prng);
-
-                //string candleName;
-                //if (Random.Range(0, 2) == 1) {
-                //    candleName = femaleNames[Random.Range(0, femaleNames.Length)];
-                //} else {
-                //    candleName = maleNames[Random.Range(0, maleNames.Length)];
-                //}
-                ////candles[i].candleStats.updateNameCallback.Invoke(candleName);
-                //candles[i].Stats.updateNameCallback.Invoke(candleName);
-                ////candles[i].Skin = candleSkins[Random.Range(0, candleSkins.Length)];
-                //candles[i].Skin = candleSkins[i];
-                //UpdateCandleProfile(candles[i], candleName, candleName.Substring(0, 1));
-
-                //CandleSpeech candleSpeech = candles[i].GetComponent<CandleSpeech>();
-                ////candleSpeech.ShowDialog("Hi, I'm " + candleName);
-
-                //CandleStory candleStory = candles[i].GetComponent<CandleStory>();
-                //candleStory.Personality = candlePersonalities[Random.Range(0, candlePersonalities.Length)];
             }
         }
 
-        GeneralEventManager.Instance.BroadcastEvent(BossQuotes.OnReplaceAllCandleEvent);
+        //GeneralEventManager.Instance.BroadcastEvent(BossQuotes.OnReplaceAllCandleEvent);
     }
 
     private void UpdateCandleProfile(Candle candle, string name, string initial) {

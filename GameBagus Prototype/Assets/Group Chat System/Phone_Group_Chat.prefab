@@ -175,7 +175,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chatMessageTemplate: {fileID: 3738104873369078346, guid: c72de3d4473ff44f683b554e8b18fa2c, type: 3}
-  _bossMessageTemplate: {fileID: 4530311466623721838, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
   _playerChatMessageTemplate: {fileID: 2983279881922634455, guid: ce53c2b190b2b41c19f6e3a783daf0b9, type: 3}
   textCooldown: 2
   _chatMessageParent: {fileID: 4561316110136924105}
@@ -342,8 +341,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 60, y: 0}
-  m_SizeDelta: {x: -60.00001, y: 0}
+  m_AnchoredPosition: {x: 45, y: 0}
+  m_SizeDelta: {x: -45.00001, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &4561316110136924104
 MonoBehaviour:

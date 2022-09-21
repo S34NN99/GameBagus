@@ -9,13 +9,10 @@ using UnityEngine.UI;
 public class GroupChat : MonoBehaviour {
     [Header("Templates")]
     [SerializeField] private GameObject _chatMessageTemplate;
-    private GameObject ChatMessageTemplate => _chatMessageTemplate;
-
-    [SerializeField] private GameObject _bossMessageTemplate;
-    private GameObject BossMessageTemplate => _bossMessageTemplate;
+    public GameObject ChatMessageTemplate => _chatMessageTemplate;
 
     [SerializeField] private GameObject _playerChatMessageTemplate;
-    private GameObject PlayerChatMessageTemplate => _playerChatMessageTemplate;
+    public GameObject PlayerChatMessageTemplate => _playerChatMessageTemplate;
 
     private List<TextHeightFitter> messagesInChat = new();
     private Queue<TextHeightFitter> chatMessageQueue = new();
@@ -86,24 +83,20 @@ public class GroupChat : MonoBehaviour {
         return chatMessage;
     }
 
-    public ChatMessage CreateTextMessage() => CreateMessage<ChatMessage>(ChatMessageTemplate);
-    public ChatMessage CreatePlayerMessage() => CreateMessage<ChatMessage>(PlayerChatMessageTemplate);
-    public GroupChatBossMessage CreateBossMessage() => CreateMessage<GroupChatBossMessage>(BossMessageTemplate);
-
-    public void InjectMessage(GameObject template) {
-        GameObject chatMessage = Instantiate(template, ChatMessageParent);
-        chatMessage.gameObject.SetActive(false);
-
-        QueueMessage(chatMessage.GetComponent<TextHeightFitter>());
-    }
-
     public void SendTextMessage(CandleProfile profile, string message) {
         if (message == null || message == "") {
             return;
         }
 
-        ChatMessage chatMessage = CreateTextMessage();
+        ChatMessage chatMessage = CreateMessage<ChatMessage>(ChatMessageTemplate);
         chatMessage.DisplayMessage(profile, message);
+    }
+
+    public void InjectMessage(GameObject messageObj) {
+        messageObj.transform.SetParent(ChatMessageParent);
+        messageObj.gameObject.SetActive(false);
+
+        QueueMessage(messageObj.GetComponent<TextHeightFitter>());
     }
 
     private void QueueMessage(TextHeightFitter message) {
