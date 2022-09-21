@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4afa996a2dfbd4c059d0e83cc7b39b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 95076241}
+  _trigger: {fileID: 95076241}
   onEventFired:
     m_PersistentCalls:
       m_Calls:
@@ -2518,7 +2518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4afa996a2dfbd4c059d0e83cc7b39b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 495767014}
+  _trigger: {fileID: 495767014}
   onEventFired:
     m_PersistentCalls:
       m_Calls:
@@ -4388,7 +4388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4afa996a2dfbd4c059d0e83cc7b39b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 830975485}
+  _trigger: {fileID: 830975485}
   onEventFired:
     m_PersistentCalls:
       m_Calls:
@@ -8579,7 +8579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4afa996a2dfbd4c059d0e83cc7b39b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 1857828675}
+  _trigger: {fileID: 1857828675}
   onEventFired:
     m_PersistentCalls:
       m_Calls:
@@ -8885,7 +8885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4afa996a2dfbd4c059d0e83cc7b39b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 1874848322}
+  _trigger: {fileID: 1874848322}
   onEventFired:
     m_PersistentCalls:
       m_Calls:
@@ -9053,7 +9053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4afa996a2dfbd4c059d0e83cc7b39b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 1929375174}
+  _trigger: {fileID: 1929375174}
   onEventFired:
     m_PersistentCalls:
       m_Calls:
@@ -9299,7 +9299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4afa996a2dfbd4c059d0e83cc7b39b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 2023928452}
+  _trigger: {fileID: 2023928452}
   onEventFired:
     m_PersistentCalls:
       m_Calls:

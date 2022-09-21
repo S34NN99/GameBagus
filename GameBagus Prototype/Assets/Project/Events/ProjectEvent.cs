@@ -6,7 +6,8 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(ProjectEventTrigger))]
 public class ProjectEvent : MonoBehaviour {
-    [SerializeField] private ProjectEventTrigger trigger;
+    [SerializeField] private ProjectEventTrigger _trigger;
+    public ProjectEventTrigger Trigger => _trigger;
 
     [SerializeField] private UnityEvent onEventFired;
 
@@ -14,8 +15,14 @@ public class ProjectEvent : MonoBehaviour {
     [Tooltip("You guys can leave a comment about what the event should do")]
     [SerializeField] private string remarksForTech;
 
+#if UNITY_EDITOR
+    private void OnValidate() {
+        _trigger = GetComponent<ProjectEventTrigger>();
+    }
+#endif
+
     private void Update() {
-        if (trigger.GetTrigger()) {
+        if (Trigger.GetTrigger()) {
             onEventFired.Invoke();
         }
     }

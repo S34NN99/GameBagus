@@ -13,7 +13,13 @@ public class IntTrigger : MonoBehaviour {
     }
 
     [SerializeField] private EquationType equation;
+
+    [Space]
+    [Tooltip("Uses the 'constantComparedVal' value instead of 'targetVar.Value'")]
+    [SerializeField] private bool useConstantVal;
+    [SerializeField] private int constantComparedVal;
     [SerializeField] private IntProperty targetVar;
+
 
     [Space]
     [SerializeField] private BoolProperty outputProp;
@@ -26,23 +32,23 @@ public class IntTrigger : MonoBehaviour {
             }
         }
 
-        int comparedVar = targetVar.Value;
+        int comparedVal = useConstantVal ? constantComparedVal : targetVar.Value;
 
         switch (equation) {
             case EquationType.Greater_Than:
-                outputProp.Value = new_Val > comparedVar;
+                outputProp.Value = new_Val > comparedVal;
                 break;
             case EquationType.Greater_Than_Equal:
-                outputProp.Value = new_Val >= comparedVar;
+                outputProp.Value = new_Val >= comparedVal;
                 break;
             case EquationType.Equal:
-                outputProp.Value = new_Val == comparedVar;
+                outputProp.Value = new_Val == comparedVal;
                 break;
             case EquationType.Smaller_Than:
-                outputProp.Value = new_Val < comparedVar;
+                outputProp.Value = new_Val < comparedVal;
                 break;
             case EquationType.Smaller_Than_Equal:
-                outputProp.Value = new_Val <= comparedVar;
+                outputProp.Value = new_Val <= comparedVal;
                 break;
         }
     }
