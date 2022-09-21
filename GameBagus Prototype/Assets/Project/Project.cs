@@ -20,7 +20,11 @@ public class Project : MonoBehaviour {
     public FloatProperty TimeRemainingPercentProp => _timeRemainingPercentProp;
 
     [SerializeField] private int requiredProgress = 240;
-    public int RequiredProgress => requiredProgress;
+    public int RequiredProgress
+    {
+        get {return requiredProgress; }
+        set { requiredProgress = value; }
+    }
 
     [Space]
     [SerializeField] private CandleManager candleManager;

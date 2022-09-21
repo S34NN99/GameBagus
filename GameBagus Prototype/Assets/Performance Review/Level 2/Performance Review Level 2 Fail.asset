@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcacae6366a894f468edb354bc50de3c, type: 3}
+  m_Name: Performance Review Level 2 Fail
+  m_EditorClassIdentifier: 
+  _projectName: PROJECT 2
+  _appImage: {fileID: 21300000, guid: 656cf7d3d82f8a34d8bdb3259f012483, type: 3}
+  _content: 'Groundhog Games launched the special campaign website.
+
+    
+
+    Complaints
+    received by client due to bugs affecting user experience.
+
+
+    Following project
+    post-mortem, the management decides to let you go from the company.
+
+'
+  _signature: 
+  _milestoneIcon: {fileID: 11400000, guid: 6025bf1102320954bb1404587f82f6e7, type: 2}
+  _favourIcon: {fileID: 11400000, guid: 4f29f2861e33cc34c8e9f412011e592f, type: 2}
+  _candleIcon: {fileID: 11400000, guid: c579bf3deeebb6843b34c31801dbed93, type: 2}

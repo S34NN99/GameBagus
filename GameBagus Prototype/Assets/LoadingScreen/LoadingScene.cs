@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class LoadingScene : MonoBehaviour
 {
-    public void LoadScene(int sceneID)
+    [SerializeField] private int sceneIndex = 1;
+
+    public void LoadScene()
     {
-        StartCoroutine(LoadSceneAsync(sceneID));
+        StartCoroutine(LoadSceneAsync(sceneIndex));
     }
 
     IEnumerator LoadSceneAsync(int sceneID)

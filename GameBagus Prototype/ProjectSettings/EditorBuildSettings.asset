@@ -8,10 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: c4821c2558bf1bc4ea951682f74ad5a1
+  - enabled: 1
+    path: Assets/Scenes - Dev/Level 1/Level 1.unity
+    guid: 0706f175ac719424698e93547a69d875
+  - enabled: 1
+    path: Assets/Scenes - Dev/Level 2/Level 2.unity
+    guid: b2058b96b44a15642969b39c2e09e8ba
   - enabled: 0
     path: Assets/Scenes/Game Scene.unity
     guid: f9d73ba506147e14992a081247f7927e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes - Dev/Temp Scene Ui to SR.unity
     guid: 3bad87cf44e224e07911511c96914111
   m_configObjects: {}
