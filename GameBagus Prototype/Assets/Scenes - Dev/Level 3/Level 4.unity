@@ -4442,7 +4442,7 @@ GameObject:
   - component: {fileID: 963865021}
   - component: {fileID: 963865020}
   m_Layer: 0
-  m_Name: A_New Client
+  m_Name: Sample Event
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7186,35 +7186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cm: {fileID: 331786603}
-  dialogs:
-  - _candleProfileId: 1
-    _isOverrideProfile: 0
-    _overrideProfile:
-      _profileName: 
-      _profilePic: {fileID: 0}
-      _initials: 
-      _style: {fileID: 0}
-    _isPlayer: 0
-    _message: I hope this client is not as difficult as the previous one
-  - _candleProfileId: 2
-    _isOverrideProfile: 0
-    _overrideProfile:
-      _profileName: 
-      _profilePic: {fileID: 0}
-      _initials: 
-      _style: {fileID: 0}
-    _isPlayer: 0
-    _message: I second that
-  - _candleProfileId: 3
-    _isOverrideProfile: 0
-    _overrideProfile:
-      _profileName: 
-      _profilePic: {fileID: 0}
-      _initials: 
-      _style: {fileID: 0}
-    _isPlayer: 0
-    _message: Let's hope for the best
-  groupChat: {fileID: 1598888235524650599}
+  dialogs: []
+  groupChat: {fileID: 0}
   randomiseCandles: 0
 --- !u!1001 &1654191585
 PrefabInstance:
