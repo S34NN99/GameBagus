@@ -6373,6 +6373,10 @@ PrefabInstance:
       propertyPath: mileStoneTemplate
       value: 
       objectReference: {fileID: 1147802030}
+    - target: {fileID: 2961872968510974468, guid: d3a810635d1cc4e5e8d751920aed56f4, type: 3}
+      propertyPath: _milestoneConditions.Array.data[2]._thresholdInPercentage
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 2961872968510974469, guid: d3a810635d1cc4e5e8d751920aed56f4, type: 3}
       propertyPath: candleManager
       value: 
