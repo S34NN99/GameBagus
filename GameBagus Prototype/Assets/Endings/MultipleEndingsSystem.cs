@@ -15,7 +15,7 @@ public class MultipleEndingsSystem : MonoBehaviour {
         _attributes = new();
     }
 
-    #region Bool State 
+    #region Bool State
     public void AddBoolState(string attribute) {
         Attributes.Add(attribute, 1);
     }

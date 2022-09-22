@@ -31,4 +31,9 @@ public class RuntimeStringRefresher : MonoBehaviour {
         string runtimeText = ObservableVariable.ConvertToRuntimeText(Text);
         updateTextCallback.Invoke(runtimeText);
     }
+
+    public void GetText(string text)
+    {
+        Text = text;
+    }
 }
