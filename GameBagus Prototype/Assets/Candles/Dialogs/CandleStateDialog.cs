@@ -39,7 +39,7 @@ public class CandleStateDialog : ScriptableObject {
 }
 
 
-[CreateAssetMenu(menuName = "Candle/Scripted Dialog")]
+[CreateAssetMenu(menuName = "Candle/Dialog")]
 public class CandleScriptedDialog : ScriptableObject {
     [SerializeField] private string[] workingDialogs_Happy;
     [SerializeField] private string[] workingDialogs_Neutral;

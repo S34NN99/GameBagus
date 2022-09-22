@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
 
+[System.Obsolete]
 public class PhoneCallAlert : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI[] contentToUpdate;
 

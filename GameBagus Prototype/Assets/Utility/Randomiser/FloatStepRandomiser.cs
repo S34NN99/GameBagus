@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Utility/Float Step Randomiser")]
-public class FloatStepRandomiser : FloatRandomiserBase {
+public class FloatStepRandomiser : FloatRandomiser {
     [SerializeField] private float _constant;
     public float Constant => _constant;
 
@@ -12,7 +12,13 @@ public class FloatStepRandomiser : FloatRandomiserBase {
     [SerializeField] private float _stepSize;
     public float StepSize => _stepSize;
 
-    public override float RandomiseFloat() {
+    private void OnValidate() {
+        if (Steps < 0) {
+            _steps = 0;
+        }
+    }
+
+    public override float Next() {
         return Constant + (StepSize * Random.Range(0, Steps + 1));
     }
 }

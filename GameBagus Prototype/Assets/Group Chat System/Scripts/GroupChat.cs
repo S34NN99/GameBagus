@@ -19,10 +19,10 @@ public class GroupChat : MonoBehaviour {
     private bool readyToSendNextMessage = true;
     private TextHeightFitter currentMessage;
 
+    [Space]
     [SerializeField] private float textCooldown = 1f;
     private float textCooldownTimer;
 
-    [Space]
     [SerializeField] private RectTransform _chatMessageParent;
     private RectTransform ChatMessageParent => _chatMessageParent;
 
@@ -31,6 +31,9 @@ public class GroupChat : MonoBehaviour {
 
     private bool isAutoScrolling = true;
     private float scrollLockPos;
+
+    [SerializeField] private CandleManager _cm;
+    public CandleManager CM => _cm;
 
     private void Update() {
         if (textCooldownTimer > 0) {

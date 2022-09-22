@@ -181,9 +181,14 @@ public class CandleStats {
             multiply
         }
 
-        public int Priority { get; set; }
-        public Type ModType { get; set; }
-        public float Strength { get; set; }
+        [SerializeField] private int _priority;
+        public int Priority { get => _priority; set => _priority = value; }
+
+        [SerializeField] private Type _modType;
+        public Type ModType { get => _modType; set => _modType = value; }
+
+        [SerializeField] private float _strength;
+        public float Strength { get => _strength; set => _strength = value; }
 
         public System.Action UnsubscribeSelf { get; set; }
     }
