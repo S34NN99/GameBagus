@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HeadManager : MonoBehaviour {
-    [SerializeField] private float candleZPos = -10f;
+    //[SerializeField] private float candleZPos = -10f;
     [SerializeField] private float decapitationForce = 100f;
     [SerializeField] private GameObject colliderTemplate;
 
@@ -14,12 +14,13 @@ public class HeadManager : MonoBehaviour {
     [SerializeField] private IntProperty headCountProp;
 
     public void RollHead(GameObject head) {
-        GameObject clonedHead = Instantiate(head, transform);
-        GameObject attachedCollider = Instantiate(colliderTemplate, head.transform);
+        GameObject attachedCollider = Instantiate(colliderTemplate, transform);
+        GameObject clonedHead = Instantiate(head, attachedCollider.transform);
+        clonedHead.transform.localPosition = Vector3.zero;
         Rigidbody2D rb2D = attachedCollider.GetComponent<Rigidbody2D>();
         BoxCollider2D boxCollider = attachedCollider.GetComponent<BoxCollider2D>();
 
-        rb2D.AddForceAtPosition(new Vector2(decapitationForce, 0), head.transform.position + new Vector3(0, boxCollider.offset.y + boxCollider.size.y / 2));
+        rb2D.AddForceAtPosition(new Vector2(decapitationForce, 0), clonedHead.transform.position + new Vector3(0, boxCollider.offset.y + boxCollider.size.y / 2));
 
         headCountProp.Value++;
         //StartCoroutine(RollHeadCoroutine());

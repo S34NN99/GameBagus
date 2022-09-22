@@ -5,16 +5,13 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ScriptedDialog : MonoBehaviour {
-    [SerializeField] private CandleManager _cm;
-    private CandleManager CM => _cm;
-
+[CreateAssetMenu(menuName = "Candle/Conversation")]
+public class CandleConversation : ScriptableObject {
     [SerializeField] private Dialog[] dialogs;
-    [SerializeField] private GroupChat groupChat;
     [SerializeField] private bool randomiseCandles;
 
-    public void StartDialog() {
-        IReadOnlyList<Candle> allCandles = CM.CandleSlots;
+    public void StartDialog(GroupChat groupChat) {
+        IReadOnlyList<Candle> allCandles = groupChat.CM.CandleSlots;
 
         IEnumerable<int> dialogCandleIds = dialogs.Where(x => {
             if (x.IsOverrideProfile) {

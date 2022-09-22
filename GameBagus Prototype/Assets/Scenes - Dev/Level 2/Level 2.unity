@@ -475,7 +475,8 @@ MonoBehaviour:
   _onValueUpdated:
     m_PersistentCalls:
       m_Calls: []
-  randomiser: {fileID: 11400000, guid: f2771bcf1110cb840bcfd3bad53222ca, type: 2}
+  _randomiser: {fileID: 11400000, guid: f2771bcf1110cb840bcfd3bad53222ca, type: 2}
+  randomiseOnStart: 1
 --- !u!114 &131712588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1283,7 +1284,8 @@ MonoBehaviour:
   _onValueUpdated:
     m_PersistentCalls:
       m_Calls: []
-  randomiser: {fileID: 11400000, guid: f2771bcf1110cb840bcfd3bad53222ca, type: 2}
+  _randomiser: {fileID: 11400000, guid: f2771bcf1110cb840bcfd3bad53222ca, type: 2}
+  randomiseOnStart: 1
 --- !u!114 &271597844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2408,7 +2410,8 @@ MonoBehaviour:
   _onValueUpdated:
     m_PersistentCalls:
       m_Calls: []
-  randomiser: {fileID: 11400000, guid: 33f0b2d25eb6c4e448c5ffb751ff4314, type: 2}
+  _randomiser: {fileID: 11400000, guid: 33f0b2d25eb6c4e448c5ffb751ff4314, type: 2}
+  randomiseOnStart: 1
 --- !u!4 &547724790
 Transform:
   m_ObjectHideFlags: 0
@@ -2582,7 +2585,8 @@ MonoBehaviour:
   _onValueUpdated:
     m_PersistentCalls:
       m_Calls: []
-  randomiser: {fileID: 11400000, guid: 1075d7fac74fa1e4caa824809038e6d0, type: 2}
+  _randomiser: {fileID: 11400000, guid: 1075d7fac74fa1e4caa824809038e6d0, type: 2}
+  randomiseOnStart: 1
 --- !u!4 &614264644
 Transform:
   m_ObjectHideFlags: 0
@@ -3046,7 +3050,8 @@ MonoBehaviour:
   _onValueUpdated:
     m_PersistentCalls:
       m_Calls: []
-  randomiser: {fileID: 11400000, guid: 4ee3030ea19a4684597bb4d69759e04e, type: 2}
+  _randomiser: {fileID: 11400000, guid: 4ee3030ea19a4684597bb4d69759e04e, type: 2}
+  randomiseOnStart: 1
 --- !u!114 &704972403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4865,7 +4870,8 @@ MonoBehaviour:
   _onValueUpdated:
     m_PersistentCalls:
       m_Calls: []
-  randomiser: {fileID: 11400000, guid: 447113d522c616e4082ead6370112dee, type: 2}
+  _randomiser: {fileID: 11400000, guid: 447113d522c616e4082ead6370112dee, type: 2}
+  randomiseOnStart: 1
 --- !u!114 &1027305122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5185,6 +5191,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2989660854074746652, guid: 256acb21aa4e0402c82ce173c9d4fdd1, type: 3}
+      propertyPath: _cm
+      value: 
+      objectReference: {fileID: 1796386237}
     - target: {fileID: 7813255798516583318, guid: 256acb21aa4e0402c82ce173c9d4fdd1, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -8746,7 +8756,8 @@ MonoBehaviour:
   _onValueUpdated:
     m_PersistentCalls:
       m_Calls: []
-  randomiser: {fileID: 11400000, guid: 6d9d1777e1c25ee48b220ae3999199c0, type: 2}
+  _randomiser: {fileID: 11400000, guid: 6d9d1777e1c25ee48b220ae3999199c0, type: 2}
+  randomiseOnStart: 1
 --- !u!114 &2026985076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9002,7 +9013,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c655ed96758bd403fa511b0f0050015b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  candleZPos: -10
   decapitationForce: 100
   colliderTemplate: {fileID: 1980849231}
   dropAnchor: {fileID: 1976248771}

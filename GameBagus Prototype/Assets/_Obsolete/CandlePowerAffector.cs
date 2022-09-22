@@ -1,16 +1,19 @@
 using System.Collections;
-using System.Collections.Generic;
 
 using UnityEngine;
 
 public class CandlePowerAffector : MonoBehaviour {
     [SerializeField] private int reducedPower = 1;
     [SerializeField] private float duration = 5f;
-    [SerializeField] private GameObject candleParents;
+
+    [SerializeField] private CandleManager _cm;
+    private CandleManager CM => _cm;
 
     public void StartPowerAffector(int childNumber) {
-        Candle candle = candleParents.transform.GetChild(childNumber - 1).GetComponent<Candle>();
-        StartCoroutine(PowerAffector(candle));
+        Candle candle = CM.CandleSlots[childNumber];
+        if (candle != null) {
+            StartCoroutine(PowerAffector(candle));
+        }
     }
 
     private IEnumerator PowerAffector(Candle candle) {

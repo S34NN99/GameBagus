@@ -2,9 +2,14 @@
 using UnityEngine;
 
 public class RandomisedFloatProperty : FloatProperty {
-    [SerializeField] private FloatRandomiserBase randomiser;
+    [SerializeField] private FloatRandomiser _randomiser;
+    public FloatRandomiser Randomiser => _randomiser;
 
-    private void Awake() {
-        Value = randomiser.RandomiseFloat();
+    [SerializeField] private bool randomiseOnStart = true;
+
+    private void Start() {
+        if (randomiseOnStart) {
+            Value = Randomiser.Next();
+        }
     }
 }

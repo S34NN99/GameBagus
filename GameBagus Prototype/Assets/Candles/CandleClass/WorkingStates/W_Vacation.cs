@@ -13,7 +13,7 @@ public class W_Vacation : WorkingState {
 
     public override void Enter(IEntity entity) {
         entity.currCandle.SetFireDetails(FireSpeed, FireSize);
-        GeneralEventManager.Instance.BroadcastEvent(BossQuotes.OnCandleVacationEvent);
+        //GeneralEventManager.Instance.BroadcastEvent(BossQuotes.OnCandleVacationEvent);
         //entity.currCandle.SM.powerConst.Strength = 0;
         //entity.currCandle.SM.decayConst.Strength = 0;
 
@@ -62,8 +62,6 @@ public class W_Vacation : WorkingState {
     }
 
     public bool CalculateThreshold(IEntity entity, int num) {
-        //float threshold = entity.currCandle.candleStats.MoodThreshold[num];
-        //return entity.currCandle.candleStats.HP > threshold;
         float threshold = entity.currCandle.Stats.MoodThreshold[num];
         return entity.currCandle.Stats.HpProp.Value > threshold;
     }

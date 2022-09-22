@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Utility/Float Equation Randomiser")]
-public class FloatEquationRandomiser : FloatRandomiserBase {
+public class FloatEquationRandomiser : FloatRandomiser {
     [SerializeField] private float _constant;
     public float Constant => _constant;
 
@@ -20,7 +20,7 @@ public class FloatEquationRandomiser : FloatRandomiserBase {
     public float MaxX => _maxX;
 
 
-    public override float RandomiseFloat() {
+    public override float Next() {
         float x = Random.Range(MinX, MaxX);
         float final = Constant;
         foreach (var degreeOfX in degreesOfX) {

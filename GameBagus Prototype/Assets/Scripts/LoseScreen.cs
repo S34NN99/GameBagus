@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+[System.Obsolete]
 public class LoseScreen : MonoBehaviour {
     public CandleManager candleManager;
     public ProjectCalendar projectClock;
