@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 178a98aec39ac451abdb031dff946096, type: 3}
-  m_Name: Lvl4_G_Progress
+  m_Script: {fileID: 11500000, guid: 678ae7c54f82d4185a6918a682e04185, type: 3}
+  m_Name: Lvl2_B_CandleLock
   m_EditorClassIdentifier: 
-  _constant: 0.75
-  _steps: 5
-  _stepSize: 0.01
+  _affectedCandlesId: 020000000300000004000000
+  _duration: 5
+  _lockState: 0
