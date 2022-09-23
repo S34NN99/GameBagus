@@ -65,6 +65,24 @@ public class MultipleEndingsSystem : MonoBehaviour {
         CheckConditions(numState);
     }
 
+    /// <summary>
+    /// Comma separate the values.
+    /// </summary>
+    /// <param name="numState"></param>
+    public void AdjustNumState(string numState) {
+        string[] values = numState.Split(',');
+
+        string attributeName = values[0];
+        int amount = int.Parse(values[1]);
+        if (Attributes.ContainsKey(attributeName)) {
+            Attributes[attributeName] += amount;
+        } else {
+            Attributes.Add(attributeName, amount);
+        }
+
+        CheckConditions(attributeName);
+    }
+
     public int NumStateVal(string numState) {
         if (Attributes.TryGetValue(numState, out int numStateVal)) {
             return numStateVal;
@@ -74,10 +92,8 @@ public class MultipleEndingsSystem : MonoBehaviour {
     #endregion
 
     #region Conditions
-    public void CheckConditions(string attribute)
-    {
-        switch (attribute)
-        {
+    public void CheckConditions(string attribute) {
+        switch (attribute) {
             case "ProWorkerActions":
                 DissenterAndGoodLapdogCondition();
                 break;
@@ -97,25 +113,22 @@ public class MultipleEndingsSystem : MonoBehaviour {
         OnChanged.Invoke();
     }
 
-    void DissenterAndGoodLapdogCondition()
-    {
+    void DissenterAndGoodLapdogCondition() {
         if (NumStateVal("ProWorkerActions") >= 4)
             AddBoolState("Dissenter");
         else if (NumStateVal("ProWorkerActions") <= 4)
             AddBoolState("TheGoodLapdog");
     }
 
-    void PissedCCondition()
-    {
-        if(NumStateVal("C-StaffDisastisfaction") >= 6)
+    void PissedCCondition() {
+        if (NumStateVal("C-StaffDisastisfaction") >= 6)
             AddBoolState("PissedC");
     }
 
-    void JoCondition()
-    {
+    void JoCondition() {
         if (NumStateVal("BuddyJo") <= 0)
             AddBoolState("FoeofJo");
-        else if(NumStateVal("BuddyJo") >= 2)
+        else if (NumStateVal("BuddyJo") >= 2)
             AddBoolState("FriendofJo");
     }
 

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67fd25fed807c4af4a0d61aaed038ef8, type: 3}
-  m_Name: FavourCost_1
+  m_Name: 1_FavourCost
   m_EditorClassIdentifier: 
   _favourPropName: Favours
   _favourCost: 1

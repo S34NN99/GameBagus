@@ -420,7 +420,6 @@ GameObject:
   - component: {fileID: 1998669155159222747}
   - component: {fileID: 7299263932175228643}
   - component: {fileID: 1998669155159222745}
-  - component: {fileID: 1998669155159222744}
   m_Layer: 5
   m_Name: Notification_Banner
   m_TagString: Untagged
@@ -562,24 +561,3 @@ MonoBehaviour:
   pivotYWhenHidden: 0
   pivotYWhenShown: 1
   animSmoothTime: 0.2
---- !u!114 &1998669155159222744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998669155159222743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2892d699bc0f476aa33ac20a4937baa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _targetRectTransform: {fileID: 1998669155159222742}
-  staticHeight: 60
-  textTargets:
-  - _textTarget: {fileID: 1998669154334665276}
-    _minimumHeight: 100
-  useUnscaledDeltaTime: 0
-  smoothTime: 4
-  smoothAccuracy: 0.05
-  _recalculateHeightOnUpdate: 1

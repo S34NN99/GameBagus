@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class SequentialActionLoop : MonoBehaviour {
-    [SerializeField] private bool fireFirstActionOnStart;
+    [SerializeField] private bool resetAndFireOnEnabled = true;
 
     [Space]
     [SerializeField] private UnityEvent[] actionLoop;
@@ -13,8 +13,9 @@ public class SequentialActionLoop : MonoBehaviour {
     private int _counter;
     private int Counter { get => _counter; set => _counter = value; }
 
-    private void Start() {
-        if (fireFirstActionOnStart) {
+    private void OnEnable() {
+        if (resetAndFireOnEnabled) {
+            Counter = 0;
             FireNextAction();
         }
     }

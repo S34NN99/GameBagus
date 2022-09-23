@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class CandleEffect : ScriptableObject {
-    [SerializeField] protected int[] _affectedCandlesId;
+    [SerializeField] protected int[] _affectedCandlesId = { 1, 2, 3, 4 };
     public int[] AffectedCandlesId => _affectedCandlesId;
 
     public virtual void ApplyToCandles(CandleManager cm) {
