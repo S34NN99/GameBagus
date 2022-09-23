@@ -16,6 +16,7 @@ public class MultipleEndingsSystem : MonoBehaviour {
 
     private void Awake() {
         _attributes = new();
+        OnChanged.Invoke();
     }
 
     #region Bool State
