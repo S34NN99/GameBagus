@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ff19a568c92749bf9383813daa69811, type: 3}
+  m_Name: Lvl3_C_Conversation
+  m_EditorClassIdentifier: 
+  dialogs:
+  - _candleProfileId: 0
+    _isOverrideProfile: 1
+    _overrideProfile:
+      _profileName: S. Kim
+      _profilePic: {fileID: 21300000, guid: cb3b19297557449618d1cda6e1411c37, type: 3}
+      _initials: S. Kim
+      _style: {fileID: 11400000, guid: d1fb9b9bfbcda4813974e372b29ed4b6, type: 2}
+    _isPlayer: 0
+    _message: Alex, please do the neccessary and include it in the 3D art creation
+      pipeline.
+  - _candleProfileId: 0
+    _isOverrideProfile: 1
+    _overrideProfile:
+      _profileName: Alex
+      _profilePic: {fileID: 21300000, guid: e520cd9b0d18f4fc99760b5c22b881d0, type: 3}
+      _initials: A.
+      _style: {fileID: 11400000, guid: 50016d03781644089b7fe89a407706b3, type: 2}
+    _isPlayer: 1
+    _message: You got it. Timeline is looking tight, assigning additional artists
+      on this.
+  - _candleProfileId: 0
+    _isOverrideProfile: 1
+    _overrideProfile:
+      _profileName: Jo
+      _profilePic: {fileID: 21300000, guid: e520cd9b0d18f4fc99760b5c22b881d0, type: 3}
+      _initials: Jo
+      _style: {fileID: 11400000, guid: 3f626a7080eb24155871e3455b429f92, type: 2}
+    _isPlayer: 0
+    _message: That's great! Appreciate the additional help.
+  - _candleProfileId: 2
+    _isOverrideProfile: 0
+    _overrideProfile:
+      _profileName: Jo
+      _profilePic: {fileID: 21300000, guid: e520cd9b0d18f4fc99760b5c22b881d0, type: 3}
+      _initials: Jo
+      _style: {fileID: 11400000, guid: 3f626a7080eb24155871e3455b429f92, type: 2}
+    _isPlayer: 0
+    _message: I've got a few designs coming up.
+  - _candleProfileId: 3
+    _isOverrideProfile: 0
+    _overrideProfile:
+      _profileName: Jo
+      _profilePic: {fileID: 21300000, guid: e520cd9b0d18f4fc99760b5c22b881d0, type: 3}
+      _initials: Jo
+      _style: {fileID: 11400000, guid: 3f626a7080eb24155871e3455b429f92, type: 2}
+    _isPlayer: 0
+    _message: The design presentation to client is in 2 days' time?!
+  randomiseCandles: 0

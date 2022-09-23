@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67fd25fed807c4af4a0d61aaed038ef8, type: 3}
-  m_Name: FavourCost_2
+  m_Script: {fileID: 11500000, guid: 678ae7c54f82d4185a6918a682e04185, type: 3}
+  m_Name: Lvl3_D_CandleLock
   m_EditorClassIdentifier: 
-  _favourPropName: Favours
-  _favourCost: 2
+  _affectedCandlesId: 01000000020000000300000004000000
+  _duration: 8
+  _lockState: 0

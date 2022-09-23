@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-#if UNITY_EDITOR
 using TMPro;
-#endif
 
 public class RuntimeStringRefresher : MonoBehaviour {
     [SerializeField] private bool refreshOnUpdate;
 
     [SerializeField] [RuntimeString(4)] private string _text;
     public string Text { get => _text; set => _text = value; }
+
+    public StringProperty TextProp { set => Text = value.Value; }
+    public RuntimeStringRefresher RuntimeString { set => Text = value.Text; }
+    public TextMeshProUGUI TMProUGUI { set => Text = value.text; }
 
     [SerializeField] private UnityEvent<string> updateTextCallback;
 
@@ -32,8 +34,7 @@ public class RuntimeStringRefresher : MonoBehaviour {
         updateTextCallback.Invoke(runtimeText);
     }
 
-    public void GetText(string text)
-    {
+    public void GetText(string text) {
         Text = text;
     }
 }
