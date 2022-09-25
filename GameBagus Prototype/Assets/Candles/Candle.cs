@@ -49,7 +49,6 @@ public class Candle : MonoBehaviour, IEntity {
     public UnityEvent<string> UpdateNameCallback => _updateNameCallback;
 
     [SerializeField] private UnityEvent<Candle> onDeath;
-    [SerializeField] private UnityEvent<CandleProfile, string> showDialogCallback;
 
     [SerializeField] private UnityEvent<float> updateCandleDecay;
 
@@ -107,7 +106,7 @@ public class Candle : MonoBehaviour, IEntity {
     }
 
     public void ShowDialog(string dialogText) {
-        showDialogCallback.Invoke(Profile, dialogText);
+        GameManager.Instance.GroupChat.SendTextMessage(Profile, dialogText);
     }
 }
 

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class GroupChatBossMessage : MonoBehaviour {
     [SerializeField] private UnityEvent<float> updateProgressCallback;
     [SerializeField] private UnityEvent onTimesUp;
+    [SerializeField] private UnityEvent fireDefaultActionCallback;
 
     [SerializeField] private float duration;
     [SerializeField] private float timer;
@@ -17,6 +18,7 @@ public class GroupChatBossMessage : MonoBehaviour {
             timer += Time.deltaTime;
             if (timer > duration) {
                 timer = duration;
+                fireDefaultActionCallback.Invoke();
             }
         } else {
             timer = duration;

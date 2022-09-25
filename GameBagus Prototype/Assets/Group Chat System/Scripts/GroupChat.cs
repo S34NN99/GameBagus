@@ -35,6 +35,12 @@ public class GroupChat : MonoBehaviour {
     [SerializeField] private CandleManager _cm;
     public CandleManager CM => _cm;
 
+    private void Awake() {
+        if (_cm == null) {
+            _cm = GameManager.Instance.CandleManager;
+        }
+    }
+
     private void Update() {
         if (textCooldownTimer > 0) {
             textCooldownTimer -= Time.deltaTime;

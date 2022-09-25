@@ -490,7 +490,7 @@ MonoBehaviour:
   useUnscaledDeltaTime: 0
   smoothTime: 15
   smoothAccuracy: 0.05
-  _recalculateHeightOnUpdate: 0
+  _recalculateHeightOnUpdate: 1
 --- !u!1 &6701317696303764472
 GameObject:
   m_ObjectHideFlags: 0

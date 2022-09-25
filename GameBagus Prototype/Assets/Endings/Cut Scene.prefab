@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lettersPerSecond: 15
-  _textToType: Test
+  _textToType: 
   useUnscaledDeltaTime: 1
   updateTextCallback:
     m_PersistentCalls:
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cefcf00718f43bc835231b0a2bd34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireFirstActionOnStart: 1
+  resetAndFireOnEnabled: 1
   actionLoop:
   - m_PersistentCalls:
       m_Calls:

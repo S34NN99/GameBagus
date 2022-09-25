@@ -21,16 +21,13 @@ public class TypingEffect : MonoBehaviour {
     public bool IsTyping { get; private set; }
     private Coroutine typingCoroutine;
 
-    public void StartThenSkipTyping() {
-        if (IsTyping) {
-            SkipTyping();
-        } else {
-            StartTyping();
-        }
+    public void ResetTyping() {
+        updateTextCallback.Invoke("");
+        StopTyping(false);
     }
 
     public void StartTyping() {
-        StopTyping();
+        StopTyping(true);
         typingCoroutine = StartCoroutine(TypeTextCoroutine());
 
         IEnumerator TypeTextCoroutine() {
@@ -68,18 +65,20 @@ public class TypingEffect : MonoBehaviour {
         if (IsTyping) {
             updateTextCallback.Invoke(TextToType);
 
-            StopTyping();
+            StopTyping(true);
             onAnimSkipped.Invoke();
         }
     }
 
-    private void StopTyping() {
+    private void StopTyping(bool isFinished = false) {
         if (typingCoroutine != null) {
             StopCoroutine(typingCoroutine);
             typingCoroutine = null;
 
             IsTyping = false;
-            onAnimFinished.Invoke();
+            if (isFinished) {
+                onAnimFinished.Invoke();
+            }
         }
     }
 }

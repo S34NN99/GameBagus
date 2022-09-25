@@ -918,8 +918,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  fireDefaultActionCallback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4779710568067851664}
+        m_TargetAssemblyTypeName: GO_Utility, Assembly-CSharp
+        m_MethodName: ClickButton
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   duration: 10
   timer: 0
+--- !u!114 &4779710568067851664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530311466623721838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a7983f083b642e89d96647d49ca7cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8339799073309525895 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9115962700702248099, guid: c72de3d4473ff44f683b554e8b18fa2c, type: 3}
