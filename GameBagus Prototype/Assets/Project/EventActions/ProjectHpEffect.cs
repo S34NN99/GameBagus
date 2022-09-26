@@ -18,6 +18,5 @@ public class ProjectHpEffect : ScriptableObject {
     private IEnumerator IncreaseProjectHP(Project project) {
         project.RequiredProgress += ChangeInHp;
         yield return new WaitForSeconds(Duration);
-        project.RequiredProgress -= ChangeInHp;
     }
 }
