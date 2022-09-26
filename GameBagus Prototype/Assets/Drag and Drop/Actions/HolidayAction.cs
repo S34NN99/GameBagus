@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class HolidayAction : BaseCandleAction {
 
+    protected override void Awake() {
+        base.Awake();
+    }
+
     public override void ActOn(Candle candle) {
         print(candle.name + " is on holidays");
         candle.SM.workingState.Exit(candle);

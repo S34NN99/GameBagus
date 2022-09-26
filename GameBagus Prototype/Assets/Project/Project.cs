@@ -20,14 +20,14 @@ public class Project : MonoBehaviour {
     public FloatProperty TimeRemainingPercentProp => _timeRemainingPercentProp;
 
     [SerializeField] private int requiredProgress = 240;
-    public int RequiredProgress
-    {
-        get {return requiredProgress; }
+    public int RequiredProgress {
+        get { return requiredProgress; }
         set { requiredProgress = value; }
     }
 
     [Space]
-    [SerializeField] private CandleManager candleManager;
+    [SerializeField] private CandleManager _cm;
+    public CandleManager CM => _cm;
 
     [Space]
     [SerializeField] private float projectDeadline = 50;
@@ -45,10 +45,16 @@ public class Project : MonoBehaviour {
     private bool isFinishing;
     private float remainingTime = 0f;
 
+    private void Awake() {
+        if (_cm == null) {
+            _cm = GameManager.Instance.CandleManager;
+        }
+    }
+
     //e Update is called once per frame
     private void Update() {
         if (isWorkingOnProject) {
-            foreach (var candle in candleManager.GetCandles()) {
+            foreach (var candle in CM.GetCandles()) {
                 candle.currCandle.SM.UpdateStates(this);
             }
 
@@ -83,7 +89,7 @@ public class Project : MonoBehaviour {
             onProjectEnded.Invoke();
 
             ProgressProp.Value = 0;
-            candleManager.CheckCandles();
+            CM.CheckCandles();
 
             //_completedProjectProp.Value++;
             //requiredProgress = GetRequiredProgressForNextProject();

@@ -12,6 +12,9 @@ public class ProjectHpEffect : ScriptableObject {
     private int ChangeInHp => _changeInHp;
 
     public void StartHpAffector(Project project) {
+        if (project == null) {
+            project = GameManager.Instance.Project;
+        }
         project.StartCoroutine(IncreaseProjectHP(project));
     }
 

@@ -13,6 +13,10 @@ public class ButtonLockEffect : ScriptableObject {
     private string ButtonToLock => _buttonToLock;
 
     public void StartLockButton(GameObject buttonParent) {
+        if (buttonParent == null) {
+            buttonParent = GameObject.Find("Action Buttons");
+        }
+
         Button targetButton = buttonParent.transform.Find(ButtonToLock).GetComponent<Button>();
         targetButton.StartCoroutine(LockButton());
 

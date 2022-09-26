@@ -8,6 +8,9 @@ public abstract class CandleEffect : ScriptableObject {
     public int[] AffectedCandlesId => _affectedCandlesId;
 
     public virtual void ApplyToCandles(CandleManager cm) {
+        if (cm == null) {
+            cm = GameManager.Instance.CandleManager;
+        }
         IReadOnlyList<Candle> candleSlots = cm.CandleSlots;
 
         foreach (var candleId in AffectedCandlesId) {

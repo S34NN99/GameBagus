@@ -142,4 +142,45 @@ public class MultipleEndingsSystem : MonoBehaviour {
     public void RetrieveData() {
 
     }
+
+    //[System.Flags]
+    //public enum BoolStates {
+    //    Dissenter = 0x1,
+    //    RevolutionBegins = 0x2,
+    //    RevolutionDies = 0x4,
+    //    TheGoodLapdog = 0x8,
+    //    PissedC = 0x10,
+    //    SecretMeeting = 0x20,
+    //    FoeofJo = 0x40,
+    //    FriendofJo = 0x80,
+    //}
+
+
+
+    //public enum NumStates {
+    //    CandlesBurntOut,
+    //    OriCandlesLeft,
+    //    ProjectsMilestone,
+    //    ProWorkerActions,
+    //    Deadliner,
+    //    C_StaffDisastisfaction,
+    //    CapitalistHoe,
+    //    BuddyJo,
+    //    Heartless,
+    //}
+    //public class testNumState {
+    //    [SerializeField] private string _attributeName;
+    //    public string AttributeName => _attributeName;
+
+    //    public int GetCount => PlayerPrefs.GetInt("Num_State_" + AttributeName);
+    //    public testNumState resultState;
+    //    public string boolTriggerAttribute;
+    //}
+
+    //public class testBoolState {
+    //    [SerializeField] private string _attributeName;
+    //    public string AttributeName => _attributeName;
+
+    //    public bool isTrue;
+    //}
 }
