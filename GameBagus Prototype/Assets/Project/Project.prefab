@@ -265,7 +265,7 @@ MonoBehaviour:
   _elapsedTimeProp: {fileID: 2961872969771670827}
   _timeRemainingPercentProp: {fileID: 2961872968086032375}
   requiredProgress: 3120
-  candleManager: {fileID: 0}
+  _cm: {fileID: 0}
   projectDeadline: 180
   nearingProjecFinishThreshold: 0.8
   onProjectEnded:
@@ -321,7 +321,7 @@ MonoBehaviour:
     _thresholdInPercentage: 60
     _self: {fileID: 0}
   - _passed: 0
-    _thresholdInPercentage: 100
+    _thresholdInPercentage: 99
     _self: {fileID: 0}
 --- !u!1 &2961872969018854928
 GameObject:
