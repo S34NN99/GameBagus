@@ -19,6 +19,9 @@ public class Project : MonoBehaviour {
     [SerializeField] private FloatProperty _timeRemainingPercentProp;
     public FloatProperty TimeRemainingPercentProp => _timeRemainingPercentProp;
 
+    [SerializeField] private FloatProperty _projectDeadeline;
+    public FloatProperty ProjectDeadeline => _projectDeadeline;
+
     [SerializeField] private int requiredProgress = 240;
     public int RequiredProgress {
         get { return requiredProgress; }
@@ -28,9 +31,6 @@ public class Project : MonoBehaviour {
     [Space]
     [SerializeField] private CandleManager _cm;
     public CandleManager CM => _cm;
-
-    [Space]
-    [SerializeField] private float projectDeadline = 50;
 
     [Range(0, 1f)]
     [SerializeField] private float nearingProjecFinishThreshold = 0.8f;
@@ -61,7 +61,7 @@ public class Project : MonoBehaviour {
             UpdateVisuals();
 
             ElapsedTimeProp.Value += Time.deltaTime;
-            remainingTime = 1 - (ElapsedTimeProp.Value / projectDeadline);
+            remainingTime = 1 - (ElapsedTimeProp.Value / ProjectDeadeline.Value);
 
             ProgressPercentProp.Value = ProgressProp.Value / requiredProgress;
             TimeRemainingPercentProp.Value = remainingTime;

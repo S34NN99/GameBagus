@@ -30,7 +30,7 @@ public class GroupChatBossMessage : MonoBehaviour {
 
     public void Skip() {
         timer = duration;
-        UpdateProgress(1);
+        updateProgressCallback.Invoke(1);
     }
 
     public void UpdateProgress(float progress) {

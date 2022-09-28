@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2961872967747278351}
   - component: {fileID: 2961872967747278348}
   m_Layer: 0
-  m_Name: Months
+  m_Name: Months Prop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,8 +42,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6dfce65d0aa84e33a559eec246f3352, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   _uniqueId: Months
   _value: 0
   _updateUiCallback:
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 2961872968086032374}
   - component: {fileID: 2961872968086032375}
   m_Layer: 0
-  m_Name: Time Remaining
+  m_Name: Time Remaining Prop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,8 +94,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a56b4105b1cad4e93a0a19f87369fbdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   _uniqueId: Time Remaining
   _value: 0
   _updateUiCallback:
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 2961872968239161716}
   - component: {fileID: 2961872968239161717}
   m_Layer: 0
-  m_Name: Project Progress
+  m_Name: Project Progress Prop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,8 +146,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a56b4105b1cad4e93a0a19f87369fbdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   _uniqueId: Project Progress
   _value: 0
   _updateUiCallback:
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 2961872968320625381}
   - component: {fileID: 2961872968320625386}
   m_Layer: 0
-  m_Name: Favours
+  m_Name: Favours Prop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,8 +198,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6dfce65d0aa84e33a559eec246f3352, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   _uniqueId: Favours
   _value: 0
   _updateUiCallback:
@@ -245,6 +245,7 @@ Transform:
   - {fileID: 2961872969654318000}
   - {fileID: 2961872968320625381}
   - {fileID: 2961872967747278351}
+  - {fileID: 5426475692870277424}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -258,15 +259,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97588f6d4d0614f9da68839db69a4bdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   _progressProp: {fileID: 2961872968239161717}
   _progressPercentProp: {fileID: 2961872969018854934}
   _elapsedTimeProp: {fileID: 2961872969771670827}
   _timeRemainingPercentProp: {fileID: 2961872968086032375}
+  _projectDeadeline: {fileID: 8381055812202684466}
   requiredProgress: 3120
   _cm: {fileID: 0}
-  projectDeadline: 180
   nearingProjecFinishThreshold: 0.8
   onProjectEnded:
     m_PersistentCalls:
@@ -280,7 +281,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 1
         m_CallState: 2
   onDeadlineEnded:
@@ -295,7 +296,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2961872968510974468
@@ -308,8 +309,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c6ded1e7ce4a7d41b354ff881f2429a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   progressbar: {fileID: 0}
   flagIcon: {fileID: 11400000, guid: 6025bf1102320954bb1404587f82f6e7, type: 2}
   mileStoneTemplate: {fileID: 0}
@@ -334,7 +335,7 @@ GameObject:
   - component: {fileID: 2961872969018854929}
   - component: {fileID: 2961872969018854934}
   m_Layer: 0
-  m_Name: Project Progress Percentage
+  m_Name: Project Progress Percentage Prop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -365,8 +366,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a56b4105b1cad4e93a0a19f87369fbdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   _uniqueId: Project Progress Percentage
   _value: 0
   _updateUiCallback:
@@ -384,7 +385,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &2961872969654318003
@@ -398,7 +399,7 @@ GameObject:
   - component: {fileID: 2961872969654318000}
   - component: {fileID: 2961872969654318001}
   m_Layer: 0
-  m_Name: Head Count
+  m_Name: Head Count Prop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,8 +430,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6dfce65d0aa84e33a559eec246f3352, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   _uniqueId: Head Count
   _value: 0
   _updateUiCallback:
@@ -450,7 +451,7 @@ GameObject:
   - component: {fileID: 2961872969771670826}
   - component: {fileID: 2961872969771670827}
   m_Layer: 0
-  m_Name: Elapsed Time
+  m_Name: Elapsed Time Prop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -481,10 +482,62 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a56b4105b1cad4e93a0a19f87369fbdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   _uniqueId: Elapsed Time
   _value: 0
+  _updateUiCallback:
+    m_PersistentCalls:
+      m_Calls: []
+  _onValueUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &3256614628681232665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5426475692870277424}
+  - component: {fileID: 8381055812202684466}
+  m_Layer: 0
+  m_Name: Project Deadline Prop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5426475692870277424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3256614628681232665}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2961872968510974471}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8381055812202684466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3256614628681232665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a56b4105b1cad4e93a0a19f87369fbdc, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  _uniqueId: Project Deadline
+  _value: 180
   _updateUiCallback:
     m_PersistentCalls:
       m_Calls: []

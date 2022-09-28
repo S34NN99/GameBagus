@@ -12,6 +12,7 @@ public class RuntimeStringRefresher : MonoBehaviour {
     public StringProperty TextProp { set => Text = value.Value; }
     public RuntimeStringRefresher RuntimeString { set => Text = value.Text; }
     public TextMeshProUGUI TMProUGUI { set => Text = value.text; }
+    public StringContent StringContent { set => Text = value.Content; }
 
     [SerializeField] private UnityEvent<string> updateTextCallback;
 
