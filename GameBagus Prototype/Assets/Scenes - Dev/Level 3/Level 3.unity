@@ -2367,6 +2367,11 @@ MonoBehaviour:
   _onValueUpdated:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &621593048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3806350862499601242, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+  m_PrefabInstance: {fileID: 497979411}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &654367052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2835,6 +2840,11 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7997717089065101481, guid: 03dda5d14d68948bf89cf5c56b8f67a0, type: 3}
   m_PrefabInstance: {fileID: 708700817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &821038410 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3806350862499601242, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+  m_PrefabInstance: {fileID: 348603591}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &832996382
 GameObject:
@@ -4168,6 +4178,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd6fc9e3e5d54ff79a37a9ae6bbea91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &998687177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3806350862499601242, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+  m_PrefabInstance: {fileID: 1316880383}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1060532839
 GameObject:
   m_ObjectHideFlags: 0
@@ -4272,6 +4287,11 @@ MonoBehaviour:
     isNot: 0
   triggerOnce: 1
   remarksForTech: 
+--- !u!1 &1143604591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3806350862499601242, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+  m_PrefabInstance: {fileID: 1415300764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1237126324
 GameObject:
   m_ObjectHideFlags: 0
@@ -6934,10 +6954,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   candleTemplates:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1143604591}
+  - {fileID: 621593048}
+  - {fileID: 821038410}
+  - {fileID: 998687177}
   randomisers:
   - {fileID: 11400000, guid: 67748eb8897c84654b23d4826780c0a3, type: 2}
   - {fileID: 11400000, guid: 67748eb8897c84654b23d4826780c0a3, type: 2}

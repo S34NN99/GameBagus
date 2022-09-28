@@ -3544,7 +3544,7 @@ MonoBehaviour:
   _onValueUpdated:
     m_PersistentCalls:
       m_Calls: []
-  _randomiser: {fileID: 0}
+  _randomiser: {fileID: 11400000, guid: c1311cf96521ec84eae638bd40cf5eb9, type: 2}
   randomiseOnStart: 1
 --- !u!114 &745711507
 MonoBehaviour:
@@ -4912,7 +4912,7 @@ MonoBehaviour:
   _onValueUpdated:
     m_PersistentCalls:
       m_Calls: []
-  _randomiser: {fileID: 0}
+  _randomiser: {fileID: 11400000, guid: 433f481c4b8dbad46a858456f82ef230, type: 2}
   randomiseOnStart: 1
 --- !u!4 &878253965
 Transform:
@@ -5003,7 +5003,7 @@ MonoBehaviour:
   _onValueUpdated:
     m_PersistentCalls:
       m_Calls: []
-  _randomiser: {fileID: 0}
+  _randomiser: {fileID: 11400000, guid: deb25cb143f271b4a96b4b76b1a2ea17, type: 2}
   randomiseOnStart: 1
 --- !u!114 &892674476
 MonoBehaviour:
@@ -6362,7 +6362,7 @@ MonoBehaviour:
   _onValueUpdated:
     m_PersistentCalls:
       m_Calls: []
-  _randomiser: {fileID: 0}
+  _randomiser: {fileID: 11400000, guid: f3c10ccb901a1df48896cea019bde2f3, type: 2}
   randomiseOnStart: 1
 --- !u!4 &1045416943
 Transform:
@@ -7740,7 +7740,7 @@ MonoBehaviour:
   _onValueUpdated:
     m_PersistentCalls:
       m_Calls: []
-  _randomiser: {fileID: 0}
+  _randomiser: {fileID: 11400000, guid: 5ce5c2c72a7cbf24ebe6550ab4e3ff5e, type: 2}
   randomiseOnStart: 1
 --- !u!4 &1516484285
 Transform:
@@ -9818,7 +9818,7 @@ MonoBehaviour:
   _onValueUpdated:
     m_PersistentCalls:
       m_Calls: []
-  _randomiser: {fileID: 0}
+  _randomiser: {fileID: 11400000, guid: 2e6d2110cbee26a4da5cb725dee7ae1f, type: 2}
   randomiseOnStart: 1
 --- !u!4 &2038525662
 Transform:

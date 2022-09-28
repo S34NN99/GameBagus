@@ -30,6 +30,6 @@ EditorBuildSettings:
     path: Assets/Scenes - Dev/Level 6/Level 6.unity
     guid: 01adbb3e0b047f64998aab0822fbc5e6
   - enabled: 0
-    path: Assets/Scenes/Game Scene.unity
+    path: Assets/Scenes/Game Scene - Jam Build.unity
     guid: f9d73ba506147e14992a081247f7927e
   m_configObjects: {}
