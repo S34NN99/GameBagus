@@ -18,8 +18,9 @@ public abstract class State {
 
 [System.Serializable]
 public abstract class WorkingState : State {
-    public abstract float FireSpeed { get; }
+    public abstract float SimSpeed { get; }
     public abstract float FireSize { get; }
+    public abstract float FireSpeed { get; }
 }
 
 public enum MoodStatesIndex {

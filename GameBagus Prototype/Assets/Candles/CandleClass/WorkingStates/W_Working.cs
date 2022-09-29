@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class W_Working : WorkingState {
     public override string Name => "Working";
-    public override float FireSpeed => 0.4f;
+    public override float SimSpeed => 0.6f;
     public override float FireSize => 0.4f;
-
+    public override float FireSpeed => 4f;
 
     public override void Enter(IEntity entity) {
-        entity.currCandle.SetFireDetails(FireSpeed, FireSize);
+        entity.currCandle.SetFireDetails(SimSpeed, FireSize, FireSpeed);
         entity.currCandle.SM.powerConst.Strength = 2;
         entity.currCandle.SM.decayConst.Strength = 2;
     }

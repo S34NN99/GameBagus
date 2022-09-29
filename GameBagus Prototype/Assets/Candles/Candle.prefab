@@ -73,6 +73,11 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   _skin: {fileID: 11400000, guid: aaad228c60e6de040bca68d55584606c, type: 2}
+  _profile:
+    _profileName: 
+    _profilePic: {fileID: 0}
+    _initials: 
+    _style: {fileID: 0}
   _updateWickImgCallback:
     m_PersistentCalls:
       m_Calls:
@@ -134,9 +139,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   onDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  showDialogCallback:
     m_PersistentCalls:
       m_Calls: []
   updateCandleDecay:
@@ -773,6 +775,26 @@ PrefabInstance:
     - target: {fileID: 2551650499154582391, guid: c052bdcd5a789ac40a5433d4c084ad74, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551650499154582392, guid: c052bdcd5a789ac40a5433d4c084ad74, type: 3}
+      propertyPath: simulationSpeed
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551650499154582392, guid: c052bdcd5a789ac40a5433d4c084ad74, type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551650499154582392, guid: c052bdcd5a789ac40a5433d4c084ad74, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551650499154582392, guid: c052bdcd5a789ac40a5433d4c084ad74, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551650499154582392, guid: c052bdcd5a789ac40a5433d4c084ad74, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2551650499154582394, guid: c052bdcd5a789ac40a5433d4c084ad74, type: 3}
       propertyPath: m_Name

@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class W_Vacation : WorkingState {
     public override string Name => "Vacation";
-    public override float FireSpeed => 0.2f;
+    public override float SimSpeed => 0.4f;
     public override float FireSize => 0.1f;
+    public override float FireSpeed => 4f;
 
     private CandleStats.Modifier healMod;
     private CandleStats.Modifier decayMod;
 
     public override void Enter(IEntity entity) {
-        entity.currCandle.SetFireDetails(FireSpeed, FireSize);
+        entity.currCandle.SetFireDetails(SimSpeed, FireSize, FireSpeed);
         //GeneralEventManager.Instance.BroadcastEvent(BossQuotes.OnCandleVacationEvent);
         //entity.currCandle.SM.powerConst.Strength = 0;
         //entity.currCandle.SM.decayConst.Strength = 0;

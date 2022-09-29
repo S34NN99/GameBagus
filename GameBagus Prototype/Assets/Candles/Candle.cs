@@ -99,10 +99,13 @@ public class Candle : MonoBehaviour, IEntity {
         onDeath.Invoke(this);
     }
 
-    public void SetFireDetails(float speed, float size) {
+    public void SetFireDetails(float simSpeed, float size, float fireSpeed) {
         var main = firePs.main;
-        main.simulationSpeed = speed;
+        main.simulationSpeed = simSpeed;
         main.startSize = size;
+
+        var velocityOverLifetime = firePs.velocityOverLifetime;
+        velocityOverLifetime.yMultiplier = fireSpeed;
     }
 
     public void ShowDialog(string dialogText) {
