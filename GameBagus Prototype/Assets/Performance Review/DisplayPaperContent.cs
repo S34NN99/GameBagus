@@ -30,7 +30,6 @@ public class DisplayPaperContent : MonoBehaviour {
         projectName.text = PaperContent.ProjectName;
         appImage.sprite = PaperContent.AppImage;
         content.text = PaperContent.Content;
-        //content.gameObject.GetComponent<TypingEffect>().TextToType = PaperContent.Content;
         signature.text = PaperContent.Signature;
     }
 

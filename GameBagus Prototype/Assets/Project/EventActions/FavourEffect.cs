@@ -25,4 +25,10 @@ public class FavourEffect : ScriptableObject {
         IntProperty favourProp = ObservableVariable.FindProperty<IntProperty>(FavourPropName);
         favourProp.Value -= FavourCost;
     }
+
+    public void GainFavours()
+    {
+        IntProperty favourProp = ObservableVariable.FindProperty<IntProperty>(FavourPropName);
+        favourProp.Value += FavourCost;
+    }
 }

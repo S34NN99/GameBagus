@@ -1123,7 +1123,31 @@ MonoBehaviour:
   candlePersonalities: []
   onCandlesBurntOut:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 351677774}
+        m_TargetAssemblyTypeName: DisplayPaperContent, Assembly-CSharp
+        m_MethodName: UpdateIcons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 351677773}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1001 &350716793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1449,6 +1473,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8371928470953337638, guid: d4b440ec425a2ad4d929ad3f24b02f5f, type: 3}
   m_PrefabInstance: {fileID: 351677771}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &351677774 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1790998365, guid: d4b440ec425a2ad4d929ad3f24b02f5f, type: 3}
+  m_PrefabInstance: {fileID: 351677771}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351677773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6428b13a970de0408f8502157cb6bbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &368143754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5123,7 +5158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a7983f083b642e89d96647d49ca7cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0
 --- !u!1001 &1090320961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7634,7 +7668,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c655ed96758bd403fa511b0f0050015b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  candleZPos: -10
   decapitationForce: 100
   colliderTemplate: {fileID: 149561018}
   dropAnchor: {fileID: 381660151}
@@ -7924,6 +7957,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e86a65eca77e41648b64b35dcb9a8d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2015905169
 GameObject:
   m_ObjectHideFlags: 0
@@ -7999,6 +8035,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _randomiser: {fileID: 11400000, guid: 97c2876be720b4e4c8591975beb1d92f, type: 2}
+  randomiseOnStart: 1
 --- !u!114 &2015905173
 MonoBehaviour:
   m_ObjectHideFlags: 0
