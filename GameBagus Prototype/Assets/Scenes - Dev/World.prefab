@@ -160,6 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e86a65eca77e41648b64b35dcb9a8d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentRunTitle: Current
+  _attributeDb: {fileID: 11400000, guid: 28d688d2816e148ba9ec4dfc8f39b697, type: 2}
   OnChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -826,6 +828,10 @@ PrefabInstance:
     - target: {fileID: 2552011242871565038, guid: 7b12115cc11ff40c39d7b49398017d56, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 8772585060336913974}
+    - target: {fileID: 2552011242871565038, guid: 7b12115cc11ff40c39d7b49398017d56, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TogglePause
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b12115cc11ff40c39d7b49398017d56, type: 3}

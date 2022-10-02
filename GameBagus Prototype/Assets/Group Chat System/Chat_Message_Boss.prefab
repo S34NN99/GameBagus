@@ -537,17 +537,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1992552454350788961}
-        m_TargetAssemblyTypeName: GroupChatBossMessage, Assembly-CSharp
-        m_MethodName: Skip
-        m_Mode: 1
+      - m_Target: {fileID: 6779208002596537949}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 7786652432855643325}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
@@ -876,7 +876,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3738104873369078346, guid: c72de3d4473ff44f683b554e8b18fa2c, type: 3}
   m_PrefabInstance: {fileID: 954355017768135460}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1992552454350788961
+--- !u!114 &4144297311246569566
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -885,10 +885,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4530311466623721838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fd6fc9e3e5d54ff79a37a9ae6bbea91, type: 3}
+  m_Script: {fileID: 11500000, guid: 0afb5fef0e55247c9b82fb3d2c450eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateProgressCallback:
+  _duration: 10
+  _isTicking: 1
+  _defaultToMax: 1
+  _startCountdownOnEnabled: 1
+  _onTimerStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  _updateProgressCallback:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 668925160}
@@ -903,22 +910,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onTimesUp:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6779208002596537949}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  fireDefaultActionCallback:
+  _onTimerEnded:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4779710568067851664}
@@ -933,8 +925,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  duration: 10
-  timer: 0
+      - m_Target: {fileID: 6779208002596537949}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  _onTimerSkipped:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4779710568067851664
 MonoBehaviour:
   m_ObjectHideFlags: 0
