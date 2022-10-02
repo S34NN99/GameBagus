@@ -1,15 +1,7 @@
 ﻿using UnityEngine;
 
 public class FloatTrigger : MonoBehaviour {
-    private enum EquationType {
-        Greater_Than,
-        Greater_Than_Equal,
-        Equal,
-        Smaller_Than,
-        Smaller_Than_Equal,
-    }
-
-    [SerializeField] private EquationType equation;
+    [SerializeField] private MyMaths.ComparisonEquation equation;
 
     [Space]
     [Tooltip("Uses the 'constantComparedVal' value instead of 'targetVar.Value'")]
@@ -30,22 +22,6 @@ public class FloatTrigger : MonoBehaviour {
 
         float comparedVal = useConstantVal ? constantComparedVal : targetVar.Value;
 
-        switch (equation) {
-            case EquationType.Greater_Than:
-                outputProp.Value = new_Val > comparedVal;
-                break;
-            case EquationType.Greater_Than_Equal:
-                outputProp.Value = new_Val >= comparedVal;
-                break;
-            case EquationType.Equal:
-                outputProp.Value = new_Val == comparedVal;
-                break;
-            case EquationType.Smaller_Than:
-                outputProp.Value = new_Val < comparedVal;
-                break;
-            case EquationType.Smaller_Than_Equal:
-                outputProp.Value = new_Val <= comparedVal;
-                break;
-        }
+        outputProp.Value = MyMaths.CompareFloats(equation, new_Val, comparedVal);
     }
 }

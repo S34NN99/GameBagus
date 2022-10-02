@@ -4423,6 +4423,10 @@ PrefabInstance:
       propertyPath: fireDefaultActionCallback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 991936543}
+    - target: {fileID: 4144297311246569566, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
+      propertyPath: _onTimerEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 991936543}
     - target: {fileID: 4271703412565609531, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4976,6 +4980,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1992552454350788961, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
       propertyPath: fireDefaultActionCallback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1266202430}
+    - target: {fileID: 4144297311246569566, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
+      propertyPath: _onTimerEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1266202430}
     - target: {fileID: 4271703412565609531, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
@@ -13017,6 +13025,10 @@ PrefabInstance:
       propertyPath: fireDefaultActionCallback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1216311997}
+    - target: {fileID: 4144297311246569566, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
+      propertyPath: _onTimerEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1216311997}
     - target: {fileID: 4271703412565609531, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -16433,6 +16445,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1992552454350788961, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
       propertyPath: fireDefaultActionCallback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 977958322}
+    - target: {fileID: 4144297311246569566, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
+      propertyPath: _onTimerEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 977958322}
     - target: {fileID: 4271703412565609531, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}

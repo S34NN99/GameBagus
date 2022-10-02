@@ -47,8 +47,4 @@ public class PhoneNotificationBanner : MonoBehaviour {
         targetPivotY = pivotYWhenHidden;
         targetOffsetY = offsetYWhenHidden;
     }
-
-    public void SelfDestructIn(float seconds) {
-        Destroy(gameObject, seconds);
-    }
 }
