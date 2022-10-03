@@ -16,13 +16,12 @@ MonoBehaviour:
   _appImage: {fileID: 21300000, guid: dc929900716d729449365a2729969c82, type: 3}
   _content: 'You failed to achieve any milestones before the deadline passed.
 
-    
 
-    The
-    COO identifies your performance as the leading cause for the project''s failure,
+    S.
+    Kim identifies your performance as the leading cause for the project''s failure,
     and you are promptly terminated from your position. Your career in development
     as it were, ends before it ever began.'
-  _signature: "Signed, \nBenny Siong(CEO)"
+  _signature: 
   _milestoneIcon: {fileID: 11400000, guid: 6025bf1102320954bb1404587f82f6e7, type: 2}
   _favourIcon: {fileID: 11400000, guid: 4f29f2861e33cc34c8e9f412011e592f, type: 2}
   _candleIcon: {fileID: 11400000, guid: c579bf3deeebb6843b34c31801dbed93, type: 2}

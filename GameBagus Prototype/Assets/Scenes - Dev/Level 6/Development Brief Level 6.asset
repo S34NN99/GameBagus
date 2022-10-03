@@ -10,20 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcacae6366a894f468edb354bc50de3c, type: 3}
-  m_Name: Performance Review Level 1 Success
+  m_Name: Development Brief Level 6
   m_EditorClassIdentifier: 
-  _projectName: PROJECT 1
-  _appImage: {fileID: 21300000, guid: 656cf7d3d82f8a34d8bdb3259f012483, type: 3}
-  _content: 'Congratulations team, we did it!
-
-
-    Our game is out on MooglePlay
-    & the PearStore, and everyone should be proud of their hard work.
-
-
-    S. Kim
-    and I are declaring paid leave for the whole of next week!'
-  _signature: "Signed, \nBenny, CEO"
+  _projectName: WiyaWika Pop!
+  _appImage: {fileID: 21300000, guid: dc929900716d729449365a2729969c82, type: 3}
+  _content: "Milestone 1 \nMandatory playtest day\n\nMilestone 2 \nSeed funding pitch\n\nMilestone
+    3\nBeta launch"
+  _signature: "<u><b>Notation from S. Kim, COO:</u></b>\n  We'll be trying to create
+    a new IP for this app, so expect changes as we receive feedback!"
   _milestoneIcon: {fileID: 11400000, guid: 6025bf1102320954bb1404587f82f6e7, type: 2}
   _favourIcon: {fileID: 11400000, guid: 4f29f2861e33cc34c8e9f412011e592f, type: 2}
   _candleIcon: {fileID: 11400000, guid: c579bf3deeebb6843b34c31801dbed93, type: 2}

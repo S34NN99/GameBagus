@@ -23,7 +23,7 @@ MonoBehaviour:
     _isPlayer: 0
     _message: What is client thinking?! Changing art direction one month away from
       launch?
-  - _candleProfileId: 2
+  - _candleProfileId: 1
     _isOverrideProfile: 0
     _overrideProfile:
       _profileName: 
@@ -32,7 +32,7 @@ MonoBehaviour:
       _style: {fileID: 0}
     _isPlayer: 0
     _message: They are driving me crazy
-  - _candleProfileId: 3
+  - _candleProfileId: 2
     _isOverrideProfile: 0
     _overrideProfile:
       _profileName: 
