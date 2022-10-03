@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ff19a568c92749bf9383813daa69811, type: 3}
+  m_Name: Lvl7_A_Conversation
+  m_EditorClassIdentifier: 
+  dialogs:
+  - _candleProfileId: 1
+    _isOverrideProfile: 0
+    _overrideProfile:
+      _profileName: 
+      _profilePic: {fileID: 0}
+      _initials: 
+      _style: {fileID: 0}
+    _isPlayer: 0
+    _message: Congrats on the promotion, Alex!
+  - _candleProfileId: 2
+    _isOverrideProfile: 0
+    _overrideProfile:
+      _profileName: 
+      _profilePic: {fileID: 0}
+      _initials: 
+      _style: {fileID: 0}
+    _isPlayer: 0
+    _message: Congrats boss!
+  - _candleProfileId: 0
+    _isOverrideProfile: 1
+    _overrideProfile:
+      _profileName: Alex
+      _profilePic: {fileID: 21300000, guid: cb3b19297557449618d1cda6e1411c37, type: 3}
+      _initials: A
+      _style: {fileID: 11400000, guid: f8742efde85e4ca4194820728da46387, type: 2}
+    _isPlayer: 1
+    _message: Thank you guys :)
+  - _candleProfileId: 3
+    _isOverrideProfile: 0
+    _overrideProfile:
+      _profileName: 
+      _profilePic: {fileID: 0}
+      _initials: 
+      _style: {fileID: 0}
+    _isPlayer: 0
+    _message: So what's the management gonna do about our open letter?
+  - _candleProfileId: 0
+    _isOverrideProfile: 1
+    _overrideProfile:
+      _profileName: Jo
+      _profilePic: {fileID: 21300000, guid: cb3b19297557449618d1cda6e1411c37, type: 3}
+      _initials: J
+      _style: {fileID: 11400000, guid: 10c38b58f6cc4ce4da99ebb4a3cf444a, type: 2}
+    _isPlayer: 0
+    _message: It's a waiting game now
+  - _candleProfileId: 4
+    _isOverrideProfile: 0
+    _overrideProfile:
+      _profileName: 
+      _profilePic: {fileID: 0}
+      _initials: 
+      _style: {fileID: 0}
+    _isPlayer: 0
+    _message: I doubt there will be change
+  - _candleProfileId: 2
+    _isOverrideProfile: 0
+    _overrideProfile:
+      _profileName: 
+      _profilePic: {fileID: 0}
+      _initials: 
+      _style: {fileID: 0}
+    _isPlayer: 0
+    _message: And meantime we're going down this MMO rabbit hole
+  - _candleProfileId: 1
+    _isOverrideProfile: 0
+    _overrideProfile:
+      _profileName: 
+      _profilePic: {fileID: 0}
+      _initials: 
+      _style: {fileID: 0}
+    _isPlayer: 0
+    _message: It's all about monetization, dude
+  randomiseCandles: 0
