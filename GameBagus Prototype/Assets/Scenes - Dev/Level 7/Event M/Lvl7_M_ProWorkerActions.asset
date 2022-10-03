@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 426d557b0937e41d7a0f5bc9bd13e475, type: 3}
-  m_Name: Lvl7_H3_ButtonLock
+  m_Script: {fileID: 11500000, guid: beecdfa413ade3341b0711bbb6597294, type: 3}
+  m_Name: Lvl7_M_ProWorkerActions
   m_EditorClassIdentifier: 
-  _duration: 10
-  _buttonToLock: 
+  _attribute: ProWorkerActions
+  _changeInNum: 5

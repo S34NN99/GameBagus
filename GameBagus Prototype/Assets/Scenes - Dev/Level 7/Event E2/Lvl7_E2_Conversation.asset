@@ -12,5 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff19a568c92749bf9383813daa69811, type: 3}
   m_Name: Lvl7_E2_Conversation
   m_EditorClassIdentifier: 
-  dialogs: []
+  dialogs:
+  - _candleProfileId: 2
+    _isOverrideProfile: 0
+    _overrideProfile:
+      _profileName: 
+      _profilePic: {fileID: 0}
+      _initials: 
+      _style: {fileID: 0}
+    _isPlayer: 0
+    _message: I thought I've fixed this last night?
+  - _candleProfileId: 1
+    _isOverrideProfile: 0
+    _overrideProfile:
+      _profileName: 
+      _profilePic: {fileID: 0}
+      _initials: 
+      _style: {fileID: 0}
+    _isPlayer: 0
+    _message: I guess not, didn't see your log recorded
+  - _candleProfileId: 2
+    _isOverrideProfile: 0
+    _overrideProfile:
+      _profileName: 
+      _profilePic: {fileID: 0}
+      _initials: 
+      _style: {fileID: 0}
+    _isPlayer: 0
+    _message: Sigh...
   randomiseCandles: 0

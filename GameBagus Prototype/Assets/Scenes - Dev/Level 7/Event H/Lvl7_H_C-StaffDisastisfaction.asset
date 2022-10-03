@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beecdfa413ade3341b0711bbb6597294, type: 3}
   m_Name: Lvl7_H_C-StaffDisastisfaction
   m_EditorClassIdentifier: 
-  _attribute: ProWorkerActions
+  _attribute: C-StaffDisastisfaction
   _changeInNum: 5

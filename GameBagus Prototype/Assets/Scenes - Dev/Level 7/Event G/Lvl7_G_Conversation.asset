@@ -12,5 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff19a568c92749bf9383813daa69811, type: 3}
   m_Name: Lvl7_G_Conversation
   m_EditorClassIdentifier: 
-  dialogs: []
+  dialogs:
+  - _candleProfileId: 0
+    _isOverrideProfile: 1
+    _overrideProfile:
+      _profileName: Jo
+      _profilePic: {fileID: 21300000, guid: cb3b19297557449618d1cda6e1411c37, type: 3}
+      _initials: J
+      _style: {fileID: 11400000, guid: f8742efde85e4ca4194820728da46387, type: 2}
+    _isPlayer: 1
+    _message: Yet another empty promises
+  - _candleProfileId: 1
+    _isOverrideProfile: 0
+    _overrideProfile:
+      _profileName: 
+      _profilePic: {fileID: 0}
+      _initials: 
+      _style: {fileID: 0}
+    _isPlayer: 0
+    _message: I doubt they'll make any REAL changes here
   randomiseCandles: 0

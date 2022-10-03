@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678ae7c54f82d4185a6918a682e04185, type: 3}
   m_Name: Lvl7_E2_CandleLock
   m_EditorClassIdentifier: 
-  _affectedCandlesId: 01000000020000000300000004000000
+  _affectedCandlesId: 010000000200000003000000
   _duration: 5
   _lockState: 0
