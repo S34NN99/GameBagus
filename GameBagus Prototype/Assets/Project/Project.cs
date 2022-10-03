@@ -51,7 +51,6 @@ public class Project : MonoBehaviour {
         }
     }
 
-    //e Update is called once per frame
     private void Update() {
         if (isWorkingOnProject) {
             foreach (var candle in CM.GetCandles()) {
@@ -65,10 +64,6 @@ public class Project : MonoBehaviour {
 
             ProgressPercentProp.Value = ProgressProp.Value / requiredProgress;
             TimeRemainingPercentProp.Value = remainingTime;
-
-
-            //updateProgressSliderCallback.Invoke(ProgressProp.Value / requiredProgress);
-            //updateProjectTimeRemaining.Invoke(remainingTime);
 
             if (remainingTime <= 0) {
                 onDeadlineEnded?.Invoke();
@@ -91,10 +86,6 @@ public class Project : MonoBehaviour {
             ProgressProp.Value = 0;
             CM.CheckCandles();
 
-            //_completedProjectProp.Value++;
-            //requiredProgress = GetRequiredProgressForNextProject();
-            //clock.ResetClock(Random.Range(minProjectDuration, maxProjectDuration));
-
             GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnProjectFinishedEvent);
 
             isWorkingOnProject = false;
@@ -106,8 +97,4 @@ public class Project : MonoBehaviour {
             isFinishing = true;
         }
     }
-
-    //private int GetRequiredProgressForNextProject() {
-    //    return minReqProgress + (Random.Range(0, progressRandomisationSteps) * progressRandomisationInterval);
-    //}
 }

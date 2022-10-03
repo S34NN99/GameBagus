@@ -21,14 +21,12 @@ public class DisplayPaperContent : MonoBehaviour {
     [SerializeField] private GameObject favourParent;
     [SerializeField] private GameObject candlesParent;
 
-    private void OnEnable()
-    {
+    private void OnEnable() {
         UpdateContent();
         GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnProjectPrologue);
     }
 
-    private void OnDisable()
-    {
+    private void OnDisable() {
         GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnProjectStart);
     }
 
@@ -48,10 +46,8 @@ public class DisplayPaperContent : MonoBehaviour {
     private void UpdateMilestoneIcon() {
         Milestone milestone = FindObjectOfType<Milestone>();
 
-        for (int i = 0; i < milestone.MilestoneConditions.Count; i++)
-        {
-            if (milestone.MilestoneConditions[i].Passed)
-            {
+        for (int i = 0; i < milestone.MilestoneConditions.Count; i++) {
+            if (milestone.MilestoneConditions[i].Passed) {
                 Image image = milestoneParent.transform.GetChild(i).GetComponent<Image>();
                 image.sprite = PaperContent.MilesteonIcon.IconColour;
             }
@@ -59,7 +55,18 @@ public class DisplayPaperContent : MonoBehaviour {
     }
 
     private void UpdateFavourIcon() {
+        Milestone milestone = FindObjectOfType<Milestone>();
 
+        int milestonesPassed = 0;
+        for (int i = 0; i < milestone.MilestoneConditions.Count; i++) {
+            if (milestone.MilestoneConditions[i].Passed) {
+                Image image = favourParent.transform.GetChild(i).GetComponent<Image>();
+                image.sprite = PaperContent.FavourIcon.IconColour;
+                milestonesPassed++;
+            }
+        }
+
+        ObservableVariable.FindProperty<IntProperty>("Milestones Completed").Value = milestonesPassed;
     }
 
     private void UpdateCandleIcon() {

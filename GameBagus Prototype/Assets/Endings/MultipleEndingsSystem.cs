@@ -134,6 +134,9 @@ public class MultipleEndingsSystem : MonoBehaviour {
             int numStateVal = NumStateVal(numState);
             PlayerPrefs.SetInt($"{CurrentRunTitle}_{numState}", numStateVal);
         }
+
+        int favoursGained = ObservableVariable.FindProperty<IntProperty>("Milestones Completed").Value;
+        PlayerPrefs.SetInt($"{CurrentRunTitle}_Favours", favoursGained);
     }
 
     public void RetrieveData() {
@@ -152,6 +155,9 @@ public class MultipleEndingsSystem : MonoBehaviour {
             int numStateVal = PlayerPrefs.GetInt($"{CurrentRunTitle}_{numState}", 0);
             AdjustNumState($"{numState},{numStateVal}");
         }
+
+        int favoursGainedPreviously = PlayerPrefs.GetInt($"{CurrentRunTitle}_Favours", 0);
+        ObservableVariable.FindProperty<IntProperty>("Favours").Value = favoursGainedPreviously;
 
         CheckNumToBoolStateTriggers();
     }
