@@ -71,6 +71,8 @@ public class Timer : MonoBehaviour {
 
             if (DefaultToMax) {
                 UpdateProgressCallback.Invoke(1f);
+            } else {
+                UpdateProgressCallback.Invoke(0f);
             }
 
             return true;

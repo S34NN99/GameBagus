@@ -16,22 +16,20 @@ MonoBehaviour:
   _appImage: {fileID: 21300000, guid: dc929900716d729449365a2729969c82, type: 3}
   _content: '<b>MILESTONE 1</b>
 
-    Prototype (Must show Waka mechanic!)
+    Concept art and early prototype
 
 
     <b>MILESTONE
     2</b>
 
-    Vertical Slice (Features complete)
+    Rendering and bug squashing
 
 
     <b>MILESTONE 3</b>
 
-    Final
-    Product (Content added on!)'
-  _signature: "<u><b>NOTATIONS FROM COO:</b></u>\n   \"This is the first time that
-    the team is working together, so <u>do expect bugs as we try and get this project
-    out.</u>\""
+    Master release'
+  _signature: "<u><b>NOTATION FROM BENNY, CEO:</b></u>\n   \"This is a new client
+    of Groundhog Games. Let's put our best foot forward to make a good impression.\""
   _milestoneIcon: {fileID: 0}
   _favourIcon: {fileID: 0}
   _candleIcon: {fileID: 0}

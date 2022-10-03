@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectName: PROJECT 1
   _appImage: {fileID: 21300000, guid: 656cf7d3d82f8a34d8bdb3259f012483, type: 3}
-  _content: "Congratulations team, we did it!\n\nOur game is out on MooglePlay &
-    PearStore, and everyone should be proud of our hard work. \n\nOur CCO and I are
-    decalring paid leave for the whole of next week!"
-  _signature: "Signed, \nBenny Siong(CEO)"
+  _content: 'Congratulations on the launch of the mobile app!
+
+
+    Management decides
+    to throw a project wrap party as an appreciation to the hard-working team and
+    to boost employee morale.'
+  _signature: 
   _milestoneIcon: {fileID: 11400000, guid: 6025bf1102320954bb1404587f82f6e7, type: 2}
   _favourIcon: {fileID: 11400000, guid: 4f29f2861e33cc34c8e9f412011e592f, type: 2}
   _candleIcon: {fileID: 11400000, guid: c579bf3deeebb6843b34c31801dbed93, type: 2}

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+[System.Obsolete]
 public class GroupChatBossMessage : MonoBehaviour {
     [SerializeField] private UnityEvent<float> updateProgressCallback;
     [SerializeField] private UnityEvent onTimesUp;

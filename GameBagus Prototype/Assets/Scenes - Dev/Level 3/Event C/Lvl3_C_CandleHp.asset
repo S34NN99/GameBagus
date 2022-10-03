@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91672c70937fa4f9b8537cc568f3806f, type: 3}
   m_Name: Lvl3_C_CandleHp
   m_EditorClassIdentifier: 
-  _affectedCandlesId: 0100000002000000
+  _affectedCandlesId: 01000000020000000300000004000000
   _duration: 8
   _chanceInHp: -3

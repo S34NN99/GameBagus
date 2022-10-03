@@ -29,7 +29,7 @@ public class GroupChat : MonoBehaviour {
     [SerializeField] private ScrollRect _scrollView;
     private ScrollRect ScrollView => _scrollView;
 
-    private bool isAutoScrolling = true;
+    private int isAutoScrolling;
     private float scrollLockPos;
 
     [SerializeField] private CandleManager _cm;
@@ -65,21 +65,21 @@ public class GroupChat : MonoBehaviour {
             }
         }
 
-        if (!isAutoScrolling) {
+        if (isAutoScrolling != 0) {
             float targetHeight = scrollLockPos / ScrollView.content.rect.height;
             ScrollView.verticalScrollbar.value = 1 + targetHeight;
         }
     }
 
     public void StopAutoScroll() {
-        isAutoScrolling = false;
+        isAutoScrolling++;
         if (currentMessage != null) {
             scrollLockPos = currentMessage.TargetRectTransform.anchoredPosition.y;
         }
     }
 
     public void ResumeAutoScroll() {
-        isAutoScrolling = true;
+        isAutoScrolling--;
         ScrollView.verticalScrollbar.value = 0;
     }
 

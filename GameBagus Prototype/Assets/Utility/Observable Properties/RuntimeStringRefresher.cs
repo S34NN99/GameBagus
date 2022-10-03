@@ -19,7 +19,7 @@ public class RuntimeStringRefresher : MonoBehaviour {
 #if UNITY_EDITOR
     private void OnValidate() {
         if (gameObject.TryGetComponent(out TextMeshProUGUI textMeshProUGUI)) {
-            textMeshProUGUI.text = Text;
+            textMeshProUGUI.text = ObservableVariable.ConvertToRuntimeText(Text);
         }
     }
 #endif

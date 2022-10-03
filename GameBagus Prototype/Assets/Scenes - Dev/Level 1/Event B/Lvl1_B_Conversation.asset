@@ -30,7 +30,7 @@ MonoBehaviour:
       _initials: 
       _style: {fileID: 0}
     _isPlayer: 0
-    _message: lol
+    _message: Lol
   - _candleProfileId: 4
     _isOverrideProfile: 0
     _overrideProfile:
@@ -39,7 +39,7 @@ MonoBehaviour:
       _initials: 
       _style: {fileID: 0}
     _isPlayer: 0
-    _message: Bleh, physics is hard
+    _message: Physics is hard
   - _candleProfileId: 1
     _isOverrideProfile: 0
     _overrideProfile:
@@ -66,14 +66,5 @@ MonoBehaviour:
       _initials: 
       _style: {fileID: 0}
     _isPlayer: 0
-    _message: We can iron out the bugs together
-  - _candleProfileId: 0
-    _isOverrideProfile: 1
-    _overrideProfile:
-      _profileName: Alex
-      _profilePic: {fileID: 21300000, guid: cb3b19297557449618d1cda6e1411c37, type: 3}
-      _initials: A.
-      _style: {fileID: 11400000, guid: 80b0cef5b55a4488f9827c642be4aeb4, type: 2}
-    _isPlayer: 1
     _message: We can iron out the bugs together
   randomiseCandles: 0

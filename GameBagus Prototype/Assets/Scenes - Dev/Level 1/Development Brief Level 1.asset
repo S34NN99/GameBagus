@@ -16,7 +16,7 @@ MonoBehaviour:
   _appImage: {fileID: 21300000, guid: dc929900716d729449365a2729969c82, type: 3}
   _content: '<b>MILESTONE 1</b>
 
-    Prototype (Must show Waka mechanic!)
+    Prototype (Must show Waka mechanic)
 
 
     <b>MILESTONE
@@ -29,9 +29,9 @@ MonoBehaviour:
 
     Final
     Product (Content added on!)'
-  _signature: "<u><b>NOTATIONS FROM COO:</b></u>\n   \"This is the first time that
-    the team is working together, so <u>do expect bugs as we try and get this project
-    out.</u>\""
+  _signature: "<u><b>NOTATIONS FROM S.KIM, COO:</b></u>\n   \"This is the first time
+    the team is working together, so do expect bugs as we try and get this project
+    out.\""
   _milestoneIcon: {fileID: 0}
   _favourIcon: {fileID: 0}
   _candleIcon: {fileID: 0}
