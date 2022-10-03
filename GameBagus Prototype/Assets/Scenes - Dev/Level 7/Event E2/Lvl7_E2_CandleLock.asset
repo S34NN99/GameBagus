@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beecdfa413ade3341b0711bbb6597294, type: 3}
-  m_Name: Lvl7_D_BuddyJo 2
+  m_Script: {fileID: 11500000, guid: 678ae7c54f82d4185a6918a682e04185, type: 3}
+  m_Name: Lvl7_E2_CandleLock
   m_EditorClassIdentifier: 
-  _attribute: BuddyJo
-  _changeInNum: 2
+  _affectedCandlesId: 01000000020000000300000004000000
+  _duration: 5
+  _lockState: 0
