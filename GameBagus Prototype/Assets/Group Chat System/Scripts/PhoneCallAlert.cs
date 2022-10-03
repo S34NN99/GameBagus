@@ -14,4 +14,14 @@ public class PhoneCallAlert : MonoBehaviour {
             runtimeString.text = ObservableVariable.ConvertToRuntimeText(runtimeString.text);
         }
     }
+
+    public void OnEnable()
+    {
+        GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnCallEvent);
+    }
+
+    public void OnDisable()
+    {
+        GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnCallEventEnded);
+    }
 }

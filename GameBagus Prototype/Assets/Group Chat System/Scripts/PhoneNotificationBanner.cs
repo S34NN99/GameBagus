@@ -39,11 +39,15 @@ public class PhoneNotificationBanner : MonoBehaviour {
     }
 
     public void Show() {
+        //GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnCallEvent);
+
         targetPivotY = pivotYWhenShown;
         targetOffsetY = offsetYWhenShown;
     }
 
     public void Hide() {
+        //GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnCallEventEnded);
+
         targetPivotY = pivotYWhenHidden;
         targetOffsetY = offsetYWhenHidden;
     }

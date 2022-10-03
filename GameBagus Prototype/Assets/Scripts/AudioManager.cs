@@ -4,6 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour {
+
+    [System.Serializable]
+    class LevelBG
+    {
+        public bool playFirstAudio;
+        public AudioClip[] playlist;
+    } 
+
     public const string OnButtonPickedUp = "On Button Picked Up";
     public const string OnButtonDropped = "On Button Dropped";
 
@@ -13,6 +21,21 @@ public class AudioManager : MonoBehaviour {
 
     public const string NearingProjectFinishedEvent = "Nearing Project Finished";
     public const string OnProjectFinishedEvent = "On Project Finished";
+    public const string OnProjectPrologue = "On Project Prologue";
+    public const string OnProjectPrologueClosed = "On Project Prologue Closed";
+
+    public const string OnProjectStart = "On Project Start";
+    public const string OnCallEvent = "On Call Event";
+    public const string OnCallEventEnded = "On Call Event Ended";
+
+    public const string TypingEffect= "Typing Effect";
+    public const string TypingEffectEnd = "Typing Effect End";
+
+    [SerializeField] private bool isMainMenu;
+    [SerializeField] private int currentLevel;
+    public int CurrentLevel => currentLevel;
+
+    [SerializeField] private List<LevelBG> bgMusicClips;
 
     [Header("Clips")]
     [Space()]
@@ -29,7 +52,14 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioClip onProjectFinished;
 
     [Space()]
-    [SerializeField] private AudioClip[] bgMusicClips;
+    [SerializeField] private AudioClip onPrologue;
+    [SerializeField] private AudioClip[] onProjectClips;
+
+    [Space()]
+    [SerializeField] private AudioClip onCallEvent;
+
+    [Space()]
+    [SerializeField] private AudioClip[] typingEffects;
 
     [Space()]
     [Header("Audio Sources")]
@@ -38,6 +68,10 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioSource candleSfxPlayer;
     [SerializeField] private AudioSource candleNearDeathSfxPlayer;
     [SerializeField] private AudioSource projectSfxPlayer;
+    [SerializeField] private AudioSource prologueSfxPlayer;
+    [SerializeField] private AudioSource ambientMusicPlayer;
+    [SerializeField] private AudioSource callMusicPlayer;
+    [SerializeField] private AudioSource typingPlayer;
 
     private bool firstCandleNearingBurnout = false;
 
@@ -51,8 +85,6 @@ public class AudioManager : MonoBehaviour {
             uiSfxPlayer.clip = onButtonDropped;
             uiSfxPlayer.Play();
         });
-
-
 
         GeneralEventManager.Instance.StartListeningTo(OnCandleCrunchEvent, () => {
             candleSfxPlayer.clip = onCandleCrunch;
@@ -72,9 +104,6 @@ public class AudioManager : MonoBehaviour {
             candleSfxPlayer.Play();
         });
 
-
-
-
         GeneralEventManager.Instance.StartListeningTo(NearingProjectFinishedEvent, () => {
             projectSfxPlayer.clip = nearingProjectFinished;
             projectSfxPlayer.loop = true;
@@ -86,12 +115,73 @@ public class AudioManager : MonoBehaviour {
             projectSfxPlayer.loop = false;
             projectSfxPlayer.Play();
         });
+
+        GeneralEventManager.Instance.StartListeningTo(OnProjectPrologue, () =>
+        {
+            prologueSfxPlayer.clip = onPrologue;
+            prologueSfxPlayer.loop = true;
+            prologueSfxPlayer.Play();
+        });
+
+        GeneralEventManager.Instance.StartListeningTo(OnProjectStart, () =>
+        {
+            prologueSfxPlayer.Stop();
+
+            ambientMusicPlayer.clip = onProjectClips[Random.Range(0,onProjectClips.Length)];
+            ambientMusicPlayer.loop = true;
+            ambientMusicPlayer.Play();
+        });
+
+        GeneralEventManager.Instance.StartListeningTo(OnCallEvent, () =>
+        {
+            callMusicPlayer.clip = onCallEvent;
+            callMusicPlayer.Play();
+        });
+
+        GeneralEventManager.Instance.StartListeningTo(OnCallEventEnded, () =>
+        {
+            callMusicPlayer.Stop();
+        });
+
+        GeneralEventManager.Instance.StartListeningTo(TypingEffect, () =>
+        {
+            typingPlayer.clip = typingEffects[Random.Range(0, typingEffects.Length)];
+            typingPlayer.loop = true;
+            typingPlayer.Play();
+        });
+
+        GeneralEventManager.Instance.StartListeningTo(TypingEffectEnd, () =>
+        {
+            typingPlayer.Stop();
+        });
+
+        if (!isMainMenu)
+        {
+            GeneralEventManager.Instance.BroadcastEvent(TypingEffect);
+            GeneralEventManager.Instance.BroadcastEvent(OnProjectPrologue);
+        }
     }
 
     private void Update() {
-        if (!bgMusicPlayer.isPlaying) {
-            bgMusicPlayer.clip = bgMusicClips[Random.Range(0, bgMusicClips.Length)];
+
+        if (!bgMusicPlayer.isPlaying)
+        {
+            if (bgMusicClips[CurrentLevel].playFirstAudio)
+            {
+                bgMusicPlayer.clip = bgMusicClips[CurrentLevel].playlist[0];
+            }
+            else
+            {
+                int length = bgMusicClips[CurrentLevel].playlist.Length - 1;
+                bgMusicPlayer.clip = bgMusicClips[CurrentLevel].playlist[Random.Range(1, length)];
+            }
+
             bgMusicPlayer.Play();
         }
+    }
+
+    public void OnClickedSFX()
+    {
+        GeneralEventManager.Instance.BroadcastEvent(OnButtonPickedUp);
     }
 }

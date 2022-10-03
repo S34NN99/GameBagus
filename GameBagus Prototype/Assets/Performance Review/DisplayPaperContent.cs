@@ -24,6 +24,12 @@ public class DisplayPaperContent : MonoBehaviour {
     private void OnEnable()
     {
         UpdateContent();
+        GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnProjectPrologue);
+    }
+
+    private void OnDisable()
+    {
+        GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnProjectStart);
     }
 
     public void UpdateContent() {
