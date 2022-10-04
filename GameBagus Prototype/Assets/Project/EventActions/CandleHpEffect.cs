@@ -11,11 +11,14 @@ public class CandleHpEffect : CandleEffect {
     private int ChangeInHp => _chanceInHp;
 
     protected override IEnumerator AffectCandleCoroutine(Candle candle) {
-        CalculateHP(candle.Stats.HpProp.Value, ChangeInHp);
-        yield return new WaitForSeconds(Duration);
+        float elapsedTime = 0;
+        float hpChangePerSec = ChangeInHp / Duration;
+
+        while (elapsedTime < Duration) {
+            elapsedTime += Time.deltaTime;
+            candle.Stats.HpProp.Value += hpChangePerSec * Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        };
     }
 
-    private float CalculateHP(float candleHP, float amount) {
-        return candleHP + amount;
-    }
 }

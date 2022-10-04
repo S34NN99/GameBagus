@@ -19,11 +19,9 @@ public class CandleManager : MonoBehaviour {
     [SerializeField] private CandlePersonality[] candlePersonalities;
 
     [SerializeField] private UnityEvent onCandlesBurntOut;
-    private System.Random prng;
 
     private void Awake() {
         candles = new Candle[candleTemplates.Length];
-        prng = new System.Random();
     }
 
     private void Start() {

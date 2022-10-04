@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour {
     private bool isPaused;
+    private bool isBgmMuted;
+    private bool isSfxMuted;
 
     public void Pause() {
         Time.timeScale = 0;
@@ -24,7 +27,16 @@ public class PauseManager : MonoBehaviour {
         }
     }
 
-    public void ShowPauseMenu() {
+    public void ToggleBgmMute() {
+        isBgmMuted = !isBgmMuted;
+    }
 
+    public void ToggleSfxMute() {
+        isSfxMuted = !isSfxMuted;
+    }
+
+    public void ReturnToMainMenu() {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 }
