@@ -183,8 +183,10 @@ public class MultipleEndingsSystem : MonoBehaviour {
         }
 
         int favoursGainedPreviously = PlayerPrefs.GetInt($"{CurrentRunTitle}_Favours", 0);
-        print(favoursGainedPreviously);
-        ObservableVariable.FindProperty<IntProperty>("Favours").Value = favoursGainedPreviously;
+        IntProperty favoursProp = ObservableVariable.FindProperty<IntProperty>("Favours");
+        if (favoursProp != null) {
+            favoursProp.Value = favoursGainedPreviously;
+        }
 
         CheckNumToBoolStateTriggers();
     }

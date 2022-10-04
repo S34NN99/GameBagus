@@ -8,7 +8,8 @@ using UnityEngine.Events;
 public class CandleManager : MonoBehaviour {
     //[SerializeField] private GameObject candleTemplate;
     [SerializeField] private GameObject[] candleTemplates;
-    [SerializeField] private CandleRandomiser[] randomisers;
+    [SerializeField] private CandleRandomiser randomiser;
+    private CandleRandomiser.State randomiserState;
 
     //[SerializeField] private Vector2[] candlePositions;
     [SerializeField] private Candle[] candles;
@@ -30,12 +31,16 @@ public class CandleManager : MonoBehaviour {
     }
 
     public void CheckCandles() {
+        if (randomiserState == null) {
+            randomiserState = randomiser.CreateState();
+        }
+
         for (int i = 0; i < candles.Length; i++) {
             if (candles[i] == null) {
                 GameObject candleGO = Instantiate(candleTemplates[i], transform);
                 candles[i] = candleGO.GetComponent<Candle>();
 
-                randomisers[i].Randomise(candles[i], prng);
+                randomiser.Randomise(candles[i], randomiserState);
             }
         }
 

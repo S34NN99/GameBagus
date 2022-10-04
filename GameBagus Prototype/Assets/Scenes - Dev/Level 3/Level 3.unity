@@ -4974,7 +4974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _content: 'Just received request from client to add a new NPC for the game.
 
-    
+
 
     NPC
     design brief:
@@ -5491,22 +5491,22 @@ PrefabInstance:
       propertyPath: _text
       value: 'Hi Alex,
 
-        
 
-        Just got off meeting with client. They
-        are not satisfied with the overall art direction and will be changing the
-        concept of the game -- to medieval period.
 
-        
+        Just got off meeting with client. They are not
+        satisfied with the overall art direction and will be changing the concept
+        of the game -- to medieval period.
 
-        Unfortunately
-        client have decided not to push the launch date hence no deadline extension
-        will be approved.
 
-        
 
-        Please relay this to the stakeholders
-        (especially Jo) and manage mitigation plans and key feature delivery.'
+        Unfortunately client have decided
+        not to push the launch date hence no deadline extension will be approved.
+
+
+
+        Please
+        relay this to the stakeholders (especially Jo) and manage mitigation plans
+        and key feature delivery.'
       objectReference: {fileID: 0}
     - target: {fileID: 7170657553880838673, guid: 9376d994518b74fde9182f26638f219f, type: 3}
       propertyPath: m_text
@@ -7432,11 +7432,7 @@ MonoBehaviour:
   - {fileID: 621593048}
   - {fileID: 821038410}
   - {fileID: 998687177}
-  randomisers:
-  - {fileID: 11400000, guid: 67748eb8897c84654b23d4826780c0a3, type: 2}
-  - {fileID: 11400000, guid: 67748eb8897c84654b23d4826780c0a3, type: 2}
-  - {fileID: 11400000, guid: 67748eb8897c84654b23d4826780c0a3, type: 2}
-  - {fileID: 11400000, guid: 67748eb8897c84654b23d4826780c0a3, type: 2}
+  randomiser: {fileID: 11400000, guid: 67748eb8897c84654b23d4826780c0a3, type: 2}
   candles: []
   candleSkins: []
   candlePersonalities: []
@@ -8604,7 +8600,7 @@ MonoBehaviour:
   _content: 'Client requests minor change in logo design following outcome from focus
     group.
 
-    
+
 
     Please implement the requested changes and update all affected
     assets.'

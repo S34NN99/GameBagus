@@ -981,11 +981,7 @@ MonoBehaviour:
   - {fileID: 2095858922}
   - {fileID: 1248618913}
   - {fileID: 1090320964}
-  randomisers:
-  - {fileID: 11400000, guid: 67748eb8897c84654b23d4826780c0a3, type: 2}
-  - {fileID: 11400000, guid: 67748eb8897c84654b23d4826780c0a3, type: 2}
-  - {fileID: 11400000, guid: 67748eb8897c84654b23d4826780c0a3, type: 2}
-  - {fileID: 11400000, guid: 67748eb8897c84654b23d4826780c0a3, type: 2}
+  randomiser: {fileID: 11400000, guid: 67748eb8897c84654b23d4826780c0a3, type: 2}
   candles: []
   candleSkins: []
   candlePersonalities: []
@@ -10127,6 +10123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentRunTitle: Current
   _attributeDb: {fileID: 0}
+  _mixAndMatchEndings: []
+  _endingCutscene: {fileID: 0}
   OnChanged:
     m_PersistentCalls:
       m_Calls:
