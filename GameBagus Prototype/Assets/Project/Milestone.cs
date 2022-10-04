@@ -47,8 +47,7 @@ public class Milestone : MonoBehaviour {
 
     public void CheckThreshold(float old_val, float new_Val) {
         foreach (MilestoneCondition ms in MilestoneConditions) {
-            if (ms.Passed)
-                continue;
+            if (ms.Passed) continue;
 
             if ((new_Val * 100) >= ms.ThresholdInPercentage) {
                 Debug.Log("Threshold Over");

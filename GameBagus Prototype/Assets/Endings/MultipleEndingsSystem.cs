@@ -138,6 +138,18 @@ public class MultipleEndingsSystem : MonoBehaviour {
     #endregion Conditions
 
     public void Save() {
+        int milestonesPassed = 0;
+
+        Milestone milestone = FindObjectOfType<Milestone>();
+        if (milestone != null) {
+            IReadOnlyList<Milestone.MilestoneCondition> milestones = FindObjectOfType<Milestone>().MilestoneConditions;
+            for (int i = 0; i < milestones.Count; i++) {
+                if (milestones[i].Passed) {
+                    milestonesPassed++;
+                }
+            }
+        }
+
         // The bool states
         foreach (var boolState in AttributeDb.BoolStateNames) {
             bool boolStateVal = HasBoolState(boolState);
@@ -150,8 +162,7 @@ public class MultipleEndingsSystem : MonoBehaviour {
             PlayerPrefs.SetInt($"{CurrentRunTitle}_{numState}", numStateVal);
         }
 
-        int favoursGained = ObservableVariable.FindProperty<IntProperty>("Milestones Completed").Value;
-        PlayerPrefs.SetInt($"{CurrentRunTitle}_Favours", favoursGained);
+        PlayerPrefs.SetInt($"{CurrentRunTitle}_Favours", milestonesPassed);
     }
 
     public void RetrieveData() {
@@ -172,6 +183,7 @@ public class MultipleEndingsSystem : MonoBehaviour {
         }
 
         int favoursGainedPreviously = PlayerPrefs.GetInt($"{CurrentRunTitle}_Favours", 0);
+        print(favoursGainedPreviously);
         ObservableVariable.FindProperty<IntProperty>("Favours").Value = favoursGainedPreviously;
 
         CheckNumToBoolStateTriggers();
@@ -209,6 +221,7 @@ public class MultipleEndingsSystem : MonoBehaviour {
                 foreach (var numState in mes.Attributes) {
                     EditorGUILayout.IntField(numState.Key, numState.Value);
                 }
+                EditorGUILayout.IntField("Favours", PlayerPrefs.GetInt($"{mes.CurrentRunTitle}_Favours", 0));
                 EditorGUI.EndDisabledGroup();
 
                 EditorGUILayout.Space(20);
@@ -224,6 +237,8 @@ public class MultipleEndingsSystem : MonoBehaviour {
                     foreach (var numState in mes.AttributeDb.NumStateNames) {
                         PlayerPrefs.DeleteKey($"{mes.CurrentRunTitle}_{numState}");
                     }
+
+                    PlayerPrefs.DeleteKey($"{mes.CurrentRunTitle}_Favours");
                 }
             }
         }
