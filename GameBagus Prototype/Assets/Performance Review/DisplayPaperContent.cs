@@ -4,12 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.Events;
 
 public class DisplayPaperContent : MonoBehaviour {
 
-    [SerializeField] private PaperContent _paperContent;
-    public PaperContent PaperContent => _paperContent;
+    [SerializeField] private PaperContent _paperContentSucess;
+    public PaperContent PaperContentSuccess => _paperContentSucess;
 
+    [SerializeField] private PaperContent _paperContentFail;
+    public PaperContent PaperContentFail => _paperContentFail;
+
+    private PaperContent ToUsePC;
     [Space]
     [SerializeField] private TextMeshProUGUI projectName;
     [SerializeField] private Image appImage;
@@ -21,8 +26,24 @@ public class DisplayPaperContent : MonoBehaviour {
     [SerializeField] private GameObject favourParent;
     [SerializeField] private GameObject candlesParent;
 
+    [Space]
+    public UnityEvent IsPassed;
+    private bool isPassed = false;
     private void OnEnable() {
-        UpdateContent();
+
+        ToUsePC = PaperContentFail;
+        Milestone milestone = FindObjectOfType<Milestone>();
+        foreach (Milestone.MilestoneCondition ms in milestone.MilestoneConditions)
+        {
+            if (ms.Passed)
+            {
+                ToUsePC = PaperContentSuccess;
+                isPassed = true;
+                break;
+            }
+        }
+
+        UpdateContent(ToUsePC);
         GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnProjectPrologue);
     }
 
@@ -30,11 +51,11 @@ public class DisplayPaperContent : MonoBehaviour {
         GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnProjectStart);
     }
 
-    public void UpdateContent() {
-        projectName.text = PaperContent.ProjectName;
-        appImage.sprite = PaperContent.AppImage;
-        content.text = PaperContent.Content;
-        signature.text = PaperContent.Signature;
+    public void UpdateContent(PaperContent pc) {
+        projectName.text = pc.ProjectName;
+        appImage.sprite = pc.AppImage;
+        content.text = pc.Content;
+        signature.text = pc.Signature;
     }
 
     public void UpdateIcons() {
@@ -49,7 +70,7 @@ public class DisplayPaperContent : MonoBehaviour {
         for (int i = 0; i < milestone.MilestoneConditions.Count; i++) {
             if (milestone.MilestoneConditions[i].Passed) {
                 Image image = milestoneParent.transform.GetChild(i).GetComponent<Image>();
-                image.sprite = PaperContent.MilesteonIcon.IconColour;
+                image.sprite = ToUsePC.MilesteonIcon.IconColour;
             }
         }
     }
@@ -61,7 +82,7 @@ public class DisplayPaperContent : MonoBehaviour {
         for (int i = 0; i < milestone.MilestoneConditions.Count; i++) {
             if (milestone.MilestoneConditions[i].Passed) {
                 Image image = favourParent.transform.GetChild(i).GetComponent<Image>();
-                image.sprite = PaperContent.FavourIcon.IconColour;
+                image.sprite = ToUsePC.FavourIcon.IconColour;
                 milestonesPassed++;
             }
         }
@@ -75,7 +96,7 @@ public class DisplayPaperContent : MonoBehaviour {
 
         for (int i = 0; i < counter; i++) {
             Image image = candlesParent.transform.GetChild(i).GetComponent<Image>();
-            image.sprite = PaperContent.CandleIcon.IconColour;
+            image.sprite = ToUsePC.CandleIcon.IconColour;
         }
     }
 
@@ -83,6 +104,23 @@ public class DisplayPaperContent : MonoBehaviour {
     public void RestartLevel() {
         //Application.LoadLevel(Application.loadedLevel);
         SceneManager.LoadScene(0);
+    }
+
+    public void LevelChanged()
+    {
+        if(isPassed)
+        {
+            IsPassed.Invoke();
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+
+    public void TutorialPassed()
+    {
+        PlayerPrefs.SetInt("CompletedTutorial", 1);
     }
 
 }
