@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178a98aec39ac451abdb031dff946096, type: 3}
   m_Name: Lvl1_D_Progress
   m_EditorClassIdentifier: 
-  _constant: 20
+  _constant: 0.2
   _steps: 10
-  _stepSize: 1
+  _stepSize: 0.01
