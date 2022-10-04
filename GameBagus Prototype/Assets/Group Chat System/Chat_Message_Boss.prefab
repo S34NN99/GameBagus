@@ -888,7 +888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0afb5fef0e55247c9b82fb3d2c450eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _duration: 10
+  _duration: 15
   _isTicking: 1
   _defaultToMax: 1
   _startCountdownOnEnabled: 1
