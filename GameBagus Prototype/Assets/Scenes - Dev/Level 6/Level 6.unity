@@ -633,14 +633,14 @@ PrefabInstance:
       value: 'The company takes note of your statement and assigns mandatory leave
         on your team "under your advisement". The leaves are unpaid.
 
-        
+
 
         "See
         to it that performance improves after this break. Tariq will also be tasked
         to oversee your conduct directly, so do liaise with him directly if you have
         any queries about what is expected of you on a daily basis "
 
-        
+
 
         The
         team is on holiday for x seconds.
@@ -1143,23 +1143,23 @@ PrefabInstance:
       propertyPath: _content
       value: 'You have used 1 Favour.
 
-        
 
-        Your call with CTO goes
-        well on past working hours. Both of you go back and forth on how just cause
-        one team succeeds doesn''t mean you shove everything you have onto that same
-        genre; an analogy about eggs and baskets comes up at some point.
 
-        
+        Your call with CTO goes well on
+        past working hours. Both of you go back and forth on how just cause one team
+        succeeds doesn''t mean you shove everything you have onto that same genre;
+        an analogy about eggs and baskets comes up at some point.
+
+
 
         But
         it doesn''t work. CTO doesn''t budge and your analogy gets rebutted with
         another compounding errors.
 
-        
 
-        You return to your team
-        with the bad news.'
+
+        You return to your team with the bad
+        news.'
       objectReference: {fileID: 0}
     - target: {fileID: 8739631955310093435, guid: ce13aafe7c33642c887f28e097d6beb4, type: 3}
       propertyPath: m_Pivot.x
@@ -5750,27 +5750,27 @@ MonoBehaviour:
   refreshOnUpdate: 0
   _text: 'To the management of Groundhog Games,
 
-    
 
-    This is an open letter
-    signed by over 100 employees across the company calling for concrete action from
-    you to protect your employees.
 
-    
+    This is an open letter signed
+    by over 100 employees across the company calling for concrete action from you
+    to protect your employees.
 
-    To that end, we demand the following
-    changes to be implemented:
 
-    
 
-    1. Changes in policies around meetings
-    with management and the working team
+    To that end, we demand the following changes
+    to be implemented:
 
-    2. Transparent investigations about
-    harrassment and bullying
 
-    3. Mandatory limit of weekly work hours with fair
-    compensations for overtime'
+
+    1. Changes in policies around meetings with management
+    and the working team
+
+    2. Transparent investigations about harrassment and
+    bullying
+
+    3. Mandatory limit of weekly work hours with fair compensations
+    for overtime'
   updateTextCallback:
     m_PersistentCalls:
       m_Calls:
@@ -5871,27 +5871,27 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'To the management of Groundhog Games,
 
-    
 
-    This is an open letter
-    signed by over 100 employees across the company calling for concrete action from
-    you to protect your employees.
 
-    
+    This is an open letter signed
+    by over 100 employees across the company calling for concrete action from you
+    to protect your employees.
 
-    To that end, we demand the following
-    changes to be implemented:
 
-    
 
-    1. Changes in policies around meetings
-    with management and the working team
+    To that end, we demand the following changes
+    to be implemented:
 
-    2. Transparent investigations about
-    harrassment and bullying
 
-    3. Mandatory limit of weekly work hours with fair
-    compensations for overtime'
+
+    1. Changes in policies around meetings with management
+    and the working team
+
+    2. Transparent investigations about harrassment and
+    bullying
+
+    3. Mandatory limit of weekly work hours with fair compensations
+    for overtime'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7180,12 +7180,11 @@ PrefabInstance:
       propertyPath: _content
       value: 'You have used 1 Favour.
 
-        
 
-        You leverage on the successes
-        you''ve had over the last few project to make it your "expert" opinion to
-        keep things as they are. After all, there''s always an audience for any sort
-        of game.'
+
+        You leverage on the successes you''ve
+        had over the last few project to make it your "expert" opinion to keep things
+        as they are. After all, there''s always an audience for any sort of game.'
       objectReference: {fileID: 0}
     - target: {fileID: 8739631955310093435, guid: ce13aafe7c33642c887f28e097d6beb4, type: 3}
       propertyPath: m_Pivot.x
@@ -7341,16 +7340,15 @@ PrefabInstance:
       propertyPath: _text
       value: 'Hi Alex,
 
-        
 
-        QA has returned feedback for the last
-        patch and it doesn''t mesh with the intended direction.
 
-        
+        QA has returned feedback for the last patch and
+        it doesn''t mesh with the intended direction.
 
-        Get
-        the team to rebuild the game with more "ka-pow" mechanics for the next pitch
-        thanks.'
+
+
+        Get the team to
+        rebuild the game with more "ka-pow" mechanics for the next pitch thanks.'
       objectReference: {fileID: 0}
     - target: {fileID: 7266656375128256659, guid: 9376d994518b74fde9182f26638f219f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -8024,6 +8022,10 @@ PrefabInstance:
       value: "<u><b>NOTATIONS:</b></u>\n   \"We'll be trying to create a new IP for
         this app, so expect changes as we receive feedback!\""
       objectReference: {fileID: 0}
+    - target: {fileID: 4279310004718762696, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 4798209957393688953, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
       propertyPath: m_text
       value: '<b>Milestone 1</b>
@@ -8356,30 +8358,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8772585060024025329, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8772585060024025329, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8772585060024025329, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1863058420}
     - target: {fileID: 8772585060024025329, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8772585060024025329, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: OnClickedSFX
       objectReference: {fileID: 0}
     - target: {fileID: 8772585060024025329, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: AudioManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8772585060024025329, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772585060024025329, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8772585060486315818, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
@@ -11190,16 +11196,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _content: 'Hey team,
 
-    
 
-    If you''re feeling tired, remember to make use
-    of the facilities that HR has provided for you. In fact, feel free to take walks
-    in the nearby park to refresh and recharge.
 
-    
+    If you''re feeling tired, remember to make use of the
+    facilities that HR has provided for you. In fact, feel free to take walks in
+    the nearby park to refresh and recharge.
 
-    In addition, management
-    would like to emphasize an important fact -- crunch in this company is not mandatory!'
+
+
+    In addition, management would
+    like to emphasize an important fact -- crunch in this company is not mandatory!'
 --- !u!1001 &850466161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12935,7 +12941,7 @@ PrefabInstance:
       propertyPath: _content
       value: 'You get blunt, stating newbies are inadequate in these technical meetings.
 
-        
+
 
         It''s
         not so much that his shoulders sag but rather that there is the repulse look
@@ -16509,10 +16515,10 @@ PrefabInstance:
         with him directly if you have any queries about what is expected of you on
         a daily basis."
 
-        
 
-        With that, project deadline is expedited
-        to achieve better metrics.'
+
+        With that, project deadline is expedited to achieve
+        better metrics.'
       objectReference: {fileID: 0}
     - target: {fileID: 7817300043095310073, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_Pivot.x
@@ -22872,10 +22878,10 @@ PrefabInstance:
         disseminating the letter, but you''re unable to pinpoint the person initiated
         this.
 
-        
 
-        S. Kim is distressed by the situation and bid
-        you to keep an eye out on the person initiating this uprising.'
+
+        S. Kim is distressed by the situation and bid you to keep
+        an eye out on the person initiating this uprising.'
       objectReference: {fileID: 0}
     - target: {fileID: 7817300043095310073, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_Pivot.x
@@ -24420,11 +24426,11 @@ PrefabInstance:
       propertyPath: _text
       value: 'Hi Alex,
 
-        
 
-        Can you believe that some snake in our
-        company influenced our employees do such a thing? This generation really
-        has no sense of gratitude or loyalty! These demands are ridiculous!'
+
+        Can you believe that some snake in our company
+        influenced our employees do such a thing? This generation really has no sense
+        of gratitude or loyalty! These demands are ridiculous!'
       objectReference: {fileID: 0}
     - target: {fileID: 7612925211727030800, guid: 03dda5d14d68948bf89cf5c56b8f67a0, type: 3}
       propertyPath: m_text
@@ -25103,15 +25109,15 @@ PrefabInstance:
       value: 'You make an immediate call to Jo, lamblasting him for jepoardizing
         the project and everyone''s livelihood. It doesn''t go well.
 
-        
+
 
         "You''ve
         heard our demands. Budge on them, or get nothing."
 
-        
 
-        Work
-        and Crunch buttons are invalid for x seconds.'
+
+        Work and Crunch
+        buttons are invalid for x seconds.'
       objectReference: {fileID: 0}
     - target: {fileID: 7817300043095310073, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_Pivot.x
@@ -29621,10 +29627,10 @@ PrefabInstance:
       value: 'You deny knowledge or involvement regarding the dissemination of the
         letter.
 
-        
 
-        S. Kim is distressed by the situation and bid
-        you to keep an eye out on the person initiating this uprising.'
+
+        S. Kim is distressed by the situation and bid you to keep
+        an eye out on the person initiating this uprising.'
       objectReference: {fileID: 0}
     - target: {fileID: 7817300043095310073, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_Pivot.x

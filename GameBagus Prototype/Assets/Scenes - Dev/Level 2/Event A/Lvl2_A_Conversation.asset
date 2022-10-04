@@ -21,7 +21,7 @@ MonoBehaviour:
       _initials: 
       _style: {fileID: 0}
     _isPlayer: 0
-    _message: This is way beyong my job scope
+    _message: This is way beyond my job scope
   - _candleProfileId: 2
     _isOverrideProfile: 0
     _overrideProfile:

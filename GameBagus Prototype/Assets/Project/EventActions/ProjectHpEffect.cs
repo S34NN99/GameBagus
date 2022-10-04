@@ -19,7 +19,13 @@ public class ProjectHpEffect : ScriptableObject {
     }
 
     private IEnumerator IncreaseProjectHP(Project project) {
-        project.RequiredProgress += ChangeInHp;
-        yield return new WaitForSeconds(Duration);
+        float elapsedTime = 0;
+        float hpChangePerSec = ChangeInHp / Duration;
+
+        while (elapsedTime < Duration) {
+            elapsedTime += Time.deltaTime;
+            project.ProgressProp.Value += hpChangePerSec * Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
     }
 }

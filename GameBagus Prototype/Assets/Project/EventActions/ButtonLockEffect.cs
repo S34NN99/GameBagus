@@ -17,7 +17,7 @@ public class ButtonLockEffect : ScriptableObject {
             buttonParent = GameObject.Find("Action Buttons");
         }
 
-        Button targetButton = buttonParent.GetComponent<Button>();
+        Button targetButton = buttonParent.transform.Find(ButtonToLock).GetComponent<Button>();
         targetButton.StartCoroutine(LockButton());
 
         IEnumerator LockButton() {

@@ -29,14 +29,4 @@ public class M_Happy : MoodState {
             entity.currCandle.SM.SetMoodState(new M_Neutral());
         }
     }
-
-    public override bool CalculateThreshold(IEntity entity) {
-        //float threshold = entity.currCandle.candleStats.MoodThreshold[CurrentIndex];
-        //return entity.currCandle.candleStats.HP < threshold;
-        float threshold = entity.currCandle.Stats.MoodThreshold[CurrentIndex];
-        return entity.currCandle.Stats.HpProp.Value < threshold;
-    }
-
-
-
 }
