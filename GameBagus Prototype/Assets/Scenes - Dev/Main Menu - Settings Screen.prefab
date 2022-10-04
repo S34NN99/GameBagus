@@ -980,6 +980,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120f77031ac4d4563a49b96e1d484b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasMenu: 1
+  _muteBgmBtn: {fileID: 2605664466428935631}
+  _muteSfxBtn: {fileID: 2605664465233601127}
 --- !u!1 &2605664466823179425
 GameObject:
   m_ObjectHideFlags: 0
