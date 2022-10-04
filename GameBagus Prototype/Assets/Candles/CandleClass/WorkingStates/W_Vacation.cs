@@ -25,10 +25,10 @@ public class W_Vacation : WorkingState {
     public override void Update(IEntity entity, Project pb) {
         //entity.currCandle.Regeneration();
         entity.currCandle.Decay();
-        CheckHP(entity);
     }
 
     public override void Exit(IEntity entity) {
+        CheckHP(entity);
         entity.currCandle.SM.workingState = null;
         entity.currCandle.Stats.RemovePowerModifier(healMod);
         healMod = null;

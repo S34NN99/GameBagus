@@ -64,9 +64,18 @@ public abstract class MoodState : State {
     public abstract int CurrentIndex { get; }
     public abstract void CheckHP(IEntity entity);
 
-    public virtual bool CalculateThreshold(IEntity entity) {
-        float threshold = entity.currCandle.Stats.MoodThreshold[CurrentIndex];
-        return entity.currCandle.Stats.HpProp.Value < threshold;
+    public virtual int CalculateThreshold(IEntity entity) {
+        float lowerBound = entity.currCandle.Stats.MoodThreshold[CurrentIndex + 1];
+        float upperBound = entity.currCandle.Stats.MoodThreshold[CurrentIndex];
+
+        float currentHealth = entity.currCandle.Stats.HpProp.Value;
+        if (currentHealth < lowerBound) {
+            return -1;
+        } else if (currentHealth >= lowerBound && currentHealth < upperBound) {
+            return 0;
+        } else {
+            return 1;
+        }
     }
 
 }

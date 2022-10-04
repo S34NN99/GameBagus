@@ -24,9 +24,15 @@ public class M_Neutral : MoodState {
     }
 
     public override void CheckHP(IEntity entity) {
-        if (CalculateThreshold(entity)) {
-            entity.currCandle.SM.moodState.Exit(entity);
-            entity.currCandle.SM.SetMoodState(new M_Sad());
+        switch (CalculateThreshold(entity)) {
+            case -1:
+                entity.currCandle.SM.moodState.Exit(entity);
+                entity.currCandle.SM.SetMoodState(new M_Sad());
+                break;
+            case 1:
+                entity.currCandle.SM.moodState.Exit(entity);
+                entity.currCandle.SM.SetMoodState(new M_Happy());
+                break;
         }
     }
 

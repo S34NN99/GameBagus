@@ -26,9 +26,15 @@ public class M_Sad : MoodState {
     }
 
     public override void CheckHP(IEntity entity) {
-        if (CalculateThreshold(entity)) {
-            entity.currCandle.SM.moodState.Exit(entity);
-            entity.currCandle.Death();
+        switch (CalculateThreshold(entity)) {
+            case -1:
+                entity.currCandle.SM.moodState.Exit(entity);
+                entity.currCandle.Death();
+                break;
+            case 1:
+                entity.currCandle.SM.moodState.Exit(entity);
+                entity.currCandle.SM.SetMoodState(new M_Neutral());
+                break;
         }
     }
 }

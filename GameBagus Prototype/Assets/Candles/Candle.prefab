@@ -56,7 +56,7 @@ MonoBehaviour:
     _hpProp: {fileID: 3171803744049403347}
     powerMods: []
     decayMods: []
-    _moodThreshold: 640000003200000000000000
+    _moodThreshold: c8000000640000003200000000000000
     updateNameCallback:
       m_PersistentCalls:
         m_Calls:
