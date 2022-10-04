@@ -10,8 +10,8 @@ public class SequentialActionLoop : MonoBehaviour {
     [Space]
     [SerializeField] private UnityEvent[] actionLoop;
 
-    private int _counter;
-    private int Counter { get => _counter; set => _counter = value; }
+    [SerializeField] private int _counter;
+    public int Counter { get => _counter; set => _counter = value; }
 
     private void OnEnable() {
         if (resetAndFireOnEnabled) {
@@ -22,8 +22,8 @@ public class SequentialActionLoop : MonoBehaviour {
 
     public void FireNextAction() {
         if (Counter < actionLoop.Length) {
-            actionLoop[Counter].Invoke();
             Counter++;
+            actionLoop[Counter - 1].Invoke();
         }
 
         CheckIfCounterNeedsToReset();
