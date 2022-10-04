@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes - Dev/Level 6/Level 6.unity
     guid: 01adbb3e0b047f64998aab0822fbc5e6
+  - enabled: 1
+    path: Assets/Scenes - Dev/Level 7/Level 7.unity
+    guid: 37e6194840214974aa8afcbf52fd578c
   - enabled: 0
     path: Assets/Scenes/Game Scene - Jam Build.unity
     guid: f9d73ba506147e14992a081247f7927e

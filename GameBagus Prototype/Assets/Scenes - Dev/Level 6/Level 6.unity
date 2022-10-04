@@ -8510,6 +8510,14 @@ PrefabInstance:
       propertyPath: candleManager
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8772585061318952635, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: onDeadlineEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 718947910}
+    - target: {fileID: 8772585061318952635, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: onDeadlineEnded.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
 --- !u!4 &718947906 stripped
@@ -8544,6 +8552,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8451ef18310374d0aa57f5840f44cfea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &718947910 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8772585060442970043, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+  m_PrefabInstance: {fileID: 718947905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &718947912 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6832442656791937889, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}

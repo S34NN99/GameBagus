@@ -3988,6 +3988,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3806350862499601242, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
   m_PrefabInstance: {fileID: 1316880383}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1007430278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8772585060442970043, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+  m_PrefabInstance: {fileID: 1597273898}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1060532839
 GameObject:
   m_ObjectHideFlags: 0
@@ -6856,6 +6861,14 @@ PrefabInstance:
     - target: {fileID: 8772585060752581288, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
       propertyPath: _onValueUpdated.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772585061318952635, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: onDeadlineEnded.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1007430278}
+    - target: {fileID: 8772585061318952635, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: onDeadlineEnded.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
