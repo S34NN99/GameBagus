@@ -732,7 +732,7 @@ PrefabInstance:
       value: 'Hey team! Just finished Queen of Sparring recently and I think there
         are some mechanics that we should implement in Waka Fighters.
 
-        
+
 
         I
         understand the schedule is tight, so let''s come together for a game jam
@@ -1482,15 +1482,15 @@ PrefabInstance:
       propertyPath: _content
       value: 'You have used 1 Favour.
 
-        
 
-        CEO is taken aback that
-        the suggestion is not being implemented.
 
-        
+        CEO is taken aback that the suggestion
+        is not being implemented.
 
-        The team is
-        relieved they don''t have to work over the weekend.'
+
+
+        The team is relieved they don''t have
+        to work over the weekend.'
       objectReference: {fileID: 0}
     - target: {fileID: 8739631955310093435, guid: ce13aafe7c33642c887f28e097d6beb4, type: 3}
       propertyPath: m_Pivot.x
@@ -1926,10 +1926,10 @@ PrefabInstance:
       value: 'The call ends and you set about encouraging the team to put in whatever
         is necessary to finish the project.
 
-        
 
-        The team is set
-        to crunch for x seconds.'
+
+        The team is set to crunch
+        for x seconds.'
       objectReference: {fileID: 0}
     - target: {fileID: 7817300043095310073, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_Pivot.x
@@ -2914,6 +2914,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 714287129}
     - target: {fileID: 1790998365, guid: d4b440ec425a2ad4d929ad3f24b02f5f, type: 3}
+      propertyPath: projectName2
+      value: 
+      objectReference: {fileID: 1755821903}
+    - target: {fileID: 1790998365, guid: d4b440ec425a2ad4d929ad3f24b02f5f, type: 3}
       propertyPath: candlesParent
       value: 
       objectReference: {fileID: 714287128}
@@ -3451,7 +3455,7 @@ PrefabInstance:
       propertyPath: _content
       value: 'The team reluctantly form groups for the weekend game jam.
 
-        
+
 
         Holiday
         button is invalid for x seconds.'
@@ -5556,32 +5560,32 @@ PrefabInstance:
       value: 'Hey Alex! Glad to get to know our new project manager. I''m Jo, the
         Lead Artist.
 
-        
 
-        I''m working on a separate project right
-        now, so I''m hoping the team treats you well. They''re a pretty dedicated
-        bunch, but just make sure they take their breaks on time, yeah?
 
-        
+        I''m working on a separate project right now, so
+        I''m hoping the team treats you well. They''re a pretty dedicated bunch,
+        but just make sure they take their breaks on time, yeah?
 
-        If
-        there''s anything, feel free to reach out. I''m just a text away.'
+
+
+        If there''s
+        anything, feel free to reach out. I''m just a text away.'
       objectReference: {fileID: 0}
     - target: {fileID: 7170657553880838673, guid: 9376d994518b74fde9182f26638f219f, type: 3}
       propertyPath: m_text
       value: 'Hey Alex! Glad to get to know our new project manager. I''m Jo, the
         Lead Artist.
 
-        
 
-        I''m working on a separate project right
-        now, so I''m hoping the team treats you well. They''re a pretty dedicated
-        bunch, but just make sure they take their breaks on time, yeah?
 
-        
+        I''m working on a separate project right now, so
+        I''m hoping the team treats you well. They''re a pretty dedicated bunch,
+        but just make sure they take their breaks on time, yeah?
 
-        If
-        there''s anything, feel free to reach out. I''m just a text away.'
+
+
+        If there''s
+        anything, feel free to reach out. I''m just a text away.'
       objectReference: {fileID: 0}
     - target: {fileID: 7170657553880838673, guid: 9376d994518b74fde9182f26638f219f, type: 3}
       propertyPath: m_fontSize
@@ -8580,33 +8584,33 @@ PrefabInstance:
       propertyPath: _text
       value: 'Hi Alex, good to see you''re settling in with the team.
 
-        
+
 
         I
         noticed you and the team are a little behind schedule. It''s okay, I understand
         this is the first project in your new role.
 
-        
 
-        Our devs
-        here are passionate with their work, so don''t be afraid to put the team
-        in overtime. They should be fine with it!'
+
+        Our devs here are
+        passionate with their work, so don''t be afraid to put the team in overtime.
+        They should be fine with it!'
       objectReference: {fileID: 0}
     - target: {fileID: 7170657553880838673, guid: 9376d994518b74fde9182f26638f219f, type: 3}
       propertyPath: m_text
       value: 'Hi Alex, good to see you''re settling in with the team.
 
-        
+
 
         I
         noticed you and the team are a little behind schedule. It''s okay, I understand
         this is the first project in your new role.
 
-        
 
-        Our devs
-        here are passionate with their work, so don''t be afraid to put the team
-        in overtime. They should be fine with it!'
+
+        Our devs here are
+        passionate with their work, so don''t be afraid to put the team in overtime.
+        They should be fine with it!'
       objectReference: {fileID: 0}
     - target: {fileID: 7266656375128256663, guid: 9376d994518b74fde9182f26638f219f, type: 3}
       propertyPath: m_RootOrder
@@ -9072,12 +9076,12 @@ PrefabInstance:
       propertyPath: _content
       value: 'You have used 1 Favour.
 
-        
 
-        The team form groups for
-        the weekend game jam but relieve knowing their time will be compensated.
 
-        
+        The team form groups for the weekend
+        game jam but relieve knowing their time will be compensated.
+
+
 
         Holiday
         button is invalid for x seconds.'
@@ -9594,10 +9598,10 @@ PrefabInstance:
       value: 'The call ends and you set about encouraging the team to put in whatever
         is necessary to finish the project.
 
-        
 
-        The team is set
-        to crunch for x seconds.'
+
+        The team is set to crunch
+        for x seconds.'
       objectReference: {fileID: 0}
     - target: {fileID: 7817300043095310073, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_Pivot.x
@@ -9685,6 +9689,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
+--- !u!114 &1755821903 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9032012194932304298, guid: 3f32cbe6e11bd5d438e475b3746a3353, type: 3}
+  m_PrefabInstance: {fileID: 714287126}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1762131741
 GameObject:
   m_ObjectHideFlags: 0

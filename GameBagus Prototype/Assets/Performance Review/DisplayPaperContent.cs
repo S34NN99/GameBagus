@@ -17,6 +17,7 @@ public class DisplayPaperContent : MonoBehaviour {
     private PaperContent ToUsePC;
     [Space]
     [SerializeField] private TextMeshProUGUI projectName;
+    [SerializeField] private TextMeshProUGUI projectName2;
     [SerializeField] private Image appImage;
     [SerializeField] private TextMeshProUGUI content;
     [SerializeField] private TextMeshProUGUI signature;
@@ -53,6 +54,7 @@ public class DisplayPaperContent : MonoBehaviour {
 
     public void UpdateContent(PaperContent pc) {
         projectName.text = pc.ProjectName;
+        projectName2.text = pc.ProjectName;
         appImage.sprite = pc.AppImage;
         content.text = pc.Content;
         signature.text = pc.Signature;
