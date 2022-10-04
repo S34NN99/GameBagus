@@ -20,8 +20,8 @@ public class PauseManager : MonoBehaviour {
 
     private void Awake() {
 
-        GeneralEventManager.Instance.StartListeningTo(AudioManager.ToggleBgmEvent, CheckButtons);
-        GeneralEventManager.Instance.StartListeningTo(AudioManager.ToggleSfxEvent, CheckButtons);
+        //GeneralEventManager.Instance.StartListeningTo(AudioManager.ToggleBgmEvent, CheckButtons);
+        //GeneralEventManager.Instance.StartListeningTo(AudioManager.ToggleSfxEvent, CheckButtons);
     }
 
     public void Pause() {

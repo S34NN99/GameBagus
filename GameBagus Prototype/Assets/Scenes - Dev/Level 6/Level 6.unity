@@ -2550,11 +2550,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
---- !u!1 &161655297 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1625782709121544137, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
-  m_PrefabInstance: {fileID: 718947905}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &162033849 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4772913340757344780, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
@@ -2918,11 +2913,6 @@ Transform:
   m_Father: {fileID: 718947906}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &188636464 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1625782709300352688, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
-  m_PrefabInstance: {fileID: 718947905}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &199905362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8022,9 +8012,25 @@ PrefabInstance:
       value: "<u><b>NOTATIONS:</b></u>\n   \"We'll be trying to create a new IP for
         this app, so expect changes as we receive feedback!\""
       objectReference: {fileID: 0}
+    - target: {fileID: 4279310004439225760, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1863058420}
+    - target: {fileID: 4279310004439225760, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleSfx
+      objectReference: {fileID: 0}
     - target: {fileID: 4279310004718762696, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
       propertyPath: m_RootOrder
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279310005357890056, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1863058420}
+    - target: {fileID: 4279310005357890056, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleBgm
       objectReference: {fileID: 0}
     - target: {fileID: 4798209957393688953, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
       propertyPath: m_text
@@ -13595,11 +13601,11 @@ PrefabInstance:
     - target: {fileID: 2811840726388696616, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 161655297}
+      objectReference: {fileID: 1796801297}
     - target: {fileID: 2811840726388696616, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 188636464}
+      objectReference: {fileID: 1796801297}
     - target: {fileID: 2811840726388696616, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_StringArgument
       value: FoeofJo
@@ -18722,11 +18728,11 @@ PrefabInstance:
     - target: {fileID: 2811840726388696616, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 188636464}
+      objectReference: {fileID: 1796801297}
     - target: {fileID: 2811840726388696616, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 161655297}
+      objectReference: {fileID: 1796801297}
     - target: {fileID: 2811840726388696616, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_StringArgument
       value: FoeofJo
@@ -25023,11 +25029,11 @@ PrefabInstance:
     - target: {fileID: 2811840726388696616, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 161655297}
+      objectReference: {fileID: 1796801297}
     - target: {fileID: 2811840726388696616, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 188636464}
+      objectReference: {fileID: 1796801297}
     - target: {fileID: 2811840726388696616, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_StringArgument
       value: FoeofJo
@@ -26226,6 +26232,11 @@ MonoBehaviour:
   targetVar: {fileID: 1776254438}
   outputProp: {fileID: 1776254437}
   isLatch: 0
+--- !u!1 &1796801297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8772585060253347636, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+  m_PrefabInstance: {fileID: 718947905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1800967631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27537,11 +27548,11 @@ PrefabInstance:
     - target: {fileID: 2811840726388696616, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 161655297}
+      objectReference: {fileID: 1796801297}
     - target: {fileID: 2811840726388696616, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 188636464}
+      objectReference: {fileID: 1796801297}
     - target: {fileID: 2811840726388696616, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_StringArgument
       value: FoeofJo

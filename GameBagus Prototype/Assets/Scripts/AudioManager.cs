@@ -182,7 +182,8 @@ public class AudioManager : MonoBehaviour {
 
     public void ToggleBgm() {
         print(PlayerPrefs.GetFloat("Bgm_Volume", 1));
-        if (PlayerPrefs.GetFloat("Bgm_Volume", 1) == 1) {
+        float volume = PlayerPrefs.GetFloat("Bgm_Volume", 1);
+        if ( volume == 1f) {
             SetBgmVolume(0);
         } else {
             SetBgmVolume(1);
@@ -191,7 +192,8 @@ public class AudioManager : MonoBehaviour {
 
     public void ToggleSfx() {
         print(PlayerPrefs.GetFloat("Bgm_Volume", 1));
-        if (PlayerPrefs.GetFloat("Sfx_Volume", 1) == 1) {
+        float volume = PlayerPrefs.GetFloat("Sfx_Volume", 1);
+        if ( volume == 1f) {
             SetSfxVolume(0);
         } else {
             SetSfxVolume(1);

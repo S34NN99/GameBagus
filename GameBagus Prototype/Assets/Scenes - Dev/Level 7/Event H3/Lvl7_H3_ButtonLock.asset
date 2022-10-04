@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Lvl7_H3_ButtonLock
   m_EditorClassIdentifier: 
   _duration: 10
-  _buttonToLock: 
+  _buttonToLock: Vacation Button

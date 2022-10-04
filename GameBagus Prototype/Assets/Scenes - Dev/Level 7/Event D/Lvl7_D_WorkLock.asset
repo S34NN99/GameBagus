@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 178a98aec39ac451abdb031dff946096, type: 3}
-  m_Name: Lvl4_D_Time
+  m_Script: {fileID: 11500000, guid: 426d557b0937e41d7a0f5bc9bd13e475, type: 3}
+  m_Name: Lvl7_D_WorkLock
   m_EditorClassIdentifier: 
-  _constant: 0.15
-  _steps: 5
-  _stepSize: 0.01
+  _duration: 12
+  _buttonToLock: Work Button

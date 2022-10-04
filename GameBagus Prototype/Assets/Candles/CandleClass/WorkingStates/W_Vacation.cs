@@ -24,7 +24,8 @@ public class W_Vacation : WorkingState {
 
     public override void Update(IEntity entity, Project pb) {
         //entity.currCandle.Regeneration();
-        entity.currCandle.Decay();
+        if (entity.currCandle.Stats.HpProp.Value <= entity.currCandle.Stats.MaxHp)
+            entity.currCandle.Decay();
     }
 
     public override void Exit(IEntity entity) {

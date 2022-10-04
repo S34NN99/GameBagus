@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Lvl5_G_ButtonLock
   m_EditorClassIdentifier: 
   _duration: 500
-  _buttonToLock: Vacation
+  _buttonToLock: Vacation Button

@@ -433,6 +433,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -335
       objectReference: {fileID: 0}
+    - target: {fileID: 6747525548672753202, guid: 4ffced7d5aeda4836ab56df6f499ebc4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1863058420}
+    - target: {fileID: 6747525548672753202, guid: 4ffced7d5aeda4836ab56df6f499ebc4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleBgm
+      objectReference: {fileID: 0}
     - target: {fileID: 6747525548672753203, guid: 4ffced7d5aeda4836ab56df6f499ebc4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -540,6 +548,14 @@ PrefabInstance:
     - target: {fileID: 6747525549111619315, guid: 4ffced7d5aeda4836ab56df6f499ebc4, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747525549901660570, guid: 4ffced7d5aeda4836ab56df6f499ebc4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1863058420}
+    - target: {fileID: 6747525549901660570, guid: 4ffced7d5aeda4836ab56df6f499ebc4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleSfx
       objectReference: {fileID: 0}
     - target: {fileID: 6747525549901660571, guid: 4ffced7d5aeda4836ab56df6f499ebc4, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7412,9 +7428,9 @@ RectTransform:
   - {fileID: 1735577163}
   - {fileID: 1254907521}
   - {fileID: 1461815650}
+  - {fileID: 76790165}
   - {fileID: 377613440}
   - {fileID: 704864534}
-  - {fileID: 76790165}
   m_Father: {fileID: 1628611188}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13048,6 +13064,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120f77031ac4d4563a49b96e1d484b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasMenu: 0
+  _muteBgmBtn: {fileID: 0}
+  _muteSfxBtn: {fileID: 0}
 --- !u!1001 &1097213157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22170,6 +22189,6 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 0edce95e4f37f4f5d9b859ce0971c4d0, type: 3}
 --- !u!1 &8975204793715166187 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1423100468187171104, guid: 0edce95e4f37f4f5d9b859ce0971c4d0, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8975204794718421474, guid: 0edce95e4f37f4f5d9b859ce0971c4d0, type: 3}
   m_PrefabInstance: {fileID: 8975204793715166186}
   m_PrefabAsset: {fileID: 0}
