@@ -599,8 +599,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3276212617705088254, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
       propertyPath: _textToType
-      value: The development team has been recalled to the office to ensure the deadline
-        is met.
+      value: This new title, WagaMaga, will hopefully pave the way for the company
+        to step into the AAA scene, and maybe even break through into console territory.
       objectReference: {fileID: 0}
     - target: {fileID: 3276212617993712532, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
       propertyPath: m_Name
@@ -1535,14 +1535,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3276212617705088254, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
       propertyPath: _textToType
-      value: "WagaMaga released without Console port despite marketing promises.
-        Consumers furious!\r\n\r\n\u201CThe console version of WagaMaga did not meet
-        the quality standard we wanted it to meet.\u201D CEO Bobby Song appears in
-        latest apology video regarding the botched release. \u201CI and the entire
-        leadership team are deeply sorry for this, and this video is me publicly
-        owning up to that.\u201D\r\n\r\nInvestors have requested an internal investigation
-        regarding the disaster whilst the development team is tasked to porting the
-        WagaMaga onto the console."
+      value: After extensive market research, Groundhog Games decides to throw their
+        hat into the PC space, seeing it as a business opportunity to reach a wider
+        audience.
       objectReference: {fileID: 0}
     - target: {fileID: 3276212617993712532, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
       propertyPath: m_Name

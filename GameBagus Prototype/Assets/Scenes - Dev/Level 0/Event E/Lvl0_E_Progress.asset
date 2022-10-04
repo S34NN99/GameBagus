@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 178a98aec39ac451abdb031dff946096, type: 3}
-  m_Name: Lvl0_Time
+  m_Name: Lvl0_E_Progress
   m_EditorClassIdentifier: 
-  _constant: 2
-  _steps: 1
-  _stepSize: 1
+  _constant: 0.6
+  _steps: 0
+  _stepSize: 0

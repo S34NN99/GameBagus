@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ff19a568c92749bf9383813daa69811, type: 3}
-  m_Name: Lvl0_Conversation
+  m_Name: Lvl0_C_Conversation
   m_EditorClassIdentifier: 
   dialogs:
   - _candleProfileId: 0
@@ -21,7 +21,7 @@ MonoBehaviour:
       _initials: HR
       _style: {fileID: 11400000, guid: 3b6040ec4ff703c439aefab480e419e9, type: 2}
     _isPlayer: 0
-    _message: Sometimes, you find out that time is running short...
+    _message: Employees can be very hard workers
   - _candleProfileId: 0
     _isOverrideProfile: 1
     _overrideProfile:
@@ -30,7 +30,7 @@ MonoBehaviour:
       _initials: HR
       _style: {fileID: 11400000, guid: 3b6040ec4ff703c439aefab480e419e9, type: 2}
     _isPlayer: 0
-    _message: ...and you're still not able to complete your deliverables
+    _message: But everyone needs a break now and then!
   - _candleProfileId: 0
     _isOverrideProfile: 1
     _overrideProfile:
@@ -39,8 +39,7 @@ MonoBehaviour:
       _initials: HR
       _style: {fileID: 11400000, guid: 3b6040ec4ff703c439aefab480e419e9, type: 2}
     _isPlayer: 0
-    _message: In that scenario, you can get your workers to crunch and work doubly
-      hard!
+    _message: If you think they're going to burn out...
   - _candleProfileId: 0
     _isOverrideProfile: 1
     _overrideProfile:
@@ -49,5 +48,6 @@ MonoBehaviour:
       _initials: HR
       _style: {fileID: 11400000, guid: 3b6040ec4ff703c439aefab480e419e9, type: 2}
     _isPlayer: 0
-    _message: Of course, that means they'll burn out twice as fast!
+    _message: Send them on holiday by drag-and-drop "vacation" to the worker of your
+      choice.
   randomiseCandles: 0

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcacae6366a894f468edb354bc50de3c, type: 3}
   m_Name: Lvl0_Development Brief
   m_EditorClassIdentifier: 
-  _projectName: TUTORIAL
-  _appImage: {fileID: 21300000, guid: dc929900716d729449365a2729969c82, type: 3}
+  _projectName: TisaTest v1
+  _appImage: {fileID: 21300000, guid: f0f3eff0155714790bb0fafac9f214e8, type: 3}
   _content: 'Milestone 1:
 
     MVP, or minimum viable product
@@ -28,8 +28,8 @@ MonoBehaviour:
     Milestone 3:
 
     Fully Polished and ready to go!'
-  _signature: "<b><u>Notation from S. Kim, COO</u></b>\n   This'll be a mock simulation
-    of your time in groundhog. We hope you'll do well!"
+  _signature: "<b><u>Notation from HR</u></b>\n   This is a mock simulation as Project
+    Manager in Groundhog Games. Good luck!"
   _milestoneIcon: {fileID: 0}
   _favourIcon: {fileID: 0}
   _candleIcon: {fileID: 0}

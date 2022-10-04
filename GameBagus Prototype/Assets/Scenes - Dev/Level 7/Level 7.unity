@@ -525,10 +525,10 @@ PrefabInstance:
       propertyPath: _text
       value: 'Brainstorming day with team leaders.
 
-        
 
-        You have
-        been roped into the brainstorm meeting from 9-5.'
+
+        You have been roped
+        into the brainstorm meeting from 9-5.'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdb47877009914bc18382ebe0e7c354a, type: 3}
@@ -1939,10 +1939,10 @@ PrefabInstance:
       value: 'We still see that is no progress, just empty promises from management
         team.
 
-        
 
-        We will continue our efforts to push through our
-        demands one way or another.'
+
+        We will continue our efforts to push through our demands
+        one way or another.'
       objectReference: {fileID: 0}
     - target: {fileID: 1998669155159222742, guid: cdb47877009914bc18382ebe0e7c354a, type: 3}
       propertyPath: m_Pivot.y
@@ -2566,7 +2566,7 @@ PrefabInstance:
     - target: {fileID: 1790998365, guid: d4b440ec425a2ad4d929ad3f24b02f5f, type: 3}
       propertyPath: _paperContent
       value: 
-      objectReference: {fileID: 11400000, guid: fdc3204eea153ae44be35fb23acb5233, type: 2}
+      objectReference: {fileID: 11400000, guid: cf7121b26c9ce4bb2b4ced29be1bed95, type: 2}
     - target: {fileID: 1790998365, guid: d4b440ec425a2ad4d929ad3f24b02f5f, type: 3}
       propertyPath: candlesParent
       value: 
@@ -3128,7 +3128,7 @@ PrefabInstance:
       value: 'The management team is outright disappointed that you did not make
         reasonable efforts to resolve employees'' demands which resulted in the strike.
 
-        
+
 
         As
         a senior member of the team, you are expected to be the face of the management
@@ -3139,7 +3139,7 @@ PrefabInstance:
       value: 'The management team is outright disappointed that you did not make
         reasonable efforts to resolve employees'' demands which resulted in the strike.
 
-        
+
 
         As
         a senior member of the team, you are expected to be the face of the management
@@ -4448,6 +4448,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 714287129}
     - target: {fileID: 1790998365, guid: d4b440ec425a2ad4d929ad3f24b02f5f, type: 3}
+      propertyPath: _paperContent
+      value: 
+      objectReference: {fileID: 11400000, guid: 4635395f1c84a4e058afc024cb8b0b4f, type: 2}
+    - target: {fileID: 1790998365, guid: d4b440ec425a2ad4d929ad3f24b02f5f, type: 3}
       propertyPath: candlesParent
       value: 
       objectReference: {fileID: 714287128}
@@ -4901,8 +4905,8 @@ RectTransform:
   - {fileID: 1415881487}
   - {fileID: 415527955}
   - {fileID: 1766006786}
-  - {fileID: 37627830}
   - {fileID: 2072195720}
+  - {fileID: 37627830}
   m_Father: {fileID: 1628611188}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5416,10 +5420,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Brainstorming day with team leaders.
 
-        
 
-        You have
-        been roped into the brainstorm meeting from 9-5.'
+
+        You have been roped
+        into the brainstorm meeting from 9-5.'
       objectReference: {fileID: 0}
     - target: {fileID: 1998669155159222742, guid: cdb47877009914bc18382ebe0e7c354a, type: 3}
       propertyPath: m_Pivot.y
@@ -5615,11 +5619,10 @@ PrefabInstance:
       value: 'There have been reports of in-game purchase bugs preventing player
         to purchase an item shown in the store.
 
-        
 
-        Beta launch
-        is not far away. This is unacceptable. The team has to crunch till this is
-        solved.'
+
+        Beta launch is not far
+        away. This is unacceptable. The team has to crunch till this is solved.'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdb47877009914bc18382ebe0e7c354a, type: 3}
@@ -11384,10 +11387,9 @@ PrefabInstance:
       propertyPath: m_text
       value: '<candle3> has applied for annual leave.
 
-        
 
-        Total
-        day(s): 2'
+
+        Total day(s): 2'
       objectReference: {fileID: 0}
     - target: {fileID: 7266656375128256663, guid: 9376d994518b74fde9182f26638f219f, type: 3}
       propertyPath: m_RootOrder
@@ -11747,10 +11749,10 @@ PrefabInstance:
       value: 'We still see that is no progress, just empty promises from management
         team.
 
-        
 
-        We will continue our efforts to push through our
-        demands one way or another.'
+
+        We will continue our efforts to push through our demands
+        one way or another.'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdb47877009914bc18382ebe0e7c354a, type: 3}
@@ -12550,11 +12552,10 @@ PrefabInstance:
       value: 'The management team is outright disappointed to find out that you have
         participated in the strike.
 
-        
 
-        As a senior member of the
-        team, you are expected to be the face of the management team and resolve
-        this internally.'
+
+        As a senior member of the team, you
+        are expected to be the face of the management team and resolve this internally.'
       objectReference: {fileID: 0}
     - target: {fileID: 7170657553880838673, guid: 9376d994518b74fde9182f26638f219f, type: 3}
       propertyPath: m_text
@@ -13358,10 +13359,9 @@ PrefabInstance:
       propertyPath: m_text
       value: '<candle3> has applied for annual leave.
 
-        
 
-        Total
-        day(s): 2'
+
+        Total day(s): 2'
       objectReference: {fileID: 0}
     - target: {fileID: 1809290574970153531, guid: 877b4c65a783c4d05940cc3e7b766475, type: 3}
       propertyPath: m_Pivot.x
@@ -15253,7 +15253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1762131742
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15354,20 +15354,20 @@ PrefabInstance:
         attempts to cover up harrassment and abuse. Investors are demanding investigation
         as the scandals plague the company.
 
-        
 
-        60% of the team
-        handed in their resignation letter.
 
-        
+        60% of the team handed in
+        their resignation letter.
 
-        This is a PR nightmare
-        and we still have a MMO to launch.
 
-        
 
-        I need to know now
-        where you stand with me and the company. What say you?'
+        This is a PR nightmare and we still
+        have a MMO to launch.
+
+
+
+        I need to know now where you stand with
+        me and the company. What say you?'
       objectReference: {fileID: 0}
     - target: {fileID: 7170657553880838673, guid: 9376d994518b74fde9182f26638f219f, type: 3}
       propertyPath: m_text
@@ -15375,20 +15375,20 @@ PrefabInstance:
         attempts to cover up harrassment and abuse. Investors are demanding investigation
         as the scandals plague the company.
 
-        
 
-        60% of the team
-        handed in their resignation letter.
 
-        
+        60% of the team handed in
+        their resignation letter.
 
-        This is a PR nightmare
-        and we still have a MMO to launch.
 
-        
 
-        I need to know now
-        where you stand with me and the company. What say you?'
+        This is a PR nightmare and we still
+        have a MMO to launch.
+
+
+
+        I need to know now where you stand with
+        me and the company. What say you?'
       objectReference: {fileID: 0}
     - target: {fileID: 7170657553880838673, guid: 9376d994518b74fde9182f26638f219f, type: 3}
       propertyPath: m_fontSize
@@ -15649,6 +15649,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1762131742}
     m_Modifications:
+    - target: {fileID: 6007618371542895228, guid: f79e284be0e4e1a41ab3d6f40ff8fe4a, type: 3}
+      propertyPath: _paperContent
+      value: 
+      objectReference: {fileID: 11400000, guid: 6f1f3f36b4724471c87c031fc49d0b17, type: 2}
     - target: {fileID: 8371928470953337633, guid: f79e284be0e4e1a41ab3d6f40ff8fe4a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -19303,7 +19307,7 @@ RectTransform:
   - {fileID: 351677772}
   - {fileID: 714287127}
   m_Father: {fileID: 548773293}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

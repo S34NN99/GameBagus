@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcacae6366a894f468edb354bc50de3c, type: 3}
   m_Name: Development Brief Level 3
   m_EditorClassIdentifier: 
-  _projectName: PROJECT 1
-  _appImage: {fileID: 21300000, guid: dc929900716d729449365a2729969c82, type: 3}
+  _projectName: Nutri-Fun!
+  _appImage: {fileID: 21300000, guid: 13dc278fe352e459cbc1011ae3cc33f6, type: 3}
   _content: '<b>MILESTONE 1</b>
 
     Concept art and early prototype

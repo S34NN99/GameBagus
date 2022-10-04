@@ -13,8 +13,22 @@ MonoBehaviour:
   m_Name: Development Brief Level 2
   m_EditorClassIdentifier: 
   _projectName: PROJECT 2
-  _appImage: {fileID: 21300000, guid: dc929900716d729449365a2729969c82, type: 3}
-  _content: 
+  _appImage: {fileID: 21300000, guid: 0e5eb19d90eac462fb488e4ebf33fe88, type: 3}
+  _content: '<b>MILESTONE 1</b>
+
+    Wireframe and designing user interface
+
+
+    <b>MILESTONE
+    2</b>
+
+    Front-end and back-end web development
+
+
+    <b>MILESTONE 3</b>
+
+    Testing
+    and deployment'
   _signature: "<b><u>Notations from CEO:</u></b>\n  We've won the bid to design and
     develop an Earth Day CSR website for one of the major telcos in the country.
     Let's make this count.\n"

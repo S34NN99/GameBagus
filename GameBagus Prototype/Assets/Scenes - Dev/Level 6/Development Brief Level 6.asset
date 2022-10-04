@@ -13,11 +13,23 @@ MonoBehaviour:
   m_Name: Development Brief Level 6
   m_EditorClassIdentifier: 
   _projectName: WiyaWika Pop!
-  _appImage: {fileID: 21300000, guid: dc929900716d729449365a2729969c82, type: 3}
-  _content: "Milestone 1 \nMandatory playtest day\n\nMilestone 2 \nSeed funding pitch\n\nMilestone
-    3\nBeta launch"
-  _signature: "<u><b>Notation from S. Kim, COO:</u></b>\n  We'll be trying to create
-    a new IP for this app, so expect changes as we receive feedback!"
+  _appImage: {fileID: 21300000, guid: 7299dd74581084cfd8673279ea9534b8, type: 3}
+  _content: '<b>MILESTONE 1</b>
+
+    Mandatory playtest day
+
+
+    <b>MILESTONE 2</b>
+
+    Seed
+    funding pitch
+
+
+    <b>MILESTONE 3</b>
+
+    Beta launch'
+  _signature: "<u><b>Notation from S. Kim, COO:</u></b>\n  \"We'll be trying to create
+    a new IP for this app, so expect changes as we receive feedback!\""
   _milestoneIcon: {fileID: 11400000, guid: 6025bf1102320954bb1404587f82f6e7, type: 2}
   _favourIcon: {fileID: 11400000, guid: 4f29f2861e33cc34c8e9f412011e592f, type: 2}
   _candleIcon: {fileID: 11400000, guid: c579bf3deeebb6843b34c31801dbed93, type: 2}

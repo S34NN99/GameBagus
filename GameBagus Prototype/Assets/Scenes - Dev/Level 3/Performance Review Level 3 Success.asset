@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcacae6366a894f468edb354bc50de3c, type: 3}
   m_Name: Performance Review Level 3 Success
   m_EditorClassIdentifier: 
-  _projectName: PROJECT 1
+  _projectName: Nutri-Fun!
   _appImage: {fileID: 21300000, guid: 656cf7d3d82f8a34d8bdb3259f012483, type: 3}
   _content: 'Congratulations on the launch of the mobile app!
 

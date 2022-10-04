@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ff19a568c92749bf9383813daa69811, type: 3}
-  m_Name: Lvl0_Conversation
+  m_Name: Lvl0_D_Conversation
   m_EditorClassIdentifier: 
   dialogs:
   - _candleProfileId: 0
@@ -21,7 +21,8 @@ MonoBehaviour:
       _initials: HR
       _style: {fileID: 11400000, guid: 3b6040ec4ff703c439aefab480e419e9, type: 2}
     _isPlayer: 0
-    _message: Every project is a race against the clock!
+    _message: Sometimes, things may happen unexpectedly during the project that you'll
+      just have to deal with!
   - _candleProfileId: 0
     _isOverrideProfile: 1
     _overrideProfile:
@@ -30,23 +31,5 @@ MonoBehaviour:
       _initials: HR
       _style: {fileID: 11400000, guid: 3b6040ec4ff703c439aefab480e419e9, type: 2}
     _isPlayer: 0
-    _message: Once the fuse is at 0, you're out of time!
-  - _candleProfileId: 0
-    _isOverrideProfile: 1
-    _overrideProfile:
-      _profileName: HR
-      _profilePic: {fileID: 21300000, guid: cb3b19297557449618d1cda6e1411c37, type: 3}
-      _initials: HR
-      _style: {fileID: 11400000, guid: 3b6040ec4ff703c439aefab480e419e9, type: 2}
-    _isPlayer: 0
-    _message: You only need to get at least 1 milestone (flag) to complete a project...
-  - _candleProfileId: 0
-    _isOverrideProfile: 1
-    _overrideProfile:
-      _profileName: HR
-      _profilePic: {fileID: 21300000, guid: cb3b19297557449618d1cda6e1411c37, type: 3}
-      _initials: HR
-      _style: {fileID: 11400000, guid: 3b6040ec4ff703c439aefab480e419e9, type: 2}
-    _isPlayer: 0
-    _message: ...but hitting more milestones will get you more Favours!
+    _message: It's your job to figure out what's the best way to deal with it!
   randomiseCandles: 0

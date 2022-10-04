@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcacae6366a894f468edb354bc50de3c, type: 3}
   m_Name: Development Brief Level 1
   m_EditorClassIdentifier: 
-  _projectName: PROJECT 1
-  _appImage: {fileID: 21300000, guid: dc929900716d729449365a2729969c82, type: 3}
+  _projectName: Waka Fighters!
+  _appImage: {fileID: 21300000, guid: d482d21da7a624c35a165b10667cb5f9, type: 3}
   _content: '<b>MILESTONE 1</b>
 
     Prototype (Must show Waka mechanic)

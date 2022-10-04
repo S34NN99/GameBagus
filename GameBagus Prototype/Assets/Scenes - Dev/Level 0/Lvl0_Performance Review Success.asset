@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcacae6366a894f468edb354bc50de3c, type: 3}
   m_Name: Lvl0_Performance Review Success
   m_EditorClassIdentifier: 
-  _projectName: TUTORIAL
-  _appImage: {fileID: 21300000, guid: 656cf7d3d82f8a34d8bdb3259f012483, type: 3}
+  _projectName: TisaTest v1
+  _appImage: {fileID: 21300000, guid: 52c16b17581914fb38bd1b4aa4c3a54b, type: 3}
   _content: "Good, you've passed test! I'll pass the results along to the hiring
-    manager. \r\n\r\nYou should receive an acceptance e-mail from HR within the next
-    few days. \r\n\r\nLook forward to seeing you in the future!\r"
+    manager. \n\nYou should receive an acceptance e-mail from HR within the next
+    few days. \n\nLooking forward to seeing you in the future!\n\n(Just gonna allow
+    them to obtain favours in this level, cuz it's probably going to be harder to
+    program an exception to this one level)"
   _signature: 
   _milestoneIcon: {fileID: 11400000, guid: 6025bf1102320954bb1404587f82f6e7, type: 2}
   _favourIcon: {fileID: 11400000, guid: 4f29f2861e33cc34c8e9f412011e592f, type: 2}

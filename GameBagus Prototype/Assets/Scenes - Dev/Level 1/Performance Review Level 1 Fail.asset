@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcacae6366a894f468edb354bc50de3c, type: 3}
   m_Name: Performance Review Level 1 Fail
   m_EditorClassIdentifier: 
-  _projectName: PROJECT 1
-  _appImage: {fileID: 21300000, guid: dc929900716d729449365a2729969c82, type: 3}
+  _projectName: Waka Fighters!
+  _appImage: {fileID: 21300000, guid: 52c16b17581914fb38bd1b4aa4c3a54b, type: 3}
   _content: 'You failed to achieve any milestones before the deadline passed.
 
 

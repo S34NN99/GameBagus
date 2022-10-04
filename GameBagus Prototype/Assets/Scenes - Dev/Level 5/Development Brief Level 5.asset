@@ -12,10 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcacae6366a894f468edb354bc50de3c, type: 3}
   m_Name: Development Brief Level 5
   m_EditorClassIdentifier: 
-  _projectName: PROJECT 5
-  _appImage: {fileID: 21300000, guid: dc929900716d729449365a2729969c82, type: 3}
-  _content: "Patch 1 \nGame Breaking bugs prioritize!\n\nPatch 2 \nGraphical fixes\n\nFirst
-    DLC \nRegain gamer goodwill"
+  _projectName: WagaMaga (PS edition)
+  _appImage: {fileID: 21300000, guid: d90323d1cdd134305875c0be7d899b00, type: 3}
+  _content: '<b>PATCH 1</b>
+
+    Prioritize game breaking bugs
+
+
+    <b>PATCH 2</b>
+
+    Graphical
+    fixes
+
+
+    <b>FIRST DLC</b>
+
+    Regain gamer goodwill'
   _signature: "<u><b>Notations from CEO:</u></b>\n  I want to reassure the team that
     the members of the marketing department that were responsible for this have been
     removed from their post. As CEO I am commited to ensuring something like this
