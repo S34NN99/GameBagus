@@ -9072,11 +9072,7 @@ MonoBehaviour:
   - {fileID: 1656699308}
   - {fileID: 1945768244}
   - {fileID: 263784968}
-  randomisers:
-  - {fileID: 11400000, guid: 67748eb8897c84654b23d4826780c0a3, type: 2}
-  - {fileID: 11400000, guid: 67748eb8897c84654b23d4826780c0a3, type: 2}
-  - {fileID: 11400000, guid: 67748eb8897c84654b23d4826780c0a3, type: 2}
-  - {fileID: 11400000, guid: 67748eb8897c84654b23d4826780c0a3, type: 2}
+  randomiser: {fileID: 11400000, guid: 67748eb8897c84654b23d4826780c0a3, type: 2}
   candles: []
   candleSkins: []
   candlePersonalities: []

@@ -1,4 +1,7 @@
-﻿public static class MyMaths {
+﻿using System.Collections.Generic;
+using System.Linq;
+
+public static class MyMaths {
     public enum ComparisonEquation {
         Greater_Than,
         Greater_Than_Equal,
