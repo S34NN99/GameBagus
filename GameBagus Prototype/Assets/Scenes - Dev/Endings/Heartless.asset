@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb65fd6df7da74babb947aac10314dbd, type: 3}
+  m_Name: Heartless
+  m_EditorClassIdentifier: 
+  _numStateName: Heartless
+  _triggers:
+  - _startRange: 10
+    _endRange: 100
+    _pages:
+    - "Whatever the outcome of the internal investigation, those who worked with
+      you knows what kind of person you really are... \n\nA heartless, inhuman person
+      who didn't have a shred of empathy in them."
+  - _startRange: 5
+    _endRange: 10
+    _pages:
+    - "Whatever the outcome of the internal investigation, those who worked with
+      you knows what kind of person you really are... \n\nA heavy-handed manager
+      that didn't take any bullcrap from the employees, but sometimes caved in with
+      enough reasoning or backlash."
+  - _startRange: 1
+    _endRange: 5
+    _pages:
+    - "Whatever the outcome of the internal investigation, those who worked with
+      you knows what kind of person you really are... \n\nA mostly chill person who
+      had stern moments, usually putting the wellness of your colleagues over the
+      deadline; unless things got really rough, or it was a bad hair day."
+  - _startRange: 0
+    _endRange: 1
+    _pages:
+    - "Whatever the outcome of the internal investigation, those who worked with
+      you knows what kind of person you really are... \n\nA caring, maybe even loving
+      individual that put the health of your colleagues first before anything else."

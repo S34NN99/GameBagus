@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb65fd6df7da74babb947aac10314dbd, type: 3}
+  m_Name: BuddyJo
+  m_EditorClassIdentifier: 
+  _numStateName: BuddyJo
+  _triggers:
+  - _startRange: 4
+    _endRange: 100
+    _pages:
+    - "Throughout all this turmoil and uncertainty, Jo is by your side, just as you
+      have been there for them. \n\nWith their connections, they managed to find
+      you a new job, in addition to giving you glowing praise and referrals to their
+      contacts. \n\nThey are probably the best thing you've taken away from this
+      soul-draining job."
+  - _startRange: 1
+    _endRange: 4
+    _pages:
+    - "Jo has taken the time to come up and thank you for all your efforts over the
+      course of the both of you working together. \n\nThey understand that you had
+      your hands tied in some situations, but there are no hard feelings and wishes
+      you the best on your future endeavours. \n\nPerhaps you'll get to work with
+      them again someday."
+  - _startRange: -4
+    _endRange: 1
+    _pages:
+    - "Jo hasn't been talking to you at all after everything went downhill. \n\nYou
+      two weren't exactly close before, but perhaps they hold a grudge against you.
+      \n\nThere is no way to tell without confronting them, and they does not seem
+      to be actively sabotaging you, so it's probably best to let sleeping dogs lie."
+  - _startRange: -100
+    _endRange: -4
+    _pages:
+    - "As if things are not bad enough, it seems you have made a nemesis in Jo due
+      to the choices you've made as Project Manager. \n\nYou are not on speaking
+      terms with them, but they definitely have been spreading the word to stay away
+      from you and whatever company you choose to work with in the future."

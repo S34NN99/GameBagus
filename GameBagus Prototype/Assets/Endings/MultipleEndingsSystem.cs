@@ -18,6 +18,12 @@ public class MultipleEndingsSystem : MonoBehaviour {
     private Dictionary<string, int> _attributes;
     public Dictionary<string, int> Attributes => _attributes;
 
+    [SerializeField] private MixAndMatchEnding[] _mixAndMatchEndings;
+    public MixAndMatchEnding[] MixAndMatchEndings => _mixAndMatchEndings;
+
+    [SerializeField] private Cutscene _endingCutscene;
+    public Cutscene EndingCutscene => _endingCutscene;
+
     public UnityEvent OnChanged;
 
     private void Awake() {
@@ -26,6 +32,15 @@ public class MultipleEndingsSystem : MonoBehaviour {
         RetrieveData();
 
         OnChanged.Invoke();
+    }
+
+    public void ShowEnding() {
+        EndingCutscene.gameObject.SetActive(true);
+        EndingCutscene.ClearContent();
+        foreach (var ending in MixAndMatchEndings) {
+            EndingCutscene.QueuePage(ending.FindPages(this));
+        }
+        EndingCutscene.GoToNextPage();
     }
 
     #region Bool State

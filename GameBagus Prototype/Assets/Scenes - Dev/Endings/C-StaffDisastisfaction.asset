@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb65fd6df7da74babb947aac10314dbd, type: 3}
+  m_Name: C-StaffDisastisfaction
+  m_EditorClassIdentifier: 
+  _numStateName: C-StaffDisastisfaction
+  _triggers:
+  - _startRange: 15
+    _endRange: 100
+    _pages:
+    - "The management did everything in their power to screw you over before you
+      leave the company, despite you staying with them til the bitter end. If there
+      was a bus, you bet you were thrown under it. \n\nSeems that you made some very,
+      very powerful enemies, but at the very least, you might be able to sue them
+      for their shenanigans."
+  - _startRange: 1
+    _endRange: 15
+    _pages:
+    - "None of the management are very happy with you at all, perhaps of the stunts
+      you've pulled while working here, and some even openly blame you for the terrible
+      state the company is in now. \n\nWhile you manage to get out relatively unscathed,
+      you probably shouldn't use them as a reference in your future job."
+  - _startRange: -14
+    _endRange: 1
+    _pages:
+    - "You've made a couple of friends amongst the management due to your obedience
+      and kiss-assery, and that earned you a little cushioning when the backlash
+      hit. \n\nThey see your value in their future ventures, or, perhaps, simply
+      as an obedient lackey that's nice to have around. "
+  - _startRange: -100
+    _endRange: -14
+    _pages:
+    - "You are considered as one of the management, having been obedient and subservient
+      to the whims and fancies of those at the top of the food chain. \n\nYou're
+      not sure if the things you have done to earn your place here were moral or
+      just, but you got a nice little golden parachute of your own as your severance
+      package. \n\nWas it worth it?"

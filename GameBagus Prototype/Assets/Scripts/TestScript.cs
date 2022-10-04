@@ -6,9 +6,10 @@ using UnityEngine;
 public class TestScript : MonoBehaviour {
     public bool doTest;
 
-    public float addedForce;
+    public MultipleEndingsSystem mes;
 
-    public Rigidbody2D targetRb;
+    public string attribute1;
+    public string attribute2;
 
     private void Update() {
         if (doTest) {
@@ -18,6 +19,9 @@ public class TestScript : MonoBehaviour {
     }
 
     public void TestFunc() {
-        targetRb.AddForceAtPosition(new Vector2(addedForce, 0), targetRb.position + new Vector2(0, 1));
+        mes.AdjustNumState(attribute1 + ",100");
+        mes.AdjustNumState(attribute2 + ",100");
+
+        mes.ShowEnding();
     }
 }
