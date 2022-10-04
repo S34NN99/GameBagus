@@ -54,10 +54,12 @@ public class DisplayPaperContent : MonoBehaviour {
 
     public void UpdateContent(PaperContent pc) {
         projectName.text = pc.ProjectName;
-        projectName2.text = pc.ProjectName;
         appImage.sprite = pc.AppImage;
         content.text = pc.Content;
         signature.text = pc.Signature;
+
+        if(projectName2)
+            projectName2.text = pc.ProjectName;
     }
 
     public void UpdateIcons() {

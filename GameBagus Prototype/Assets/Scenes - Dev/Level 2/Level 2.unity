@@ -1822,6 +1822,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentRunTitle: Current
   _attributeDb: {fileID: 11400000, guid: 28d688d2816e148ba9ec4dfc8f39b697, type: 2}
+  _mixAndMatchEndings: []
+  _endingCutscene: {fileID: 0}
   OnChanged:
     m_PersistentCalls:
       m_Calls:
@@ -5501,6 +5503,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6702661300675094428, guid: cc8a1d1a9381a409ab7f04710bf2e745, type: 3}
   m_PrefabInstance: {fileID: 1007746263}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1007746265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007746264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da434ef734944fa0a352f5821906a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contentToUpdate: []
 --- !u!114 &1023740891 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4772913340757344780, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}

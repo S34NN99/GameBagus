@@ -4974,7 +4974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _content: 'Just received request from client to add a new NPC for the game.
 
-    
+
 
     NPC
     design brief:
@@ -5491,22 +5491,22 @@ PrefabInstance:
       propertyPath: _text
       value: 'Hi Alex,
 
-        
 
-        Just got off meeting with client. They
-        are not satisfied with the overall art direction and will be changing the
-        concept of the game -- to medieval period.
 
-        
+        Just got off meeting with client. They are not
+        satisfied with the overall art direction and will be changing the concept
+        of the game -- to medieval period.
 
-        Unfortunately
-        client have decided not to push the launch date hence no deadline extension
-        will be approved.
 
-        
 
-        Please relay this to the stakeholders
-        (especially Jo) and manage mitigation plans and key feature delivery.'
+        Unfortunately client have decided
+        not to push the launch date hence no deadline extension will be approved.
+
+
+
+        Please
+        relay this to the stakeholders (especially Jo) and manage mitigation plans
+        and key feature delivery.'
       objectReference: {fileID: 0}
     - target: {fileID: 7170657553880838673, guid: 9376d994518b74fde9182f26638f219f, type: 3}
       propertyPath: m_text
@@ -6376,6 +6376,10 @@ PrefabInstance:
     - target: {fileID: 977680467925737151, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 977680468196041373, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 977680468600695633, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
       propertyPath: m_IsActive
@@ -8604,7 +8608,7 @@ MonoBehaviour:
   _content: 'Client requests minor change in logo design following outcome from focus
     group.
 
-    
+
 
     Please implement the requested changes and update all affected
     assets.'

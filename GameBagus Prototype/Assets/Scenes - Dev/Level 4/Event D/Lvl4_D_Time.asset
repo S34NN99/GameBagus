@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178a98aec39ac451abdb031dff946096, type: 3}
   m_Name: Lvl4_D_Time
   m_EditorClassIdentifier: 
-  _constant: 15
+  _constant: 0.15
   _steps: 5
-  _stepSize: 1
+  _stepSize: 0.01
