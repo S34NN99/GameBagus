@@ -181,6 +181,7 @@ public class AudioManager : MonoBehaviour {
     }
 
     public void ToggleBgm() {
+        print(PlayerPrefs.GetFloat("Bgm_Volume", 1));
         if (PlayerPrefs.GetFloat("Bgm_Volume", 1) == 1) {
             SetBgmVolume(0);
         } else {
@@ -189,6 +190,7 @@ public class AudioManager : MonoBehaviour {
     }
 
     public void ToggleSfx() {
+        print(PlayerPrefs.GetFloat("Bgm_Volume", 1));
         if (PlayerPrefs.GetFloat("Sfx_Volume", 1) == 1) {
             SetSfxVolume(0);
         } else {

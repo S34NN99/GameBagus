@@ -1010,16 +1010,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7170657553880838673, guid: 9376d994518b74fde9182f26638f219f, type: 3}
       propertyPath: m_text
-      value: 'Once in a while you will get a time-sensitive notification, such as...
-
-
-        "An
+      value: "Once in a while you will get a time-sensitive notification, such as...\n\n\"An
         earthquake has occured, the computers we stored our data on was crushed in
-        the rubble!"
-
-
-        Well, not really, but we''re pretending for the sake
-        of this exercise.'
+        the rubble!\"\n\nWell, not really, we're pretending for the sake of this
+        exercise.\n\nRemember you have limited time to decide on a choice. \n\nBut
+        keep in mind your choices will affect your relationship with your bosses,
+        colleagues and thus your working experience!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170657553880838673, guid: 9376d994518b74fde9182f26638f219f, type: 3}
+      propertyPath: m_fontSize
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170657553880838673, guid: 9376d994518b74fde9182f26638f219f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 7266656375128256663, guid: 9376d994518b74fde9182f26638f219f, type: 3}
       propertyPath: m_RootOrder
@@ -6246,6 +6250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120f77031ac4d4563a49b96e1d484b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasMenu: 0
+  _muteBgmBtn: {fileID: 0}
+  _muteSfxBtn: {fileID: 0}
 --- !u!1 &1187418858
 GameObject:
   m_ObjectHideFlags: 0
