@@ -29,7 +29,6 @@ public class TypingEffect : MonoBehaviour {
     public void StartTyping() {
 
         StopTyping(true);
-        GeneralEventManager.Instance.BroadcastEvent(AudioManager.TypingEffect);
 
         typingCoroutine = StartCoroutine(TypeTextCoroutine());
 
@@ -59,7 +58,6 @@ public class TypingEffect : MonoBehaviour {
                 }
             }
 
-            GeneralEventManager.Instance.BroadcastEvent(AudioManager.TypingEffectEnd);
 
             IsTyping = false;
             onAnimFinished.Invoke();
@@ -77,7 +75,6 @@ public class TypingEffect : MonoBehaviour {
 
     private void StopTyping(bool isFinished = false) {
         if (typingCoroutine != null) {
-            GeneralEventManager.Instance.BroadcastEvent(AudioManager.TypingEffectEnd);
 
             StopCoroutine(typingCoroutine);
             typingCoroutine = null;

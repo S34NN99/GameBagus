@@ -6780,6 +6780,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: be611670b36934818a5173a734d4fc98, type: 2}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: _stats._maxHp
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}

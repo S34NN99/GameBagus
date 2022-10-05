@@ -3,6 +3,9 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Game State Database")]
 public class GameStateDatabase : ScriptableObject {
+    [SerializeField] private int _levelIndex;
+    public int LevelIndex => _levelIndex;
+
     [SerializeField] private string[] _boolStateNames;
     public string[] BoolStateNames => _boolStateNames;
 
