@@ -4771,11 +4771,11 @@ PrefabInstance:
     - target: {fileID: 6007618371542895228, guid: f79e284be0e4e1a41ab3d6f40ff8fe4a, type: 3}
       propertyPath: _paperContentFail
       value: 
-      objectReference: {fileID: 11400000, guid: 43c805c7f5cfbaa4f8cb6851a3d2b14c, type: 2}
+      objectReference: {fileID: 11400000, guid: 16dca1a00da22f740ba53b5f364cd49b, type: 2}
     - target: {fileID: 6007618371542895228, guid: f79e284be0e4e1a41ab3d6f40ff8fe4a, type: 3}
       propertyPath: _paperContentSucess
       value: 
-      objectReference: {fileID: 11400000, guid: 43c805c7f5cfbaa4f8cb6851a3d2b14c, type: 2}
+      objectReference: {fileID: 11400000, guid: 16dca1a00da22f740ba53b5f364cd49b, type: 2}
     - target: {fileID: 8371928470953337633, guid: f79e284be0e4e1a41ab3d6f40ff8fe4a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
