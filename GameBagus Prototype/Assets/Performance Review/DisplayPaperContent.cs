@@ -65,7 +65,7 @@ public class DisplayPaperContent : MonoBehaviour {
     public void UpdateIcons() {
         UpdateMilestoneIcon();
         UpdateFavourIcon();
-        UpdateCandleIcon();
+        StartCoroutine(UpdateCandleIcon());
     }
 
     private void UpdateMilestoneIcon() {
@@ -94,7 +94,8 @@ public class DisplayPaperContent : MonoBehaviour {
         ObservableVariable.FindProperty<IntProperty>("Milestones Completed").Value = milestonesPassed;
     }
 
-    private void UpdateCandleIcon() {
+    private IEnumerator UpdateCandleIcon() {
+        yield return new WaitForSeconds(1f);
         CandleManager cm = FindObjectOfType<CandleManager>();
         int counter = cm.CheckRemainingCandles();
 

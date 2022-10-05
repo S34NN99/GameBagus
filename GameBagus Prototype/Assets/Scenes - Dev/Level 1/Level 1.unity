@@ -1635,10 +1635,10 @@ MonoBehaviour:
   onCandlesBurntOut:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 498757501}
-        m_TargetAssemblyTypeName: DisplayPaperContent, Assembly-CSharp
-        m_MethodName: UpdateIcons
-        m_Mode: 1
+      - m_Target: {fileID: 498757503}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1647,10 +1647,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 498757503}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 498757501}
+        m_TargetAssemblyTypeName: DisplayPaperContent, Assembly-CSharp
+        m_MethodName: UpdateIcons
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8241,7 +8241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6747525549111619315, guid: 4ffced7d5aeda4836ab56df6f499ebc4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6747525549901660570, guid: 4ffced7d5aeda4836ab56df6f499ebc4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
