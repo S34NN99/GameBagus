@@ -16,22 +16,16 @@ MonoBehaviour:
   _appImage: {fileID: 21300000, guid: 37ff56003ade14522b785ddb98402bf6, type: 3}
   _content: '<b>MILESTONE 1</b>
 
-    Concept art and early prototype
-
-
-    <b>MILESTONE
-    2</b>
-
     Pre-alpha build
 
 
+    <b>MILESTONE 2</b>
+
+    Rendering
+    and bug squashing
+
+
     <b>MILESTONE 3</b>
-
-    Rendering and bug squashing
-
-
-    <b>MILESTONE
-    4</b>
 
     Beta launch
 
