@@ -13,6 +13,7 @@ public class W_Working : WorkingState {
         entity.currCandle.SetFireDetails(SimSpeed, FireSize, FireSpeed);
         entity.currCandle.SM.powerConst.Strength = 2;
         entity.currCandle.SM.decayConst.Strength = 2;
+        GeneralEventManager.Instance.BroadcastEvent(AudioManager.OnCandleWorkEvent);
     }
 
     public override void Update(IEntity entity, Project pb) {
