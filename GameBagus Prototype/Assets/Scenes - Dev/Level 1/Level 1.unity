@@ -10537,14 +10537,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3683832231036055956, guid: 9aec4fb6c1dbd4981a7a3b1b1721a762, type: 3}
-      propertyPath: isMainMenu
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3683832231036055956, guid: 9aec4fb6c1dbd4981a7a3b1b1721a762, type: 3}
-      propertyPath: currentLevel
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3683832231036055957, guid: 9aec4fb6c1dbd4981a7a3b1b1721a762, type: 3}
       propertyPath: m_Name
       value: Audio Manager
@@ -11691,6 +11683,18 @@ PrefabInstance:
     - target: {fileID: 1598888235768796919, guid: 256acb21aa4e0402c82ce173c9d4fdd1, type: 3}
       propertyPath: m_Name
       value: Canvas_Phone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598888236935867068, guid: 256acb21aa4e0402c82ce173c9d4fdd1, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598888236935867068, guid: 256acb21aa4e0402c82ce173c9d4fdd1, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598888236935867068, guid: 256acb21aa4e0402c82ce173c9d4fdd1, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1598888236935867071, guid: 256acb21aa4e0402c82ce173c9d4fdd1, type: 3}
       propertyPath: m_RootOrder
