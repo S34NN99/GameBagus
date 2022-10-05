@@ -8095,6 +8095,34 @@ PrefabInstance:
       propertyPath: _paperContentSucess
       value: 
       objectReference: {fileID: 11400000, guid: ece257e86b3084f79a3c96d5881780de, type: 2}
+    - target: {fileID: 3430164670173014604, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430164670173014604, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430164670173014604, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 981202898}
+    - target: {fileID: 3430164670173014604, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430164670173014604, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Delete
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430164670173014604, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: MultipleEndingsSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430164670173014604, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3480830507985445134, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
       propertyPath: m_text
       value: "<u><b>NOTATIONS:</b></u>\n   \"We'll be trying to create a new IP for
@@ -11778,6 +11806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 8
+  isMainMenu: 0
 --- !u!95 &882294379
 Animator:
   serializedVersion: 4

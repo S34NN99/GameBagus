@@ -4251,6 +4251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 5
+  isMainMenu: 0
 --- !u!95 &1237126326
 Animator:
   serializedVersion: 4
@@ -6663,6 +6664,34 @@ PrefabInstance:
     - target: {fileID: 3405013385529448379, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430164670173014604, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430164670173014604, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430164670173014604, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1428461044}
+    - target: {fileID: 3430164670173014604, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430164670173014604, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Delete
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430164670173014604, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: MultipleEndingsSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430164670173014604, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4200796519865037142, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
       propertyPath: m_AnchorMax.y

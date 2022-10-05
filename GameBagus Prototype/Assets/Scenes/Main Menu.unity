@@ -6043,6 +6043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 1
+  isMainMenu: 0
 --- !u!95 &903139158
 Animator:
   serializedVersion: 4
@@ -11685,6 +11686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 2
+  isMainMenu: 1
 --- !u!95 &1796708020
 Animator:
   serializedVersion: 4

@@ -118,6 +118,7 @@ public class DisplayPaperContent : MonoBehaviour {
         }
         else
         {
+            FindObjectOfType<MultipleEndingsSystem>().Delete();
             SceneManager.LoadScene(0);
         }
     }

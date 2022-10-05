@@ -6,10 +6,16 @@ using UnityEngine.SceneManagement;
 public class LoadingScene : MonoBehaviour
 {
     [SerializeField] private int sceneIndex = 1;
+    [SerializeField] private bool isMainMenu;
 
     public void LoadScene()
     {
-        StartCoroutine(LoadSceneAsync(sceneIndex));
+        if(isMainMenu && PlayerPrefs.GetInt("Current_Level") != 0)
+        {
+            StartCoroutine(LoadSceneAsync(PlayerPrefs.GetInt("Current_Level")));
+        }
+        else
+            StartCoroutine(LoadSceneAsync(sceneIndex));
     }
 
     IEnumerator LoadSceneAsync(int sceneID)
@@ -21,4 +27,6 @@ public class LoadingScene : MonoBehaviour
             yield return null;
         }
     }
+
+
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -163,6 +164,27 @@ public class MultipleEndingsSystem : MonoBehaviour {
         }
 
         PlayerPrefs.SetInt($"{CurrentRunTitle}_Favours", milestonesPassed);
+        PlayerPrefs.SetInt("Current_Level", SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void Delete()
+    {
+        // The bool states
+        foreach (var boolState in AttributeDb.BoolStateNames)
+        {
+            bool boolStateVal = HasBoolState(boolState);
+            PlayerPrefs.SetInt($"{CurrentRunTitle}_{boolState}",0);
+        }
+
+        // The num states
+        foreach (var numState in AttributeDb.NumStateNames)
+        {
+            int numStateVal = NumStateVal(numState);
+            PlayerPrefs.SetInt($"{CurrentRunTitle}_{numState}", 0);
+        }
+
+        PlayerPrefs.SetInt($"{CurrentRunTitle}_Favours", 0);
+        PlayerPrefs.SetInt("Current_Level", 0);
     }
 
     public void RetrieveData() {
