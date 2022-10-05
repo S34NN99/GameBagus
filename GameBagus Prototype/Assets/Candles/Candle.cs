@@ -60,6 +60,11 @@ public class Candle : MonoBehaviour, IEntity {
         SM.SetWorkingState(new W_Working());
         SM.SetMoodState(new M_Happy());
         Stats.HpProp.Value = Stats.MaxHp;
+        Stats.HpProp.OnValueUpdated.AddListener((old_val, new_val) => {
+            if (new_val > Stats.MaxHp) {
+                Stats.HpProp.Value = Stats.MaxHp;
+            }
+        });
     }
 
     private void Start() {
