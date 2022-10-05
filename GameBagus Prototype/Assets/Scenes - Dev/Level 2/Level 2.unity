@@ -10361,10 +10361,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 393937716}
     m_Modifications:
-    - target: {fileID: 6747525548672753202, guid: 4ffced7d5aeda4836ab56df6f499ebc4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 136701596}
     - target: {fileID: 6747525549111619314, guid: 4ffced7d5aeda4836ab56df6f499ebc4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10453,10 +10449,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game - Settings Screen
       objectReference: {fileID: 0}
-    - target: {fileID: 6747525549901660570, guid: 4ffced7d5aeda4836ab56df6f499ebc4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 136701596}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ffced7d5aeda4836ab56df6f499ebc4, type: 3}
 --- !u!1 &1990343161 stripped

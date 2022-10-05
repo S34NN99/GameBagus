@@ -8012,25 +8012,9 @@ PrefabInstance:
       value: "<u><b>NOTATIONS:</b></u>\n   \"We'll be trying to create a new IP for
         this app, so expect changes as we receive feedback!\""
       objectReference: {fileID: 0}
-    - target: {fileID: 4279310004439225760, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1863058420}
-    - target: {fileID: 4279310004439225760, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleSfx
-      objectReference: {fileID: 0}
     - target: {fileID: 4279310004718762696, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
       propertyPath: m_RootOrder
       value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 4279310005357890056, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1863058420}
-    - target: {fileID: 4279310005357890056, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleBgm
       objectReference: {fileID: 0}
     - target: {fileID: 4798209957393688953, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
       propertyPath: m_text
@@ -8398,6 +8382,10 @@ PrefabInstance:
       propertyPath: _paperContent
       value: 
       objectReference: {fileID: 11400000, guid: fdf59188454b24aef9d87430e6fa60ae, type: 2}
+    - target: {fileID: 8772585060567126809, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_text
+      value: 'Months : 0'
+      objectReference: {fileID: 0}
     - target: {fileID: 8772585060640701725, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
       propertyPath: _paperContent
       value: 
@@ -8909,6 +8897,10 @@ PrefabInstance:
     - target: {fileID: 8772585061318952635, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
       propertyPath: onDeadlineEnded.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772585061863739126, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}
+      propertyPath: m_text
+      value: 'Favours : 0'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1f1693647afa48b7b3cc749f2fca6ed, type: 3}

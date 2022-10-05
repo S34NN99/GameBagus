@@ -43,4 +43,8 @@ public class GO_Utility : MonoBehaviour {
     public void ClickButton(Button button) {
         queue.Enqueue(button.onClick.Invoke);
     }
+
+    public void Print(string message) {
+        print(message);
+    }
 }

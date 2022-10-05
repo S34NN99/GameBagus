@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 2605664465233601130}
   - component: {fileID: 2605664465233601125}
   m_Layer: 5
-  m_Name: SFX
+  m_Name: SFX Mute Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 2605664466428935474}
   - component: {fileID: 2605664466428935629}
   m_Layer: 5
-  m_Name: Music
+  m_Name: Music Mute Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

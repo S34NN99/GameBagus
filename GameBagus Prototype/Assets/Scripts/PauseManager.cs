@@ -58,12 +58,12 @@ public class PauseManager : MonoBehaviour {
 
     public void ToggleBgmMute() {
         isBgmMuted = !isBgmMuted;
-        GeneralEventManager.Instance.BroadcastEvent(AudioManager.ToggleBgmEvent);
+        AudioManager.ToggleBgm();
     }
 
     public void ToggleSfxMute() {
         isSfxMuted = !isSfxMuted;
-        GeneralEventManager.Instance.BroadcastEvent(AudioManager.ToggleSfxEvent);
+        AudioManager.ToggleSfx();
     }
 
     public void ReturnToMainMenu() {

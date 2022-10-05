@@ -5,6 +5,54 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour {
 
+    public static void SetBgmVolume(float volume) {
+        PlayerPrefs.SetFloat("Bgm_Volume", volume);
+        CheckAudioSourcesInScene();
+    }
+
+    public static void SetSfxVolume(float volume) {
+        PlayerPrefs.SetFloat("Sfx_Volume", volume);
+        CheckAudioSourcesInScene();
+    }
+
+    public static void CheckAudioSourcesInScene() {
+        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        if (audioManager != null) {
+            audioManager.CheckBgmAndSfxMute();
+        }
+
+        float bgmVolume = PlayerPrefs.GetFloat("Bgm_Volume", 1);
+        float sfxVolume = PlayerPrefs.GetFloat("Sfx_Volume", 1);
+
+        AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
+        foreach (var audioSource in audioSources) {
+            string objName = audioSource.gameObject.name.ToUpper();
+            if (objName.StartsWith("BGM") || objName.EndsWith("BGM")) {
+                audioSource.volume = bgmVolume;
+            } else if (objName.StartsWith("SFX") || objName.StartsWith("SFX")) {
+                audioSource.volume = sfxVolume;
+            }
+        }
+    }
+
+    public static void ToggleBgm() {
+        float volume = PlayerPrefs.GetFloat("Bgm_Volume", 1);
+        if (volume == 1f) {
+            SetBgmVolume(0);
+        } else {
+            SetBgmVolume(1);
+        }
+    }
+
+    public static void ToggleSfx() {
+        float volume = PlayerPrefs.GetFloat("Sfx_Volume", 1);
+        if (volume == 1f) {
+            SetSfxVolume(0);
+        } else {
+            SetSfxVolume(1);
+        }
+    }
+
     [System.Serializable]
     class LevelBG {
         public bool playFirstAudio;
@@ -29,9 +77,6 @@ public class AudioManager : MonoBehaviour {
 
     public const string TypingEffect = "Typing Effect";
     public const string TypingEffectEnd = "Typing Effect End";
-
-    public const string ToggleBgmEvent = "Toggle Bgm";
-    public const string ToggleSfxEvent = "Toggle Sfx";
 
     [SerializeField] private bool isMainMenu;
     [SerializeField] private int currentLevel;
@@ -151,9 +196,6 @@ public class AudioManager : MonoBehaviour {
             typingPlayer.Stop();
         });
 
-        GeneralEventManager.Instance.StartListeningTo(ToggleBgmEvent, ToggleBgm);
-        GeneralEventManager.Instance.StartListeningTo(ToggleSfxEvent, ToggleSfx);
-
         CheckBgmAndSfxMute();
 
         if (!isMainMenu) {
@@ -178,36 +220,6 @@ public class AudioManager : MonoBehaviour {
 
     public void OnClickedSFX() {
         GeneralEventManager.Instance.BroadcastEvent(OnButtonPickedUp);
-    }
-
-    public void ToggleBgm() {
-        print(PlayerPrefs.GetFloat("Bgm_Volume", 1));
-        float volume = PlayerPrefs.GetFloat("Bgm_Volume", 1);
-        if ( volume == 1f) {
-            SetBgmVolume(0);
-        } else {
-            SetBgmVolume(1);
-        }
-    }
-
-    public void ToggleSfx() {
-        print(PlayerPrefs.GetFloat("Bgm_Volume", 1));
-        float volume = PlayerPrefs.GetFloat("Sfx_Volume", 1);
-        if ( volume == 1f) {
-            SetSfxVolume(0);
-        } else {
-            SetSfxVolume(1);
-        }
-    }
-
-    public void SetBgmVolume(float volume) {
-        PlayerPrefs.SetFloat("Bgm_Volume", volume);
-        CheckBgmAndSfxMute();
-    }
-
-    public void SetSfxVolume(float volume) {
-        PlayerPrefs.SetFloat("Sfx_Volume", volume);
-        CheckBgmAndSfxMute();
     }
 
     public void CheckBgmAndSfxMute() {
