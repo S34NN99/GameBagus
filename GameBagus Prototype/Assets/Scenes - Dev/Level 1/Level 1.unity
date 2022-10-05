@@ -10538,6 +10538,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3683832231036055956, guid: 9aec4fb6c1dbd4981a7a3b1b1721a762, type: 3}
+      propertyPath: isMainMenu
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683832231036055956, guid: 9aec4fb6c1dbd4981a7a3b1b1721a762, type: 3}
       propertyPath: currentLevel
       value: 1
       objectReference: {fileID: 0}

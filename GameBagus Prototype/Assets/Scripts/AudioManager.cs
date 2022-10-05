@@ -62,6 +62,7 @@ public class AudioManager : MonoBehaviour {
     public const string OnButtonPickedUp = "On Button Picked Up";
     public const string OnButtonDropped = "On Button Dropped";
 
+    public const string OnCandleWorkEvent = "On Candle Work";
     public const string OnCandleCrunchEvent = "On Candle Crunch";
     public const string NearingCandleBurnoutEvent = "Nearing Candle Burnout";
     public const string OnCandleBurnoutEvent = "On Candle Burnout";
@@ -90,6 +91,7 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] private AudioClip onButtonDropped;
 
     [Space()]
+    [SerializeField] private AudioClip onCandleWork;
     [SerializeField] private AudioClip onCandleCrunch;
     [SerializeField] private AudioClip nearingCandleBurnout;
     [SerializeField] private AudioClip[] onCandleSnuffedClips;
@@ -135,6 +137,11 @@ public class AudioManager : MonoBehaviour {
 
         GeneralEventManager.Instance.StartListeningTo(OnCandleCrunchEvent, () => {
             candleSfxPlayer.clip = onCandleCrunch;
+            candleSfxPlayer.Play();
+        });
+
+        GeneralEventManager.Instance.StartListeningTo(OnCandleWorkEvent, () => {
+            candleSfxPlayer.clip = onCandleWork;
             candleSfxPlayer.Play();
         });
 

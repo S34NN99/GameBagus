@@ -1205,8 +1205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548ff8302661341fbae2beb124222e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMainMenu: 0
-  currentLevel: 2
+  isMainMenu: 1
+  currentLevel: 7
   bgMusicClips:
   - playFirstAudio: 1
     playlist:
@@ -1255,9 +1255,13 @@ MonoBehaviour:
     - {fileID: 8300000, guid: d06ab0eaed53b644e93fe45ba6261b78, type: 3}
     - {fileID: 8300000, guid: 18ff08e52da373b48aa85ac45bfd3d8a, type: 3}
     - {fileID: 8300000, guid: 6151ab2728c7afe4b9586e3afa8ad3df, type: 3}
+  - playFirstAudio: 1
+    playlist:
+    - {fileID: 8300000, guid: 094410d1c675841ada5eae19f1040a61, type: 3}
   onButtonPickedUp: {fileID: 8300000, guid: bdf9b1bc7604c4245be788ce9c132dca, type: 3}
   onButtonDropped: {fileID: 8300000, guid: d8014508f18c73945866d3a0d61624f5, type: 3}
-  onCandleCrunch: {fileID: 8300000, guid: 592f1173a14044a42b85c193cdb537e3, type: 3}
+  onCandleWork: {fileID: 8300000, guid: 582668f51394d0b41bd4ff7286a2571e, type: 3}
+  onCandleCrunch: {fileID: 8300000, guid: 6fa9d4b4ddc19c148aa7172c707ca26b, type: 3}
   nearingCandleBurnout: {fileID: 8300000, guid: 4f4c2056981f74a17a194be24c3f927c, type: 3}
   onCandleSnuffedClips:
   - {fileID: 8300000, guid: 78490ebfc50555740b5ffbeb76d0c584, type: 3}
