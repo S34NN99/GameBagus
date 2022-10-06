@@ -12,7 +12,14 @@ public class LoadingScene : MonoBehaviour
     {
         if(isMainMenu && PlayerPrefs.GetInt("Current_Level") != 0)
         {
-            StartCoroutine(LoadSceneAsync(PlayerPrefs.GetInt("Current_Level")));
+            if (PlayerPrefs.GetInt("Current_Level") != 1)
+            {
+                Debug.Log(PlayerPrefs.GetInt("Current_Level"));
+                StartCoroutine(LoadSceneAsync(PlayerPrefs.GetInt("Current_Level")));
+                Debug.Log("load scene");
+            }
+            else
+                StartCoroutine(LoadSceneAsync(sceneIndex));
         }
         else
             StartCoroutine(LoadSceneAsync(sceneIndex));
