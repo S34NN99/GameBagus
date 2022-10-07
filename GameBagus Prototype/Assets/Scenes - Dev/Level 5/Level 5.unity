@@ -2210,7 +2210,6 @@ PrefabInstance:
       value: 'You have used 1 Favour.
 
 
-
         S. Kim accepts the proposition but
         there''s a lingering feeling that proposition will bite you in the butt down
         the line, but for now you breathe easy knowing you bought the team time.'
@@ -4241,7 +4240,6 @@ PrefabInstance:
       value: 'S. Kim pops in on Jo. Nothing comes of the lunch, but you know from
         the glare Jo gives as they re-enter the office and S. Kim''s satisfied grin
         that you won''t be invited to future "discussions".
-
 
 
         At the very
@@ -6914,16 +6912,14 @@ PrefabInstance:
       value: 'You have gained 1 Favour.
 
 
-
-        You make the carefully worded
-        equivalent of raking one of your team members over the coals, blaming them
-        for being the cause for the friction with the team and C staff whilst positioning
-        yourself as simply the middleman negotiating between two parties.
-
+        You make the carefully worded equivalent
+        of raking one of your team members over the coals, blaming them for being
+        the cause for the friction with the team and C staff whilst positioning yourself
+        as simply the middleman negotiating between two parties.
 
 
-        It
-        doesn''t take long to see that team member get called into HR.'
+        It doesn''t
+        take long to see that team member get called into HR.'
       objectReference: {fileID: 0}
     - target: {fileID: 7817300043095310073, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_Pivot.x
@@ -13519,7 +13515,6 @@ PrefabInstance:
         repeated communication.
 
 
-
         Warning letters being sent out the next
         day and everyone''s shoulders slump.'
       objectReference: {fileID: 0}
@@ -14422,15 +14417,12 @@ PrefabInstance:
       value: 'You have used 1 Favour.
 
 
-
         "Fine Alex, I see your point.
-
 
 
         We''ll
         allocate some bonuses out to be dispensed immediately to the teams for the
         last leg of the project. They did do an admirable job all things considered.
-
 
 
         But
@@ -16048,10 +16040,9 @@ PrefabInstance:
       value: 'You have gained 1 Favour.
 
 
-
-        "That''s what I like to hear.
-        Get this sorted and get it done; once we''re breathing easier we can think
-        about compensating the teams properly."'
+        "That''s what I like to hear. Get
+        this sorted and get it done; once we''re breathing easier we can think about
+        compensating the teams properly."'
       objectReference: {fileID: 0}
     - target: {fileID: 7817300043095310073, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_Pivot.x
@@ -18810,7 +18801,6 @@ PrefabInstance:
       value: 'You have used 3 Favours.
 
 
-
         "It''s good that you understand
         where you made mistakes. We will be monitoring going forward; please ensure
         that you improve going forward."'
@@ -19952,11 +19942,9 @@ PrefabInstance:
         leave.
 
 
-
         "I get it, it''s scary to stand up to the folks that pay
         our wages. No hard feelings. If you change your mind you know you can always
         give me a call."
-
 
 
         With that conversation done, you turn back to

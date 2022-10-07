@@ -634,18 +634,14 @@ PrefabInstance:
         on your team "under your advisement". The leaves are unpaid.
 
 
-
         "See
         to it that performance improves after this break. Tariq will also be tasked
         to oversee your conduct directly, so do liaise with him directly if you have
         any queries about what is expected of you on a daily basis "
 
 
-
         The
-        team is on holiday for x seconds.
-
-'
+        team is on holiday for x seconds.'
       objectReference: {fileID: 0}
     - target: {fileID: 7817300043095310073, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_Pivot.x
@@ -1144,22 +1140,18 @@ PrefabInstance:
       value: 'You have used 1 Favour.
 
 
-
-        Your call with CTO goes well on
-        past working hours. Both of you go back and forth on how just cause one team
-        succeeds doesn''t mean you shove everything you have onto that same genre;
-        an analogy about eggs and baskets comes up at some point.
-
+        Your call with CTO goes well on past
+        working hours. Both of you go back and forth on how just cause one team succeeds
+        doesn''t mean you shove everything you have onto that same genre; an analogy
+        about eggs and baskets comes up at some point.
 
 
-        But
-        it doesn''t work. CTO doesn''t budge and your analogy gets rebutted with
-        another compounding errors.
+        But it doesn''t
+        work. CTO doesn''t budge and your analogy gets rebutted with another compounding
+        errors.
 
 
-
-        You return to your team with the bad
-        news.'
+        You return to your team with the bad news.'
       objectReference: {fileID: 0}
     - target: {fileID: 8739631955310093435, guid: ce13aafe7c33642c887f28e097d6beb4, type: 3}
       propertyPath: m_Pivot.x
@@ -7171,7 +7163,6 @@ PrefabInstance:
       value: 'You have used 1 Favour.
 
 
-
         You leverage on the successes you''ve
         had over the last few project to make it your "expert" opinion to keep things
         as they are. After all, there''s always an audience for any sort of game.'
@@ -7329,7 +7320,6 @@ PrefabInstance:
     - target: {fileID: 1802794672877196199, guid: 9376d994518b74fde9182f26638f219f, type: 3}
       propertyPath: _text
       value: 'Hi Alex,
-
 
 
         QA has returned feedback for the last patch and
@@ -11347,11 +11337,9 @@ MonoBehaviour:
   _content: 'Hey team,
 
 
-
     If you''re feeling tired, remember to make use of the
     facilities that HR has provided for you. In fact, feel free to take walks in
     the nearby park to refresh and recharge.
-
 
 
     In addition, management would
@@ -13091,7 +13079,6 @@ PrefabInstance:
     - target: {fileID: 4772913340757344780, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: _content
       value: 'You get blunt, stating newbies are inadequate in these technical meetings.
-
 
 
         It''s
@@ -16665,7 +16652,6 @@ PrefabInstance:
         with us. Tariq has already been added to your team''s chat, so do liaise
         with him directly if you have any queries about what is expected of you on
         a daily basis."
-
 
 
         With that, project deadline is expedited to achieve
@@ -23030,7 +23016,6 @@ PrefabInstance:
         this.
 
 
-
         S. Kim is distressed by the situation and bid you to keep
         an eye out on the person initiating this uprising.'
       objectReference: {fileID: 0}
@@ -24578,19 +24563,19 @@ PrefabInstance:
       value: 'Hi Alex,
 
 
+        Can you believe that some snake in our company influenced
+        our employees do such a thing? This generation really has no sense of gratitude
+        or loyalty! These demands are ridiculous!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612925211727030800, guid: 03dda5d14d68948bf89cf5c56b8f67a0, type: 3}
+      propertyPath: m_text
+      value: 'Hi Alex,
+
+
 
         Can you believe that some snake in our company
         influenced our employees do such a thing? This generation really has no sense
         of gratitude or loyalty! These demands are ridiculous!'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7612925211727030800, guid: 03dda5d14d68948bf89cf5c56b8f67a0, type: 3}
-      propertyPath: m_text
-      value: "The management is very dissapointed to come upon that certain employees
-        have used the recent company survey to disseminate a letter of demand with
-        the threat of work stoppage if not met. \n\nThis is not the way we do things
-        here, if anyone has any concerns please go through the proper channels and
-        do not entertain these bad apples who do not have yours and the company's
-        best interest at heart. "
       objectReference: {fileID: 0}
     - target: {fileID: 7997717089065101458, guid: 03dda5d14d68948bf89cf5c56b8f67a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -25261,10 +25246,8 @@ PrefabInstance:
         the project and everyone''s livelihood. It doesn''t go well.
 
 
-
         "You''ve
         heard our demands. Budge on them, or get nothing."
-
 
 
         Work and Crunch
@@ -29787,7 +29770,6 @@ PrefabInstance:
       propertyPath: _content
       value: 'You deny knowledge or involvement regarding the dissemination of the
         letter.
-
 
 
         S. Kim is distressed by the situation and bid you to keep

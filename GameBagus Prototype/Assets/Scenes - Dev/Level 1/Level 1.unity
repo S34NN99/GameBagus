@@ -1484,10 +1484,8 @@ PrefabInstance:
       value: 'You have used 1 Favour.
 
 
-
         CEO is taken aback that the suggestion
         is not being implemented.
-
 
 
         The team is relieved they don''t have
@@ -1924,9 +1922,8 @@ PrefabInstance:
         is necessary to finish the project.
 
 
-
-        The team is set to crunch
-        for x seconds.'
+        The team is set to crunch for
+        x seconds.'
       objectReference: {fileID: 0}
     - target: {fileID: 7817300043095310073, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_Pivot.x
@@ -2391,18 +2388,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 00e6888941dc7471fb635d5c23e80461, type: 2}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 2
       objectReference: {fileID: 0}
@@ -2423,24 +2408,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1852221271}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RollHead
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: CheckIfListEmpty
       objectReference: {fileID: 0}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -2463,24 +2432,8 @@ PrefabInstance:
       value: SendTextMessage
       objectReference: {fileID: 0}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HeadManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: CandleManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: HeadManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 406837943}
-    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
@@ -2489,14 +2442,6 @@ PrefabInstance:
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: showDialogCallback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GroupChat, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2554,6 +2499,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Candle (0)
       objectReference: {fileID: 0}
+    - target: {fileID: 7699765964407069571, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: LightsModule.ratio
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7699765964407069571, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: NoiseModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7699765964407069571, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: LightsModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7699765964407069571, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7699765964407069571, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7699765964407069571, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221984063614629116, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
 --- !u!4 &406837940 stripped
@@ -2569,11 +2542,6 @@ GameObject:
 --- !u!1 &406837942 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3806350862499601242, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
-  m_PrefabInstance: {fileID: 406837939}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &406837943 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3806350863327536136, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
   m_PrefabInstance: {fileID: 406837939}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &416481359
@@ -3456,7 +3424,6 @@ PrefabInstance:
       value: 'The team reluctantly form groups for the weekend game jam.
 
 
-
         Holiday
         button is invalid for x seconds.'
       objectReference: {fileID: 0}
@@ -4159,6 +4126,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contentToUpdate: []
+--- !u!114 &595751290 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+  m_PrefabInstance: {fileID: 2095858919}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095858922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c152ac3882ea264da639a9a2ce36cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &637980828 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6747525549901660568, guid: 4ffced7d5aeda4836ab56df6f499ebc4, type: 3}
@@ -6869,6 +6847,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1852221271}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: _stateSwitchCallback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -6897,6 +6879,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: _stateSwitchCallback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: showDialogCallback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
@@ -6907,6 +6893,10 @@ PrefabInstance:
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: showDialogCallback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SendTextMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: _stateSwitchCallback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -7783,6 +7773,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1852221271}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: _stateSwitchCallback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -7811,6 +7805,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: _stateSwitchCallback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: showDialogCallback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
@@ -7821,6 +7819,10 @@ PrefabInstance:
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: showDialogCallback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SendTextMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: _stateSwitchCallback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -9616,10 +9618,8 @@ PrefabInstance:
       value: 'You have used 1 Favour.
 
 
-
         The team form groups for the weekend
         game jam but relieve knowing their time will be compensated.
-
 
 
         Holiday
@@ -10138,9 +10138,8 @@ PrefabInstance:
         is necessary to finish the project.
 
 
-
-        The team is set to crunch
-        for x seconds.'
+        The team is set to crunch for
+        x seconds.'
       objectReference: {fileID: 0}
     - target: {fileID: 7817300043095310073, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_Pivot.x
@@ -11590,6 +11589,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1852221271}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: _stateSwitchCallback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -11618,9 +11621,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: _stateSwitchCallback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: showDialogCallback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: _stateSwitchCallback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 595751290}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: showDialogCallback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -11628,6 +11639,10 @@ PrefabInstance:
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: showDialogCallback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SendTextMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
+      propertyPath: _stateSwitchCallback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

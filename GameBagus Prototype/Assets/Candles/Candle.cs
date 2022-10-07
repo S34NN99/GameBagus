@@ -48,6 +48,9 @@ public class Candle : MonoBehaviour, IEntity {
     [SerializeField] private UnityEvent<string> _updateNameCallback;
     public UnityEvent<string> UpdateNameCallback => _updateNameCallback;
 
+    [SerializeField] private UnityEvent _stateSwitchCallback;
+    public UnityEvent StateSwitchCallback => _stateSwitchCallback;
+
     [SerializeField] private UnityEvent<Candle> onDeath;
 
     [SerializeField] private UnityEvent<float> updateCandleDecay;
@@ -115,6 +118,12 @@ public class Candle : MonoBehaviour, IEntity {
 
     public void ShowDialog(string dialogText) {
         GameManager.Instance.GroupChat.SendTextMessage(Profile, dialogText);
+    }
+
+    public void StateChangeFeedback(ParticleSystem ps)
+    {
+        ps.Play();
+        print("state change");
     }
 }
 

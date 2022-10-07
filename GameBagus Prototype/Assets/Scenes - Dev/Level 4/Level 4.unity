@@ -521,7 +521,6 @@ PrefabInstance:
       value: 'You have gained 1 Favour.
 
 
-
         You playfully brush off the situation.
         After all, everyone deals with their own drama their own way.'
       objectReference: {fileID: 0}
@@ -3442,7 +3441,6 @@ PrefabInstance:
       value: 'You have used 1 Favour.
 
 
-
         Calling him out for his unprofessional
         behaviour may have stopped his tirade, but he''s definitely not happy with
         you now!'
@@ -3811,7 +3809,6 @@ PrefabInstance:
     - target: {fileID: 4772913340757344780, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: _content
       value: 'You have used 1 Favour.
-
 
 
         You call him out on his attitude.
@@ -6016,7 +6013,6 @@ PrefabInstance:
     - target: {fileID: 4772913340757344780, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: _content
       value: 'You have used 1 Favour.
-
 
 
         After the report went through, Dahrul
@@ -8396,9 +8392,8 @@ PrefabInstance:
         but it''s all these drama with my wife is stressing me out.
 
 
-
-        I
-        hope you''re not making a big deal out of this.'
+        I hope
+        you''re not making a big deal out of this.'
       objectReference: {fileID: 0}
     - target: {fileID: 2351660773081945279, guid: 9376d994518b74fde9182f26638f219f, type: 3}
       propertyPath: m_text

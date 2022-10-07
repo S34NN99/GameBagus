@@ -25,6 +25,7 @@ public class StateMachine {
         if (workingState == null && state != null) {
             workingState = state;
             workingState.Enter(owner);
+            owner.currCandle.StateSwitchCallback.Invoke();
         }
     }
 

@@ -4971,7 +4971,6 @@ MonoBehaviour:
   _content: 'Just received request from client to add a new NPC for the game.
 
 
-
     NPC
     design brief:
 
@@ -8673,9 +8672,7 @@ MonoBehaviour:
     group.
 
 
-
-    Please implement the requested changes and update all affected
-    assets.'
+    Please implement the requested changes and update all affected assets.'
 --- !u!1001 &2001177789
 PrefabInstance:
   m_ObjectHideFlags: 0

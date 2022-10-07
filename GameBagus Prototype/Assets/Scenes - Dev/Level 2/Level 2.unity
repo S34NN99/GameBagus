@@ -261,7 +261,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: be611670b36934818a5173a734d4fc98, type: 2}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: _stats._maxHp
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
@@ -1604,7 +1604,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 00e6888941dc7471fb635d5c23e80461, type: 2}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: _stats._maxHp
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
@@ -4380,6 +4380,15 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4772913340757344780, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
+      propertyPath: _content
+      value: 'The team successfully completed the 4-day training classes.
+
+        
+
+        Exhaustion
+        among the team is apparent due to after-work hours and weekend classes.'
+      objectReference: {fileID: 0}
     - target: {fileID: 7817300043095310073, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5715,7 +5724,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: de6d816f9b6404f6abdecfcdfad55d0c, type: 2}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: _stats._maxHp
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
@@ -6312,7 +6321,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: _stats._maxHp
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3806350862499601240, guid: f6d6891486e7943879ee1e5e46d35f71, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
@@ -10201,6 +10210,15 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4772913340757344780, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
+      propertyPath: _content
+      value: 'You have used 1 Favour.
+
+        
+
+        HR will look into rescheduling
+        the training classes to a suitable time.'
+      objectReference: {fileID: 0}
     - target: {fileID: 7817300043095310073, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11206,6 +11224,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5671363685396103367, guid: 3bd47199ca9c84337887946dd5db8592, type: 3}
+      propertyPath: m_text
+      value: Major bug reported affecting the stability and performance of the initial
+        build.
+      objectReference: {fileID: 0}
     - target: {fileID: 8376529172395168288, guid: 3bd47199ca9c84337887946dd5db8592, type: 3}
       propertyPath: m_text
       value: 
@@ -11214,7 +11237,6 @@ PrefabInstance:
       propertyPath: _textToType
       value: 'Major bug reported affecting the stability and performance of the initial
         build.
-
 
 
         The team has to crunch until the issue is fixed.'

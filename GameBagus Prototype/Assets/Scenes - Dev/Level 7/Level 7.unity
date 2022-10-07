@@ -535,7 +535,6 @@ PrefabInstance:
       value: 'Brainstorming day with team leaders.
 
 
-
         You have been roped
         into the brainstorm meeting from 9-5.'
       objectReference: {fileID: 0}
@@ -581,7 +580,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _content: 'Brainstorming day with team leaders.
-
 
 
     You have been roped into
@@ -1254,9 +1252,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3276212617705088254, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
       propertyPath: _textToType
-      value: "You will be taking the lead on our major game projects and managing
-        a team of talented co-workers. You'll also report to our Head of Production,
-        S. Kim.\n \nTo accept this offer, please report to the office on Monday.\n"
+      value: '"We hear and acknowledge our fellow employees. Management team are
+        taking swift action for new employee support practices to be implemented.
+
+
+
+        We
+        will see to it to ensure Groundhog Games a safe and inclusive environment."'
       objectReference: {fileID: 0}
     - target: {fileID: 3276212617993712532, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
       propertyPath: m_Name
@@ -1277,7 +1279,7 @@ PrefabInstance:
     - target: {fileID: 3276212617993712554, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
       propertyPath: actionLoop.Array.data[2].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1870889262}
+      objectReference: {fileID: 521444090}
     - target: {fileID: 3276212617993712554, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
       propertyPath: actionLoop.Array.data[2].m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -1639,7 +1641,6 @@ PrefabInstance:
       propertyPath: _content
       value: 'You apologize for your involvement and expressed your obligation to
         help management to resolve this discreetly.
-
 
 
         S. Kim accepts your
@@ -2523,7 +2524,6 @@ PrefabInstance:
       value: 'You have proposed a 10% salary increase for the employees.
 
 
-
         Management
         takes your proposal into consideration but ultimately decides to implement
         5% increase.'
@@ -2726,13 +2726,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3276212617705088254, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
       propertyPath: _textToType
-      value: 'Congratulations!
-
-
-        Groundhog Games is pleased to offer you
-        the position of Project Manager.
-
-'
+      value: Groundhog Games issues a statement in response to open letter from the
+        employee advocacy group.
       objectReference: {fileID: 0}
     - target: {fileID: 3276212617993712532, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
       propertyPath: m_Name
@@ -4900,6 +4895,114 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8371928470953337638, guid: d4b440ec425a2ad4d929ad3f24b02f5f, type: 3}
   m_PrefabInstance: {fileID: 498757500}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &521444088
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1762131742}
+    m_Modifications:
+    - target: {fileID: 3276212617705088254, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: _textToType
+      value: Following the statement, you are promoted to Senior Project Manager
+        and given a generous raise.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712532, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: m_Name
+      value: Cut Scene 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712532, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712554, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: actionLoop.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712554, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: actionLoop.Array.data[2].m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712554, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: actionLoop.Array.data[2].m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1870889262}
+    - target: {fileID: 3276212617993712554, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: actionLoop.Array.data[2].m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712554, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: actionLoop.Array.data[2].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712554, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: actionLoop.Array.data[2].m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712554, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: actionLoop.Array.data[2].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712554, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: actionLoop.Array.data[2].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712555, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712555, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712555, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712555, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712555, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712555, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712555, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712555, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212617993712555, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212619660193894, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276212619660193895, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+--- !u!224 &521444089 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3276212617993712555, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+  m_PrefabInstance: {fileID: 521444088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &521444090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3276212617993712532, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
+  m_PrefabInstance: {fileID: 521444088}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &548495436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5136,7 +5239,6 @@ PrefabInstance:
     - target: {fileID: 4772913340757344780, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: _content
       value: 'You have proposed a limit of 45 hours work week including overtime.
-
 
 
         Management
@@ -5801,7 +5903,6 @@ PrefabInstance:
         to purchase an item shown in the store.
 
 
-
         Beta launch is not far
         away. This is unacceptable. The team has to crunch till this is solved.'
       objectReference: {fileID: 0}
@@ -5848,7 +5949,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _content: 'There have been reports of in-game purchase bugs preventing player to
     purchase an item shown in the store.
-
 
 
     Beta launch is not far away. This
@@ -10633,7 +10733,6 @@ PrefabInstance:
       value: 'A little over 90 employees have RSVP-ed to join the strike.
 
 
-
         You
         will be participating a 3-day work stoppage starting tomorrow.'
       objectReference: {fileID: 0}
@@ -11487,7 +11586,6 @@ PrefabInstance:
       value: 'The team enjoys the day off at the paintball park.
 
 
-
         It''s
         been a while since the team is able to get together for an activity outside
         of work'
@@ -12028,7 +12126,6 @@ MonoBehaviour:
     team.
 
 
-
     We will continue our efforts to push through our demands one way
     or another.'
 --- !u!114 &1332604097 stripped
@@ -12425,7 +12522,6 @@ PrefabInstance:
     - target: {fileID: 4772913340757344780, guid: 0e0b089f9c17b411f9c60e6883e6ed92, type: 3}
       propertyPath: _content
       value: 'A little over 90 employees have RSVP-ed to join the strike.
-
 
 
         There
@@ -12872,7 +12968,6 @@ PrefabInstance:
       propertyPath: _text
       value: 'The management team is outright disappointed to find out that you have
         participated in the strike.
-
 
 
         As a senior member of the team, you
@@ -15136,7 +15231,6 @@ PrefabInstance:
       value: 'You have proposed additional 7 days annual leave for the employees.
 
 
-
         Management
         takes your proposal into consideration but ultimately decides to implement
         additional 2 days annual leave.'
@@ -16009,6 +16103,7 @@ RectTransform:
   m_Children:
   - {fileID: 368143755}
   - {fileID: 216753795}
+  - {fileID: 521444089}
   - {fileID: 1870889261}
   - {fileID: 1821877384}
   m_Father: {fileID: 548773293}
@@ -16433,7 +16528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8371928470953337633, guid: f79e284be0e4e1a41ab3d6f40ff8fe4a, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8371928470953337633, guid: f79e284be0e4e1a41ab3d6f40ff8fe4a, type: 3}
       propertyPath: m_AnchorMax.x
@@ -17392,17 +17487,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3276212617705088254, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
       propertyPath: _textToType
-      value: 'We make groundbreaking games at Groundhog Games.
-
-
-        Welcome
-        aboard, Alex!
-
-'
+      value: "For now, business runs as usual. \r\n\r\nThe working team moves on
+        to the next project developing a massively multiplayer online game (MMO)."
       objectReference: {fileID: 0}
     - target: {fileID: 3276212617993712532, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
       propertyPath: m_Name
-      value: Cut Scene (3)
+      value: Cut Scene 4
       objectReference: {fileID: 0}
     - target: {fileID: 3276212617993712532, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
       propertyPath: m_IsActive
@@ -17498,7 +17588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3276212617993712555, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3276212617993712555, guid: a9f5c0371240d48b9897990ffee918fc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17837,7 +17927,6 @@ PrefabInstance:
       propertyPath: _content
       value: 'You apologize for your involvement and expressed your obligation to
         help management to resolve this discreetly.
-
 
 
         S. Kim accepts your
@@ -18730,7 +18819,6 @@ PrefabInstance:
         on management''s lack of response on handling the situation.
 
 
-
         S.
         Kim isn''t pleased with you and warns that there will be ramifications for
         your actions.'
@@ -19330,7 +19418,6 @@ PrefabInstance:
       value: 'You try your best to rationalize the team''s decision to strike and
         expressed your frustrations on management''s lack of response on handling
         the situation.
-
 
 
         S. Kim isn''t pleased with you and warns that there
